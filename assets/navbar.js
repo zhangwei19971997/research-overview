@@ -1,4 +1,4 @@
-/* 共享导航条 — 调研基地情报站
+/* 共享导航条 — 康庄研究院情报站
  * 用法：在 </body> 前引入 <script src="assets/navbar.js"></script>
  * 行为：
  *   1) 页面已有 .sidebar  → 校验/补齐 4 个 nav-btn，并按当前 URL 修正 "on" 高亮
@@ -9,15 +9,15 @@
   // 4 个导航项（href 用站点根相对，便于子目录 /reports/、/futures/、/scores/ 也能用）
   var SITE_ROOT = '/';
   var items = [
-    {key:'index',     text:'归档首页', href:SITE_ROOT+'index.html'},
-    {key:'dashboard', text:'汇总看板', href:SITE_ROOT+'dashboard.html'},
-    {key:'futures',   text:'期货收盘', href:SITE_ROOT+'futures.html'},
-    {key:'scores',    text:'股票打分', href:SITE_ROOT+'scores/index.html'}
+    {key:'index',  text:'康庄大厅', href:SITE_ROOT+'index.html'},
+    {key:'news',   text:'财经新闻总结', href:SITE_ROOT+'news.html'},
+    {key:'futures',text:'期货收盘', href:SITE_ROOT+'futures.html'},
+    {key:'scores', text:'股票打分', href:SITE_ROOT+'scores/index.html'}
   ];
   // 依据当前 URL 决定哪个 key 高亮
   var path = location.pathname.replace(/\/+$/,'/');
   function activeKey(){
-    if (/\/dashboard(\.html)?$/.test(path)) return 'dashboard';
+    if (/\/news(\.html)?$/.test(path)) return 'news';
     if (/\/futures(\.html)?$/.test(path) || /\/futures\//.test(path)) return 'futures';
     if (/\/scores(\.html)?$/.test(path) || /\/scores\//.test(path)) return 'scores';
     return 'index';
@@ -32,7 +32,7 @@
     }).join('');
     return '<aside class="sidebar nb-injected"><div class="brand">'+
       '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+
-      '<path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>调研基地</div>'+
+      '<path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>康庄研究院</div>'+
       '<div class="nav-sep"></div>'+btns+'</aside>';
   }
 
@@ -121,7 +121,7 @@
     }).join('');
     var html = '<nav class="nb-topbar"><span class="nb-brand">'+
       '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+
-      '<path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>调研基地</span>'+
+      '<path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>康庄研究院</span>'+
       '<span class="nb-sep"></span>'+btns+'</nav>';
     document.body.insertAdjacentHTML('afterbegin', html);
   }

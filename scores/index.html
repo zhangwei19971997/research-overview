@@ -49,30 +49,15 @@ font-size:14px;font-weight:600;transition:background .15s}
 </div>
 
 <div class="stats">
-<div class="stat"><b>8</b><span>已归档日期</span></div>
-<div class="stat"><b>184</b><span>最新个股数</span></div>
+<div class="stat"><b>7</b><span>已归档日期</span></div>
+<div class="stat"><b>139</b><span>最新个股数</span></div>
 <div class="stat"><b>80+20</b><span>技术/基本面权重</span></div>
 </div>
 
 <div class="card">
 <h2>📅 打分报告归档 <span class="tag">实时更新</span></h2>
 <div class="list"><div class="item">
-<div class="date">2026-08-30<small>周日 · 最新</small></div>
-<div class="info">
-<div class="top3">
-<span class="stock-tag">🥇 生益科技 78.2分</span>
-<span class="stock-tag">🥈 联瑞新材 72.7分</span>
-<span class="stock-tag">🥉 飞龙股份 70.5分</span>
-</div>
-<div class="meta">共 <strong>184</strong> 只个股进入评分池（08-23∪08-24∪08-26∪<b>08-28/29/30 新池</b>，较 03:00 那轮 +45 新进）· 东方财富主源断开→腾讯兜底 · 数据截至 <strong>08-28</strong> 收盘 · <b>数据滞后 0 只</b>、regime 强市降权 135/184 · 扩池致分位数校准变化（生益科技 80.8→78.2）</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-08-30_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-08-30_打分表格.html">打分表格 →</a>
-</div>
-</div>
-<div class="item">
-<div class="date">2026-08-26<small>周三</small></div>
+<div class="date">2026-08-26<small>周三 · 最新</small></div>
 <div class="info">
 <div class="top3">
 <span class="stock-tag">🥇 生益科技 80.8分</span>
@@ -182,16 +167,15 @@ font-size:14px;font-weight:600;transition:background .15s}
 </div>
 
 <div class="card" style="background:#fff3e0;border:1px solid #ffcc80">
-<h2>⚠️ 本期数据说明 <span class="tag" style="background:#ffe0b2;color:#e65100">2026-08-31 14:39 手动重跑</span></h2>
+<h2>⚠️ 本期数据说明 <span class="tag" style="background:#ffe0b2;color:#e65100">2026-08-31 每日自动化</span></h2>
 <div class="method" style="background:#fff8e1;border-color:#ffe082">
-<b>数据截至 2026-08-28 收盘</b>：周一 14:39 重跑，T-1 锁定最新已收盘交易日 = 周五 08-28（周末无新交易日）。<br>
-<b>🔑 扩池（本次重跑核心变化）</b>：03:00 那轮时尚无 08-28~08-30 新闻池；今早 10:53 星球补录 08-28(30只)/08-29(28只)/08-30(28只) 三池（08-27 仍 stock_count=0 缺口跳过）。并入现有 08-23∪08-24∪08-26 池 → <b>扩池 139→184 只（+45 新进，9 只重叠）</b>，新进含五粮液/美的集团/中国神华/天齐锂业/华大九天/迎驾贡酒等。<br>
-<b>东方财富主源仍断开</b>（RemoteDisconnected）→ <b>纯腾讯源兜底</b>；②③ --enhance 虽报「已注入」但 EM 预测接口实际全返回 2.5，<b>维持中性 2.5</b>（同 03:00）。<br>
-<b>数据滞后标记 0/184</b>：腾讯源补全 08-28 收盘数据，全部解除（同 03:00 状态，无新增误伤）。<br>
-<b>生益科技 80.8→78.2 说明</b>：非数据问题，系<b>扩池导致分位数校准变化</b>（池由 139→184，A+ 阈值 61.8→64.4，技术分池内百分位重排）；技术分 67.9→65.2、基本面 12.9→13.0，绝对技术值未变。<br>
-<b>Δ分对比基准 = 03:00 那轮 139 池 JSON</b>（已备份为 _0300_打分_总得分.json）：139 只重合项 Δ 主要为<b>扩池分位数重校准</b>（非真实涨跌），45 只新进标记「新进」、0 滑出。<br>
-<b>regime 强市</b>：权重 趋势0.15/动量0.20/量价0.15/资金0.10/突破0.20，触发降权 135/184；评级分位数校准 A+≥64.4；技术面均值 32.58/80、基本面 9.73/20、总分 42.31/100。<br>
-<b>Top3</b>：生益科技 78.2 / 联瑞新材 72.7 / 飞龙股份 70.5（均 A+；生益科技稳居榜首，联瑞新材/飞龙股份新晋）。<br>
+<b>数据截至 2026-08-28 收盘</b>：今日 08-31（周一）凌晨自动化重跑，T-1 锁定最新已收盘交易日 = 周五 08-28（周末无新交易日，与 08-30 同为 08-28 口径）。<br>
+<b>池不变（139 只）</b>：沿用 08-23∪08-24∪08-26 合并池；08-27 结构化抽取缺口（stock_count=0）未扩池，08-28~08-31 无新池。<br>
+<b>东方财富主源仍断开</b>（RemoteDisconnected）→ <b>纯腾讯源兜底</b>；②③ 一致预期/评级变动 --enhance 虽报「已注入」但实际 EM 预测接口返回全 2.5，<b>维持中性 2.5</b>（同 08-30）。<br>
+<b>🔑 关键修复：数据滞后标记 0/139</b>：上期（08-30）有 <b>34 只</b>被标记「停牌/数据滞后」（×0.8 + 滞后 K 线压低技术分），本期腾讯源已补全 08-28 收盘数据，<b>全部解除</b>。典型：<b>生益科技 技术分 45.0→67.9、总分 57.9→80.8</b> 跃居榜首（主板非停，此前为源端数据滞后误伤，非真实涨幅）。<br>
+<b>Δ分对比基准 = 08-27 全量刷新基线</b>（prev0827fresh，as-of 08-27）；Δ 含<b>真实 1 日轮动</b> + <b>数据滞后修复方差</b>（生益科技 +22.9 等大幅 Δ 主要为滞后修复，请结合「数据滞后」状态解读）。<br>
+<b>regime 强市</b>：权重 趋势0.15/动量0.20/量价0.15/资金0.10/突破0.20，触发降权 107/139；评级分位数校准 A+≥61.8；技术面均值 32.36/80、基本面 9.83/20、总分 42.19/100。<br>
+<b>Top3</b>：生益科技 80.8 / 万华化学 75.8 / 科翔股份 71.7（均 A+；较上期 万华/科翔/金洲管道 轮动，生益科技因滞后解除新晋榜首）。<br>
 <b>⚠️ 报告实时快照</b>：Top3 卡片现价/PE/MA 因 EM 阻断显示 0，评分本身基于腾讯 K 线有效；②⑤/f62 机构吸筹维度因未注入 override-json 按中性，tdx/westock 已 connected 可走 run_override_pipeline 补齐。
 </div>
 </div>
