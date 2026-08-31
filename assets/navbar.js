@@ -7,13 +7,13 @@
 (function(){
   'use strict';
   // 导航项（href 用站点根相对，便于子目录 /reports/、/futures/、/scores/ 也能用）
-  // 平级栏目：康庄大厅 / 财经新闻总结 / 期货收盘 / 股票打分（三者平行，无父子嵌套）
+  // 平级栏目：康庄大厅 / 江湖传闻 / 期货收盘 / 江湖龙虎榜（三者平行，无父子嵌套）
   var SITE_ROOT = '/';
   var items = [
     {key:'index',  text:'康庄大厅', href:SITE_ROOT+'index.html'},
-    {key:'news',   text:'财经新闻总结', href:SITE_ROOT+'news.html'},
+    {key:'news',   text:'江湖传闻', href:SITE_ROOT+'news.html'},
     {key:'futures',text:'期货收盘', href:SITE_ROOT+'futures.html'},
-    {key:'scores', text:'股票打分', href:SITE_ROOT+'scores/index.html'}
+    {key:'scores', text:'江湖龙虎榜', href:SITE_ROOT+'scores/index.html'}
   ];
   // 依据当前 URL 决定哪个 key 高亮
   var path = location.pathname.replace(/\/+$/,'/');
