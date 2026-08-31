@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-08-07 新闻总结报告</title>
+<script src="../assets/chart.umd.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.header { background: linear-gradient(135deg, #1a237e, #283593, #3949ab); color: white; padding: 40px 30px; border-radius: 16px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(26,35,126,0.3); }
+.header h1 { font-size: 28px; margin-bottom: 8px; }
+.header .meta { font-size: 14px; opacity: 0.85; }
+.header .sources { margin-top: 10px; font-size: 13px; opacity: 0.75; }
+.section { background: white; border-radius: 12px; padding: 28px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 3px solid #e8eaf6; display: flex; align-items: center; gap: 8px; }
+.section-title .icon { font-size: 24px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.card { border-radius: 10px; padding: 18px; border-left: 4px solid; transition: transform 0.2s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+.card h3 { font-size: 15px; margin-bottom: 8px; }
+.card p { font-size: 13px; color: #555; }
+.card .tags { margin-top: 8px; }
+.tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-right: 4px; margin-bottom: 4px; }
+.heat-bar { display: inline-block; font-size: 12px; color: #ff6f00; font-weight: 700; }
+.chart-container { position: relative; height: 320px; margin: 10px 0; }
+.summary-box { background: linear-gradient(135deg, #e8eaf6, #f3e5f5); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+.summary-box h2 { font-size: 18px; margin-bottom: 12px; color: #1a237e; }
+.summary-box p { font-size: 14px; color: #455a64; line-height: 1.8; }
+.disclaimer { font-size: 12px; color: #999; text-align: center; margin-top: 20px; padding: 16px; }
+.stock-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.stock-table th { background: #3949ab; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.stock-table td { padding: 8px 12px; border-bottom: 1px solid #e8eaf6; }
+.stock-table tr:hover { background: #f5f7fa; }
+.cat-badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+@media (max-width: 768px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body><style id="zsxq-nav-css">
+#zsxq-site-nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+padding:9px 14px;background:#12325b;color:#fff;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:14px}
+#zsxq-site-nav a{color:#fff;text-decoration:none;background:rgba(255,255,255,.16);padding:7px 13px;
+border-radius:999px;min-height:36px;display:inline-flex;align-items:center;line-height:1}
+#zsxq-site-nav a:hover{background:rgba(255,255,255,.3)}
+#zsxq-site-nav .cur{margin-right:auto;font-weight:700;letter-spacing:.5px}
+#zsxq-site-nav .dis{opacity:.35;pointer-events:none}
+@media(max-width:768px){#zsxq-site-nav{font-size:13px;padding:8px 10px;gap:6px}
+#zsxq-site-nav a{padding:7px 11px}}
+</style><div id="zsxq-site-nav"><span class="cur">2026-08-07</span>
+<a href="../index.html">归档首页</a><a href="../dashboard.html">汇总看板</a><a href="../news.html">财经新闻总结</a>
+<a id="zsxq-prev" class="dis" href="#">← 前一期</a><a id="zsxq-next" class="dis" href="#">后一期 →</a></div>
+<script src="../data/index.js"></script>
+<script>(function(){var L=(window.ZSXQ_INDEX||[]).map(function(x){return x.date;}).sort();
+var d="2026-08-07",i=L.indexOf(d);
+function set(id,t){var e=document.getElementById(id);if(!e)return;
+if(t){e.href=t+".html";e.className="";}}
+if(i>0)set("zsxq-prev",L[i-1]);if(i>=0&&i<L.length-1)set("zsxq-next",L[i+1]);})();</script>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>📊 2026-08-07 财经新闻总结报告</h1>
+  <div class="meta">分析日期：2026-08-07 | 生成时间：2026-08-08 06:05</div>
+  <div class="sources">数据来源：调研基地（观察者03 + 调研纪要），共 217 篇帖子</div>
+</div>
+
+<!-- 一句话结论 -->
+<div class="summary-box">
+  <h2>🎯 一句话结论</h2>
+  <p>2026-08-07 调研基地共 217 篇帖子，市场高度聚焦 AI 硬件上游与景气赛道：黄金/有色资源、算力/AI芯片、PCB/电子布/CCL、创新药/CXO、AI光模块/CPO 等方向热度居前，黄金/有色与电力电网亦获资金关注；创新药/CXO 延续出海逻辑。共提取并验证 A股 395 只，建议优先关注高提及、高景气共振标的。</p>
+</div>
+
+<!-- 发帖时间分布（可选） -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🕐</span> 发帖时间分布</div>
+    <div class="chart-container" style="height:240px;"><canvas id="postChart"></canvas></div>
+    <div style="font-size:12px;color:#999;margin-top:8px;">主力来源：信息社(209)、菜园子(8)</div>
+  </div>
+
+<!-- 主题热度图 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🔥</span> 主题热度排行</div>
+  <div class="chart-container">
+    <canvas id="heatChart"></canvas>
+  </div>
+</div>
+
+<!-- 核心主题卡片 -->
+<div class="section">
+  <div class="section-title"><span class="icon">📋</span> 核心主题详解</div>
+  <div class="grid-2">
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🪙 黄金/有色资源 <span class="heat-bar">★★★★★</span></h3>
+      <p>黄金/有色资源 当日热度评分 100，相关帖 27 篇，重点标的 易普力、紫金矿业、洛阳钼业、西部矿业、景旺电子。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">易普力</span><span class="tag" style="background:#e0e0e0;color:#424242;">紫金矿业</span><span class="tag" style="background:#e0e0e0;color:#424242;">洛阳钼业</span><span class="tag" style="background:#e0e0e0;color:#424242;">西部矿业</span><span class="tag" style="background:#e0e0e0;color:#424242;">景旺电子</span><span class="tag" style="background:#e0e0e0;color:#424242;">壶化股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">中国黄金</span><span class="tag" style="background:#e0e0e0;color:#424242;">宝鼎科技</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🧠 算力/AI芯片 <span class="heat-bar">★★★★★</span></h3>
+      <p>算力/AI芯片 当日热度评分 98，相关帖 57 篇，重点标的 寒武纪、锐捷网络、景嘉微、杰华特、麦格米特。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">寒武纪</span><span class="tag" style="background:#e0e0e0;color:#424242;">锐捷网络</span><span class="tag" style="background:#e0e0e0;color:#424242;">景嘉微</span><span class="tag" style="background:#e0e0e0;color:#424242;">杰华特</span><span class="tag" style="background:#e0e0e0;color:#424242;">麦格米特</span><span class="tag" style="background:#e0e0e0;color:#424242;">欧陆通</span><span class="tag" style="background:#e0e0e0;color:#424242;">菲利华</span><span class="tag" style="background:#e0e0e0;color:#424242;">禾盛新材</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🟩 PCB/电子布/CCL <span class="heat-bar">★★★★★</span></h3>
+      <p>PCB/电子布/CCL 当日热度评分 94，相关帖 31 篇，重点标的 国际复材、胜宏科技、中材科技、中国巨石、中钨高新。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">国际复材</span><span class="tag" style="background:#e0e0e0;color:#424242;">胜宏科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">中材科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">中国巨石</span><span class="tag" style="background:#e0e0e0;color:#424242;">中钨高新</span><span class="tag" style="background:#e0e0e0;color:#424242;">厦门钨业</span><span class="tag" style="background:#e0e0e0;color:#424242;">芯碁微装</span><span class="tag" style="background:#e0e0e0;color:#424242;">华正新材</span></div>
+    </div>
+    <div class="card" style="border-color: #5c6bc0; background: #e8eaf6;">
+      <h3>💊 创新药/CXO <span class="heat-bar">★★★★☆</span></h3>
+      <p>创新药/CXO 当日热度评分 86，相关帖 26 篇，重点标的 百奥赛图、奥浦迈、康龙化成、百普赛斯、药明康德。</p>
+      <div class="tags"><span class="tag" style="background:#c5cae9;color:#283593;">百奥赛图</span><span class="tag" style="background:#c5cae9;color:#283593;">奥浦迈</span><span class="tag" style="background:#c5cae9;color:#283593;">康龙化成</span><span class="tag" style="background:#c5cae9;color:#283593;">百普赛斯</span><span class="tag" style="background:#c5cae9;color:#283593;">药明康德</span><span class="tag" style="background:#c5cae9;color:#283593;">纳微科技</span><span class="tag" style="background:#c5cae9;color:#283593;">赛分科技</span><span class="tag" style="background:#c5cae9;color:#283593;">凯莱英</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🔆 AI光模块/CPO <span class="heat-bar">★★★★☆</span></h3>
+      <p>AI光模块/CPO 当日热度评分 85，相关帖 40 篇，重点标的 中际旭创、唯特偶、炬光科技、天通股份、日联科技。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">中际旭创</span><span class="tag" style="background:#e0e0e0;color:#424242;">唯特偶</span><span class="tag" style="background:#e0e0e0;color:#424242;">炬光科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">天通股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">日联科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">长盈通</span><span class="tag" style="background:#e0e0e0;color:#424242;">联讯仪器</span><span class="tag" style="background:#e0e0e0;color:#424242;">华光新材</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🤖 人形机器人/具身智能 <span class="heat-bar">★★★★☆</span></h3>
+      <p>人形机器人/具身智能 当日热度评分 82，相关帖 23 篇，重点标的 机器人、中信建投、宇树科技、上纬新材、线上线下。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">机器人</span><span class="tag" style="background:#e0e0e0;color:#424242;">中信建投</span><span class="tag" style="background:#e0e0e0;color:#424242;">宇树科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">上纬新材</span><span class="tag" style="background:#e0e0e0;color:#424242;">线上线下</span><span class="tag" style="background:#e0e0e0;color:#424242;">中大力德</span><span class="tag" style="background:#e0e0e0;color:#424242;">麦迪科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">华恒生物</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>💾 存储/内存 <span class="heat-bar">★★★★☆</span></h3>
+      <p>存储/内存 当日热度评分 81，相关帖 20 篇，重点标的 兆易创新、长鑫科技、普冉股份、友邦吊顶、真爱美家。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">兆易创新</span><span class="tag" style="background:#e0e0e0;color:#424242;">长鑫科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">普冉股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">友邦吊顶</span><span class="tag" style="background:#e0e0e0;color:#424242;">真爱美家</span><span class="tag" style="background:#e0e0e0;color:#424242;">星网锐捷</span><span class="tag" style="background:#e0e0e0;color:#424242;">东芯股份</span></div>
+    </div>
+    <div class="card" style="border-color: #43a047; background: #f1f8e9;">
+      <h3>🧊 AI液冷/散热 <span class="heat-bar">★★★★☆</span></h3>
+      <p>AI液冷/散热 当日热度评分 79，相关帖 15 篇，重点标的 新天科技、冠龙节能、联特科技、创世纪、斯莱克。</p>
+      <div class="tags"><span class="tag" style="background:#c8e6c9;color:#2e7d32;">新天科技</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">冠龙节能</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">联特科技</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">创世纪</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">斯莱克</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">曙光数创</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">兴业科技</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">裕同科技</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>☀️ 光伏/新能源 <span class="heat-bar">★★★★☆</span></h3>
+      <p>光伏/新能源 当日热度评分 79，相关帖 30 篇，重点标的 天合光能、福斯特、横店东磁、工大科雅、龙净环保。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">天合光能</span><span class="tag" style="background:#e0e0e0;color:#424242;">福斯特</span><span class="tag" style="background:#e0e0e0;color:#424242;">横店东磁</span><span class="tag" style="background:#e0e0e0;color:#424242;">工大科雅</span><span class="tag" style="background:#e0e0e0;color:#424242;">龙净环保</span><span class="tag" style="background:#e0e0e0;color:#424242;">宁德时代</span><span class="tag" style="background:#e0e0e0;color:#424242;">旗滨集团</span><span class="tag" style="background:#e0e0e0;color:#424242;">TCL中环</span></div>
+    </div>
+    <div class="card" style="border-color: #d81b60; background: #fce4ec;">
+      <h3>📱 AI应用/大模型 <span class="heat-bar">★★★★☆</span></h3>
+      <p>AI应用/大模型 当日热度评分 75，相关帖 24 篇，重点标的 迪安诊断、国金证券、金域医学、网宿科技。</p>
+      <div class="tags"><span class="tag" style="background:#f8bbd0;color:#ad1457;">迪安诊断</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">国金证券</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">金域医学</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">网宿科技</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🛒 消费/食饮/教育 <span class="heat-bar">★★★☆☆</span></h3>
+      <p>消费/食饮/教育 当日热度评分 70，相关帖 22 篇，重点标的 学大教育、传智教育、伟星新材。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">学大教育</span><span class="tag" style="background:#e0e0e0;color:#424242;">传智教育</span><span class="tag" style="background:#e0e0e0;color:#424242;">伟星新材</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🎮 传媒/游戏/AI视频 <span class="heat-bar">★★★☆☆</span></h3>
+      <p>传媒/游戏/AI视频 当日热度评分 70，相关帖 10 篇，重点标的 巨人网络、驱动力、完美世界、分众传媒、中信证券。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">巨人网络</span><span class="tag" style="background:#e0e0e0;color:#424242;">驱动力</span><span class="tag" style="background:#e0e0e0;color:#424242;">完美世界</span><span class="tag" style="background:#e0e0e0;color:#424242;">分众传媒</span><span class="tag" style="background:#e0e0e0;color:#424242;">中信证券</span><span class="tag" style="background:#e0e0e0;color:#424242;">北京文化</span><span class="tag" style="background:#e0e0e0;color:#424242;">遥望科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">天娱数科</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🛡️ 信创/华为链 <span class="heat-bar">★★★☆☆</span></h3>
+      <p>信创/华为链 当日热度评分 69，相关帖 26 篇，重点标的 国泰海通、久其软件、达梦数据、京东方A、大族激光。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">国泰海通</span><span class="tag" style="background:#e0e0e0;color:#424242;">久其软件</span><span class="tag" style="background:#e0e0e0;color:#424242;">达梦数据</span><span class="tag" style="background:#e0e0e0;color:#424242;">京东方A</span><span class="tag" style="background:#e0e0e0;color:#424242;">大族激光</span><span class="tag" style="background:#e0e0e0;color:#424242;">长信科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">蓝思科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">帝尔激光</span></div>
+    </div>
+    <div class="card" style="border-color: #1e88e5; background: #e3f2fd;">
+      <h3>🔬 半导体设备/材料 <span class="heat-bar">★★★☆☆</span></h3>
+      <p>半导体设备/材料 当日热度评分 68，相关帖 16 篇，重点标的 江丰电子、正帆科技、富创精密、北方华创、中微公司。</p>
+      <div class="tags"><span class="tag" style="background:#bbdefb;color:#1565c0;">江丰电子</span><span class="tag" style="background:#bbdefb;color:#1565c0;">正帆科技</span><span class="tag" style="background:#bbdefb;color:#1565c0;">富创精密</span><span class="tag" style="background:#bbdefb;color:#1565c0;">北方华创</span><span class="tag" style="background:#bbdefb;color:#1565c0;">中微公司</span><span class="tag" style="background:#bbdefb;color:#1565c0;">芯源微</span><span class="tag" style="background:#bbdefb;color:#1565c0;">拓荆科技</span><span class="tag" style="background:#bbdefb;color:#1565c0;">新莱应材</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>⚡ 电力/电网 <span class="heat-bar">★★★☆☆</span></h3>
+      <p>电力/电网 当日热度评分 64，相关帖 12 篇，重点标的 潍柴动力、民德电子、思源电气、中恒电气、四方股份。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">潍柴动力</span><span class="tag" style="background:#e0e0e0;color:#424242;">民德电子</span><span class="tag" style="background:#e0e0e0;color:#424242;">思源电气</span><span class="tag" style="background:#e0e0e0;color:#424242;">中恒电气</span><span class="tag" style="background:#e0e0e0;color:#424242;">四方股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">白云电器</span><span class="tag" style="background:#e0e0e0;color:#424242;">科威尔</span><span class="tag" style="background:#e0e0e0;color:#424242;">金盘科技</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🚗 汽车/智能驾驶 <span class="heat-bar">★★★☆☆</span></h3>
+      <p>汽车/智能驾驶 当日热度评分 63，相关帖 11 篇，重点标的 妙可蓝多、海星股份。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">妙可蓝多</span><span class="tag" style="background:#e0e0e0;color:#424242;">海星股份</span></div>
+    </div>
+    <div class="card" style="border-color: #78909c; background: #eceff1;">
+      <h3>🚀 军工/商业航天 <span class="heat-bar">★★★☆☆</span></h3>
+      <p>军工/商业航天 当日热度评分 63，相关帖 6 篇，重点标的 中复神鹰。</p>
+      <div class="tags"><span class="tag" style="background:#cfd8dc;color:#37474f;">中复神鹰</span></div>
+    </div>
+    <div class="card" style="border-color: #fb8c00; background: #fff3e0;">
+      <h3>🔌 MLCC/被动元件 <span class="heat-bar">★★★☆☆</span></h3>
+      <p>MLCC/被动元件 当日热度评分 61，相关帖 3 篇，重点标的 。</p>
+      <div class="tags"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 主题分布图 -->
+<div class="section">
+  <div class="section-title"><span class="icon">📊</span> 主题分布与市场结构</div>
+  <div class="grid-2">
+    <div>
+      <h4 style="margin-bottom:10px;color:#455a64;">主题热度分布</h4>
+      <div class="chart-container" style="height:280px;">
+        <canvas id="distChart"></canvas>
+      </div>
+    </div>
+    <div>
+      <h4 style="margin-bottom:10px;color:#455a64;">产业链景气度图谱</h4>
+      <div class="chart-container" style="height:280px;">
+        <canvas id="chainChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 市场情绪 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🌐</span> 市场情绪与宏观</div>
+  <div class="grid-3">
+    <div class="card" style="border-color:#42a5f5;background:#e3f2fd;">
+      <h3>📊 大盘走势</h3>
+      <p>大盘走势 相关讨论热度 68 次，反映当日市场关注重心。</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>📊 海外/美股</h3>
+      <p>海外/美股 相关讨论热度 271 次，反映当日市场关注重心。</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>📊 商品/有色</h3>
+      <p>商品/有色 相关讨论热度 248 次，反映当日市场关注重心。</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>📊 政策/产业</h3>
+      <p>政策/产业 相关讨论热度 82 次，反映当日市场关注重心。</p>
+    </div>
+    <div class="card" style="border-color:#ffa726;background:#fff3e0;">
+      <h3>📊 流动性/资金</h3>
+      <p>流动性/资金 相关讨论热度 56 次，反映当日市场关注重心。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 重点关注个股 -->
+<div class="section">
+  <div class="section-title"><span class="icon">⭐</span> 重点关注个股速览</div>
+  <table class="stock-table">
+    <thead>
+      <tr>
+        <th>公司</th>
+        <th>主题</th>
+        <th>核心要点</th>
+        <th>来源</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">机器人</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">人形机器人/具身智能</span></td>
+        <td style="color:#555;">科技】深度：全球通用机器人领跑者，全栈自研构建商业化飞轮   宇树IPO定价150.80元/股，对应发行市值约610亿元，超出</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">百奥赛图</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">生物科技、百普赛斯、百奥赛图、义翘神州、康龙化成等公司均有望承接AI相关需求。  此外，随着AI for science 需求的</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">奥浦迈</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">期昭衍新药、美迪西、奥浦迈等多家公司业绩预告情况，持续证明创新药产业链当前景气度在快速上行。展望后续，中报（当前仍有较多重点公</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">寒武纪</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">算力/AI芯片</span></td>
+        <td style="color:#555;">【寒武纪】26Q2业绩速评：Q2出货短期节奏性影响，存货环比大增业绩拐点确定  【收入】31.11亿，yoy</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">康龙化成</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">百奥赛图、义翘神州、康龙化成等公司均有望承接AI相关需求。  此外，随着AI for science 需求的整体增长，前端需求的</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">百普赛斯</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">高，金斯瑞生物科技、百普赛斯、百奥赛图、义翘神州、康龙化成等公司均有望承接AI相关需求。  此外，随着AI for scienc</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">药明康德</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">业绩及订单表现，本周药明康德、赛分科技、百奥赛图等多家公司中报业绩超预期，结合海外CXO龙头（如MEDPACE、IQVIA、查尔</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">纳微科技</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">百奥赛图、皓元医药、纳微科技、百普赛斯、赛分科技、美迪西、益诺思、昊帆生物、奥浦迈等#文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">赛分科技</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">表现，本周药明康德、赛分科技、百奥赛图等多家公司中报业绩超预期，结合海外CXO龙头（如MEDPACE、IQVIA、查尔斯河）中报</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">国泰海通</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">信创/华为链</span></td>
+        <td style="color:#555;">88亿美元）。  【国泰海通通信团队】#文字观点  #业绩披露   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">国际复材</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/CCL</span></td>
+        <td style="color:#555;">子布板块：中国巨石、国际复材、中材科技 CCL板块：华正新材、金安国纪、南亚新材、宝鼎科技、建滔 ————— 前瞻判断请持续关注</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中信建投</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">人形机器人/具身智能</span></td>
+        <td style="color:#555;">，暂不予评级。   中信建投机械 许光坦/籍星博#文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">宇树科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">人形机器人/具身智能</span></td>
+        <td style="color:#555;">🤖【宇树科技】深度：全球通用机器人领跑者，全栈自研构建商业化飞轮   宇树IPO定价150.80元/股，对应发行</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">凯莱英</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">药明生物、药明合联、凯莱英等）及下半年业绩、未来指引值得期待。当前CXO外需线需求强劲、具备较好估值性价比，内需线Q2订单增速</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">皓元医药</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">斯瑞科技、百奥赛图、皓元医药、纳微科技、百普赛斯、赛分科技、美迪西、益诺思、昊帆生物、奥浦迈等#文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">巨人网络</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">传媒/游戏/AI视频</span></td>
+        <td style="color:#555;">心动网络、沐瞳科技、巨人网络、网易、腾讯等。   【端游热度】根据顺网星研社6月网吧热力榜，腾讯、网易依然遥遥领先于其他厂商。腾</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">药康生物</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">建议关注：百奥赛图、药康生物、百普赛斯#文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">易普力</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">黄金/有色资源</span></td>
+        <td style="color:#555;">团队】 重点推荐# 易普力！   # 事件：  “十五五”民爆规划出台！2030年，企业重组整合有序推进，产业集中度持续提高，</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">江丰电子</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备/材料</span></td>
+        <td style="color:#555;">的参考前期外发报告：江丰电子、正帆科技、富创精密、新莱应材等，# 依次排序。 #文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">正帆科技</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备/材料</span></td>
+        <td style="color:#555;">外发报告：江丰电子、正帆科技、富创精密、新莱应材等，# 依次排序。 #文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">紫金矿业</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">黄金/有色资源</span></td>
+        <td style="color:#555;">中资铜企如洛阳钼业、紫金矿业等以出口阴极铜/粗铜、氢氧化钴为主，几无影响。中国有色矿业在刚果金拥有15万吨产能的卢阿拉巴火法冶炼</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">洛阳钼业</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">黄金/有色资源</span></td>
+        <td style="color:#555;">在刚果金的中资铜企如洛阳钼业、紫金矿业等以出口阴极铜/粗铜、氢氧化钴为主，几无影响。中国有色矿业在刚果金拥有15万吨产能的卢阿拉</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中际旭创</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI光模块/CPO</span></td>
+        <td style="color:#555;">成样本，涉及景嘉微、中际旭创、天孚通信等算力细分领域龙头企业。创业板金融科技指数选取金融科技领域市值大、流动性好的50只创业板股</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">胜宏科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/CCL</span></td>
+        <td style="color:#555;">【胜宏科技：与核心客户合作开发的研发迭代产品正顺利推进当中 部分客户已释放2027–2028年长期需求】财联社</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中材科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/CCL</span></td>
+        <td style="color:#555;">中国巨石、国际复材、中材科技 CCL板块：华正新材、金安国纪、南亚新材、宝鼎科技、建滔 ————— 前瞻判断请持续关注中信建材团</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中国巨石</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/CCL</span></td>
+        <td style="color:#555;">预期差 电子布板块：中国巨石、国际复材、中材科技 CCL板块：华正新材、金安国纪、南亚新材、宝鼎科技、建滔 ————— 前瞻判断</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">义翘神州</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">百普赛斯、百奥赛图、义翘神州、康龙化成等公司均有望承接AI相关需求。  此外，随着AI for science 需求的整体增长，</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">海思科</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">），广生堂，艾力斯，海思科，亿帆医药，罗欣药业，贝达药业；  ④平台资产价值：和铂医药（H）。  2026年医药行业投资策略报</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">锐捷网络</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">算力/AI芯片</span></td>
+        <td style="color:#555;">IDC供应商） 3、锐捷网络（字节第一个交换机供应商，份额高达50-60%）</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中钨高新</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/CCL</span></td>
+        <td style="color:#555;">重点关注：鼎泰高科、中钨高新、民爆光电、新锐股份、欧科亿、天工国际、厦门钨业等#文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">厦门钨业</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/CCL</span></td>
+        <td style="color:#555;">、欧科亿、天工国际、厦门钨业等#文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">芯碁微装</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/CCL</span></td>
+        <td style="color:#555;">的资本开支。  # 芯碁微装。mSAP带来LDI设备价值量2-3倍提升，今年公司6微米设备签单大超预期，全年预计至少大几十台订单</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">新天科技</td>
+        <td><span class="cat-badge" style="background:#c8e6c9;color:#2e7d32;">AI液冷/散热</span></td>
+        <td style="color:#555;">家交流总结：# 重视新天科技     # 电磁流量计是数据中心液冷流量计的主流方案。行业早期CDU配的流量计没有统一标准，NV发</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">富创精密</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备/材料</span></td>
+        <td style="color:#555;">江丰电子、正帆科技、富创精密、新莱应材等，# 依次排序。 #文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">西部矿业</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">黄金/有色资源</span></td>
+        <td style="color:#555;">西藏的4大量增标的：西部矿业、藏格矿业、中国黄金国际和宏达股份。#文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">北方华创</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备/材料</span></td>
+        <td style="color:#555;">中科飞测、中微公司、北方华创、拓荆科技、华海清科、长川科技、芯源微、微导纳米； 零部件：#富创精密、江丰电子、珂玛科技、正帆科技</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中微公司</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备/材料</span></td>
+        <td style="color:#555;">设备：#中科飞测、中微公司、北方华创、拓荆科技、华海清科、长川科技、芯源微、微导纳米； 零部件：#富创精密、江丰电子、珂玛科技</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">芯源微</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备/材料</span></td>
+        <td style="color:#555;">华海清科、长川科技、芯源微、微导纳米； 零部件：#富创精密、江丰电子、珂玛科技、正帆科技、神工股份、智立方；  具体细节欢迎交</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">拓荆科技</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备/材料</span></td>
+        <td style="color:#555;">中微公司、北方华创、拓荆科技、华海清科、长川科技、芯源微、微导纳米； 零部件：#富创精密、江丰电子、珂玛科技、正帆科技、神工股份</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">景旺电子</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">黄金/有色资源</span></td>
+        <td style="color:#555;">并成功进入深南电路、景旺电子等头部PCB厂商供应链，高端产品载板干膜已实现小批量销售，并预计在下半年放量。  我们认为：mSAP</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">驱动力</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">传媒/游戏/AI视频</span></td>
+        <td style="color:#555;">价齐升和高端化的关键驱动力，也为国内企业提供了加速国产替代的重大机遇，当前市场因海外波动而陷入迷茫时刻正是加仓吸筹的绝佳机会。</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">天合光能</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光伏/新能源</span></td>
+        <td style="color:#555;">、阿特斯、晶科能源、天合光能、晶澳科技、横店东磁等）和优势龙头（福斯特、福莱特、爱旭股份、钧达股份，关注TCL中环）等  风险提</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">壶化股份</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">黄金/有色资源</span></td>
+        <td style="color:#555;">雅化集团、凯龙股份、壶化股份、金奥博等。  ☎欢迎联系：任杰19512256636/宋涛#文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">景嘉微</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">算力/AI芯片</span></td>
+        <td style="color:#555;">板股票构成样本，涉及景嘉微、中际旭创、天孚通信等算力细分领域龙头企业。创业板金融科技指数选取金融科技领域市值大、流动性好的50</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中国黄金</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">黄金/有色资源</span></td>
+        <td style="color:#555;">基、周大生、老凤祥、中国黄金   欢迎联系：赵令伊#文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">宝鼎科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">黄金/有色资源</span></td>
+        <td style="color:#555;">金安国纪、南亚新材、宝鼎科技、建滔 ————— 前瞻判断请持续关注中信建材团队：冷威/孙林潇#文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">华正新材</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/CCL</span></td>
+        <td style="color:#555;">材科技 CCL板块：华正新材、金安国纪、南亚新材、宝鼎科技、建滔 ————— 前瞻判断请持续关注中信建材团队：冷威/孙林潇#文字</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中化国际</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/CCL</span></td>
+        <td style="color:#555;">树脂 （东材/圣泉/中化国际），# 硅微粉 （联瑞）。#文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">昭衍新药</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">绩指引上修，以及前期昭衍新药、美迪西、奥浦迈等多家公司业绩预告情况，持续证明创新药产业链当前景气度在快速上行。展望后续，中报（当</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">美迪西</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">，以及前期昭衍新药、美迪西、奥浦迈等多家公司业绩预告情况，持续证明创新药产业链当前景气度在快速上行。展望后续，中报（当前仍有较</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">益诺思</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">、赛分科技、美迪西、益诺思、昊帆生物、奥浦迈等#文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">完美世界</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">传媒/游戏/AI视频</span></td>
+        <td style="color:#555;">同比增速较高的主要是完美世界、鹰角网络、柠檬微趣、哔哩哔哩、雷霆网络、心动网络等；环比增速较高的主要是米哈游、心动网络、沐瞳科技</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">东材科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/CCL</span></td>
+        <td style="color:#555;">和科技  碳氢树脂：东材科技  PTFE树脂：昊华科技、东岳集团  ☎️华安化工团队王强峰/潘宁馨#文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">百利天恒</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">价值驱动。需注意竞品百利天恒DLL3 ADC一线SCLC进度更快。  风险提示:zoci一线SCLC联合数据不及预期、ADC与T</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">杰华特</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">算力/AI芯片</span></td>
+        <td style="color:#555;">H系GPU超节点：杰华特，华丰，伟测，兴森等；  ⓪-1 非H系列：盛科通信，胜蓝股份等；  #自立之盾：同列主线/支撑国产</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">麦格米特</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">算力/AI芯片</span></td>
+        <td style="color:#555;">🌼持续重点推荐：麦格米特（英伟达Rubin平台+ XAI双卡位，新品打开价值空间）、欧陆通（谷歌链最先兑现，物料储备充足）、</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">欧陆通</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">算力/AI芯片</span></td>
+        <td style="color:#555;">新品打开价值空间）、欧陆通（谷歌链最先兑现，物料储备充足）、中富电路（电源PCB核心配套，受益架构升级）、新雷能（ADI独家绑</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">兆易创新</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">存储/内存</span></td>
+        <td style="color:#555;">ram；参考兄弟公司兆易创新的nor flash（苹果供应链），从2017约6%全球市占率，提升至2026年20%。  # 综上</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">长鑫科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">存储/内存</span></td>
+        <td style="color:#555;">长鑫科技怎么看？ dram全球市占率，三星39%，sk海力士26%，美光25%，长鑫仅7%。 1️⃣中国大陆</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">深南电路</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/CCL</span></td>
+        <td style="color:#555;">沪电股份、胜宏科技、深南电路、生益科技、兴森科技 # 其他公司变化情况欢迎联系交流 #文字观点   收起</td>
+        <td style="font-size:11px;color:#999;">调研基地观察者+调研纪要</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="disclaimer">
+  ⚠️ 本报告由AI基于公开新闻信息自动整理，仅供研究参考，不构成任何投资建议。投资有风险，入市需谨慎。<br>
+  数据来源：调研基地（观察者03 + 调研纪要），共 217 篇帖子 | 生成时间：2026-08-07
+</div>
+
+</div>
+
+<script>
+// 发帖时间分布（可选）
+const postLabels = ["00", "07", "08", "09", "10", "11", "12", "13", "14", "15", "19", "20"];
+const postValues = [3, 43, 29, 32, 8, 2, 15, 36, 15, 2, 28, 4];
+new Chart(document.getElementById('postChart'), {
+  type: 'bar',
+  data: { labels: postLabels, datasets: [{ data: postValues, backgroundColor: '#7e57c2', borderRadius: 6, barThickness: 18 }] },
+  options: { responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: { x: { ticks: { font: { size: 11 } } }, y: { beginAtZero: true, ticks: { font: { size: 10 } } } }
+  }
+});
+
+
+// 主题热度数据
+const heatLabels = ["黄金/有色资源", "算力/AI芯片", "PCB/电子布/CCL", "创新药/CXO", "AI光模块/CPO", "人形机器人/具身智能", "存储/内存", "AI液冷/散热", "光伏/新能源", "AI应用/大模型", "消费/食饮/教育", "传媒/游戏/AI视频", "信创/华为链", "半导体设备/材料", "电力/电网", "汽车/智能驾驶", "军工/商业航天", "MLCC/被动元件"];
+const heatValues = [100, 98, 94, 86, 85, 82, 81, 79, 79, 75, 70, 70, 69, 68, 64, 63, 63, 61];
+const heatColors = ["#9e9e9e", "#9e9e9e", "#9e9e9e", "#5c6bc0", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#43a047", "#9e9e9e", "#d81b60", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#1e88e5", "#9e9e9e", "#9e9e9e", "#78909c", "#fb8c00"];
+
+// 热度图
+new Chart(document.getElementById('heatChart'), {
+  type: 'bar',
+  data: {
+    labels: heatLabels,
+    datasets: [{
+      data: heatValues,
+      backgroundColor: heatColors,
+      borderRadius: 6,
+      barThickness: 28
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false },
+      tooltip: { callbacks: { label: ctx => '热度: ' + ctx.raw + '/100' } }
+    },
+    scales: {
+      x: { max: 100, grid: { color: '#f0f0f0' }, ticks: { font: { size: 11 } } },
+      y: { ticks: { font: { size: 12 } } }
+    }
+  }
+});
+
+// 分布图
+new Chart(document.getElementById('distChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ["黄金/有色资源", "算力/AI芯片", "PCB/电子布/CCL", "创新药/CXO", "AI光模块/CPO", "人形机器人/具身智能", "存储/内存"],
+    datasets: [{
+      data: [100, 98, 94, 86, 85, 82, 81],
+      backgroundColor: ["#9e9e9e", "#9e9e9e", "#9e9e9e", "#5c6bc0", "#9e9e9e", "#9e9e9e", "#9e9e9e"],
+      borderWidth: 2,
+      borderColor: '#fff'
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'right', labels: { font: { size: 11 }, padding: 8 } }
+    }
+  }
+});
+
+// 产业链雷达图
+new Chart(document.getElementById('chainChart'), {
+  type: 'radar',
+  data: {
+    labels: ["黄金/有色资源", "算力/AI芯片", "PCB/电子布/CCL", "创新药/CXO", "AI光模块/CPO", "人形机器人/具身智能"],
+    datasets: [{
+      label: '产业链景气度',
+      data: [100, 98, 94, 86, 85, 82],
+      borderColor: '#1a237e',
+      backgroundColor: 'rgba(26,35,126,0.15)',
+      pointBackgroundColor: '#1a237e',
+      pointRadius: 5,
+      borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      r: { beginAtZero: true, max: 100,
+        ticks: { stepSize: 25, font: { size: 9 } },
+        pointLabels: { font: { size: 11 } }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>调研基地 · 每日情报站 · 归档首页</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Roboto,sans-serif;
+background:#f4f6f9;color:#1f2933;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px 56px}
+.layout{display:flex;align-items:flex-start;min-height:100vh}
+.sidebar{position:sticky;top:0;align-self:flex-start;width:232px;flex:none;height:100vh;
+background:#12325b;color:#fff;padding:22px 16px;display:flex;flex-direction:column;gap:4px;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Roboto,sans-serif}
+.sidebar .brand{font-weight:700;font-size:16px;display:flex;align-items:center;gap:8px;margin-bottom:18px;line-height:1.3}
+.sidebar .brand svg{flex:none}
+.sidebar .nav-sep{height:1px;background:rgba(255,255,255,.14);margin:4px 2px 12px}
+.nav-btn{padding:10px 14px;border-radius:10px;font-size:14px;color:#dbe6f3;min-height:40px;
+display:flex;align-items:center;transition:background .15s,color .15s}
+.nav-btn:hover{background:rgba(255,255,255,.12);color:#fff}
+.nav-btn.on{background:#1e88e5;color:#fff;font-weight:600}
+.main{flex:1;min-width:0}
+.hero{background:linear-gradient(135deg,#12325b,#1e6fa8 55%,#1e88e5);color:#fff;border-radius:0 0 20px 20px;
+padding:28px 16px 30px;margin-bottom:22px}
+.hero .inner{max-width:1120px;margin:0 auto}
+.hero h1{font-size:24px;font-weight:700;letter-spacing:.5px}
+.hero p{opacity:.86;font-size:14px;margin-top:6px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
+.stat{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px}
+.stat b{display:block;font-size:22px;line-height:1.2}
+.stat span{font-size:12px;opacity:.85}
+.sec{margin-top:26px}
+.sec-h{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sec-h h2{font-size:17px;font-weight:700}
+.sec-h .bar{width:4px;height:17px;border-radius:2px;background:#1e88e5}
+.sec-h .note{margin-left:auto;font-size:12px;color:#8494a6}
+.card{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(16,42,74,.07);padding:16px}
+.latest{border-left:4px solid #e53935}
+.latest .tag{display:inline-block;background:#ffebee;color:#c62828;font-size:12px;font-weight:600;
+padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.latest h3{font-size:20px;margin-bottom:6px}
+.latest p{color:#425466;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.portal{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.pcard{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(16,42,74,.07);padding:17px;display:block;
+border-left:4px solid #1e88e5;transition:transform .15s,box-shadow .15s}
+.pcard:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(16,42,74,.12)}
+.pcard .ph{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.pcard .ph h3{font-size:16px;font-weight:700}
+.pcard .ph .go{margin-left:auto;font-size:12.5px;font-weight:600;color:#1e88e5}
+.pcard .pd{font-size:13px;color:#52606d;min-height:40px}
+.pcard .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.pcard .pm{display:flex;gap:13px;flex-wrap:wrap;font-size:12px;color:#7b8794;
+border-top:1px dashed #e5eaf0;margin-top:10px;padding-top:9px}
+.pcard .pm b{color:#1e88e5;font-size:13px}
+.pcard.off{opacity:.6;border-left-color:#b0bec5;pointer-events:none}
+.day{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(16,42,74,.07);padding:15px;display:block;
+transition:transform .15s,box-shadow .15s;border-top:3px solid #1e88e5}
+.day:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(16,42,74,.12)}
+.day .d{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}
+.day .d b{font-size:17px}
+.day .d span{font-size:12px;color:#8494a6}
+.day .sum{font-size:13px;color:#52606d;height:60px;overflow:hidden}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 8px}
+.tag2{font-size:12px;padding:3px 9px;border-radius:6px;font-weight:600}
+.metrics{display:flex;gap:14px;font-size:12px;color:#7b8794;border-top:1px dashed #e5eaf0;padding-top:9px}
+.metrics b{color:#1e88e5;font-size:13px}
+.chart-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chart{width:100%;min-width:640px;height:auto;display:block}
+.ax{font-size:11px;fill:#8494a6}
+.bl{font-size:12.5px;fill:#3e4c59}
+.bv{font-size:12px;fill:#7b8794}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:12px;color:#52606d}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:#f7f9fc;color:#52606d;font-weight:600;text-align:left;padding:10px;border-bottom:2px solid #e5eaf0;
+white-space:nowrap}
+td{padding:10px;border-bottom:1px solid #eef2f7;vertical-align:top}
+tr:hover td{background:#fafcff}
+.code{font-family:Consolas,Menlo,monospace;color:#1565c0;font-weight:600}
+.rank{display:inline-flex;width:22px;height:22px;border-radius:6px;background:#eef2f7;color:#52606d;
+align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.rank.t{background:#e53935;color:#fff}
+.search{width:100%;padding:11px 14px;border:1px solid #dfe6ee;border-radius:10px;font-size:16px;
+background:#fff;margin-bottom:12px;outline:none}
+.search:focus{border-color:#1e88e5}
+.empty{color:#8494a6;font-size:13px;padding:18px;text-align:center}
+.onboard{text-align:center;padding:34px 20px}
+.onboard svg{margin-bottom:12px}
+.onboard h3{font-size:17px;margin-bottom:8px;color:#1f2933}
+.onboard p{font-size:13.5px;color:#52606d;max-width:520px;margin:0 auto 6px}
+.onboard .hint{font-size:12.5px;color:#8494a6;margin-top:10px}
+.foot{margin-top:30px;padding:16px;background:#fff8e1;border:1px solid #ffe082;border-radius:12px;
+font-size:12px;color:#7c5b00;line-height:1.75}
+.updated{text-align:center;color:#9aa5b1;font-size:12px;margin-top:14px}
+@media(max-width:768px){
+.layout{flex-direction:column}
+.sidebar{position:static;width:auto;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;
+padding:12px 14px;gap:8px}
+.sidebar .brand{margin-bottom:0;margin-right:auto}
+.sidebar .nav-sep{display:none}
+.nav-btn{flex:1 1 auto;justify-content:center;min-height:36px;padding:8px 12px}
+.stats{grid-template-columns:repeat(2,1fr)}
+.hero h1{font-size:20px}
+.wrap{padding:0 12px 40px}
+.grid{grid-template-columns:1fr}
+.day .sum{height:auto}
+th,td{padding:8px 7px;font-size:12.5px}
+}
+</style></head><body><div class="layout"><aside class="sidebar"><div class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>调研基地</div><div class="nav-sep"></div><a class="nav-btn on" href="index.html">归档首页</a><a class="nav-btn" href="dashboard.html">汇总看板</a><a class="nav-btn" href="news.html">财经新闻总结</a><a class="nav-btn" href="futures.html">期货收盘</a><a class="nav-btn" href="scores/index.html">股票打分</a></aside><div class="main"><div class="hero"><div class="inner"><h1>调研基地 · 每日情报站</h1><p>每日情报总览 · 财经新闻总结 / 汇总看板 / 期货收盘 / 股票打分</p><div class="stats"><div class="stat"><b>31</b><span>累计天数</span></div><div class="stat"><b>298</b><span>累计主题</span></div><div class="stat"><b>1482</b><span>累计个股</span></div><div class="stat"><b>08-30</b><span>最近更新</span></div></div></div></div><div class="wrap"><div class="sec"><div class="card" style="background:#e8f0fe;border:1px solid #90caf9;margin-bottom:16px"><h2 style="font-size:15px;margin-bottom:10px">📌 站点地址 &amp; 近期更新</h2><div style="font-size:13px;color:#37474f;line-height:1.9">
+<b>正确访问地址：</b><code style="color:#1565c0;font-weight:600">https://zhangwei19971997.github.io/research-overview/</code><br>
+若从根域 <code style="color:#1565c0;font-weight:600">zhangwei19971997.github.io/</code> 打开显示「Site not found」404，是因为缺少 <code style="color:#1565c0;font-weight:600">/research-overview/</code> 仓库路径，请改用上方完整地址。<br>
+<b>近期新闻：</b> <a href="reports/2026-08-30.html">08-30</a> · <a href="reports/2026-08-29.html">08-29</a> · <a href="reports/2026-08-28.html">08-28</a> · <a href="reports/2026-08-27.html">08-27</a> · <a href="news.html">全部 →</a><br>
+<b>最新打分：</b> <a href="scores/index.html">2026-08-30（184只）</a>
+</div></div>
+<div class="sec-h"><i class="bar"></i><h2>栏目导航</h2><span class="note">点击卡片进入对应栏目</span></div><div class="portal"><a class="pcard" href="news.html" style="border-left-color:#e53935"><div class="ph"><h3>财经新闻总结</h3><span class="go">进入 →</span></div><div class="pd">最新一期 <b>2026-08-30</b> 周日：8月30日为2026年中报收官日，星球内容高度集中于机构中报密集点评与产业链跟踪。AI算力硬件上游（液冷/OCS/CPO/PCB/AI材料）与半导体设备材料封测双主线最强，Jackson Ho…</div><div class="chips"><span class="tag2" style="background:#c8e6c9;color:#2e7d32">AI算力/液冷/OCS/CPO ★★★★★</span><span class="tag2" style="background:#bbdefb;color:#1565c0">半导体设备/材料/封测 ★★★★★</span><span class="tag2" style="background:#e8eef5;color:#8e24aa">AI材料(电子布/CCL/PTFE) ★★★★☆</span></div><div class="pm"><span>累计 <b>31</b> 期</span><span>主题 <b>10</b></span><span>个股 <b>28</b></span></div></a><a class="pcard" href="dashboard.html" style="border-left-color:#1e88e5"><div class="ph"><h3>汇总看板</h3><span class="go">进入 →</span></div><div class="pd">跨日聚合：主题热度趋势 / 高频主题榜 / 主题动量 / 高频个股 TOP20（带现价涨跌）。</div><div class="pm"><span>覆盖 2026-07-29 ~ 2026-08-30</span><span>主题 <b>298</b></span><span>个股 <b>1482</b></span></div></a><a class="pcard" href="futures.html" style="border-left-color:#1e3a8a"><div class="ph"><h3>期货收盘</h3><span class="go">进入 →</span></div><div class="pd">四大股指期货（IF/IH/IC/IM）收盘分析 · 最新 <b>2026-08-28</b> 周五</div><div class="chips"><span class="tag2" style="background:#16a34a1a;color:#16a34a">IF -0.46%</span><span class="tag2" style="background:#16a34a1a;color:#16a34a">IH -0.24%</span><span class="tag2" style="background:#16a34a1a;color:#16a34a">IC -0.64%</span><span class="tag2" style="background:#16a34a1a;color:#16a34a">IM -0.36%</span></div><div class="pm"><span>累计 <b>25</b> 期</span><span>技术面 / 宏观 / 新闻 / 情绪四维</span></div></a><a class="pcard" href="scores/index.html" style="border-left-color:#8e24aa"><div class="ph"><h3>股票打分</h3><span class="go">进入 →</span></div><div class="pd">个股池百分制打分（技术面 80 + 基本面 20） · 最新 <b>2026-08-30</b>（184只，含08-28/29/30新池）</div><div class="pm"><span>累计 <b>8</b> 期</span><span>面向未来一周相对收益</span></div></a></div></div><div class="sec"><div class="card"><b>本站地址</b><br><span id="site-url" style="color:#1e88e5;word-break:break-all">加载中…</span><p style="font-size:12.5px;color:#7b8794;margin-top:6px">手机浏览器打开 → 分享 → 添加到主屏幕，即可当 APP 使用。</p></div></div><div class="foot"><b>免责声明</b><br>本站内容由知识星球公开帖子自动汇总整理，仅用于个人研究与信息留档，不构成任何投资建议。所涉个股仅为信息提及，不代表推荐；数据可能存在提取误差，请以上市公司公告及权威数据源为准。据此操作，风险自负。</div><p class="updated">最后更新：2026-08-31 10:53</p></div><script>(function(){var e=document.getElementById("site-url");if(!e)return;if(location.protocol==="file:"){e.textContent="本地预览（部署后此处显示公网地址）";e.style.color="#8494a6";return;}var u=location.origin+location.pathname.replace(/index\.html$/,"");e.textContent=u;})();</script></div></div></body></html>

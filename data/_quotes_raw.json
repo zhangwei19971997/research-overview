@@ -1,0 +1,425 @@
+{
+ "ok": true,
+ "data": {
+  "sz300308": {
+   "code": "sz300308",
+   "name": "中际旭创",
+   "price": 858.35,
+   "change_percent": -0.9,
+   "time": "2026-08-28"
+  },
+  "sz300502": {
+   "code": "sz300502",
+   "name": "新易盛",
+   "price": 399.0,
+   "change_percent": -2.47,
+   "time": "2026-08-28"
+  },
+  "sz002371": {
+   "code": "sz002371",
+   "name": "北方华创",
+   "price": 697.51,
+   "change_percent": -2.85,
+   "time": "2026-08-28"
+  },
+  "sh688012": {
+   "code": "sh688012",
+   "name": "中微公司",
+   "price": 367.0,
+   "change_percent": -2.4,
+   "time": "2026-08-28"
+  },
+  "sz300394": {
+   "code": "sz300394",
+   "name": "天孚通信",
+   "price": 263.58,
+   "change_percent": -1.34,
+   "time": "2026-08-28"
+  },
+  "sz300604": {
+   "code": "sz300604",
+   "name": "长川科技",
+   "price": 277.11,
+   "change_percent": -2.7,
+   "time": "2026-08-28"
+  },
+  "sh688313": {
+   "code": "sh688313",
+   "name": "仕佳光子",
+   "price": 155.1,
+   "change_percent": -2.54,
+   "time": "2026-08-28"
+  },
+  "sh688498": {
+   "code": "sh688498",
+   "name": "源杰科技",
+   "price": 1538.35,
+   "change_percent": -5.68,
+   "time": "2026-08-28"
+  },
+  "sh603259": {
+   "code": "sh603259",
+   "name": "药明康德",
+   "price": 157.4,
+   "change_percent": -1.59,
+   "time": "2026-08-28"
+  },
+  "sh688072": {
+   "code": "sh688072",
+   "name": "拓荆科技",
+   "price": 669.29,
+   "change_percent": -3.42,
+   "time": "2026-08-28"
+  },
+  "sh688200": {
+   "code": "sh688200",
+   "name": "华峰测控",
+   "price": 389.03,
+   "change_percent": -2.74,
+   "time": "2026-08-28"
+  },
+  "sz002281": {
+   "code": "sz002281",
+   "name": "光迅科技",
+   "price": 173.61,
+   "change_percent": -1.57,
+   "time": "2026-08-28"
+  },
+  "sh688017": {
+   "code": "sh688017",
+   "name": "绿的谐波",
+   "price": 292.0,
+   "change_percent": -2.44,
+   "time": "2026-08-28"
+  },
+  "sh688585": {
+   "code": "sh688585",
+   "name": "上纬新材",
+   "price": 157.95,
+   "change_percent": -1.21,
+   "time": "2026-08-28"
+  },
+  "sz300567": {
+   "code": "sz300567",
+   "name": "精测电子",
+   "price": 215.6,
+   "change_percent": -2.8,
+   "time": "2026-08-28"
+  },
+  "sh688256": {
+   "code": "sh688256",
+   "name": "寒武纪",
+   "price": 1046.63,
+   "change_percent": -0.13,
+   "time": "2026-08-28"
+  },
+  "sz002384": {
+   "code": "sz002384",
+   "name": "东山精密",
+   "price": 195.62,
+   "change_percent": -2.48,
+   "time": "2026-08-28"
+  },
+  "sh600183": {
+   "code": "sh600183",
+   "name": "生益科技",
+   "price": 145.65,
+   "change_percent": 3.32,
+   "time": "2026-08-28"
+  },
+  "sh601689": {
+   "code": "sh601689",
+   "name": "拓普集团",
+   "price": 47.09,
+   "change_percent": -0.72,
+   "time": "2026-08-28"
+  },
+  "sz300570": {
+   "code": "sz300570",
+   "name": "太辰光",
+   "price": 204.3,
+   "change_percent": -2.43,
+   "time": "2026-08-28"
+  },
+  "sz002837": {
+   "code": "sz002837",
+   "name": "英维克",
+   "price": 64.48,
+   "change_percent": -2.26,
+   "time": "2026-08-28"
+  },
+  "sz002916": {
+   "code": "sz002916",
+   "name": "深南电路",
+   "price": 362.4,
+   "change_percent": -0.74,
+   "time": "2026-08-28"
+  },
+  "sz300759": {
+   "code": "sz300759",
+   "name": "康龙化成",
+   "price": 43.78,
+   "change_percent": -2.93,
+   "time": "2026-08-28"
+  },
+  "sz000636": {
+   "code": "sz000636",
+   "name": "风华高科",
+   "price": 55.45,
+   "change_percent": 2.48,
+   "time": "2026-08-28"
+  },
+  "sh603986": {
+   "code": "sh603986",
+   "name": "兆易创新",
+   "price": 396.82,
+   "change_percent": -3.5,
+   "time": "2026-08-28"
+  },
+  "sh688361": {
+   "code": "sh688361",
+   "name": "中科飞测",
+   "price": 362.66,
+   "change_percent": -2.96,
+   "time": "2026-08-28"
+  },
+  "sh688981": {
+   "code": "sh688981",
+   "name": "中芯国际",
+   "price": 125.88,
+   "change_percent": -0.36,
+   "time": "2026-08-28"
+  },
+  "sz002050": {
+   "code": "sz002050",
+   "name": "三花智控",
+   "price": 36.17,
+   "change_percent": -1.77,
+   "time": "2026-08-28"
+  },
+  "sz300274": {
+   "code": "sz300274",
+   "name": "阳光电源",
+   "price": 97.69,
+   "change_percent": -1.16,
+   "time": "2026-08-28"
+  },
+  "sz300408": {
+   "code": "sz300408",
+   "name": "三环集团",
+   "price": 112.24,
+   "change_percent": -0.21,
+   "time": "2026-08-28"
+  },
+  "sh600176": {
+   "code": "sh600176",
+   "name": "中国巨石",
+   "price": 43.2,
+   "change_percent": 1.31,
+   "time": "2026-08-28"
+  },
+  "sh601899": {
+   "code": "sh601899",
+   "name": "紫金矿业",
+   "price": 34.65,
+   "change_percent": 0.23,
+   "time": "2026-08-28"
+  },
+  "sh688037": {
+   "code": "sh688037",
+   "name": "芯源微",
+   "price": 367.74,
+   "change_percent": -1.94,
+   "time": "2026-08-28"
+  },
+  "sh688630": {
+   "code": "sh688630",
+   "name": "芯碁微装",
+   "price": 418.8,
+   "change_percent": -4.51,
+   "time": "2026-08-28"
+  },
+  "sh688041": {
+   "code": "sh688041",
+   "name": "海光信息",
+   "price": 245.49,
+   "change_percent": -0.2,
+   "time": "2026-08-28"
+  },
+  "sz300757": {
+   "code": "sz300757",
+   "name": "罗博特科",
+   "price": 536.7,
+   "change_percent": -2.79,
+   "time": "2026-08-28"
+  },
+  "sz000938": {
+   "code": "sz000938",
+   "name": "紫光股份",
+   "price": 35.89,
+   "change_percent": -1.48,
+   "time": "2026-08-28"
+  },
+  "sh688120": {
+   "code": "sh688120",
+   "name": "华海清科",
+   "price": 260.52,
+   "change_percent": -2.46,
+   "time": "2026-08-28"
+  },
+  "sh601100": {
+   "code": "sh601100",
+   "name": "恒立液压",
+   "price": 101.36,
+   "change_percent": -1.59,
+   "time": "2026-08-28"
+  },
+  "sz002850": {
+   "code": "sz002850",
+   "name": "科达利",
+   "price": 177.3,
+   "change_percent": -2.24,
+   "time": "2026-08-28"
+  },
+  "sz002821": {
+   "code": "sz002821",
+   "name": "凯莱英",
+   "price": 164.94,
+   "change_percent": -3.34,
+   "time": "2026-08-28"
+  },
+  "sh600105": {
+   "code": "sh600105",
+   "name": "永鼎股份",
+   "price": 39.8,
+   "change_percent": -2.93,
+   "time": "2026-08-28"
+  },
+  "sz301396": {
+   "code": "sz301396",
+   "name": "宏景科技",
+   "price": 176.25,
+   "change_percent": -2.83,
+   "time": "2026-08-28"
+  },
+  "sh600988": {
+   "code": "sh600988",
+   "name": "赤峰黄金",
+   "price": 49.09,
+   "change_percent": 1.8,
+   "time": "2026-08-28"
+  },
+  "sz300364": {
+   "code": "sz300364",
+   "name": "中文在线",
+   "price": 22.73,
+   "change_percent": 0.66,
+   "time": "2026-08-28"
+  },
+  "sz300418": {
+   "code": "sz300418",
+   "name": "昆仑万维",
+   "price": 40.4,
+   "change_percent": -1.2,
+   "time": "2026-08-28"
+  },
+  "sh688322": {
+   "code": "sh688322",
+   "name": "奥比中光-W",
+   "price": 95.26,
+   "change_percent": -2.08,
+   "time": "2026-08-28"
+  },
+  "sh688025": {
+   "code": "sh688025",
+   "name": "杰普特",
+   "price": 402.5,
+   "change_percent": -3.53,
+   "time": "2026-08-28"
+  },
+  "sz300750": {
+   "code": "sz300750",
+   "name": "宁德时代",
+   "price": 368.5,
+   "change_percent": -1.21,
+   "time": "2026-08-28"
+  },
+  "sh688141": {
+   "code": "sh688141",
+   "name": "杰华特",
+   "price": 119.58,
+   "change_percent": -7.7,
+   "time": "2026-08-28"
+  },
+  "sh600276": {
+   "code": "sh600276",
+   "name": "恒瑞医药",
+   "price": 47.32,
+   "change_percent": -0.61,
+   "time": "2026-08-28"
+  },
+  "sz002463": {
+   "code": "sz002463",
+   "name": "沪电股份",
+   "price": 121.7,
+   "change_percent": -0.26,
+   "time": "2026-08-28"
+  },
+  "sh689009": {
+   "code": "sh689009",
+   "name": "九号公司-WD",
+   "price": 42.38,
+   "change_percent": -3.57,
+   "time": "2026-08-28"
+  },
+  "sz301526": {
+   "code": "sz301526",
+   "name": "国际复材",
+   "price": 30.2,
+   "change_percent": -3.02,
+   "time": "2026-08-28"
+  },
+  "sz300857": {
+   "code": "sz300857",
+   "name": "协创数据",
+   "price": 253.88,
+   "change_percent": -2.05,
+   "time": "2026-08-28"
+  },
+  "sz300454": {
+   "code": "sz300454",
+   "name": "深信服",
+   "price": 124.89,
+   "change_percent": 4.07,
+   "time": "2026-08-28"
+  },
+  "sz000977": {
+   "code": "sz000977",
+   "name": "浪潮信息",
+   "price": 77.44,
+   "change_percent": -1.06,
+   "time": "2026-08-28"
+  },
+  "sh603019": {
+   "code": "sh603019",
+   "name": "中科曙光",
+   "price": 85.82,
+   "change_percent": -0.83,
+   "time": "2026-08-28"
+  },
+  "sh603009": {
+   "code": "sh603009",
+   "name": "北特科技",
+   "price": 46.09,
+   "change_percent": -1.75,
+   "time": "2026-08-28"
+  },
+  "sz002536": {
+   "code": "sz002536",
+   "name": "飞龙股份",
+   "price": 53.33,
+   "change_percent": -1.66,
+   "time": "2026-08-28"
+  }
+ }
+}

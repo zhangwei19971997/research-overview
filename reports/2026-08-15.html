@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-08-15 新闻总结报告</title>
+<script src="../assets/chart.umd.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.header { background: linear-gradient(135deg, #1a237e, #283593, #3949ab); color: white; padding: 40px 30px; border-radius: 16px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(26,35,126,0.3); }
+.header h1 { font-size: 28px; margin-bottom: 8px; }
+.header .meta { font-size: 14px; opacity: 0.85; }
+.header .sources { margin-top: 10px; font-size: 13px; opacity: 0.75; }
+.section { background: white; border-radius: 12px; padding: 28px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 3px solid #e8eaf6; display: flex; align-items: center; gap: 8px; }
+.section-title .icon { font-size: 24px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.card { border-radius: 10px; padding: 18px; border-left: 4px solid; transition: transform 0.2s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+.card h3 { font-size: 15px; margin-bottom: 8px; }
+.card p { font-size: 13px; color: #555; }
+.card .tags { margin-top: 8px; }
+.tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-right: 4px; margin-bottom: 4px; }
+.heat-bar { display: inline-block; font-size: 12px; color: #ff6f00; font-weight: 700; }
+.chart-container { position: relative; height: 320px; margin: 10px 0; }
+.summary-box { background: linear-gradient(135deg, #e8eaf6, #f3e5f5); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+.summary-box h2 { font-size: 18px; margin-bottom: 12px; color: #1a237e; }
+.summary-box p { font-size: 14px; color: #455a64; line-height: 1.8; }
+.disclaimer { font-size: 12px; color: #999; text-align: center; margin-top: 20px; padding: 16px; }
+.stock-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.stock-table th { background: #3949ab; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.stock-table td { padding: 8px 12px; border-bottom: 1px solid #e8eaf6; }
+.stock-table tr:hover { background: #f5f7fa; }
+.cat-badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+@media (max-width: 768px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body><style id="zsxq-nav-css">
+#zsxq-site-nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+padding:9px 14px;background:#12325b;color:#fff;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:14px}
+#zsxq-site-nav a{color:#fff;text-decoration:none;background:rgba(255,255,255,.16);padding:7px 13px;
+border-radius:999px;min-height:36px;display:inline-flex;align-items:center;line-height:1}
+#zsxq-site-nav a:hover{background:rgba(255,255,255,.3)}
+#zsxq-site-nav .cur{margin-right:auto;font-weight:700;letter-spacing:.5px}
+#zsxq-site-nav .dis{opacity:.35;pointer-events:none}
+@media(max-width:768px){#zsxq-site-nav{font-size:13px;padding:8px 10px;gap:6px}
+#zsxq-site-nav a{padding:7px 11px}}
+</style><div id="zsxq-site-nav"><span class="cur">2026-08-15</span>
+<a href="../index.html">归档首页</a><a href="../dashboard.html">汇总看板</a><a href="../news.html">财经新闻总结</a>
+<a id="zsxq-prev" class="dis" href="#">← 前一期</a><a id="zsxq-next" class="dis" href="#">后一期 →</a></div>
+<script src="../data/index.js"></script>
+<script>(function(){var L=(window.ZSXQ_INDEX||[]).map(function(x){return x.date;}).sort();
+var d="2026-08-15",i=L.indexOf(d);
+function set(id,t){var e=document.getElementById(id);if(!e)return;
+if(t){e.href=t+".html";e.className="";}}
+if(i>0)set("zsxq-prev",L[i-1]);if(i>=0&&i<L.length-1)set("zsxq-next",L[i+1]);})();</script>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>📊 2026-08-15 财经新闻总结报告</h1>
+  <div class="meta">分析日期：2026-08-15 | 生成时间：2026-08-16 06:04</div>
+  <div class="sources">数据来源：调研基地（信息社主笔 + 调研纪要/机构交流），共 58 篇帖子</div>
+</div>
+
+<!-- 一句话结论 -->
+<div class="summary-box">
+  <h2>🎯 一句话结论</h2>
+  <p>2026-08-15 调研基地共 58 篇帖子，市场主线高度聚焦于 AI 硬件上游与景气赛道：AI算力/数据中心（腾讯Q2 capex 527.8亿超预期、国产卡一卡难求、测算2030年负荷60-70GW）与光模块/CPO/NPO/硅光（杰普特FAU/MPO、太辰光扩产、卓胜微硅光平台、AAOI/LITE确认NPO 2027放量）并列居前；存储（长鑫扩产、HBF架构、闪迪/铠侠NAND、LTA长协拔估值）、PCB/CCL/电子布（生益科技+130%、M9碳氢树脂、欧科亿钻针）、算力租赁（CoreWeave涨价25%仍售罄、中富电路/新雷能/智微智能卡位）、华为超节点（Atlas 950）同步高热。黄金/资源（长江金属看4700美元/盎司）、AI安全（玻璃翼计划）、压电陶瓷/MFC、人形机器人（科达利/胜通七腾）、白酒（茅台业绩底）、纺服（报喜鸟+47.71%）、游戏（世纪华通/恺英）多点开花。风格进入"质量重于故事"第二阶段，建议沿强现实强预期主线把握确定性。</p>
+</div>
+
+<!-- 发帖时间分布（可选） -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🕐</span> 发帖时间分布</div>
+    <div class="chart-container" style="height:240px;"><canvas id="postChart"></canvas></div>
+    <div style="font-size:12px;color:#999;margin-top:8px;">主力来源：信息社(58)</div>
+  </div>
+
+<!-- 主题热度图 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🔥</span> 主题热度排行</div>
+  <div class="chart-container">
+    <canvas id="heatChart"></canvas>
+  </div>
+</div>
+
+<!-- 核心主题卡片 -->
+<div class="section">
+  <div class="section-title"><span class="icon">📋</span> 核心主题详解</div>
+  <div class="grid-2">
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🚀 AI算力·数据中心·AIDC <span class="heat-bar">★★★★★</span></h3>
+      <p>腾讯Q2 capex 527.8亿（远超预期321亿）且Q3继续大幅采购；国产卡占比80%以上致一卡难求，测算2030年算力负荷60-70GW、累计投资超10万亿，算力建设高景气持续数年，央国企算力网想象空间打开</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">行云科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">锐捷网络</span><span class="tag" style="background:#e0e0e0;color:#424242;">盛视科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">中国移动</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>💡 AI光模块·CPO·NPO·硅光 <span class="heat-bar">★★★★★</span></h3>
+      <p>NPO从概念走向落地，腾讯云Q4部署NPO超级节点；杰普特光器件(FAU/MPO)超预期、太辰光购地扩产、卓胜微硅光PIC+TIA/Driver平台型；AAOI/LITE硬件论坛确认CPO 2028、NPO 2027放量，互连成下一瓶颈</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">中际旭创</span><span class="tag" style="background:#e0e0e0;color:#424242;">立讯精密</span><span class="tag" style="background:#e0e0e0;color:#424242;">杰普特</span><span class="tag" style="background:#e0e0e0;color:#424242;">太辰光</span><span class="tag" style="background:#e0e0e0;color:#424242;">新易盛</span><span class="tag" style="background:#e0e0e0;color:#424242;">东山精密</span><span class="tag" style="background:#e0e0e0;color:#424242;">国泰海通</span><span class="tag" style="background:#e0e0e0;color:#424242;">卓胜微</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>📐 PCB·电子布·CCL·树脂·钻针 <span class="heat-bar">★★★★★</span></h3>
+      <p>生益科技半年报归母净利+130%超预期、AI高速板占比提升；M9碳氢树脂用量跃升但良率仅60-70%存瓶颈；欧科亿/永鑫PCB钻针AI用针占比50-60%、订单饱满，30X Ai针最缺</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">机器人</span><span class="tag" style="background:#e0e0e0;color:#424242;">欧科亿</span><span class="tag" style="background:#e0e0e0;color:#424242;">生益科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">东材科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">圣泉集团</span><span class="tag" style="background:#e0e0e0;color:#424242;">生益电子</span></div>
+    </div>
+    <div class="card" style="border-color: #00897b; background: #e0f2f1;">
+      <h3>💾 存储芯片·HBF·NAND <span class="heat-bar">★★★★★</span></h3>
+      <p>闪迪/铠侠NAND指引强化AI数据中心需求，2030年AI SSD出货1200EB；HBF架构变革开启（单GPU 4TB）；长鑫扩产决心强，LTA长协下限诚意足、原厂拔估值，存储β共享</p>
+      <div class="tags"><span class="tag" style="background:#b2dfdb;color:#004d40;">海达尔</span><span class="tag" style="background:#b2dfdb;color:#004d40;">顺络电子</span><span class="tag" style="background:#b2dfdb;color:#004d40;">宇树科技</span></div>
+    </div>
+    <div class="card" style="border-color: #ec407a; background: #fce4ec;">
+      <h3>🔌 算力租赁 <span class="heat-bar">★★★★★</span></h3>
+      <p>北美算租龙头CoreWeave Q2收入+112%、涨价25%仍售罄，千亿美元储备锁定定价权；国内"有卡即有利润"Q2兑现，中富电路/新雷能(±400V电源)/智微智能/行云科技卡位清晰</p>
+      <div class="tags"><span class="tag" style="background:#f8bbd0;color:#ad1457;">新雷能</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">中富电路</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">智微智能</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">利通电子</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">协创数据</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">宏景科技</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">中信证券</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🖥️ 华为超节点·国产算力 <span class="heat-bar">★★★★</span></h3>
+      <p>华为Atlas 950 SuperPoD超节点计划Q4上市，上一代Atlas 900已商用750余套获科大讯飞/美团深度适配；国产算力确定性最高供应商之一，申万建议关注进展</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">科大讯飞</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>⛏️ 黄金·资源股 <span class="heat-bar">★★★★</span></h3>
+      <p>长江金属看金价修复至4700美元/盎司、板块50%+空间，近三周已修复近30%；行情仍在初期，逢调增配，重视美元松动下非美资产共振上行大窗口期</p>
+      <div class="tags"></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🛡️ AI安全·玻璃翼计划 <span class="heat-bar">★★★★</span></h3>
+      <p>智谱GLM5.3 AI安全能力跃升，重申中国"玻璃翼计划"呼之欲出，与头部网安厂合作落地AI安全；国内AI安全市场空间超680亿，订单量价逐月加速</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">深信服</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🔷 压电陶瓷·MFC <span class="heat-bar">★★★★</span></h3>
+      <p>国内压电陶瓷全面缺货（设备18月交期/含铅环评/国产MFC崛起），邦瓷电子为国内唯一量产多层压电陶瓷堆叠企业，配合国产MFC高度定制，订单指引50万支、收入近10亿</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">星源材质</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🤖 人形机器人·具身智能 <span class="heat-bar">★★★★</span></h3>
+      <p>科达利机器人零部件（减速器/直线关节/灵巧手）加速推进、泰国谐波基地在建；胜通七腾特种巡检机器人刚需放量、跑通现金流；宇树IPO狂热，工厂机械臂大规模落地</p>
+      <div class="tags"></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🍶 白酒·食饮 <span class="heat-bar">★★★</span></h3>
+      <p>茅台Q2收入-5.2%/利润-6.9%为业绩底，渠道改革红利释放、i茅台占比破61%，坚定底部配置；迎驾/今世缘/古井双节动销有望正增，边际向好趋势不改</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">贵州茅台</span><span class="tag" style="background:#e0e0e0;color:#424242;">驱动力</span><span class="tag" style="background:#e0e0e0;color:#424242;">今世缘</span><span class="tag" style="background:#e0e0e0;color:#424242;">五粮液</span><span class="tag" style="background:#e0e0e0;color:#424242;">迎驾贡酒</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🧵 纺织服饰 <span class="heat-bar">★★★</span></h3>
+      <p>报喜鸟H1净利+47.71%大超预期、多品牌运营（hazzys/LAFUMA/Woolrich）被严重低估，PE仅12倍；比音勒芬同为贵族服饰逻辑，纺服估值修复在途</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">报喜鸟</span><span class="tag" style="background:#e0e0e0;color:#424242;">比音勒芬</span><span class="tag" style="background:#e0e0e0;color:#424242;">长城汽车</span><span class="tag" style="background:#e0e0e0;color:#424242;">亚钾国际</span><span class="tag" style="background:#e0e0e0;color:#424242;">万华化学</span><span class="tag" style="background:#e0e0e0;color:#424242;">桐昆股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">新凤鸣</span><span class="tag" style="background:#e0e0e0;color:#424242;">卫星化学</span><span class="tag" style="background:#e0e0e0;color:#424242;">宝丰能源</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🎮 游戏 <span class="heat-bar">★★★</span></h3>
+      <p>世纪华通大股东提前终止减持、盛趣《冒险岛》怀旧服爆满，SLG+休闲双轮驱动、估值显著低于EA；恺英调研+股权激励+新游《雷霆烈焰》，继续推荐</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">世纪华通</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🔋 锂电·储能 <span class="heat-bar">★★★★</span></h3>
+      <p>中创新航H1净利+100-110%、Wh盈利超预期创单季新高；7月国内储能并网16gwh创同月新高，独立储能贡献七成、配储时长3.22h创新高，长时储能投运</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">科达利</span><span class="tag" style="background:#e0e0e0;color:#424242;">国能日新</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🪟 玻璃基板·建材科技 <span class="heat-bar">★★★</span></h3>
+      <p>玻璃基板海外推迟（三星27→28、Ab 26→27）、国内加速追赶，旗滨集团国产原片核心标的；建材科技股沿电子布/玻璃基板反弹，传统低估值龙头修复</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">旗滨集团</span><span class="tag" style="background:#e0e0e0;color:#424242;">中国巨石</span><span class="tag" style="background:#e0e0e0;color:#424242;">兔宝宝</span><span class="tag" style="background:#e0e0e0;color:#424242;">华新建材</span><span class="tag" style="background:#e0e0e0;color:#424242;">申万宏源</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🌐 宏观·政策·地产 <span class="heat-bar">★★★</span></h3>
+      <p>北京放松限购后传9月底前地产系列政策（贴息/降公积金利率）；经济节奏类似2024但政策加码空间有限，六张网基建+地产托底为主，AI算力获央国企投资想象</p>
+      <div class="tags"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 主题分布图 -->
+<div class="section">
+  <div class="section-title"><span class="icon">📊</span> 主题分布与市场结构</div>
+  <div class="grid-2">
+    <div>
+      <h4 style="margin-bottom:10px;color:#455a64;">主题热度分布</h4>
+      <div class="chart-container" style="height:280px;">
+        <canvas id="distChart"></canvas>
+      </div>
+    </div>
+    <div>
+      <h4 style="margin-bottom:10px;color:#455a64;">产业链景气度图谱</h4>
+      <div class="chart-container" style="height:280px;">
+        <canvas id="chainChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 市场情绪 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🌐</span> 市场情绪与宏观</div>
+  <div class="grid-3">
+    <div class="card" style="border-color:#42a5f5;background:#e3f2fd;">
+      <h3>📊 大盘走势</h3>
+      <p>华金策略：A股调整后反弹取决于经济基本面与政策/流动性宽松，科技反弹短期或持续；继续逢低配置科技成长、部分周期，强产业趋势+无外部重大负面下科技占优。</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>🌏 海外/美股</h3>
+      <p>北美算租龙头CoreWeave Q2收入+112%、Nebius+454%，千亿美元储备锁定定价权；美股AI应用（Datadog/Snowflake/ServiceNow）估值修复，应用软件仅4倍EV/营收显著低估。</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>🏗️ 商品/资源</h3>
+      <p>长江金属看金价修复至4700美元/盎司、板块50%+空间；国内肉牛存栏连降、牛肉涨价在即，牧业股（优然/现代牧业）利润弹性大；化工关注TDI/维生素/钾肥供需。</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>⚖️ 政策/地缘</h3>
+      <p>北京放松限购后传9月底前地产系列政策（贴息/降公积金利率/减税费），基调仍防风险；经济节奏似2024但财政压力可控、加码空间有限，六张网基建+地产托底为主。</p>
+    </div>
+    <div class="card" style="border-color:#ffa726;background:#fff3e0;">
+      <h3>💧 流动性</h3>
+      <p>7月社融同比多增2755亿（企业债+股票融资+政府债发力），M2-M1剪刀差收窄至3.7pct，资金活化回升；央行淡化贷款单一渠道，直接融资重要性上升，利好科技型企业。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 重点关注个股 -->
+<div class="section">
+  <div class="section-title"><span class="icon">⭐</span> 重点关注个股速览</div>
+  <table class="stock-table">
+    <thead>
+      <tr>
+        <th>公司</th>
+        <th>主题</th>
+        <th>核心要点</th>
+        <th>来源</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">报喜鸟</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">纺织服饰</span></td>
+        <td style="color:#555;">！大超预期！！！继续强推！！！报喜鸟，小比音勒芬，沧海遗珠！！！错过比音勒芬，别再错过</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">机器人</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB·电子布·CCL·树脂·钻针</span></td>
+        <td style="color:#555;">利润体量。同时欧科亿与多家人型机器人公司有深入合作，且航空航天刀具也有长期布局，刀具主</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">欧科亿</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB·电子布·CCL·树脂·钻针</span></td>
+        <td style="color:#555;">领导，欧科亿最近底部回升，我们在这个位置继续推荐。 🔹永鑫精</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">比音勒芬</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">纺织服饰</span></td>
+        <td style="color:#555;">！！！继续强推！！！报喜鸟，小比音勒芬，沧海遗珠！！！错过比音勒芬，别再错过报喜鸟！！！</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">世纪华通</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">游戏</span></td>
+        <td style="color:#555;">英我们最近都做了更新~ # 世纪华通 大股东提前终止减持，Hotel Legacy等流</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中际旭创</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI光模块·CPO·NPO·硅光</span></td>
+        <td style="color:#555;">平台型公司。 🌹光模块：首推中际旭创，# 其次关注新易盛、东山精密、立讯精密等。NPO</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">生益科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB·电子布·CCL·树脂·钻针</span></td>
+        <td style="color:#555;">【天风电子】生益科技2026年半年报点评 # 事件：生益科技发布20</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">贵州茅台</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">白酒·食饮</span></td>
+        <td style="color:#555;">品牌低基数下或迎来增长。 ② 贵州茅台：目前回款进度80%（货没发完），公司有意控制发货</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">驱动力</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">白酒·食饮</span></td>
+        <td style="color:#555;">26Q2结构下行，飞天仍为主要驱动力。Q2茅台酒/系列酒营收320.32/67.40亿</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">新雷能</td>
+        <td><span class="cat-badge" style="background:#f8bbd0;color:#ad1457;">算力租赁</span></td>
+        <td style="color:#555;">的产业趋势 # 中富电路 # 新雷能 🔥# 新雷能：【近期产业端进展较大，市场及估</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">海达尔</td>
+        <td><span class="cat-badge" style="background:#b2dfdb;color:#004d40;">存储芯片·HBF·NAND</span></td>
+        <td style="color:#555;">❗【天风电新】顺络电子+海达尔再推荐：升级链方向-0814 ——————————</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">行云科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI算力·数据中心·AIDC</span></td>
+        <td style="color:#555;">7月以来我们一直toppick行云科技，而且从未采用平铺算租策略，核心原因：密集公告利好</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">顺络电子</td>
+        <td><span class="cat-badge" style="background:#b2dfdb;color:#004d40;">存储芯片·HBF·NAND</span></td>
+        <td style="color:#555;">❗【天风电新】顺络电子+海达尔再推荐：升级链方向-0814 ——————</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">立讯精密</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI光模块·CPO·NPO·硅光</span></td>
+        <td style="color:#555;"># 其次关注新易盛、东山精密、立讯精密等。NPO是下一代光互联的胜负手，优先NPO龙头和</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">杰普特</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI光模块·CPO·NPO·硅光</span></td>
+        <td style="color:#555;">天风机械｜杰普特再更新：订单&amp;业绩有望超预期带动新一轮成长主升浪0</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">太辰光</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI光模块·CPO·NPO·硅光</span></td>
+        <td style="color:#555;">【国泰海通通信】太辰光中报点评:业绩符合预期，扩产是主旋律0814 事</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">锐捷网络</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI算力·数据中心·AIDC</span></td>
+        <td style="color:#555;">🔥【开源通信】锐捷网络：业绩亮眼，超节点交换设备龙头蓄势待发，维持“买入</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">旗滨集团</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">玻璃基板·建材科技</span></td>
+        <td style="color:#555;">平。建议关注国产原片的核心标的旗滨集团。 本周推荐组合：旗滨集团，兔宝宝，华新建材，</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">长城汽车</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">纺织服饰</span></td>
+        <td style="color:#555;">长城汽车：魏牌V8X上市，月销有望3-5k 1、事件：8</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中富电路</td>
+        <td><span class="cat-badge" style="background:#f8bbd0;color:#ad1457;">算力租赁</span></td>
+        <td style="color:#555;">前时点变化最大的产业趋势 # 中富电路 # 新雷能 🔥# 新雷能：【近期产业端进展较</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">宇树科技</td>
+        <td><span class="cat-badge" style="background:#b2dfdb;color:#004d40;">存储芯片·HBF·NAND</span></td>
+        <td style="color:#555;">洪灏最新观点：涉及宇树科技、长江存储、韩股资金转进港股等 8月14日｜莲华</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">智微智能</td>
+        <td><span class="cat-badge" style="background:#f8bbd0;color:#ad1457;">算力租赁</span></td>
+        <td style="color:#555;">润高增长（利通电子、协创数据、智微智能、行云科技等），"有卡即有利润"持续兑现 -头部</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">今世缘</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">白酒·食饮</span></td>
+        <td style="color:#555;">（持平），桌数减少&amp;规格提升，今世缘品牌宴席量有双位数增长；商务消费同比&amp;环比均有修复</td>
+        <td style="font-size:11px;color:#999;">调研基地（信息社+调研纪要）</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="disclaimer">
+  ⚠️ 本报告由AI基于公开新闻信息自动整理，仅供研究参考，不构成任何投资建议。投资有风险，入市需谨慎。<br>
+  数据来源：调研基地（信息社主笔 + 调研纪要/机构交流），共 58 篇帖子 | 生成时间：2026-08-15
+</div>
+
+</div>
+
+<script>
+// 发帖时间分布（可选）
+const postLabels = ["00", "10", "11", "13", "21"];
+const postValues = [11, 1, 31, 1, 14];
+new Chart(document.getElementById('postChart'), {
+  type: 'bar',
+  data: { labels: postLabels, datasets: [{ data: postValues, backgroundColor: '#7e57c2', borderRadius: 6, barThickness: 18 }] },
+  options: { responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: { x: { ticks: { font: { size: 11 } } }, y: { beginAtZero: true, ticks: { font: { size: 10 } } } }
+  }
+});
+
+
+// 主题热度数据
+const heatLabels = ["AI算力·数据中心·AIDC", "AI光模块·CPO·NPO·硅光", "PCB·电子布·CCL·树脂·钻针", "存储芯片·HBF·NAND", "算力租赁", "华为超节点·国产算力", "黄金·资源股", "AI安全·玻璃翼计划", "压电陶瓷·MFC", "人形机器人·具身智能", "白酒·食饮", "纺织服饰", "游戏", "锂电·储能", "玻璃基板·建材科技", "宏观·政策·地产"];
+const heatValues = [101, 98, 93, 90, 90, 87, 88, 82, 80, 85, 75, 78, 78, 80, 72, 75];
+const heatColors = ["#9e9e9e", "#9e9e9e", "#9e9e9e", "#00897b", "#ec407a", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#9e9e9e"];
+
+// 热度图
+new Chart(document.getElementById('heatChart'), {
+  type: 'bar',
+  data: {
+    labels: heatLabels,
+    datasets: [{
+      data: heatValues,
+      backgroundColor: heatColors,
+      borderRadius: 6,
+      barThickness: 28
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false },
+      tooltip: { callbacks: { label: ctx => '热度: ' + ctx.raw + '/100' } }
+    },
+    scales: {
+      x: { max: 100, grid: { color: '#f0f0f0' }, ticks: { font: { size: 11 } } },
+      y: { ticks: { font: { size: 12 } } }
+    }
+  }
+});
+
+// 分布图
+new Chart(document.getElementById('distChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ["AI算力·数据中心·AIDC", "AI光模块·CPO·NPO·硅光", "PCB·电子布·CCL·树脂·钻针", "存储芯片·HBF·NAND", "算力租赁", "华为超节点·国产算力", "黄金·资源股"],
+    datasets: [{
+      data: [101, 98, 93, 90, 90, 87, 88],
+      backgroundColor: ["#9e9e9e", "#9e9e9e", "#9e9e9e", "#00897b", "#ec407a", "#9e9e9e", "#9e9e9e"],
+      borderWidth: 2,
+      borderColor: '#fff'
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'right', labels: { font: { size: 11 }, padding: 8 } }
+    }
+  }
+});
+
+// 产业链雷达图
+new Chart(document.getElementById('chainChart'), {
+  type: 'radar',
+  data: {
+    labels: ["AI算力·数据中心·AIDC", "AI光模块·CPO·NPO·硅光", "PCB·电子布·CCL·树脂·钻针", "存储芯片·HBF·NAND", "算力租赁", "华为超节点·国产算力"],
+    datasets: [{
+      label: '产业链景气度',
+      data: [101, 98, 93, 90, 90, 87],
+      borderColor: '#1a237e',
+      backgroundColor: 'rgba(26,35,126,0.15)',
+      pointBackgroundColor: '#1a237e',
+      pointRadius: 5,
+      borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      r: { beginAtZero: true, max: 100,
+        ticks: { stepSize: 25, font: { size: 9 } },
+        pointLabels: { font: { size: 11 } }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

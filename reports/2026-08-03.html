@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-08-03 新闻总结报告</title>
+<script src="../assets/chart.umd.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.header { background: linear-gradient(135deg, #1a237e, #283593, #3949ab); color: white; padding: 40px 30px; border-radius: 16px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(26,35,126,0.3); }
+.header h1 { font-size: 28px; margin-bottom: 8px; }
+.header .meta { font-size: 14px; opacity: 0.85; }
+.header .sources { margin-top: 10px; font-size: 13px; opacity: 0.75; }
+.section { background: white; border-radius: 12px; padding: 28px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 3px solid #e8eaf6; display: flex; align-items: center; gap: 8px; }
+.section-title .icon { font-size: 24px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.card { border-radius: 10px; padding: 18px; border-left: 4px solid; transition: transform 0.2s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+.card h3 { font-size: 15px; margin-bottom: 8px; }
+.card p { font-size: 13px; color: #555; }
+.card .tags { margin-top: 8px; }
+.tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-right: 4px; margin-bottom: 4px; }
+.heat-bar { display: inline-block; font-size: 12px; color: #ff6f00; font-weight: 700; }
+.chart-container { position: relative; height: 320px; margin: 10px 0; }
+.summary-box { background: linear-gradient(135deg, #e8eaf6, #f3e5f5); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+.summary-box h2 { font-size: 18px; margin-bottom: 12px; color: #1a237e; }
+.summary-box p { font-size: 14px; color: #455a64; line-height: 1.8; }
+.disclaimer { font-size: 12px; color: #999; text-align: center; margin-top: 20px; padding: 16px; }
+.stock-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.stock-table th { background: #3949ab; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.stock-table td { padding: 8px 12px; border-bottom: 1px solid #e8eaf6; }
+.stock-table tr:hover { background: #f5f7fa; }
+.cat-badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+@media (max-width: 768px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body><style id="zsxq-nav-css">
+#zsxq-site-nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+padding:9px 14px;background:#12325b;color:#fff;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:14px}
+#zsxq-site-nav a{color:#fff;text-decoration:none;background:rgba(255,255,255,.16);padding:7px 13px;
+border-radius:999px;min-height:36px;display:inline-flex;align-items:center;line-height:1}
+#zsxq-site-nav a:hover{background:rgba(255,255,255,.3)}
+#zsxq-site-nav .cur{margin-right:auto;font-weight:700;letter-spacing:.5px}
+#zsxq-site-nav .dis{opacity:.35;pointer-events:none}
+@media(max-width:768px){#zsxq-site-nav{font-size:13px;padding:8px 10px;gap:6px}
+#zsxq-site-nav a{padding:7px 11px}}
+</style><div id="zsxq-site-nav"><span class="cur">2026-08-03</span>
+<a href="../index.html">归档首页</a><a href="../dashboard.html">汇总看板</a><a href="../news.html">财经新闻总结</a>
+<a id="zsxq-prev" class="dis" href="#">← 前一期</a><a id="zsxq-next" class="dis" href="#">后一期 →</a></div>
+<script src="../data/index.js"></script>
+<script>(function(){var L=(window.ZSXQ_INDEX||[]).map(function(x){return x.date;}).sort();
+var d="2026-08-03",i=L.indexOf(d);
+function set(id,t){var e=document.getElementById(id);if(!e)return;
+if(t){e.href=t+".html";e.className="";}}
+if(i>0)set("zsxq-prev",L[i-1]);if(i>=0&&i<L.length-1)set("zsxq-next",L[i+1]);})();</script>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>📊 2026-08-03 财经新闻总结报告</h1>
+  <div class="meta">分析日期：2026-08-03 | 生成时间：2026-08-04 06:07</div>
+  <div class="sources">数据来源：调研基地</div>
+</div>
+
+<!-- 一句话结论 -->
+<div class="summary-box">
+  <h2>🎯 一句话结论</h2>
+  <p>北美CSP财报全线验证AI capex→收入正循环，阿里Qwen3.8-Max发布；英伟达CPO量产确认+Rubin Ultra光互联升级打开新空间；药明康德26H1业绩大超预期；新型电力系统十五五规划落地；光伏反内卷制度化。市场延续科技降杠杆调整，资金流向防御板块再平衡。</p>
+</div>
+
+<!-- 发帖时间分布（可选） -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🕐</span> 发帖时间分布</div>
+    <div class="chart-container" style="height:240px;"><canvas id="postChart"></canvas></div>
+    <div style="font-size:12px;color:#999;margin-top:8px;">主力来源：信息社(187)</div>
+  </div>
+
+<!-- 主题热度图 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🔥</span> 主题热度排行</div>
+  <div class="chart-container">
+    <canvas id="heatChart"></canvas>
+  </div>
+</div>
+
+<!-- 核心主题卡片 -->
+<div class="section">
+  <div class="section-title"><span class="icon">📋</span> 核心主题详解</div>
+  <div class="grid-2">
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>📌 北美CSP财报验证AI capex正循环 + 阿里云弹性 <span class="heat-bar">★★★★★</span></h3>
+      <p>AWS Q2营收422亿+37%、Azure+43%超预期、Google Cloud+82%；三大云厂同步上调全年capex指引超2000亿美元；阿里Qwen3.8-Max正式发布，云业务FY27Q1预计加速至45%+
+海外云厂形成capex→收入→利润→再加码正循环，杰文斯悖论驱动总需求扩张；国内阿里云受益多模型策略和Agentic Cloud体系，公有云市占率24.8%、AI云40%+</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">阿里巴巴</span><span class="tag" style="background:#e0e0e0;color:#424242;">金山云</span><span class="tag" style="background:#e0e0e0;color:#424242;">优刻得</span><span class="tag" style="background:#e0e0e0;color:#424242;">网宿科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">首都在线</span><span class="tag" style="background:#e0e0e0;color:#424242;">润泽科技</span></div>
+    </div>
+    <div class="card" style="border-color: #00acc1; background: #e0f7fa;">
+      <h3>📌 英伟达CPO量产+Rubin Ultra光互联升级 <span class="heat-bar">★★★★★</span></h3>
+      <p>英伟达确认CPO已量产交付客户；SA报告Rubin Ultra存储降配(HBM4E 12-Hi→HBM4 8-Hi)，scale-up互联从NVL72扩大到NVL576，NPO/CPO比例1:4带来纯增量市场
+存储BOM占比过高(50%→28%)，英伟达主动降配转投光互联；CPO产业链进入商用落地周期，2027-2028持续放量；大光(1.6T/3.2T)新光(NPO/CPO)双线驱动</p>
+      <div class="tags"><span class="tag" style="background:#b2ebf2;color:#006064;">中际旭创</span><span class="tag" style="background:#b2ebf2;color:#006064;">新易盛</span><span class="tag" style="background:#b2ebf2;color:#006064;">天孚通信</span><span class="tag" style="background:#b2ebf2;color:#006064;">炬光科技</span><span class="tag" style="background:#b2ebf2;color:#006064;">联特科技</span><span class="tag" style="background:#b2ebf2;color:#006064;">致尚科技</span><span class="tag" style="background:#b2ebf2;color:#006064;">罗博特科</span></div>
+    </div>
+    <div class="card" style="border-color: #d81b60; background: #fce4ec;">
+      <h3>📌 AI应用/Agent商业化加速 + Token工厂 <span class="heat-bar">★★★★</span></h3>
+      <p>DeepSeek V4-Flash正式版API公测(运行成本全球最低)；阿里千问办公公测接入Qwen3.8；微软Copilot席位超3000万；ServiceNow AI ACV超10亿美元；Salesforce Agentforce ARR达12亿+205%
+开源模型多端部署的足迹乘法效应使云厂受益；AI平台(Foundry/WorkBuddy)成为新壁垒保护应用商不被模型吞噬；Token工厂作为推理优化基础设施星火燎原</p>
+      <div class="tags"><span class="tag" style="background:#f8bbd0;color:#ad1457;">中控技术</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">金山办公</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">鼎捷数智</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">集智股份</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">星环科技</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">信测标准</span></div>
+    </div>
+    <div class="card" style="border-color: #1e88e5; background: #e3f2fd;">
+      <h3>📌 半导体设备超级周期 + 存储国产突破 <span class="heat-bar">★★★★★</span></h3>
+      <p>中微公司26H1营收66.91亿+35%，扣非净利润10-12亿+86~123%；北方华创26Q2新接订单环比提升；长鑫LPDDR6有望H2量产导入；泛林FY26Q4营收+30%、FY27Q1指引+52%
+两存加速扩产+先进逻辑/封装扩产超预期，大陆半导体设备需求进入超级周期；长鑫DRAM国产替代空间巨大(全球份额仅7.7%)</p>
+      <div class="tags"><span class="tag" style="background:#bbdefb;color:#1565c0;">中微公司</span><span class="tag" style="background:#bbdefb;color:#1565c0;">北方华创</span><span class="tag" style="background:#bbdefb;color:#1565c0;">长川科技</span><span class="tag" style="background:#bbdefb;color:#1565c0;">华海清科</span><span class="tag" style="background:#bbdefb;color:#1565c0;">芯碁微装</span><span class="tag" style="background:#bbdefb;color:#1565c0;">长鑫科技</span></div>
+    </div>
+    <div class="card" style="border-color: #43a047; background: #f1f8e9;">
+      <h3>📌 电子布/PCB涨价加速 + AI硬件材料 <span class="heat-bar">★★★★★</span></h3>
+      <p>8月电子布涨价：厚布+17.5%至10.1元/米、薄布+17-18%；电子纱G75+8.9%、D450+20.3%；四会富仕26H1营收+43%、Q2利润环比近翻倍；胜宏科技驳斥订单取消传闻
+AI服务器PCB需求旺盛+供给受限，电子布连续第4个月加速涨价；通胀链缩圈分化，有AI的电子布(T布/二代布)确定性最强</p>
+      <div class="tags"><span class="tag" style="background:#c8e6c9;color:#2e7d32;">中国巨石</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">国际复材</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">中材科技</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">宏和科技</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">四会富仕</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">胜宏科技</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>📌 谷歌Gemini Robotics 2 + 宇树IPO + 特斯拉SOP <span class="heat-bar">★★★★</span></h3>
+      <p>谷歌发布Gemini Robotics 2系列三款模型实现跨本体通用能力；宇树科技8月10日申购发行价420亿；特斯拉V3 7月启动SOP、9月或周产1K；上纬智元布局本体+大模型
+物理AI里程碑——模型突破从单一技能跨越到跨本体通用，加速产业落地；本体量产在即、数据采集先行，数采设备/电子皮肤受益</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">上纬新材</span><span class="tag" style="background:#e0e0e0;color:#424242;">中大力德</span><span class="tag" style="background:#e0e0e0;color:#424242;">金固股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">福莱新材</span><span class="tag" style="background:#e0e0e0;color:#424242;">奥比中光</span><span class="tag" style="background:#e0e0e0;color:#424242;">科达利</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>📌 新型电力系统十五五规划 + 电网投资提速 <span class="heat-bar">★★★★</span></h3>
+      <p>新型电力系统建设十五五规划印发：2030年配网承载分布式新能源9亿千瓦(+80%)、西电东送超4.2亿千瓦、省间互济+50%；国网上半年固投3100亿+12.6%；特高压十五五在建规模超十三五+十四五总和
+风光发电量占比首破25%→消纳压力驱动电网储能投资非线性增长；配网/特高压两端受益，算电协同打开新蓝海(400-700亿千瓦时调节容量)</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">国电南瑞</span><span class="tag" style="background:#e0e0e0;color:#424242;">四方股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">平高电气</span><span class="tag" style="background:#e0e0e0;color:#424242;">许继电气</span><span class="tag" style="background:#e0e0e0;color:#424242;">科林电气</span><span class="tag" style="background:#e0e0e0;color:#424242;">长缆科技</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>📌 药明康德业绩大超预期 + 创新药出海兑现 <span class="heat-bar">★★★★</span></h3>
+      <p>药明康德26H1营收288.97亿+39%，经调整净利润115.7亿+83%，全年收入指引上调至35-39%；TIDES全年增速指引上调至45%；海外CXO(LONZA/MEDPACE/IQVIA)均上调全年指引
+商业化放量驱动业绩加速(小分子D&amp;M 149.9亿+73%，TIDES 72.6亿+44%)；在手订单664亿+25%；科伦博泰/康诺亚/MNC合作资产海外III期成功，27/28年海外销售分成开始兑现</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">药明康德</span><span class="tag" style="background:#e0e0e0;color:#424242;">恒瑞医药</span><span class="tag" style="background:#e0e0e0;color:#424242;">科伦药业</span><span class="tag" style="background:#e0e0e0;color:#424242;">荣昌生物</span><span class="tag" style="background:#e0e0e0;color:#424242;">百济神州</span><span class="tag" style="background:#e0e0e0;color:#424242;">康方生物</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>📌 光伏反内卷制度化 + 光伏玻璃涨价 <span class="heat-bar">★★★★</span></h3>
+      <p>市场监管总局开展光伏行业价格合规指导；《光伏行业成本核算模型通则》7月27日实施；光伏玻璃8月新单价上涨1.17%；行业冷修加速(6-7月新增7750t/d)
+光伏行业治理从自律倡议到标准化制度化，尾部企业加速出清；光伏玻璃率先供需改善，库存天数降至45天(降15%)</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">隆基绿能</span><span class="tag" style="background:#e0e0e0;color:#424242;">爱旭股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">福莱特</span><span class="tag" style="background:#e0e0e0;color:#424242;">福斯特</span><span class="tag" style="background:#e0e0e0;color:#424242;">高测股份</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>📌 AI材料：磷化铟/钽/锡供需缺口扩大 <span class="heat-bar">★★★★</span></h3>
+      <p>AXT磷化铟收入3070万美元创历史新高+164%；3寸衬底价格从1400→4800元年内涨4次；钽首次被央媒纳入算力金属叙事；锡矿供给持续偏紧(沪锡库存降56%)
+AI数据中心光模块升级驱动磷化铟需求爆发，供需缺口持续至2028年；关键材料(磷化铟/钽/锡)供给刚性+需求非线性增长=价格上行空间巨大</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">云南锗业</span><span class="tag" style="background:#e0e0e0;color:#424242;">光智科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">海川智能</span><span class="tag" style="background:#e0e0e0;color:#424242;">新金路</span><span class="tag" style="background:#e0e0e0;color:#424242;">高能环境</span></div>
+    </div>
+    <div class="card" style="border-color: #43a047; background: #f1f8e9;">
+      <h3>📌 核电审批加速 + AIDC液冷放量 <span class="heat-bar">★★★</span></h3>
+      <p>国常会核准8台新机组(金七门二期/太平岭三期/庄河一期/莱阳一期)；冰轮环境北美磁悬浮冷机订单1.4亿美元(1-7月爆发增长)；Bloom Energy Q2营收+166%上调全年指引
+核电模块化+液冷是AI数据中心能源刚需；SOFC降本路径清晰(LCOE 3000→1500$/kW可与燃机平价)；国内液冷产业链Q3订单集中落地</p>
+      <div class="tags"><span class="tag" style="background:#c8e6c9;color:#2e7d32;">中国核建</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">利柏特</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">冰轮环境</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">英维克</span><span class="tag" style="background:#c8e6c9;color:#2e7d32;">中集集团</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>📌 消费食饮：安琪酵母蛋白爆发 + 乳业反转 + 瑞幸超预期 <span class="heat-bar">★★★</span></h3>
+      <p>安琪酵母蛋白吨价3→5万+涨价30-50%，扩产至10万吨再造一个安琪；瑞幸Q2营收158.86亿+28.5%、月均用户1.127亿创新高；乳业原奶周期反转、合同奶价回升至3.06元
+GLP-1减肥浪潮驱动全球高蛋白需求爆发，酵母蛋白作为优质替代品供不应求；瑞幸外卖费用率可控+回购执行积极；乳业上游出清→下游盈利修复</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">安琪酵母</span><span class="tag" style="background:#e0e0e0;color:#424242;">伊利股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">优然牧业</span><span class="tag" style="background:#e0e0e0;color:#424242;">报喜鸟</span><span class="tag" style="background:#e0e0e0;color:#424242;">小菜园</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>📌 全球宏观：科技降杠杆+资金再平衡 <span class="heat-bar">★★★</span></h3>
+      <p>A股成交缩至2万亿，科创50单日跌5.08%；中欧瑞博称科技硬件泡沫破灭(公募仓位76%历史极值)；微盘风格反弹受益再平衡；两融余额2.61万亿+48亿；中信期指净空75851手
+科技板块去杠杆尚未结束，情绪仍需时间换空间；银行/红利防御+微盘量化成过渡方向；海外杠杆ETF风险未完全释放</p>
+      <div class="tags"></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>📌 出海赛道：极兔/九号/安克创新持续高增 <span class="heat-bar">★★★</span></h3>
+      <p>极兔海外高成长(TikTok东南亚GMV+57%/全球+77%)；九号两轮车7月出货近百万台；安克创新欧洲储能放量+港股入通性价比高；纽威股份7月订单同环比好转
+出海消费和工业品景气度持续验证：快递东南亚渗透率提升、电动两轮车海外扩张、户储渗透率加速、工业阀门全球份额提升</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">九号公司</span><span class="tag" style="background:#e0e0e0;color:#424242;">安克创新</span><span class="tag" style="background:#e0e0e0;color:#424242;">纽威股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">极米科技</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 主题分布图 -->
+<div class="section">
+  <div class="section-title"><span class="icon">📊</span> 主题分布与市场结构</div>
+  <div class="grid-2">
+    <div>
+      <h4 style="margin-bottom:10px;color:#455a64;">主题热度分布</h4>
+      <div class="chart-container" style="height:280px;">
+        <canvas id="distChart"></canvas>
+      </div>
+    </div>
+    <div>
+      <h4 style="margin-bottom:10px;color:#455a64;">产业链景气度图谱</h4>
+      <div class="chart-container" style="height:280px;">
+        <canvas id="chainChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 市场情绪 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🌐</span> 市场情绪与宏观</div>
+  <div class="grid-3">
+    <div class="card" style="border-color:#42a5f5;background:#e3f2fd;">
+      <h3>🌐 大盘</h3>
+      <p>A股延续震荡调整，成交缩至2万亿；科创50单日跌5.08%科技股继续降杠杆；ETF交易未见放量说明恐慌未到极值；沪锡库存降56%、伦锡降30%</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>🌐 海外</h3>
+      <p>美股Q2财报季科技股EPS超预期但股价反应弱(历史第四低)；美联储7月按兵不动；布油暗盘跌4.7%至83.8美元；ASML/AMAT业绩超预期</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>🌐 商品</h3>
+      <p>铜现货偏强(美国232关税预期形成非美短缺)；锡供需持续偏紧(LME库存仅7085吨)；磷化铟涨价4次(1400→4800元/片)；黄金4000美元强支撑</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>🌐 政策</h3>
+      <p>政治局会议明确加大逆周期调节；新型电力系统十五五规划发布(配网/特高压/算电协同)；国常会核准8台核电新机组；光伏价格合规指导制度化</p>
+    </div>
+    <div class="card" style="border-color:#ffa726;background:#fff3e0;">
+      <h3>🌐 流动性</h3>
+      <p>A股日成交2万亿(较上周缩量5000亿)；两融余额2.61万亿+48亿；中信期指净空75851手；海外杠杆ETF风险未完全释放(峰值回落60-70%)</p>
+    </div>
+  </div>
+</div>
+
+<!-- 重点关注个股 -->
+<div class="section">
+  <div class="section-title"><span class="icon">⭐</span> 重点关注个股速览</div>
+  <table class="stock-table">
+    <thead>
+      <tr>
+        <th>公司</th>
+        <th>主题</th>
+        <th>核心要点</th>
+        <th>来源</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中际旭创</td>
+        <td><span class="cat-badge" style="background:#b2ebf2;color:#006064;">CPO/光互联</span></td>
+        <td style="color:#555;">光模块龙头，英伟达CPO量产+1.6T放量双驱动</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">新易盛</td>
+        <td><span class="cat-badge" style="background:#b2ebf2;color:#006064;">CPO/光互联</span></td>
+        <td style="color:#555;">800G/1.6T光模块核心供应商，CPO产业链受益</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">天孚通信</td>
+        <td><span class="cat-badge" style="background:#b2ebf2;color:#006064;">CPO/光互联</span></td>
+        <td style="color:#555;">光引擎龙头，CPO产业链核心受益标的</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中微公司</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备</span></td>
+        <td style="color:#555;">26H1营收66.91亿+35%，扣非10-12亿+86~123%，存储敞口约六成</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">北方华创</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备</span></td>
+        <td style="color:#555;">Q2新接订单环比提升，26年有望逼近700亿级别</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">药明康德</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">26H1营收289亿+39%，经调整净利润116亿+83%，全年指引上调至35-39%</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中国巨石</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">电子布/PCB</span></td>
+        <td style="color:#555;">电子布龙头，8月厚布涨价17.5%加速，AI+非AI双轮驱动</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">国际复材</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">电子布/PCB</span></td>
+        <td style="color:#555;">电子布涨价核心受益标的，估值重回击球区</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">三环集团</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">MLCC/SOFC</span></td>
+        <td style="color:#555;">MLCC龙头+SOFC电堆全球头部，AIDC能源新方向</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">安琪酵母</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">消费食饮</span></td>
+        <td style="color:#555;">酵母蛋白吨价3→5万+涨价30-50%，十五五扩产至10万吨</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">恒瑞医药</td>
+        <td><span class="cat-badge" style="background:#e1bee7;color:#4a148c;">创新药</span></td>
+        <td style="color:#555;">TF ADC获FDA孤儿药资格，长效胰岛素获批，剂泰科技AI平台合作</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">阿里巴巴</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI算力/CSP</span></td>
+        <td style="color:#555;">Qwen3.8-Max发布+千问办公公测，云业务FY27Q1预计加速至45%+</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">荣昌生物</td>
+        <td><span class="cat-badge" style="background:#e1bee7;color:#4a148c;">创新药</span></td>
+        <td style="color:#555;">创新药出海核心标的，ADC管线获国际认可</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">科伦药业</td>
+        <td><span class="cat-badge" style="background:#c5cae9;color:#283593;">创新药/CXO</span></td>
+        <td style="color:#555;">科伦博泰sac-TMT全球III期成功，MNC backbone地位确立</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">长川科技</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备</span></td>
+        <td style="color:#555;">半导体测试设备龙头，在长川互联板块供应商份额90%</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">华海清科</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备</span></td>
+        <td style="color:#555;">CMP设备龙头，晶圆减薄/切割受益先进封装扩产</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">隆基绿能</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光伏反内卷</span></td>
+        <td style="color:#555;">BC电池龙头，差异化优势明显，反内卷政策受益</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">福莱特</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光伏玻璃</span></td>
+        <td style="color:#555;">光伏玻璃龙头，8月涨价+行业冷修加速，PB仅1.2倍历史低位</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">国电南瑞</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">电力电网</span></td>
+        <td style="color:#555;">电网二次设备龙头，十五五特高压在建规模超十三五+十四五总和</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">四方股份</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">电力电网</span></td>
+        <td style="color:#555;">电网二次/信息化龙头，受益配网智能化+算电协同</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">平高电气</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">电力电网</span></td>
+        <td style="color:#555;">特高压GIS龙头，26年特高压招标大年已超25年全年</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中国核建</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">核电</span></td>
+        <td style="color:#555;">核电工程建设国家队，8台新机组核准直接受益</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">利柏特</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">核电/AIDC</span></td>
+        <td style="color:#555;">核电模块化受益华龙一号2.0，员工持股彰显信心</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中集集团</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AIDC/海工</span></td>
+        <td style="color:#555;">AIDC模块化在手订单60亿+海工扭亏，27年估值仅9倍</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">胜宏科技</td>
+        <td><span class="cat-badge" style="background:#e1bee7;color:#6a1b9a;">PCB</span></td>
+        <td style="color:#555;">AI服务器PCB核心供应商，辟谣订单取消传闻，在手订单充足</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">四会富仕</td>
+        <td><span class="cat-badge" style="background:#e1bee7;color:#6a1b9a;">PCB</span></td>
+        <td style="color:#555;">26H1营收+43%Q2利润环比翻倍，工控+汽车+通信多轮驱动</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">联特科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光通信</span></td>
+        <td style="color:#555;">海外客户突破(Oracle/Google/AWS)，800G导入，明年订单量可达300万只</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">长光华芯</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光通信</span></td>
+        <td style="color:#555;">硅光芯片Foundry布局，8英寸平台2026年底通线</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">光迅科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光通信</span></td>
+        <td style="color:#555;">光模块/光器件全产品线，CPO+DCI双受益</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">九号公司</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">出海消费</span></td>
+        <td style="color:#555;">两轮车7月出货近百万台，海外空间打开，26年PE仅17倍</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中控技术</td>
+        <td><span class="cat-badge" style="background:#f8bbd0;color:#ad1457;">AI应用</span></td>
+        <td style="color:#555;">工业大模型TPT国内第一全球领先，远期TAM 2800亿</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">海天精工</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">工业母机</span></td>
+        <td style="color:#555;">Q2订单增速20-30%，业绩拐点确立，大股东上市首次增持</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">乔锋智能</td>
+        <td><span class="cat-badge" style="background:#c8e6c9;color:#2e7d32;">CNC/AI液冷</span></td>
+        <td style="color:#555;">AI液冷CNC龙头，月订单翻倍以上增长，26/27年利润6亿/10亿+</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">安克创新</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">出海消费</span></td>
+        <td style="color:#555;">小充主业+欧洲储能放量，港股26年PE仅17倍性价比高</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">学大教育</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">教育</span></td>
+        <td style="color:#555;">Q2经营向好，全年3亿利润+回购+股权激励锁定增长</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">松发股份</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">船舶制造</span></td>
+        <td style="color:#555;">全球船舶民企龙头，70亿定增落地，量利齐升</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">上纬新材</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">机器人</span></td>
+        <td style="color:#555;">国产机器人本体新星，大脑+数据采集双布局，华为/智元核心团队</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中大力德</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">机器人</span></td>
+        <td style="color:#555;">RV/谐波减速器核心供应商，受益机器人量产</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">金固股份</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">机器人</span></td>
+        <td style="color:#555;">阿凡达材料切入机器人+与头部机器人厂家订单合作</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">高测股份</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光伏设备</span></td>
+        <td style="color:#555;">光伏切割设备龙头，钨丝细线技术领先，磷化铟/碳化硅泛半导体设备第二曲线</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">爱旭股份</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光伏反内卷</span></td>
+        <td style="color:#555;">高效BC电池龙头，差异化壁垒+反内卷政策受益</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">许继电气</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">电力电网</span></td>
+        <td style="color:#555;">配网设备核心供应商，十五五配网投资占比扩张受益</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">科林电气</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">电力电网</span></td>
+        <td style="color:#555;">配网一次设备龙头，受益配电网投资扩容和智能化</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">长缆科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">电力电网</span></td>
+        <td style="color:#555;">特高压电缆附件龙头，受益特高压和配网双提速</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中材科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">电子布/PCB</span></td>
+        <td style="color:#555;">风电叶片+玻纤+锂膜三大业务，电子布涨价受益</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">纽威股份</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">出海工业</span></td>
+        <td style="color:#555;">工业阀门龙头，7月订单同环比好转，海工+欧洲高景气</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">冰轮环境</td>
+        <td><span class="cat-badge" style="background:#c8e6c9;color:#2e7d32;">AIDC液冷</span></td>
+        <td style="color:#555;">北美磁悬浮冷机订单1.4亿美元(1-7月爆发增长)，AIDC液冷核心</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">万华化学</td>
+        <td><span class="cat-badge" style="background:#e6ee9c;color:#827717;">化工</span></td>
+        <td style="color:#555;">聚氨酯龙头，MDI盈利修复+新材料布局</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">海亮股份</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">铜加工</span></td>
+        <td style="color:#555;">铜箔量价齐升+欧洲整合减亏+AI铜基散热三重共振</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">盛屯矿业</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">资源</span></td>
+        <td style="color:#555;">铜钴资源兑现加速，26H1归母18亿+71%，刚果金铜钴量价双升</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">报喜鸟</td>
+        <td><span class="cat-badge" style="background:#ffcdd2;color:#b71c1c;">消费</span></td>
+        <td style="color:#555;">Hazzys品牌对标比音勒芬，26H1归母+39%，PE仅12倍</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">福莱新材</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">机器人</span></td>
+        <td style="color:#555;">机器人数据采集设备+电子皮肤，27年看160亿市值翻倍空间</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">奥比中光</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">机器人</span></td>
+        <td style="color:#555;">3D视觉传感器龙头，机器人数据采集核心标的</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">仕佳光子</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光通信</span></td>
+        <td style="color:#555;">无源器件+光芯片，8月半年报有支撑</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">源杰科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光通信</span></td>
+        <td style="color:#555;">光芯片龙头，EML/CW光源受益AI数通需求爆发</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">云南锗业</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI材料</span></td>
+        <td style="color:#555;">磷化铟龙头，产能45万片扩产中，27年37万片利润17亿</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">永鼎股份</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光通信</span></td>
+        <td style="color:#555;">光芯片+光模块布局，大订单落地</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">剑桥科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光通信</span></td>
+        <td style="color:#555;">光模块弹性标的，1.6T试产完成批量，明年5倍PE</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">芯碁微装</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备</span></td>
+        <td style="color:#555;">激光直写光刻设备，先进封装RDL层受益</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">通威股份</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光伏</span></td>
+        <td style="color:#555;">硅料龙头，反内卷政策受益，硅料价格企稳回升</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">润泽科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI算力/IDC</span></td>
+        <td style="color:#555;">IDC龙头，智算中心机柜价格上涨，受益算力需求爆发</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">风华高科</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">MLCC</span></td>
+        <td style="color:#555;">MLCC国产龙头，AI通胀受益标的</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">顺络电子</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">MLCC</span></td>
+        <td style="color:#555;">电感龙头，AI通胀受益，受益被动元器件涨价</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">合锻智能</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">核电</span></td>
+        <td style="color:#555;">核聚变真空室构件+光模块PIM零部件+PCB层压设备</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">极米科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">出海消费</span></td>
+        <td style="color:#555;">海外翻倍增长+国内企稳，26-28年利润3/5/7亿，市值仅46亿</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">英维克</td>
+        <td><span class="cat-badge" style="background:#c8e6c9;color:#2e7d32;">AIDC液冷</span></td>
+        <td style="color:#555;">数据中心温控龙头，液冷Q3有望体现部分交付</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">高能环境</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI材料</span></td>
+        <td style="color:#555;">精铋产能6000吨全球领先，成立半导体材料公司强化AI金属价值</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">新金路</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI材料</span></td>
+        <td style="color:#555;">栗木矿保有锡9万吨/钽4602吨/钨2.2万吨，算力金属最强标的之一</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">光智科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI材料</span></td>
+        <td style="color:#555;">磷化铟产能420台炉，27年出货40万片，28年净利润22.6亿</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">海川智能</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI材料</span></td>
+        <td style="color:#555;">磷化铟新增300台炉子，27年出货38万片目标市值525亿</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">三花智控</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">机器人</span></td>
+        <td style="color:#555;">热管理龙头，特斯拉机器人产业链核心供应商</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">拓普集团</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">机器人</span></td>
+        <td style="color:#555;">汽车底盘+机器人执行器，特斯拉链核心标的</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">科达利</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">机器人</span></td>
+        <td style="color:#555;">锂电池结构件龙头，机器人精密结构件延伸</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">东山精密</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/光通信</span></td>
+        <td style="color:#555;">FPC+PCB+光模块多元化布局，AI多重受益</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">华工科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光通信</span></td>
+        <td style="color:#555;">激光+光模块双轮驱动，CPO/NPO产业链受益</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">科伦博泰</td>
+        <td><span class="cat-badge" style="background:#e1bee7;color:#4a148c;">创新药</span></td>
+        <td style="color:#555;">sac-TMT全球III期成功，默沙东ADC backbone，港股核心创新药</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">百济神州</td>
+        <td><span class="cat-badge" style="background:#e1bee7;color:#4a148c;">创新药</span></td>
+        <td style="color:#555;">泽布替尼全球放量+BCL2等管线推进，国际化最成功biotech</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">康方生物</td>
+        <td><span class="cat-badge" style="background:#e1bee7;color:#4a148c;">创新药</span></td>
+        <td style="color:#555;">PD-1/VEGF双抗卡度尼利全球领先，AK112海外注册推进</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">智翔金泰</td>
+        <td><span class="cat-badge" style="background:#e1bee7;color:#4a148c;">创新药</span></td>
+        <td style="color:#555;">4款创新药进入商业兑现期，TCE海外进展顺利+IL-15 BD预期</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">信达生物</td>
+        <td><span class="cat-badge" style="background:#e1bee7;color:#4a148c;">创新药</span></td>
+        <td style="color:#555;">PD-1基石+玛仕度肽+多管线推进，国际化布局加速</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">华懋科技</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">光通信/先进封装</span></td>
+        <td style="color:#555;">富创优越光模块代工龙头，NPO+先进封装打开长期空间，明年估值仅10倍</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">金风科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">风电</span></td>
+        <td style="color:#555;">风电主机龙头，Q3预期同环比改善，港股性价比高</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">大金重工</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">风电</span></td>
+        <td style="color:#555;">海上风电塔筒龙头，欧洲海风受益</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">浪潮信息</td>
+        <td><span class="cat-badge" style="background:#f8bbd0;color:#ad1457;">AI算力</span></td>
+        <td style="color:#555;">AI服务器龙头，受益国产算力爆发</td>
+        <td style="font-size:11px;color:#999;">信息社</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="disclaimer">
+  ⚠️ 本报告由AI基于公开新闻信息自动整理，仅供研究参考，不构成任何投资建议。投资有风险，入市需谨慎。<br>
+  数据来源：调研基地 | 生成时间：2026-08-03
+</div>
+
+</div>
+
+<script>
+// 发帖时间分布（可选）
+const postLabels = ["08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"];
+const postValues = [1, 27, 8, 9, 10, 22, 10, 8, 2, 2, 10, 4, 42, 2, 1, 18];
+new Chart(document.getElementById('postChart'), {
+  type: 'bar',
+  data: { labels: postLabels, datasets: [{ data: postValues, backgroundColor: '#7e57c2', borderRadius: 6, barThickness: 18 }] },
+  options: { responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: { x: { ticks: { font: { size: 11 } } }, y: { beginAtZero: true, ticks: { font: { size: 10 } } } }
+  }
+});
+
+
+// 主题热度数据
+const heatLabels = ["北美CSP财报验证AI capex正循环 + 阿里云弹性", "英伟达CPO量产+Rubin Ultra光互联升级", "AI应用/Agent商业化加速 + Token工厂", "半导体设备超级周期 + 存储国产突破", "电子布/PCB涨价加速 + AI硬件材料", "谷歌Gemini Robotics 2 + 宇树IPO + 特斯拉SOP", "新型电力系统十五五规划 + 电网投资提速", "药明康德业绩大超预期 + 创新药出海兑现", "光伏反内卷制度化 + 光伏玻璃涨价", "AI材料：磷化铟/钽/锡供需缺口扩大", "核电审批加速 + AIDC液冷放量", "消费食饮：安琪酵母蛋白爆发 + 乳业反转 + 瑞幸超预期", "全球宏观：科技降杠杆+资金再平衡", "出海赛道：极兔/九号/安克创新持续高增"];
+const heatValues = [95, 93, 88, 90, 87, 85, 84, 82, 80, 78, 75, 73, 72, 70];
+const heatColors = ["#9e9e9e", "#00acc1", "#d81b60", "#1e88e5", "#43a047", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#43a047", "#9e9e9e", "#9e9e9e", "#9e9e9e"];
+
+// 热度图
+new Chart(document.getElementById('heatChart'), {
+  type: 'bar',
+  data: {
+    labels: heatLabels,
+    datasets: [{
+      data: heatValues,
+      backgroundColor: heatColors,
+      borderRadius: 6,
+      barThickness: 28
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false },
+      tooltip: { callbacks: { label: ctx => '热度: ' + ctx.raw + '/100' } }
+    },
+    scales: {
+      x: { max: 100, grid: { color: '#f0f0f0' }, ticks: { font: { size: 11 } } },
+      y: { ticks: { font: { size: 12 } } }
+    }
+  }
+});
+
+// 分布图
+new Chart(document.getElementById('distChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ["北美CSP财报验证AI capex正循环 + 阿里云弹性", "英伟达CPO量产+Rubin Ultra光互联升级", "AI应用/Agent商业化加速 + Token工厂", "半导体设备超级周期 + 存储国产突破", "电子布/PCB涨价加速 + AI硬件材料", "谷歌Gemini Robotics 2 + 宇树IPO + 特斯拉SOP", "新型电力系统十五五规划 + 电网投资提速"],
+    datasets: [{
+      data: [95, 93, 88, 90, 87, 85, 84],
+      backgroundColor: ["#9e9e9e", "#00acc1", "#d81b60", "#1e88e5", "#43a047", "#9e9e9e", "#9e9e9e"],
+      borderWidth: 2,
+      borderColor: '#fff'
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'right', labels: { font: { size: 11 }, padding: 8 } }
+    }
+  }
+});
+
+// 产业链雷达图
+new Chart(document.getElementById('chainChart'), {
+  type: 'radar',
+  data: {
+    labels: ["北美CSP财报验证AI capex正循环 + 阿里云弹性", "英伟达CPO量产+Rubin Ultra光互联升级", "AI应用/Agent商业化加速 + Token工厂", "半导体设备超级周期 + 存储国产突破", "电子布/PCB涨价加速 + AI硬件材料", "谷歌Gemini Robotics 2 + 宇树IPO + 特斯拉SOP"],
+    datasets: [{
+      label: '产业链景气度',
+      data: [95, 93, 88, 90, 87, 85],
+      borderColor: '#1a237e',
+      backgroundColor: 'rgba(26,35,126,0.15)',
+      pointBackgroundColor: '#1a237e',
+      pointRadius: 5,
+      borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      r: { beginAtZero: true, max: 100,
+        ticks: { stepSize: 25, font: { size: 9 } },
+        pointLabels: { font: { size: 11 } }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

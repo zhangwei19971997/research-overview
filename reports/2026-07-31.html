@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-07-31 新闻总结报告</title>
+<script src="../assets/chart.umd.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.header { background: linear-gradient(135deg, #1a237e, #283593, #3949ab); color: white; padding: 40px 30px; border-radius: 16px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(26,35,126,0.3); }
+.header h1 { font-size: 28px; margin-bottom: 8px; }
+.header .meta { font-size: 14px; opacity: 0.85; }
+.header .sources { margin-top: 10px; font-size: 13px; opacity: 0.75; }
+.section { background: white; border-radius: 12px; padding: 28px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 3px solid #e8eaf6; display: flex; align-items: center; gap: 8px; }
+.section-title .icon { font-size: 24px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.card { border-radius: 10px; padding: 18px; border-left: 4px solid; transition: transform 0.2s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+.card h3 { font-size: 15px; margin-bottom: 8px; }
+.card p { font-size: 13px; color: #555; }
+.card .tags { margin-top: 8px; }
+.tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-right: 4px; margin-bottom: 4px; }
+.heat-bar { display: inline-block; font-size: 12px; color: #ff6f00; font-weight: 700; }
+.chart-container { position: relative; height: 320px; margin: 10px 0; }
+.summary-box { background: linear-gradient(135deg, #e8eaf6, #f3e5f5); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+.summary-box h2 { font-size: 18px; margin-bottom: 12px; color: #1a237e; }
+.summary-box p { font-size: 14px; color: #455a64; line-height: 1.8; }
+.disclaimer { font-size: 12px; color: #999; text-align: center; margin-top: 20px; padding: 16px; }
+.stock-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.stock-table th { background: #3949ab; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.stock-table td { padding: 8px 12px; border-bottom: 1px solid #e8eaf6; }
+.stock-table tr:hover { background: #f5f7fa; }
+.cat-badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+@media (max-width: 768px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body><style id="zsxq-nav-css">
+#zsxq-site-nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+padding:9px 14px;background:#12325b;color:#fff;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:14px}
+#zsxq-site-nav a{color:#fff;text-decoration:none;background:rgba(255,255,255,.16);padding:7px 13px;
+border-radius:999px;min-height:36px;display:inline-flex;align-items:center;line-height:1}
+#zsxq-site-nav a:hover{background:rgba(255,255,255,.3)}
+#zsxq-site-nav .cur{margin-right:auto;font-weight:700;letter-spacing:.5px}
+#zsxq-site-nav .dis{opacity:.35;pointer-events:none}
+@media(max-width:768px){#zsxq-site-nav{font-size:13px;padding:8px 10px;gap:6px}
+#zsxq-site-nav a{padding:7px 11px}}
+</style><div id="zsxq-site-nav"><span class="cur">2026-07-31</span>
+<a href="../index.html">归档首页</a><a href="../dashboard.html">汇总看板</a><a href="../news.html">财经新闻总结</a>
+<a id="zsxq-prev" class="dis" href="#">← 前一期</a><a id="zsxq-next" class="dis" href="#">后一期 →</a></div>
+<script src="../data/index.js"></script>
+<script>(function(){var L=(window.ZSXQ_INDEX||[]).map(function(x){return x.date;}).sort();
+var d="2026-07-31",i=L.indexOf(d);
+function set(id,t){var e=document.getElementById(id);if(!e)return;
+if(t){e.href=t+".html";e.className="";}}
+if(i>0)set("zsxq-prev",L[i-1]);if(i>=0&&i<L.length-1)set("zsxq-next",L[i+1]);})();</script>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>📊 2026-07-31 财经新闻总结报告</h1>
+  <div class="meta">分析日期：2026-07-31 | 生成时间：2026-08-01 06:08</div>
+  <div class="sources">数据来源：调研基地（160条帖子，信息社155条+菜园子5条）</div>
+</div>
+
+<!-- 一句话结论 -->
+<div class="summary-box">
+  <h2>🎯 一句话结论</h2>
+  <p>7月31日AI产业链迎来全面反弹，海外四大CSP财报（微软Azure+43%、亚马逊AWS+37%、谷歌云+82%）验证AI ROI闭环，市场从'纯烧钱叙事'转向'业绩兑现'逻辑。AI应用端因OpenAI降价80%与DeepSeek V4 Flash发布而全线大涨，资金从上游硬件向中下游应用扩散。半导体设备/存储/光通信/电子布/MLCC等多条涨价主线共振，Gemini Robotics 2发布与宇树科技IPO启动催化机器人板块。宏观端PCE转负、日元干预、韩股暴涨17.9%缓解外围恐慌，ETF单月净流入超5400亿创历史新高，政策端政治局会议强调'人工智能+'与扩大内需。</p>
+</div>
+
+<!-- 发帖时间分布（可选） -->
+
+
+<!-- 主题热度图 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🔥</span> 主题热度排行</div>
+  <div class="chart-container">
+    <canvas id="heatChart"></canvas>
+  </div>
+</div>
+
+<!-- 核心主题卡片 -->
+<div class="section">
+  <div class="section-title"><span class="icon">📋</span> 核心主题详解</div>
+  <div class="grid-2">
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🤖 AI应用/Agent商业化 <span class="heat-bar">★★★★★</span></h3>
+      <p>OpenAI将GPT-5.6 Luna降价80%、Terra降价20%，DeepSeek V4 Flash正式版上线公测，国产模型能力逼近海外闭源SOTA。腾讯WorkBuddy月活突破2000万登顶国内PC端AI原生Agent第一，字节豆包/阿里千问同步发力B端。Token价格战推动AI应用渗透加速，办公/营销/财税/AIGC等多场景涨停潮涌现，资金从上游硬件向中下游应用明显扩散。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">金山办公</span><span class="tag" style="background:#e0e0e0;color:#424242;">泛微网络</span><span class="tag" style="background:#e0e0e0;color:#424242;">税友股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">昆仑万维</span><span class="tag" style="background:#e0e0e0;color:#424242;">蓝色光标</span><span class="tag" style="background:#e0e0e0;color:#424242;">易点天下</span><span class="tag" style="background:#e0e0e0;color:#424242;">博思软件</span><span class="tag" style="background:#e0e0e0;color:#424242;">万兴科技</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>☁️ CSP云厂商财报与AI ROI <span class="heat-bar">★★★★★</span></h3>
+      <p>四大CSP财报全部超预期：微软Azure+43%首破千亿、AWS+37%连续5季度加速、谷歌云+82%创历史最高增速、Meta上修capex。合计积压订单1.7万亿美元，AI基础设施回本周期不到3年，市场从抗拒FCF转负到默许接受。亚马逊上调2026年capex至2200亿美元，27-28年需求能见度极高，AI投资ROI逻辑得到财报验证。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">中际旭创</span><span class="tag" style="background:#e0e0e0;color:#424242;">新易盛</span><span class="tag" style="background:#e0e0e0;color:#424242;">协创数据</span><span class="tag" style="background:#e0e0e0;color:#424242;">宏景科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">利通电子</span></div>
+    </div>
+    <div class="card" style="border-color: #1e88e5; background: #e3f2fd;">
+      <h3>🔧 半导体设备/国产替代 <span class="heat-bar">★★★★★</span></h3>
+      <p>LRCX Q2营收67亿美元创历史新高，上修2026年WFE至低1500亿美元区间。日本8月16日实施机床高端技术出口审批新规，国产替代窗口加速。芯源微涂胶显影Track验证顺利Q3有望小批量订单，长川科技GPU测试机拿下新一代全部份额。设备板块调整超30%后估值处于历史底部，华创27年订单估值不到5PS。</p>
+      <div class="tags"><span class="tag" style="background:#bbdefb;color:#1565c0;">北方华创</span><span class="tag" style="background:#bbdefb;color:#1565c0;">中微公司</span><span class="tag" style="background:#bbdefb;color:#1565c0;">拓荆科技</span><span class="tag" style="background:#bbdefb;color:#1565c0;">芯源微</span><span class="tag" style="background:#bbdefb;color:#1565c0;">长川科技</span><span class="tag" style="background:#bbdefb;color:#1565c0;">中科飞测</span><span class="tag" style="background:#bbdefb;color:#1565c0;">精测电子</span><span class="tag" style="background:#bbdefb;color:#1565c0;">华峰测控</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>💡 光通信/光互连 <span class="heat-bar">★★★★★</span></h3>
+      <p>仕佳光子Q2利润接近2亿元大超预期，800G持续景气1.6T进入兑现阶段。海外Lumentum涨15%、Coherent涨12%，Formfactor上调CPO指引。CSP资本开支上修直接拉动光互连需求，广发通信认为恐慌式调整接近结束，龙头27年估值10倍以内，28年需求已明确。CPO产业进展反而加快，市场认知差显著。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">仕佳光子</span><span class="tag" style="background:#e0e0e0;color:#424242;">中际旭创</span><span class="tag" style="background:#e0e0e0;color:#424242;">新易盛</span><span class="tag" style="background:#e0e0e0;color:#424242;">天孚通信</span><span class="tag" style="background:#e0e0e0;color:#424242;">源杰科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">光迅科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">罗博特科</span><span class="tag" style="background:#e0e0e0;color:#424242;">长光华芯</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🦾 人形机器人/具身智能 <span class="heat-bar">★★★★☆</span></h3>
+      <p>谷歌DeepMind发布Gemini Robotics 2三大模型，首次实现全身运动控制、跨本体迁移与多机器人协作，技术路线收敛。宇树科技8月10日申购即将登陆科创板，打响下半年机器人IPO第一枪。板块自2月至今回调40-50%，但产业进展（软件模型/硬件量产/资本融资）均在加速，三大阵营（T链/国产链/NV链）逐步形成。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">奥比中光</span><span class="tag" style="background:#e0e0e0;color:#424242;">上纬新材</span><span class="tag" style="background:#e0e0e0;color:#424242;">拓普集团</span><span class="tag" style="background:#e0e0e0;color:#424242;">三花智控</span><span class="tag" style="background:#e0e0e0;color:#424242;">北特科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">斯菱股份</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>📋 PCB/电子布/铜箔涨价 <span class="heat-bar">★★★★☆</span></h3>
+      <p>7628电子布涨至8.6万元/吨年同比+102%，8月预计再涨1.5元/米以上。国际复材二代布6月提价10%已落地，9月再次调价窗口。高端织机供应受限，丰田织机二手价格上涨。PCB铜箔HVLP-3/4供需紧张，27年缺口或达35-40%。mSAP市场规模有望从百亿到27年近500亿。下游光模块/存储需求爆发持续拉动。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">国际复材</span><span class="tag" style="background:#e0e0e0;color:#424242;">宏和科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">中国巨石</span><span class="tag" style="background:#e0e0e0;color:#424242;">平安电工</span><span class="tag" style="background:#e0e0e0;color:#424242;">生益科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">德福科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">诺德股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">东山精密</span></div>
+    </div>
+    <div class="card" style="border-color: #fb8c00; background: #fff3e0;">
+      <h3>⚡ MLCC/被动元器件涨价 <span class="heat-bar">★★★★☆</span></h3>
+      <p>三星电机8月1日起涨价30%，太阳诱电9月起涨价但仍无法保证交货。Q3消费电子拉货+AI服务器量产，供需缺口进一步放大。原厂全线满载，中容及普通高容持续转产AI，渠道库存新低。顺络电子Q2收入首破20亿大关，AI收入26年预计8-10亿。MLCC现货价本周企稳回暖，与日韩逐步脱敏。</p>
+      <div class="tags"><span class="tag" style="background:#ffe0b2;color:#e65100;">风华高科</span><span class="tag" style="background:#ffe0b2;color:#e65100;">三环集团</span><span class="tag" style="background:#ffe0b2;color:#e65100;">博迁新材</span><span class="tag" style="background:#ffe0b2;color:#e65100;">顺络电子</span><span class="tag" style="background:#ffe0b2;color:#e65100;">江海股份</span></div>
+    </div>
+    <div class="card" style="border-color: #00897b; background: #e0f2f1;">
+      <h3>💾 存储芯片 <span class="heat-bar">★★★★☆</span></h3>
+      <p>三星Q2创史上最强盈利季，五年长约锁定60-70%产能，HBM4三季度收入环比3倍+，存储供不应求持续至2028年。KOSPI单日暴涨17.9%创纪录，SK海力士涨停29.95%。村田上修业绩。长鑫科技科创板上市博弈结束但扩产趋势明确，国产存储成长性更高。存储是AI成本卡点，全球利润分配格局或将重塑。</p>
+      <div class="tags"><span class="tag" style="background:#b2dfdb;color:#004d40;">长鑫科技</span><span class="tag" style="background:#b2dfdb;color:#004d40;">中芯国际</span><span class="tag" style="background:#b2dfdb;color:#004d40;">寒武纪</span><span class="tag" style="background:#b2dfdb;color:#004d40;">海光信息</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🎬 多模态/AIGC视频生成 <span class="heat-bar">★★★★☆</span></h3>
+      <p>MiniMax发布H3（海螺3）首个开源主流多模态生成模型，支持15s 2K分辨率原生双声道视频，定价不足主流1/3。字节Seedance 2.5支持30秒原生直出+50个全模态素材参考。AI短剧抖音上半年新增22.19万部、播放增量5157亿。德才股份火山引擎信控额度升至5000万，AI漫剧业务加速规模化落地。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">昆仑万维</span><span class="tag" style="background:#e0e0e0;color:#424242;">万兴科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">德才股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">荣信文化</span><span class="tag" style="background:#e0e0e0;color:#424242;">蓝色光标</span></div>
+    </div>
+    <div class="card" style="border-color: #ec407a; background: #fce4ec;">
+      <h3>🖥️ 算力租赁 <span class="heat-bar">★★★★☆</span></h3>
+      <p>微软Azure 90%收入来自长尾用户，亚马逊AWS保持近40%净利率，算力租赁卡位中间最舒服位置。Token分成模式加速普及，推理侧5/5分成可见，部分厂商谈7/3分。BIS审查路径下拿卡能力成为核心竞争力，NCP关系/海外干净资金/机房/物流能力决定成本。行云科技三签补充协议上修租金，下游大厂愿意为算力涨价兜底。</p>
+      <div class="tags"><span class="tag" style="background:#f8bbd0;color:#ad1457;">协创数据</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">宏景科技</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">利通电子</span><span class="tag" style="background:#f8bbd0;color:#ad1457;">东阳光</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🧪 AI材料 <span class="heat-bar">★★★☆☆</span></h3>
+      <p>电子布/树脂/铜箔/玻璃基板/碳化硅多线并进。玻璃基板'光+玻璃'组合潜力最大，AI时代材料变革。碳化硅终端价格下降驱动渗透率快速提升，十倍以上需求增量。六氟化钨供需紧张，中船特气利润弹性显著。磷化铟AXT backlog超1亿美元订单能见度延至3-4季度，兴业科技/光智科技等新秀加速扩产。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">国际复材</span><span class="tag" style="background:#e0e0e0;color:#424242;">宏和科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">联瑞新材</span><span class="tag" style="background:#e0e0e0;color:#424242;">东材科技</span><span class="tag" style="background:#e0e0e0;color:#424242;">圣泉集团</span><span class="tag" style="background:#e0e0e0;color:#424242;">光智科技</span></div>
+    </div>
+    <div class="card" style="border-color: #9e9e9e; background: #f5f5f5;">
+      <h3>🔌 北美电力/AIDC能源 <span class="heat-bar">★★★☆☆</span></h3>
+      <p>Bloom Energy大涨26% Q2收入首破10亿美元，SOFC进入业绩兑现期。PJM缺电加剧，备用容量一度降至5GW接近最低要求，市场价近2.8万美元/MWh。50MW以上大负荷可能被拉闸限电，电力接入成为AI数据中心核心约束。变压器订单持续，燃气轮机供需紧张。杰瑞股份燃气轮机获北美CSP百亿复购大单。</p>
+      <div class="tags"><span class="tag" style="background:#e0e0e0;color:#424242;">特锐德</span><span class="tag" style="background:#e0e0e0;color:#424242;">思源电气</span><span class="tag" style="background:#e0e0e0;color:#424242;">杰瑞股份</span><span class="tag" style="background:#e0e0e0;color:#424242;">金盘科技</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 主题分布图 -->
+<div class="section">
+  <div class="section-title"><span class="icon">📊</span> 主题分布与市场结构</div>
+  <div class="grid-2">
+    <div>
+      <h4 style="margin-bottom:10px;color:#455a64;">主题热度分布</h4>
+      <div class="chart-container" style="height:280px;">
+        <canvas id="distChart"></canvas>
+      </div>
+    </div>
+    <div>
+      <h4 style="margin-bottom:10px;color:#455a64;">产业链景气度图谱</h4>
+      <div class="chart-container" style="height:280px;">
+        <canvas id="chainChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 市场情绪 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🌐</span> 市场情绪与宏观</div>
+  <div class="grid-3">
+    <div class="card" style="border-color:#42a5f5;background:#e3f2fd;">
+      <h3>📈 大盘走势</h3>
+      <p>三市成交25601亿较上日增加2014亿，主力净流入625亿。7月股票ETF单月净流入超5400亿创历史新高。创业板补完缺口探底回升，科技反抽行情启动。食品饮料/银行/石油石化领涨被资金填仓，灵活资金开始捞科技反抽。中信累计加空4760手，净空75175手。</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>🌍 海外市场</h3>
+      <p>美股全线暴涨：纳指+3.36%、费城半导体+8.19%、DRAM指数+16.70%。微软单日+15.51%创近年最大涨幅，存储链集体逼空（闪迪/西数/美光涨15%+）。KOSPI暴涨17.9%创纪录，SK海力士/三星涨停。VIX重挫17%至17.09。LRCX财报超预期上修WFE预期，Lam Research涨18%。</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>🛢️ 商品/有色</h3>
+      <p>PCE六年来首次转负环比-0.1%，美元指数失守100，黄金+1.58%。铜之低库存/极端天气扰动，黄金之央行购金Q2净增289吨同比+62%。压制金铜估值的'板块情绪'因素已修复，'涨价预期'形成将带来盈利和估值双击。锡钨钽景气度持续向好供需偏紧。</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>🏛️ 政策</h3>
+      <p>政治局会议强调'适时调整货币政策工具'、'加快财政支出'、实施'人工智能+'行动，政策天平从'谋划'滑向'出台'。国家发改委正研究制定扩大内需战略实施方案（2026-2030年）。光伏行业成本核算通则发布仅4天即启动价格合规指导，从'自律倡议'走向'制度化'。日本8月16日实施机床高端技术出口审批新规。</p>
+    </div>
+    <div class="card" style="border-color:#ffa726;background:#fff3e0;">
+      <h3>💰 流动性</h3>
+      <p>7月股票ETF净流入超5400亿创历史新高，宽基ETF净流入2945亿。两融余额26065亿较上日减少369亿。股票ETF成交额维持2480亿以上。回购潮+国新/诚通增持成为行情重要支撑。日本突袭式干预日元暴涨超3%至158.26，套息平仓存在冲击全球风险资产风险。</p>
+    </div>
+    <div class="card" style="border-color:#ab47bc;background:#f3e5f5;">
+      <h3>🔥 AI产业拐点</h3>
+      <p>四大CSP财报全部超预期，合计云业务年化收入约3890亿美元，积压订单1.7万亿。OpenAI 7月ARR增量超整个Q2，逼近600亿美元。AI基础设施回本不到3年，ROI逻辑获财报验证。市场从'抗拒FCF转负'到'默许接受'，AI进入正循环。AI共识牢固度51.83分'虽松未崩'，基本面支撑核心信仰。</p>
+    </div>
+    <div class="card" style="border-color:#ef5350;background:#ffebee;">
+      <h3>🇰🇷 韩国存储/去杠杆</h3>
+      <p>KOSPI单日暴涨17.9%创纪录，外资净买入7.3万亿韩元（51亿美元），44亿美元流入KOSPI科技板块。SK海力士/三星涨停29.95%/26.8%。崔泰源会长首次个人直接买入SK海力士333万美元。韩国交易所审查卖空禁令技术可行性。三星Q2创史上最强盈利季，五年长约锁定60-70%产能。</p>
+    </div>
+    <div class="card" style="border-color:#66bb6a;background:#e8f5e9;">
+      <h3>📉 苹果财报与存储涨价</h3>
+      <p>苹果6月季营收1094亿同比+16%创新高但盘后跌6.4%，Q4指引受外汇逆风(-2.5pct)和供应限制不及预期。存储芯片涨价压制毛利率，FY26Q4毛利率指引47-48%（较Q3的50.1%下降）。苹果正评估增加DRAM供应商。台积电先进制程全线涨价5-10%。美伊冲突致双海峡封锁风险驱动运价上行。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 重点关注个股 -->
+<div class="section">
+  <div class="section-title"><span class="icon">⭐</span> 重点关注个股速览</div>
+  <table class="stock-table">
+    <thead>
+      <tr>
+        <th>公司</th>
+        <th>主题</th>
+        <th>核心要点</th>
+        <th>来源</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">仕佳光子</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光通信/光互连</span></td>
+        <td style="color:#555;">Q2归母净利约1.99亿同比+61%环比+71%大超预期，800G持续景气1.6T进入小批量出货阶段，AWG芯片及MT-FA高密度光连接产品受益高速光模块升级，产品结构优化推动利润加速释放</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">国际复材</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布</span></td>
+        <td style="color:#555;">二代布推进珠海二期配套70+坩埚预计9月投产，Q2末-Q3末-年底产能80/150/210万米/月。二代布6月提价10%已落地9月再调价。T布订单15万米/月远超出货2万米。订购600台织布机27Q1全部到货</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">长川科技</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备</span></td>
+        <td style="color:#555;">GPU测试机深度绑定H拿下最新一代GPU测试设备所有份额，26H1业绩超预期兑现。布局板级封装与TCB设备有望在CoPoS大潮中成为核心标的，TCB已在大客户验证中，量检测业务积极突破</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">芯源微</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备</span></td>
+        <td style="color:#555;">国内唯一量产前道涂胶显影设备厂，新一代FT Alkaid架构取得积极进展。核心存储客户验证顺利Q3中期有望小批量订单。TEL全球交付能力下降提价10%+，国产替代紧迫性加强。26H1订单20-25亿接近去年全年</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">北方华创</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备</span></td>
+        <td style="color:#555;">国产半导体设备龙头，先进逻辑制程扩产核心受益。27年订单估值不到5PS处于历史底部，十五五征程不局限于国产替代，出海第二成长曲线加速。去日化方向核心受益标的</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">中际旭创</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光通信/光互连</span></td>
+        <td style="color:#555;">全球光模块龙头，800G需求保持高景气1.6T加速放量。CSP资本开支上修直接拉动光互连需求，28年需求已相当明确。27年估值10倍以内，恐慌式调整后基本面与估值严重背离</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">寒武纪</td>
+        <td><span class="cat-badge" style="background:#b2dfdb;color:#004d40;">存储芯片/AI芯片</span></td>
+        <td style="color:#555;">国产AI芯片龙头，全产业链自主突破阶段。算力比拼从GPU转向架构/封装/生态系统竞争，中国AI芯片形成设计→制造→封测→材料→软件完整布局。AI芯片全链条国产替代核心标的</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">海光信息</td>
+        <td><span class="cat-badge" style="background:#b2dfdb;color:#004d40;">存储芯片/AI芯片</span></td>
+        <td style="color:#555;">国产CPU/DCU龙头，AI芯片全产业链自主突破核心标的。CPU环节是上游硬件与下游落地的多重交集，Agent核心铲子。受益于国产模型份额提升带来的算力需求</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">金山办公</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI应用/Agent商业化</span></td>
+        <td style="color:#555;">国产办公软件龙头，WPS接入AI后付费转化加速。365 Copilot付费席位突破3000万验证AI办公变现逻辑，SaaS模式有效缓解Capex现金流压力。AI应用业绩兑现期核心标的</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">协创数据</td>
+        <td><span class="cat-badge" style="background:#f8bbd0;color:#ad1457;">算力租赁</span></td>
+        <td style="color:#555;">走模组大陆维修路径拿卡数量稳定，存量最大。Token分成模式加速普及推理侧5/5分成可见。已有完整拿卡通路，算力租赁卡位中间最舒服位置，5年长约现金流可预见</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">顺络电子</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">MLCC/被动元器件涨价</span></td>
+        <td style="color:#555;">Q2收入首破20亿大关创季度历史新高同比+23%环比+29%。AI收入26H1约1.6亿全年预计8-10亿，TLVR电感国内仅顺络具备已向北美大客户出货。Q3环比预计大几十到三位数增长，钽电容加速认证导入</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">风华高科</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">MLCC/被动元器件涨价</span></td>
+        <td style="color:#555;">MLCC原厂龙头，市场已优先选出MLCC涨价线。三星电机8月涨价30%太阳诱电9月涨价，原厂全线满载中容及普通高容持续转产AI。与日韩逐步脱敏，第二轮回购5-10亿力度超预期</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">江海股份</td>
+        <td><span class="cat-badge" style="background:#ffe0b2;color:#e65100;">MLCC/被动元器件涨价</span></td>
+        <td style="color:#555;">AI电容首推标的，40条AI牛角产线整体规划公布。AI市场利润空间从50亿增至250亿，可拿份额从10%增至50%。超容已成标品，牛角因Power Rack非线性增长。已拿到G和台达量产订单</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">宏和科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布</span></td>
+        <td style="color:#555;">电子布T布首选标的，上半年领跑。7628电子布年同比+102%持续涨价，8月预计再涨1.5元/米以上。高端织机供应受限，供给缺口不止28年。上半年领跑近期超跌后具备配置价值</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">平安电工</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布</span></td>
+        <td style="color:#555;">云母制品拳头产品+特种电子布第二曲线。26H1收入+20%利润因外部环境阶段性波动，还原后增长20%+。在手丰田织机360台，泰国基地投资2.1亿70%特种布。股权激励600万股力度大时点准</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">德福科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/铜箔</span></td>
+        <td style="color:#555;">锂电铜箔单吨盈利7-8k出货14.5万吨，电子电路铜箔规划5万吨高端产能27H1一期2.5万吨落地。已具备HVLP1-3量产能力27年高附加产品出货2万吨。考虑27年业绩对应425亿赔率可观</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">诺德股份</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/铜箔</span></td>
+        <td style="color:#555;">26H1收入64亿同比+113%扭亏为盈，Q2出货约2.8万吨同比翻倍。RTF-3已有订单放量HVLP-1/2出货稳增。新一轮涨价或超3000元/吨，AI铜箔多线并行客户验证认可度高，27年经营性盈利12亿+</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">松发股份</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备</span></td>
+        <td style="color:#555;">定增发行价146元募资70亿，Q2业绩大超预期净利率爬至17%。上半年新签订单200亿美金已排产至29-30年。需求加速业绩高增估值历史底部，远期业绩有望达400亿以上</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">联讯仪器</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备</span></td>
+        <td style="color:#555;">26Q2业绩环比260%加速，下游光模块高陡峭斜率扩产导致Keysight交付周期拉长，份额超预期扩张。高速FT测试/HBM KGD测试设备在头部客户验证，目标测试设备平台型公司</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">鼎泰高科</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布</span></td>
+        <td style="color:#555;">Q2业绩增速中枢接近400%，7月出货均价已达2元/支预计年底月增1500万支扩产速度。少数具备高倍径扩产能力的龙头，PCB钻针直接受益于高端PCB扩产</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">奥比中光</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">人形机器人/具身智能</span></td>
+        <td style="color:#555;">机器人与AI视觉产业中台，7月发布数据采集全系列新品大订单有望持续落地。Gemini Robotics进展超预期大脑激活机器人行情。当前估值低于历史20xPS底线低于定增价，2030年100亿产值目标</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">上纬新材</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">人形机器人/具身智能</span></td>
+        <td style="color:#555;">切入C端消费级具身智能，两款产品预计26Q3发布量产。启元Q1约88cm双足机器人主打陪伴教育，启元T1支持双轮足四足切换定位轻户外。售价1-10万元，计划覆盖京东/抖音/天猫+华为苹果线下渠道</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">杰瑞股份</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">北美电力/AIDC能源</span></td>
+        <td style="color:#555;">燃气轮机发电获北美CSP百亿复购大单超预期，明后年业绩有望大幅上修。数据中心一体化单MW价值量数倍提升，已发布AIDC液冷/预制模块化方舱产品。自研小土星模块化燃气机组完成海外首单交付</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">藏格矿业</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">有色金属/铜锂</span></td>
+        <td style="color:#555;">巨龙铜矿二期2026年1月投产年产铜提升至30-35万吨，权益产能9.23-10.77万吨。锂业务察尔汗1.6万吨+麻米措一期5万吨26Q3投产。钾业务120万吨稳产老挝一期100万吨规划。26H1巨龙投资收益约28亿</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">安孚科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">半导体投资/AI应用</span></td>
+        <td style="color:#555;">南孚电池主业约120亿市值安全垫，投资业务仅20亿估值超跌。战略入股GPU独角兽象帝先6.9%/硅光易缆微8.5%/光刻光源华昇迈10%并合资设半导体设备公司。光刻光源百亿级国产替代市场尚未price in</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">德才股份</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">多模态/AIGC</span></td>
+        <td style="color:#555;">建筑龙头战略布局AI漫剧及智算，子公司奇想无限为Seedance 2.0首批邀测客户。火山引擎信控额度由2000万升至5000万。26Q1 AI新业务单季新签超3.4亿，Agent/AI漫剧业务加速规模化落地</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">博思软件</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI应用/Agent商业化</span></td>
+        <td style="color:#555;">腾讯第二大股东，5月签署深度战略合作AI智能体全面对接。电子票夹微信小程序注册用户超1.3亿，WorkBuddy人机双写接入后用户池现成。财政+税务+医疗三大政务AI场景落地200+三甲医院</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">英诺激光</td>
+        <td><span class="cat-badge" style="background:#bbdefb;color:#1565c0;">半导体设备/激光</span></td>
+        <td style="color:#555;">海外主力PCB激光设备长期缺货加快超快激光国产替代。少数实现激光头自产具备整机全流程国产化能力，稀缺壁垒突出。高阶HDI渗透率提升传统激光无法满足精密微孔加工，明年超快激光设备需求3000台市场近200亿</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">华曙高科</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">3D打印</span></td>
+        <td style="color:#555;">26H1预计收入3.41亿同比+42%归母净利0.08亿同比+87%，Q2收入2.11亿同比+86%净利润同比+290%。高增长由于下游需求回暖及3D打印应用场景拓展，3C端侧3D业务将爆发</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">铂力特</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">3D打印</span></td>
+        <td style="color:#555;">与关联方正时精控采购合同预计1.51亿元核心零部件，26年累计采购1.68亿同比增幅295%预示设备将爆量。3D打印订单节点到来苹果大年，3C端侧3D业务确定爆发</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">立讯精密</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">消费电子</span></td>
+        <td style="color:#555;">苹果新品及零部件全面受益、AI算力大幅增量、显著低估。26H2-27年苹果AI硬件加速创新叠加上游外观大创新（3D打印）具有看点。精选果链alpha优质标的首选</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">特锐德</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">北美电力/AIDC能源</span></td>
+        <td style="color:#555;">回购3-6亿彰显信心回购价上限50元较收盘高48%。26H1归母净利3.9-4.6亿同比+20-40%。沙特SE核心供应商准入全球首座400kV预制舱变电站交付。算力中心业务合同额翻倍增长发布800V HVDC</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">龙星科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">化工/绿色材料</span></td>
+        <td style="color:#555;">可持续炭黑sCB已量供首期订单近万吨，与欧洲大型轮胎企业达成开发计划。sCB经济效益优于传统炭黑，扩产计划已在规划中。欧盟绿色监管催生百万吨需求百亿蓝海市场</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">昆仑万维</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">多模态/AIGC</span></td>
+        <td style="color:#555;">艾捷科芯+AI+短剧三重逻辑，AI应用涨停潮率先涨停标的。国产大模型不讲竞争叙事TAM蛋糕仍在做大，下游有Token消耗和分发逻辑的AI应用类标的。模型智力提升单价降低带来更充裕应用需求</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">蓝色光标</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI应用/Agent商业化</span></td>
+        <td style="color:#555;">大力推进AI营销接入文心4.5系列开源模型赋能BlueAI营销平台，应用于社媒内容分析/视频理解处理等场景。AI营销批量变现进入订单落地毛利抬升拐点阶段</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">长光华芯</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光通信/光互连</span></td>
+        <td style="color:#555;">EML+CW激光芯片量产突破，100G EML稳定量产200G PAM4 EML已完成送样。8英寸硅光平台落地在即一期年产能6万片预计26年底通线。InP有源+硅光无源全产业链双平台IDM龙头估值重塑</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">罗博特科</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光通信/光互连</span></td>
+        <td style="color:#555;">CPO产业链核心标的，Formfactor上调CPO指引大涨21%。CPO产业进展加快是今年最大认知差之一，市场质疑声中产业进展反而加速。坚定推荐</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">宏景科技</td>
+        <td><span class="cat-badge" style="background:#f8bbd0;color:#ad1457;">算力租赁</span></td>
+        <td style="color:#555;">超跌到市值没有服务器价值高，链条即将恢复。具备海外机房资源及深度绑定渠道，算力租赁核心标的。国产模型份额持续提升算租首先受益</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">泛微网络</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI应用/Agent商业化</span></td>
+        <td style="color:#555;">腾讯第五大股东，旗下所有产品全面接入DeepSeek大模型。WorkBuddy AI生态首批共创伙伴，人机双写协同编辑能力接入。AI办公从问答式辅助到参与式创作范式跃迁</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">税友股份</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI应用/Agent商业化</span></td>
+        <td style="color:#555;">与阿里云AI智能体应用长期合作，90%以上基础设施使用阿里云。通义千问大模型应用于财税咨询/爱搜税等AI SaaS场景。AI应用交易方向核心标的</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">深信服</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">AI应用/Agent商业化</span></td>
+        <td style="color:#555;">AI Infra核心标的，企业AI项目由简单问答走向复杂Agent，数据治理/向量检索/模型管理/可观测性/安全需求快速提升。AI Infra工具逐步成为刚需行业TAM持续扩张</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">容百科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">新能源/钠电</span></td>
+        <td style="color:#555;">钠电正极NFPP产能1.8万吨，仙桃30万吨一体化项目分三期27年5/7/9月投产。26年钠电正极出货近1万吨标志量产元年。三元6月单月1.4万吨创历史新高，锰铁锂同比+50%盈利转正</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">光迅科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">光通信/光互连</span></td>
+        <td style="color:#555;">光通信DCI产业链核心标的，受益于光互连全面走强。海外Lumentum涨15% Coherent涨12%，英伟达投资康宁5亿美元锁定产能。光通信龙头业绩指引持续走高</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">生益科技</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">PCB/电子布/CCL</span></td>
+        <td style="color:#555;">CCL龙头M9必炒，高端挺进国产替代加速。上游电子布涨价+下游光模块/存储需求爆发双重利好。高盛闭门会指出高端覆铜板毛利率持续扩张26下半年存提价预期</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">拓普集团</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">人形机器人/具身智能</span></td>
+        <td style="color:#555;">特斯拉Optimus V3总成&amp;核心部件供应商，机器人板块T链核心标的。汽车零部件主业稳健，机器人业务打开第二增长曲线</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">思源电气</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">北美电力/AIDC能源</span></td>
+        <td style="color:#555;">变压器最确定的电力设备短缺环节，无论数据中心并网还是自建电源均需要变压器/开关/配电。AI数据中心抬高长期负荷曲线，电力设备景气度具备持续性</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">锦波生物</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">医药/医美</span></td>
+        <td style="color:#555;">26年收入以传统薇旖美为主新产品凝胶为辅Q2业绩有望环比增长。凝胶新品布局400-500家机构年底目标近1000家，泪沟填充具备大爆品潜力。17型胶原蛋白预计27年拿注册证市场首例</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">利尔化学</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">化工/农药</span></td>
+        <td style="color:#555;">华润入主焕新势能，华润双鹤推动四个转变：化学+生物制造/综合植保/创新驱动/品牌制剂。草铵膦淡季不淡旺季涨价预期强，精草铵膦龙头地位稳固海外登记领先2-3年</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+      <tr>
+        <td style="font-weight:600;color:#1a237e;">新金路</td>
+        <td><span class="cat-badge" style="background:#e0e0e0;color:#424242;">有色金属</span></td>
+        <td style="color:#555;">广西栗木矿项目按计划推进，锡钨钽铌打开成长空间。有色板块Q2机构持仓降至近5年最低，锡钨钽供需偏紧价格有望持续上行。近期非理性杀跌是绝佳上车机会</td>
+        <td style="font-size:11px;color:#999;">调研基地</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="disclaimer">
+  ⚠️ 本报告由AI基于公开新闻信息自动整理，仅供研究参考，不构成任何投资建议。投资有风险，入市需谨慎。<br>
+  数据来源：调研基地（160条帖子，信息社155条+菜园子5条） | 生成时间：2026-07-31
+</div>
+
+</div>
+
+<script>
+// 发帖时间分布（可选）
+
+
+// 主题热度数据
+const heatLabels = ["AI应用/Agent商业化", "CSP云厂商财报与AI ROI", "半导体设备/国产替代", "光通信/光互连", "人形机器人/具身智能", "PCB/电子布/铜箔涨价", "MLCC/被动元器件涨价", "存储芯片", "多模态/AIGC视频生成", "算力租赁", "AI材料", "北美电力/AIDC能源"];
+const heatValues = [98, 96, 94, 92, 90, 88, 86, 85, 83, 82, 75, 73];
+const heatColors = ["#9e9e9e", "#9e9e9e", "#1e88e5", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#fb8c00", "#00897b", "#9e9e9e", "#ec407a", "#9e9e9e", "#9e9e9e"];
+
+// 热度图
+new Chart(document.getElementById('heatChart'), {
+  type: 'bar',
+  data: {
+    labels: heatLabels,
+    datasets: [{
+      data: heatValues,
+      backgroundColor: heatColors,
+      borderRadius: 6,
+      barThickness: 28
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false },
+      tooltip: { callbacks: { label: ctx => '热度: ' + ctx.raw + '/100' } }
+    },
+    scales: {
+      x: { max: 100, grid: { color: '#f0f0f0' }, ticks: { font: { size: 11 } } },
+      y: { ticks: { font: { size: 12 } } }
+    }
+  }
+});
+
+// 分布图
+new Chart(document.getElementById('distChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ["AI应用", "CSP财报", "半导体设备", "光通信", "人形机器人", "PCB/电子布", "MLCC/被动元器件", "存储芯片", "AIGC视频", "算力租赁", "AI材料", "AIDC能源", "其他"],
+    datasets: [{
+      data: [20, 18, 16, 14, 12, 10, 8, 7, 6, 5, 4, 3, 2],
+      backgroundColor: ["#9e9e9e", "#9e9e9e", "#1e88e5", "#9e9e9e", "#9e9e9e", "#9e9e9e", "#fb8c00", "#00897b", "#9e9e9e", "#ec407a", "#9e9e9e", "#9e9e9e"],
+      borderWidth: 2,
+      borderColor: '#fff'
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'right', labels: { font: { size: 11 }, padding: 8 } }
+    }
+  }
+});
+
+// 产业链雷达图
+new Chart(document.getElementById('chainChart'), {
+  type: 'radar',
+  data: {
+    labels: ["AI应用/Agent", "CSP云厂商ROI", "半导体设备", "光通信/光互连", "人形机器人", "PCB/电子布涨价"],
+    datasets: [{
+      label: '产业链景气度',
+      data: [98, 96, 94, 92, 90, 88],
+      borderColor: '#1a237e',
+      backgroundColor: 'rgba(26,35,126,0.15)',
+      pointBackgroundColor: '#1a237e',
+      pointRadius: 5,
+      borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      r: { beginAtZero: true, max: 100,
+        ticks: { stepSize: 25, font: { size: 9 } },
+        pointLabels: { font: { size: 11 } }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
