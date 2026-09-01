@@ -115,9 +115,9 @@ if(i>0)set("zsxq-prev",L[i-1]);if(i>=0&&i<L.length-1)set("zsxq-next",L[i+1]);})(
 <!-- 帖子全文集合（可选，模式A） -->
   <div class="section">
     <div class="section-title"><span class="icon">📄</span> 帖子全文集合（共 33 条）</div>
-    <p style="font-size:13px;margin:-6px 0 12px;">📎 <a href="信息社_2026-08-27_报告_全集.md" target="_blank" style="color:#1a237e;text-decoration:underline;">查看全文合集（Markdown）</a> — 共 33 条原始帖文，点击在新标签页打开。</p>
+    <p style="font-size:13px;margin:-6px 0 12px;"><button type="button" onclick="downloadPostsMd()" style="background:#e8eaf6;border:1px solid #c5cae9;border-radius:6px;padding:6px 12px;color:#1a237e;font-size:13px;cursor:pointer;">📎 查看全文合集（Markdown）</button><span style="color:#666;"> — 共 33 条原始帖文，点击导出 .md 文件（本地离线可用，无需联网）。</span></p>
     <p style="font-size:12px;color:#888;margin:-6px 0 14px;">原始帖文按时间倒序排列，默认折叠；点击标题展开正文。仅模式A（抓取+分析）有此数据。</p>
-    <div class="posts-list">
+    <div class="posts-list" id="postsList">
 <details><summary><b>信息社</b> · 2026-08-27 23:21</summary><div class="post-body">上市公司硫磺-硫铁矿-磷石膏-硫酸产能统计</div></details>
 <details><summary><b>信息社</b> · 2026-08-27 23:20</summary><div class="post-body">北证50etf被动资金流入弹性测算-0827</div></details>
 <details><summary><b>信息社</b> · 2026-08-27 23:16</summary><div class="post-body">【开源化工】新凤鸣中报点评——0827
@@ -478,6 +478,45 @@ new Chart(document.getElementById('chainChart'), {
     }
   }
 });
+
+
+// 帖子全文合集导出（v3.9.2 存量修复注入；纯客户端 Blob，无外部依赖）
+var POSTS_MD_NAME = "2026-08-27_帖子全集.md";
+var POSTS_MD_DATE = "2026-08-27";
+function downloadPostsMd() {
+  var list = document.getElementById('postsList');
+  if (!list) { alert('未找到帖子列表，无法导出'); return; }
+  var items = list.querySelectorAll('details');
+  var lines = ['# ' + POSTS_MD_DATE + ' 帖子全集', '',
+               '> 共 ' + items.length + ' 条 | 由报告页导出', '', '---', ''];
+  items.forEach(function (d) {
+    var s = d.querySelector('summary');
+    var b = d.querySelector('.post-body');
+    var head = s ? String(s.textContent || '').replace(/^[\s▸▾]+/, '').trim() : '';
+    var body = b ? String(b.textContent || '') : '';
+    // 纯图片 / 无文字帖在采集层 text 即为空，导出时补占位说明，避免 md 里出现空白条目
+    if (!body.trim()) { body = '_（本帖无文字内容，可能为纯图片 / 转发）_'; }
+    lines.push('### ' + head);
+    lines.push('');
+    lines.push(body);
+    lines.push('');
+    lines.push('---');
+    lines.push('');
+  });
+  try {
+    var blob = new Blob([lines.join('\n')], { type: 'text/markdown;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = POSTS_MD_NAME;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  } catch (e) {
+    alert('导出失败：' + (e && e.message ? e.message : e));
+  }
+}
 </script>
 </body>
 </html>
