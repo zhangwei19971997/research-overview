@@ -1,0 +1,152 @@
+{
+ "date": "2026-09-02",
+ "weekday": "三",
+ "summary": "9月2日核心主题聚焦AI服务器产业链（MLCC紧缺、液冷散热）、交通基建（四川路桥订单恢复、干散货旺季）及腾讯WorkBuddy开放平台生态。",
+ "sources": "调研基地",
+ "themes": [
+  {
+   "name": "AI服务器/MLCC紧缺",
+   "stars": "★★★★★",
+   "score": 95,
+   "companies": [
+    "三星电机",
+    "火炬电子",
+    "风华高科",
+    "三环集团"
+   ],
+   "logic": "三星电机获1.07万亿韩元MLCC长单，AI级MLCC需求缺口2000万只"
+  },
+  {
+   "name": "液冷散热/AIDC",
+   "stars": "★★★★☆",
+   "score": 85,
+   "companies": [
+    "金帝股份",
+    "集泰股份",
+    "雪人集团"
+   ],
+   "logic": "金帝股份液冷四大产品通过验证，单机柜价值量27万元，Q4订单释放"
+  },
+  {
+   "name": "交通基建/四川路桥",
+   "stars": "★★★★☆",
+   "score": 80,
+   "companies": [
+    "四川路桥"
+   ],
+   "logic": "四川路桥在手订单3000亿支撑三年营收"
+  },
+  {
+   "name": "腾讯WorkBuddy开放平台",
+   "stars": "★★★★☆",
+   "score": 80,
+   "companies": [
+    "腾讯"
+   ],
+   "logic": "WorkBuddy开放平台上线，接入30+硬件品牌"
+  },
+  {
+   "name": "立讯精密/AI设备",
+   "stars": "★★★★☆",
+   "score": 75,
+   "companies": [
+    "立讯精密"
+   ],
+   "logic": "高盛买入评级，光模块产能扩张加速"
+  },
+  {
+   "name": "干散货海运旺季",
+   "stars": "★★★☆☆",
+   "score": 65,
+   "companies": [
+    "海通发展",
+    "太平洋航运"
+   ],
+   "logic": "BCI单日跳涨8%，几内亚发运量环比+44%"
+  },
+  {
+   "name": "北交所五周年",
+   "stars": "★★★☆☆",
+   "score": 60,
+   "companies": [],
+   "logic": "北交所设立五周年，政策礼包预期升温"
+  },
+  {
+   "name": "OLED材料",
+   "stars": "★★★☆☆",
+   "score": 60,
+   "companies": [
+    "莱特光电"
+   ],
+   "logic": "莱特光电Q布项目Q3设备安装"
+  }
+ ],
+ "stocks": [
+  {
+   "name": "火炬电子",
+   "code": "603678",
+   "theme": "AI服务器/MLCC紧缺",
+   "points": "MLCC原厂"
+  },
+  {
+   "name": "风华高科",
+   "code": "000636",
+   "theme": "AI服务器/MLCC紧缺",
+   "points": "MLCC原厂"
+  },
+  {
+   "name": "三环集团",
+   "code": "300408",
+   "theme": "AI服务器/MLCC紧缺",
+   "points": "MLCC原厂"
+  },
+  {
+   "name": "金帝股份",
+   "code": "603270",
+   "theme": "液冷散热/AIDC",
+   "points": "液冷四大产品通过验证"
+  },
+  {
+   "name": "集泰股份",
+   "code": "300888",
+   "theme": "液冷散热/AIDC",
+   "points": "液冷导热硅油"
+  },
+  {
+   "name": "雪人集团",
+   "code": "002639",
+   "theme": "液冷散热/AIDC",
+   "points": "制冷压缩机"
+  },
+  {
+   "name": "立讯精密",
+   "code": "002475",
+   "theme": "AI设备/消费电子",
+   "points": "光模块产能扩张"
+  },
+  {
+   "name": "莱特光电",
+   "code": "688150",
+   "theme": "OLED材料",
+   "points": "Q布项目推进"
+  },
+  {
+   "name": "海通发展",
+   "code": "601456",
+   "theme": "干散货海运",
+   "points": "干散货船运"
+  },
+  {
+   "name": "太平洋航运",
+   "code": "601099",
+   "theme": "干散货海运",
+   "points": "干散货船运"
+  }
+ ],
+ "macro_count": 3,
+ "theme_count": 8,
+ "stock_count": 10,
+ "post_count": 20,
+ "report": "reports/2026-09-02.html",
+ "tech_scores": []
+}

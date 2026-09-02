@@ -1,8 +1,21 @@
 {
  "title": "康庄研究院",
- "updated": "2026-09-02 00:37:41",
- "count": 33,
+ "updated": "2026-09-03 00:32:52",
+ "count": 34,
  "days": [
+  {
+   "date": "2026-09-02",
+   "weekday": "三",
+   "summary": "9月2日核心主题聚焦AI服务器产业链（MLCC紧缺、液冷散热）、交通基建（四川路桥订单恢复、干散货旺季）及腾讯WorkBuddy开放平台生态。",
+   "theme_count": 8,
+   "stock_count": 10,
+   "top_themes": [
+    "AI服务器/MLCC紧缺",
+    "液冷散热/AIDC",
+    "交通基建/四川路桥"
+   ],
+   "report": "reports/2026-09-02.html"
+  },
   {
    "date": "2026-09-01",
    "weekday": "二",
