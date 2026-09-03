@@ -87,7 +87,10 @@ color:#52606d;word-break:break-all;font-family:ui-monospace,SFMono-Regular,Menlo
     }).join('');
   }
 
+  var recentLoaded = false;
   function loadRecent(base){
+    if(recentLoaded) return;
+    recentLoaded = true;
     var box = document.getElementById('recent');
     var sc = document.createElement('script');
     sc.src = base + 'data/index.js';
@@ -107,8 +110,7 @@ color:#52606d;word-break:break-all;font-family:ui-monospace,SFMono-Regular,Menlo
 
   function use(base){ renderNav(base); loadRecent(base); }
 
-  /* 校验推导出的根路径是否真实存在（以 data/index.json 为探针），失败则回退 '/
-' 再试 */
+  /* 校验推导出的根路径是否真实存在（以 data/index.json 为探针），失败则回退站点根再试 */
   (function probe(i){
     if(i >= cands.length){ use('/'); return; }
     var b = cands[i];
