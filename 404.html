@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>页面走丢了 · 康庄研究院</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%231e88e5%22%2F%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3Crect%20x%3D%227%22%20y%3D%2217%22%20width%3D%224%22%20height%3D%228%22%20rx%3D%221%22%2F%3E%3Crect%20x%3D%2214%22%20y%3D%2212%22%20width%3D%224%22%20height%3D%2213%22%20rx%3D%221%22%2F%3E%3Crect%20x%3D%2221%22%20y%3D%227%22%20width%3D%224%22%20height%3D%2218%22%20rx%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+background:#f4f6f9;color:#1f2933;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:24px 16px 56px}
+.header{background:linear-gradient(135deg,#1e88e5,#1565c0);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:24px}
+.header h1{font-size:22px;font-weight:700;margin-bottom:6px}
+.header p{font-size:14px;opacity:.9}
+.code{font-size:64px;font-weight:800;letter-spacing:4px;line-height:1;margin-bottom:4px}
+.card{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(16,42,74,.07);padding:20px;margin-bottom:16px}
+.card h2{font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.card h2 .tag{font-size:11px;background:#e3f2fd;color:#1565c0;padding:2px 8px;border-radius:10px;font-weight:600}
+.path{background:#fafcff;border:1px dashed #c7d6e6;border-radius:10px;padding:10px 14px;font-size:13px;
+color:#52606d;word-break:break-all;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.nav a{display:block;padding:16px;border-radius:12px;border:1px solid #eef2f7;background:#fafcff;transition:all .15s}
+.nav a:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(30,136,229,.1);border-color:#1e88e5;background:#fff}
+.nav a b{display:block;font-size:15px;color:#1e88e5;margin-bottom:2px}
+.nav a span{font-size:12px;color:#8494a6}
+.list{display:flex;flex-direction:column;gap:10px}
+.item{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:10px;border:1px solid #eef2f7;background:#fafcff}
+.item:hover{border-color:#1e88e5;background:#fff}
+.item .date{font-size:15px;font-weight:700;color:#1e88e5;min-width:96px}
+.item .txt{flex:1;font-size:13px;color:#52606d}
+.foot{font-size:12px;color:#8494a6;text-align:center;margin-top:24px}
+.hint{font-size:13px;color:#7c5b00}
+@media(max-width:600px){.code{font-size:48px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="code">404</div>
+    <h1>页面走丢了</h1>
+    <p>你访问的地址不存在，或该期归档尚未生成。可以从下面回到站点。</p>
+  </div>
+
+  <div class="card">
+    <h2>🔗 你访问的地址 <span class="tag" id="tagpath">无法解析</span></h2>
+    <div class="path" id="showpath">—</div>
+  </div>
+
+  <div class="card">
+    <h2>🧭 站点导航</h2>
+    <div class="nav" id="nav"></div>
+  </div>
+
+  <div class="card">
+    <h2>📰 最近归档 <span class="tag">江湖传闻</span></h2>
+    <div class="list" id="recent"><div class="item"><div class="txt">正在加载最近归档…</div></div></div>
+  </div>
+
+  <p class="foot">康庄研究院 · 内容由知识星球公开帖子自动汇总整理，仅用于个人研究与信息留档，不构成任何投资建议。</p>
+</div>
+
+<script>
+(function(){
+  var path = location.pathname + location.search;
+  document.getElementById('showpath').textContent = path;
+
+  /* 站点根路径推导：不写死域名 / 仓库名。
+     GitHub Pages 项目页 = /<repo>/；用户页 = /。再做一次存在性校验兜底。 */
+  var seg = location.pathname.split('/').filter(Boolean);
+  var guess = (/\.github\.io$/i.test(location.hostname) && seg.length) ? '/' + seg[0] + '/' : '/';
+  var cands = [];
+  [guess, '/'].forEach(function(b){ if(cands.indexOf(b)<0) cands.push(b); });
+
+  var SECTIONS = [
+    ['index.html','康庄大厅','总览门户 · 四维汇总看板'],
+    ['news.html','江湖传闻','每日情报归档与主题脉络'],
+    ['futures.html','期货收盘','IF/IH/IC/IM 每日收盘分析'],
+    ['scores/index.html','江湖龙虎榜','个股池百分制打分排名']
+  ];
+
+  function renderNav(base){
+    document.getElementById('nav').innerHTML = SECTIONS.map(function(s){
+      return '<a href="' + base + s[0] + '"><b>' + s[1] + '</b><span>' + s[2] + '</span></a>';
+    }).join('');
+  }
+
+  function loadRecent(base){
+    var box = document.getElementById('recent');
+    var sc = document.createElement('script');
+    sc.src = base + 'data/index.js';
+    sc.onload = function(){
+      var arr = window.ZSXQ_INDEX || [];
+      if(!arr.length){ box.innerHTML = '<div class="item"><div class="txt">暂无归档记录。</div></div>'; return; }
+      box.innerHTML = arr.slice(0,6).map(function(e){
+        return '<a class="item" href="' + base + e.report + '"><div class="date">' + e.date +
+               '</div><div class="txt">' + (e.summary || '').slice(0,72) + '…</div></a>';
+      }).join('');
+    };
+    sc.onerror = function(){
+      box.innerHTML = '<div class="item"><div class="txt hint">归档索引加载失败，请从上方导航进入。</div></div>';
+    };
+    document.head.appendChild(sc);
+  }
+
+  function use(base){ renderNav(base); loadRecent(base); }
+
+  /* 校验推导出的根路径是否真实存在（以 data/index.json 为探针），失败则回退 '/
+' 再试 */
+  (function probe(i){
+    if(i >= cands.length){ use('/'); return; }
+    var b = cands[i];
+    fetch(b + 'data/index.json', {cache:'no-store'}).then(function(r){
+      if(r.ok){ use(b); } else { probe(i+1); }
+    }).catch(function(){ probe(i+1); });
+  })(0);
+
+  use(guess); /* 先按推导值立即渲染，避免空白等待；探针结果稍后覆盖 */
+})();
+</script>
+</body>
+</html>
