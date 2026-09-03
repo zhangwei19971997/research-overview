@@ -1,306 +1,130 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%231e88e5%22%2F%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3Crect%20x%3D%227%22%20y%3D%2217%22%20width%3D%224%22%20height%3D%228%22%20rx%3D%221%22%2F%3E%3Crect%20x%3D%2214%22%20y%3D%2212%22%20width%3D%224%22%20height%3D%2213%22%20rx%3D%221%22%2F%3E%3Crect%20x%3D%2221%22%20y%3D%227%22%20width%3D%224%22%20height%3D%2218%22%20rx%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>股票池打分 · 调研基地</title>
-<style>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%231e88e5%22%2F%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3Crect%20x%3D%227%22%20y%3D%2217%22%20width%3D%224%22%20height%3D%228%22%20rx%3D%221%22%2F%3E%3Crect%20x%3D%2214%22%20y%3D%2212%22%20width%3D%224%22%20height%3D%2213%22%20rx%3D%221%22%2F%3E%3Crect%20x%3D%2221%22%20y%3D%227%22%20width%3D%224%22%20height%3D%2218%22%20rx%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>康庄研究院 · 江湖龙虎榜</title><style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
-background:#f4f6f9;color:#1f2933;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Roboto,sans-serif;
+background:#f4f6f9;color:#1f2933;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:24px 16px 56px}
-.header{background:linear-gradient(135deg,#1e88e5,#1565c0);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:24px}
-.header h1{font-size:22px;font-weight:700;margin-bottom:6px}
-.header p{font-size:14px;opacity:.9}
-.card{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(16,42,74,.07);padding:20px;margin-bottom:16px}
-.card h2{font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.card h2 .tag{font-size:11px;background:#e3f2fd;color:#1565c0;padding:2px 8px;border-radius:10px;font-weight:600}
-.list{display:flex;flex-direction:column;gap:12px}
-.item{display:flex;align-items:center;gap:16px;padding:16px;border-radius:12px;border:1px solid #eef2f7;
-transition:all .15s;background:#fafcff}
-.item:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(30,136,229,.1);border-color:#1e88e5;background:#fff}
-.item .date{font-size:18px;font-weight:700;color:#1e88e5;min-width:100px}
-.item .date small{display:block;font-size:12px;color:#8494a6;font-weight:400;margin-top:2px}
-.item .info{flex:1}
-.item .info .top3{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
-.item .info .stock-tag{font-size:12px;padding:2px 8px;border-radius:8px;background:#e8f5e9;color:#2e7d32;font-weight:600}
-.item .meta{font-size:12px;color:#8494a6}
-.item .meta strong{color:#1e88e5}
-.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;background:#1e88e5;color:#fff;
-font-size:14px;font-weight:600;transition:background .15s}
-.btn:hover{background:#1565c0}
-.btn-alt{background:#43a047}
-.btn-alt:hover{background:#2e7d32}
-.actions{display:flex;flex-direction:column;gap:8px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
-.stat{background:#fff;border-radius:12px;padding:16px;text-align:center;box-shadow:0 1px 3px rgba(16,42,74,.07)}
-.stat b{display:block;font-size:28px;color:#1e88e5;font-weight:700}
-.stat span{font-size:12px;color:#8494a6}
-.method{background:#fff8e1;border:1px solid #ffe082;border-radius:12px;padding:16px;font-size:13px;color:#7c5b00;line-height:1.8}
-.method b{color:#f57c00}
-</style>
-</head>
-<body>
-<div class="wrap">
-<div class="header">
-<h1>📊 股票池量化打分</h1>
-<p>基于「23策略」技术面+基本面双维度评分 · 百分制 · 每三日更新</p>
-</div>
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px 56px}
+.layout{display:flex;align-items:flex-start;min-height:100vh}
+.sidebar{position:sticky;top:0;align-self:flex-start;width:232px;flex:none;height:100vh;
+background:#12325b;color:#fff;padding:22px 16px;display:flex;flex-direction:column;gap:4px;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Roboto,sans-serif}
+.sidebar .brand{font-weight:700;font-size:16px;display:flex;align-items:center;gap:8px;margin-bottom:18px;line-height:1.3}
+.sidebar .brand svg{flex:none}
+.sidebar .nav-sep{height:1px;background:rgba(255,255,255,.14);margin:4px 2px 12px}
+.nav-btn{padding:10px 14px;border-radius:10px;font-size:14px;color:#dbe6f3;min-height:40px;
+display:flex;align-items:center;transition:background .15s,color .15s}
+.nav-btn:hover{background:rgba(255,255,255,.12);color:#fff}
+.nav-btn.on{background:#1e88e5;color:#fff;font-weight:600}
+.main{flex:1;min-width:0}
+.hero{background:linear-gradient(135deg,#12325b,#1e6fa8 55%,#1e88e5);color:#fff;border-radius:0 0 20px 20px;
+padding:28px 16px 30px;margin-bottom:22px}
+.hero .inner{max-width:1120px;margin:0 auto}
+.hero h1{font-size:24px;font-weight:700;letter-spacing:.5px}
+.hero p{opacity:.86;font-size:14px;margin-top:6px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
+.stat{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px}
+.stat b{display:block;font-size:22px;line-height:1.2}
+.stat span{font-size:12px;opacity:.85}
+.sec{margin-top:26px}
+.sec-h{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sec-h h2{font-size:17px;font-weight:700}
+.sec-h .bar{width:4px;height:17px;border-radius:2px;background:#1e88e5}
+.sec-h .note{margin-left:auto;font-size:12px;color:#8494a6}
+.card{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(16,42,74,.07);padding:16px}
+.latest{border-left:4px solid #e53935}
+.latest .tag{display:inline-block;background:#ffebee;color:#c62828;font-size:12px;font-weight:600;
+padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.latest h3{font-size:20px;margin-bottom:6px}
+.latest p{color:#425466;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.portal{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.pcard{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(16,42,74,.07);padding:17px;display:block;
+border-left:4px solid #1e88e5;transition:transform .15s,box-shadow .15s}
+.pcard:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(16,42,74,.12)}
+.pcard .ph{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.pcard .ph h3{font-size:16px;font-weight:700}
+.pcard .ph .go{margin-left:auto;font-size:12.5px;font-weight:600;color:#1e88e5}
+.pcard .pd{font-size:13px;color:#52606d;min-height:40px}
+.pcard .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.pcard .pm{display:flex;gap:13px;flex-wrap:wrap;font-size:12px;color:#7b8794;
+border-top:1px dashed #e5eaf0;margin-top:10px;padding-top:9px}
+.pcard .pm b{color:#1e88e5;font-size:13px}
+.pcard.off{opacity:.6;border-left-color:#b0bec5;pointer-events:none}
+.day{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(16,42,74,.07);padding:15px;display:block;
+transition:transform .15s,box-shadow .15s;border-top:3px solid #1e88e5}
+.day:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(16,42,74,.12)}
+.day .d{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}
+.day .d b{font-size:17px}
+.day .d span{font-size:12px;color:#8494a6}
+.day .sum{font-size:13px;color:#52606d;height:60px;overflow:hidden}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 8px}
+.tag2{font-size:12px;padding:3px 9px;border-radius:6px;font-weight:600}
+.metrics{display:flex;gap:14px;font-size:12px;color:#7b8794;border-top:1px dashed #e5eaf0;padding-top:9px}
+.metrics b{color:#1e88e5;font-size:13px}
+.chart-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chart{width:100%;min-width:640px;height:auto;display:block}
+.ax{font-size:11px;fill:#8494a6}
+.bl{font-size:12.5px;fill:#3e4c59}
+.bv{font-size:12px;fill:#7b8794}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:12px;color:#52606d}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:#f7f9fc;color:#52606d;font-weight:600;text-align:left;padding:10px;border-bottom:2px solid #e5eaf0;
+white-space:nowrap}
+td{padding:10px;border-bottom:1px solid #eef2f7;vertical-align:top}
+tr:hover td{background:#fafcff}
+.code{font-family:Consolas,Menlo,monospace;color:#1565c0;font-weight:600}
+.rank{display:inline-flex;width:22px;height:22px;border-radius:6px;background:#eef2f7;color:#52606d;
+align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.rank.t{background:#e53935;color:#fff}
+.search{width:100%;padding:11px 14px;border:1px solid #dfe6ee;border-radius:10px;font-size:16px;
+background:#fff;margin-bottom:12px;outline:none}
+.search:focus{border-color:#1e88e5}
+.empty{color:#8494a6;font-size:13px;padding:18px;text-align:center}
+.onboard{text-align:center;padding:34px 20px}
+.onboard svg{margin-bottom:12px}
+.onboard h3{font-size:17px;margin-bottom:8px;color:#1f2933}
+.onboard p{font-size:13.5px;color:#52606d;max-width:520px;margin:0 auto 6px}
+.onboard .hint{font-size:12.5px;color:#8494a6;margin-top:10px}
+.foot{margin-top:30px;padding:16px;background:#fff8e1;border:1px solid #ffe082;border-radius:12px;
+font-size:12px;color:#7c5b00;line-height:1.75}
+.updated{text-align:center;color:#9aa5b1;font-size:12px;margin-top:14px}
+@media(max-width:768px){
+.layout{flex-direction:column}
+.sidebar{position:static;width:auto;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;
+padding:12px 14px;gap:8px}
+.sidebar .brand{margin-bottom:0;margin-right:auto}
+.sidebar .nav-sep{display:none}
+.nav-btn{flex:1 1 auto;justify-content:center;min-height:36px;padding:8px 12px}
+.stats{grid-template-columns:repeat(2,1fr)}
+.hero h1{font-size:20px}
+.wrap{padding:0 12px 40px}
+.grid{grid-template-columns:1fr}
+.day .sum{height:auto}
+th,td{padding:8px 7px;font-size:12.5px}
+}
 
-<div class="stats">
-<div class="stat"><b>13</b><span>已归档日期</span></div>
-<div class="stat"><b>10</b><span>最新个股数</span></div>
-<div class="stat"><b>80+20</b><span>技术/基本面权重</span></div>
-</div>
-
-<div class="card">
-<h2>📅 打分报告归档 <span class="tag">实时更新</span></h2>
-<div class="list">
-<div class="item">
-<div class="date">2026-09-02<small>周三 · 最新</small></div>
-<div class="info">
-<div class="top3">
-<span class="stock-tag">🥇 金帝股份 79.8分</span>
-<span class="stock-tag">🥈 风华高科 46.6分</span>
-<span class="stock-tag">🥉 莱特光电 44.4分</span>
-</div>
-<div class="meta">共 <strong>10</strong> 只个股进入评分池（调研基地 09-02 清单）· 东方财富主源恢复，腾讯兜底备用 · 数据截至 <strong>2026-08-31</strong> 收盘 · regime 强市降权 10/10 · 金帝股份一字涨停触发动量×0.6</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-09-02_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-09-02_打分表格.html">打分表格 →</a>
-</div>
-</div>
-
-<div class="item">
-<div class="date">2026-09-01<small>周二</small></div>
-<div class="info">
-<div class="top3">
-🥇<span class="stock-tag">松发股份 83.6分</span>
-🥈<span class="stock-tag">风语筑 80.3分</span>
-🥉<span class="stock-tag">协创数据 77.9分</span>
-</div>
-<div class="meta">共 <strong>184</strong> 只个股进入评分池 · 数据截至 <strong>2026-08-31</strong> 收盘</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-09-01_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-09-01_打分表格.html">打分表格 →</a>
-</div>
-</div>
-
-<div class="item">
-<div class="date">2026-08-30<small>周日</small></div>
-<div class="info">
-<div class="top3">
-🥇<span class="stock-tag">生益科技 78.2分</span>
-🥈<span class="stock-tag">联瑞新材 72.7分</span>
-🥉<span class="stock-tag">飞龙股份 70.5分</span>
-</div>
-<div class="meta">共 <strong>184</strong> 只个股进入评分池 · 数据截至 <strong>2026-08-28</strong> 收盘</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-08-30_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-08-30_打分表格.html">打分表格 →</a>
-</div>
-</div>
-
-<div class="item">
-<div class="date">2026-08-29<small>周六</small></div>
-<div class="info">
-<div class="top3">
-🥇<span class="stock-tag">齐鲁银行 56.7分</span>
-🥈<span class="stock-tag">可孚医疗 51.8分</span>
-🥉<span class="stock-tag">申菱环境 49.5分</span>
-</div>
-<div class="meta">共 <strong>28</strong> 只个股进入评分池 · 数据截至 <strong>2026-08-29</strong> 收盘</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-08-29_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-08-29_打分表格.html">打分表格 →</a>
-</div>
-</div>
-
-<div class="item">
-<div class="date">2026-08-28<small>周五</small></div>
-<div class="info">
-<div class="top3">
-🥇<span class="stock-tag">生益科技 80.8分</span>
-🥈<span class="stock-tag">万华化学 78.1分</span>
-🥉<span class="stock-tag">科翔股份 71.7分</span>
-</div>
-<div class="meta">共 <strong>139</strong> 只个股进入评分池 · 数据截至 <strong>2026-08-28</strong> 收盘</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-08-28_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-08-28_打分表格.html">打分表格 →</a>
-</div>
-</div>
-
-<div class="item">
-<div class="date">2026-08-27<small>周四</small></div>
-<div class="info">
-<div class="top3">
-🥇<span class="stock-tag">协创数据 76.8分</span>
-🥈<span class="stock-tag">同飞股份 74.4分</span>
-🥉<span class="stock-tag">松发股份 69.2分</span>
-</div>
-<div class="meta">共 <strong>105</strong> 只个股进入评分池 · 数据截至 <strong>2026-08-27</strong> 收盘</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-08-27_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-08-27_打分表格.html">打分表格 →</a>
-</div>
-</div>
-
-<div class="item">
-<div class="date">2026-08-26<small>周三</small></div>
-<div class="info">
-<div class="top3">
-<span class="stock-tag">🥇 生益科技 80.8分</span>
-<span class="stock-tag">🥈 万华化学 75.8分</span>
-<span class="stock-tag">🥉 科翔股份 71.7分</span>
-</div>
-<div class="meta">共 <strong>139</strong> 只个股进入评分池（同 08-26 池，08-27 抽取缺口 0 只未扩池）· 东方财富主源断开→腾讯兜底 · 数据截至 <strong>08-28</strong> 收盘 · <b>数据滞后标记 0 只</b>（上期 34 只已解）、regime 强市降权 107/139 · 生益科技因数据滞后解除跃居榜首</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-08-26_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-08-26_打分表格.html">打分表格 →</a>
-</div>
-</div>
-
-<div class="item">
-<div class="date">2026-08-25<small>周二</small></div>
-<div class="info">
-<div class="top3">
-<span class="stock-tag">🥇 协创数据 76.4分</span>
-<span class="stock-tag">🥈 优迅股份 75.4分</span>
-<span class="stock-tag">🥉 飞龙股份 72.4分</span>
-</div>
-<div class="meta">共 <strong>105</strong> 只个股进入评分池（同 08-24 池）· 东方财富主源恢复(腾讯兜底) · 数据截至 <strong>08-27</strong> 收盘 · Top3 较 08-24 显著轮动</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-08-25_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-08-25_打分表格.html">打分表格 →</a>
-</div>
-</div>
-
-<div class="item">
-<div class="date">2026-08-24<small>周一</small></div>
-<div class="info">
-<div class="top3">
-<span class="stock-tag">🥇 飞龙股份 78.9分</span>
-<span class="stock-tag">🥈 太辰光 70.8分</span>
-<span class="stock-tag">🥉 融捷股份 70.3分</span>
-</div>
-<div class="meta">共 <strong>105</strong> 只个股进入评分池（解封后 08-23∪08-24 合并）</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-08-24_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-08-24_打分表格.html">打分表格 →</a>
-</div>
-</div>
-
-<div class="item">
-<div class="date">2026-08-22<small>周六</small></div>
-<div class="info">
-<div class="top3">
-<span class="stock-tag">🥇 赤峰黄金 69.5分</span>
-<span class="stock-tag">🥈 银泰黄金 68.0分</span>
-<span class="stock-tag">🥉 太辰光 66.2分</span>
-</div>
-<div class="meta">共 <strong>79</strong> 只个股进入评分池</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-08-22_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-08-22_打分表格.html">打分表格 →</a>
-</div>
-</div>
-
-<div class="item">
-<div class="date">2026-08-21<small>周五</small></div>
-<div class="info">
-<div class="top3">
-<span class="stock-tag">🥇 旭光电子 67.4分</span>
-<span class="stock-tag">🥈 金海通 64.4分</span>
-<span class="stock-tag">🥉 双鹭药业 64.2分</span>
-</div>
-<div class="meta">共 <strong>126</strong> 只个股进入评分池</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-08-21_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-08-21_打分表格.html">打分表格 →</a>
-</div>
-</div>
-
-<div class="item">
-<div class="date">2026-08-20<small>周四</small></div>
-<div class="info">
-<div class="top3">
-<span class="stock-tag">🥇 旭光电子 67.31分</span>
-<span class="stock-tag">🥈 东田微 66.99分</span>
-<span class="stock-tag">🥉 键凯科技 63.63分</span>
-</div>
-<div class="meta">共 <strong>140</strong> 只个股进入评分池</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-08-20_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-08-20_打分表格.html">打分表格 →</a>
-</div>
-</div>
-
-<div class="item">
-<div class="date">2026-08-19<small>周三</small></div>
-<div class="info">
-<div class="top3">
-<span class="stock-tag">🥇 双环传动</span>
-<span class="stock-tag">🥈 信科移动</span>
-<span class="stock-tag">🥉 尚太科技</span>
-</div>
-<div class="meta">共 <strong>165</strong> 只个股进入评分池</div>
-</div>
-<div class="actions">
-<a class="btn" href="2026-08-19_打分报告.html">查看报告 →</a>
-<a class="btn btn-alt" href="2026-08-19_打分表格.html">打分表格 →</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="card" style="background:#fff3e0;border:1px solid #ffcc80">
-<h2>⚠️ 本期数据说明 <span class="tag" style="background:#ffe0b2;color:#e65100">2026-08-31 每日自动化</span></h2>
-<div class="method" style="background:#fff8e1;border-color:#ffe082">
-<b>数据截至 2026-08-28 收盘</b>：今日 08-31（周一）凌晨自动化重跑，T-1 锁定最新已收盘交易日 = 周五 08-28（周末无新交易日，与 08-30 同为 08-28 口径）。<br>
-<b>池不变（139 只）</b>：沿用 08-23∪08-24∪08-26 合并池；08-27 结构化抽取缺口（stock_count=0）未扩池，08-28~08-31 无新池。<br>
-<b>东方财富主源仍断开</b>（RemoteDisconnected）→ <b>纯腾讯源兜底</b>；②③ 一致预期/评级变动 --enhance 虽报「已注入」但实际 EM 预测接口返回全 2.5，<b>维持中性 2.5</b>（同 08-30）。<br>
-<b>🔑 关键修复：数据滞后标记 0/139</b>：上期（08-30）有 <b>34 只</b>被标记「停牌/数据滞后」（×0.8 + 滞后 K 线压低技术分），本期腾讯源已补全 08-28 收盘数据，<b>全部解除</b>。典型：<b>生益科技 技术分 45.0→67.9、总分 57.9→80.8</b> 跃居榜首（主板非停，此前为源端数据滞后误伤，非真实涨幅）。<br>
-<b>Δ分对比基准 = 08-27 全量刷新基线</b>（prev0827fresh，as-of 08-27）；Δ 含<b>真实 1 日轮动</b> + <b>数据滞后修复方差</b>（生益科技 +22.9 等大幅 Δ 主要为滞后修复，请结合「数据滞后」状态解读）。<br>
-<b>regime 强市</b>：权重 趋势0.15/动量0.20/量价0.15/资金0.10/突破0.20，触发降权 107/139；评级分位数校准 A+≥61.8；技术面均值 32.36/80、基本面 9.83/20、总分 42.19/100。<br>
-<b>Top3</b>：生益科技 80.8 / 万华化学 75.8 / 科翔股份 71.7（均 A+；较上期 万华/科翔/金洲管道 轮动，生益科技因滞后解除新晋榜首）。<br>
-<b>⚠️ 报告实时快照</b>：Top3 卡片现价/PE/MA 因 EM 阻断显示 0，评分本身基于腾讯 K 线有效；②⑤/f62 机构吸筹维度因未注入 override-json 按中性，tdx/westock 已 connected 可走 run_override_pipeline 补齐。
-</div>
-</div>
-
-<div class="card" style="background:#fff3e0;border:1px solid #ffcc80">
-<h2>⚠️ 往期数据说明 <span class="tag" style="background:#ffe0b2;color:#e65100">2026-08-27 15:37 重跑</span></h2>
-<div class="method" style="background:#fff8e1;border-color:#ffe082">
-<b>数据截至 2026-08-27 收盘</b>：T-1 锁定 auto 解析到最新已收盘交易日（08-27，周三收盘后重跑）。<br>
-<b>东方财富接口已恢复</b>：15:33 探测 EM 主源 OK，本期主源回归东方财富、腾讯兜底；<b>②③ 经 --enhance 自动补齐</b>（一致预期/评级变动，覆盖全 105 只）。<br>
-<b>Δ分对比基准 = 08-24 纯腾讯快照</b>（08-26 10:09 那轮）：本期 Δ 同时含<b>真实 3 日市场轮动</b>与<b>轻微源切换方差</b>（东财恢复 vs 上期纯腾讯）——Top3 由 飞龙/融捷/金钼 轮动至 协创数据/优迅股份/飞龙，属 regime 强势下的动量切换。<br>
-<b>进阶维度仍为中性</b>：⑤杠杆风控 / f62 机构吸筹因未注入 override-json 按中性 2.5 处理；<b>tdx-connector 与 westock-mcp 现已 connected</b>，如需补齐可走 run_override_pipeline 注入后重跑。
-</div>
-</div>
-
-<div class="card">
-<h2>📐 评分方法论</h2>
-<div class="method">
-<b>技术面（80分）</b>：趋势健康(0-16) + 动量质量(0-16) + 量价共振(0-16) + 机构吸筹(0-16) + 突破形态(0-16)<br>
-<b>基本面（20分）</b>：市值规模 + ROE + 营收增速 + 净利润增速<br>
-<b>Top 3 深度分析</b>：五维雷达 + 财务指标 + 技术信号 + 综合诊断
-</div>
-</div>
-</div>
-<script src="../assets/navbar.js"></script>
-</body>
-</html>
+.sitem{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(16,42,74,.07);padding:15px;
+border-top:3px solid #1e88e5;transition:transform .15s,box-shadow .15s}
+.sitem:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(16,42,74,.12)}
+.sitem.new{border-top-color:#e53935}
+.sd{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}
+.sd b{font-size:17px}
+.sd span{font-size:12px;color:#8494a6}
+.snew{display:inline-block;background:#ffebee;color:#c62828;font-size:11px;font-weight:600;
+padding:2px 8px;border-radius:999px;margin-left:6px}
+.stop3{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 8px}
+.stag{font-size:12px;padding:3px 9px;border-radius:6px;background:#eef2f7;color:#37474f;font-weight:600}
+.stag.g{background:#ffebee;color:#c62828}
+.smeta{font-size:12.5px;color:#52606d;line-height:1.6}
+.sacts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;padding-top:9px;border-top:1px dashed #e5eaf0}
+.sbtn{font-size:12.5px;font-weight:600;color:#1e88e5;padding:5px 10px;border:1px solid #d6e4f5;
+border-radius:8px;background:#f5f9ff}
+.sbtn:hover{background:#e8f2ff}
+.slider{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;margin-top:4px}
+.slide{flex:0 0 auto;width:210px;background:#fff;border:1px solid #e5eaf0;border-radius:10px;padding:10px}
+.slide .sname{font-size:14px;font-weight:700}
+.slide .sscore{font-size:12.5px;color:#1e88e5;font-weight:600}
+.slide .sdesc{font-size:12px;color:#52606d;margin-top:4px;height:36px;overflow:hidden}
+@media(max-width:768px){.slide{width:170px}}
+</style></head><body><div class="layout"><aside class="sidebar"><div class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>康庄研究院</div><div class="nav-sep"></div><a class="nav-btn" href="../index.html">康庄大厅</a><a class="nav-btn" href="../news.html">江湖传闻</a><a class="nav-btn" href="../futures.html">期货收盘</a><a class="nav-btn on" href="../scores/index.html">江湖龙虎榜</a></aside><div class="main"><div class="hero"><div class="inner"><h1>江湖龙虎榜</h1><p>基于「23策略」技术面 + 基本面双维度百分制评分 · 每三日更新 · Top3 按综合总得分排序</p><div class="stats"><div class="stat"><b>13</b><span>已归档日期</span></div><div class="stat"><b>10</b><span>最新个股数</span></div><div class="stat"><b>80+20</b><span>技术/基本面权重</span></div><div class="stat"><b>09-02</b><span>最近更新</span></div></div></div></div><div class="wrap"><div class="sec"><div class="sec-h"><span class="bar"></span><h2>📅 打分报告归档</h2><span class="note">共 13 期 · Top3 按综合总得分排序</span></div><div class="grid"><div class="sitem new"><div class="sd"><b>2026-09-02</b><span>周三</span><span class="snew">最新</span></div><div class="stop3"><span class="stag g">🥇 金帝股份 79.8分</span><span class="stag">🥈 风华高科 46.6分</span><span class="stag">🥉 莱特光电 44.4分</span></div><div class="smeta">共 10 只个股进入评分池（江湖传闻 09-02 清单）· 东方财富主源恢复，腾讯兜底备用 · 数据截至 2026-08-31 收盘 · regime 强市降权 10/10 · 金帝股份一字涨停触发动量×0.6</div><div class="sacts"><a class="sbtn" href="2026-09-02_打分报告.html">查看报告 →</a><a class="sbtn" href="2026-09-02_打分表格.html">打分表格 →</a></div></div><div class="sitem"><div class="sd"><b>2026-09-01</b><span>周二</span></div><div class="stop3"><span class="stag g">🥇 松发股份 83.6分</span><span class="stag">🥈 风语筑 80.3分</span><span class="stag">🥉 协创数据 77.9分</span></div><div class="smeta">共 184 只个股进入评分池 · 数据截至 2026-08-31 收盘</div><div class="sacts"><a class="sbtn" href="2026-09-01_打分报告.html">查看报告 →</a><a class="sbtn" href="2026-09-01_打分表格.html">打分表格 →</a></div></div><div class="sitem"><div class="sd"><b>2026-08-30</b><span>周日</span></div><div class="stop3"><span class="stag g">🥇 安克创新 68.5分</span><span class="stag">🥈 中国神华 66.7分</span><span class="stag">🥉 招商轮船 61.2分</span></div><div class="smeta">共 184 只个股进入评分池 · 数据截至 2026-08-28 收盘</div><div class="sacts"><a class="sbtn" href="2026-08-30_打分报告.html">查看报告 →</a><a class="sbtn" href="2026-08-30_打分表格.html">打分表格 →</a></div></div><div class="sitem"><div class="sd"><b>2026-08-29</b><span>周六</span></div><div class="stop3"><span class="stag g">🥇 齐鲁银行 56.7分</span><span class="stag">🥈 可孚医疗 51.8分</span><span class="stag">🥉 申菱环境 49.5分</span></div><div class="smeta">共 28 只个股进入评分池 · 数据截至 2026-08-29 收盘</div><div class="sacts"><a class="sbtn" href="2026-08-29_打分报告.html">查看报告 →</a><a class="sbtn" href="2026-08-29_打分表格.html">打分表格 →</a></div></div><div class="sitem"><div class="sd"><b>2026-08-28</b><span>周五</span></div><div class="stop3"><span class="stag g">🥇 生益科技 80.8分</span><span class="stag">🥈 万华化学 78.1分</span><span class="stag">🥉 科翔股份 71.7分</span></div><div class="smeta">共 139 只个股进入评分池 · 数据截至 2026-08-28 收盘</div><div class="sacts"><a class="sbtn" href="2026-08-28_打分报告.html">查看报告 →</a><a class="sbtn" href="2026-08-28_打分表格.html">打分表格 →</a></div></div><div class="sitem"><div class="sd"><b>2026-08-27</b><span>周四</span></div><div class="stop3"><span class="stag g">🥇 协创数据 76.8分</span><span class="stag">🥈 同飞股份 74.4分</span><span class="stag">🥉 松发股份 69.2分</span></div><div class="smeta">共 105 只个股进入评分池 · 数据截至 2026-08-27 收盘</div><div class="sacts"><a class="sbtn" href="2026-08-27_打分报告.html">查看报告 →</a><a class="sbtn" href="2026-08-27_打分表格.html">打分表格 →</a></div></div><div class="sitem"><div class="sd"><b>2026-08-26</b><span>周三</span></div><div class="stop3"><span class="stag g">🥇 生益科技 80.8分</span><span class="stag">🥈 万华化学 75.8分</span><span class="stag">🥉 科翔股份 71.7分</span></div><div class="smeta">共 139 只个股进入评分池（同 08-26 池，08-27 抽取缺口 0 只未扩池）· 东方财富主源断开→腾讯兜底 · 数据截至 08-28 收盘 · 数据滞后标记 0 只（上期 34 只已解）、regime 强市降权 107/139 · 生益科技因数据滞后解除跃居榜首</div><div class="sacts"><a class="sbtn" href="2026-08-26_打分报告.html">查看报告 →</a><a class="sbtn" href="2026-08-26_打分表格.html">打分表格 →</a></div></div><div class="sitem"><div class="sd"><b>2026-08-25</b><span>周二</span></div><div class="stop3"><span class="stag g">🥇 协创数据 76.4分</span><span class="stag">🥈 优迅股份 75.4分</span><span class="stag">🥉 飞龙股份 72.4分</span></div><div class="smeta">共 105 只个股进入评分池（同 08-24 池）· 东方财富主源恢复(腾讯兜底) · 数据截至 08-27 收盘 · Top3 较 08-24 显著轮动</div><div class="sacts"><a class="sbtn" href="2026-08-25_打分报告.html">查看报告 →</a><a class="sbtn" href="2026-08-25_打分表格.html">打分表格 →</a></div></div><div class="sitem"><div class="sd"><b>2026-08-24</b><span>周一</span></div><div class="stop3"><span class="stag g">🥇 飞龙股份 78.8分</span><span class="stag">🥈 太辰光 70.8分</span><span class="stag">🥉 融捷股份 70.3分</span></div><div class="smeta">共 105 只个股进入评分池（解封后 08-23∪08-24 合并）</div><div class="sacts"><a class="sbtn" href="2026-08-24_打分报告.html">查看报告 →</a><a class="sbtn" href="2026-08-24_打分表格.html">打分表格 →</a></div></div><div class="sitem"><div class="sd"><b>2026-08-22</b><span>周六</span></div><div class="stop3"><span class="stag g">🥇 赤峰黄金 69.5分</span><span class="stag">🥈 银泰黄金 68.0分</span><span class="stag">🥉 太辰光 66.2分</span></div><div class="smeta">共 79 只个股进入评分池</div><div class="sacts"><a class="sbtn" href="2026-08-22_打分报告.html">查看报告 →</a><a class="sbtn" href="2026-08-22_打分表格.html">打分表格 →</a></div></div><div class="sitem"><div class="sd"><b>2026-08-21</b><span>周五</span></div><div class="stop3"><span class="stag g">🥇 旭光电子 67.4分</span><span class="stag">🥈 金海通 64.4分</span><span class="stag">🥉 双鹭药业 64.2分</span></div><div class="smeta">共 126 只个股进入评分池</div><div class="sacts"><a class="sbtn" href="2026-08-21_打分报告.html">查看报告 →</a><a class="sbtn" href="2026-08-21_打分表格.html">打分表格 →</a></div></div><div class="sitem"><div class="sd"><b>2026-08-20</b><span>周四</span></div><div class="stop3"><span class="stag g">🥇 旭光电子 67.3分</span><span class="stag">🥈 东田微 67.0分</span><span class="stag">🥉 键凯科技 63.6分</span></div><div class="smeta">共 140 只个股进入评分池</div><div class="sacts"><a class="sbtn" href="2026-08-20_打分报告.html">查看报告 →</a><a class="sbtn" href="2026-08-20_打分表格.html">打分表格 →</a></div></div><div class="sitem"><div class="sd"><b>2026-08-19</b><span>周三</span></div><div class="stop3"><span class="stag g">🥇 双环传动 79.0分</span><span class="stag">🥈 信科移动 79.0分</span><span class="stag">🥉 尚太科技 79.0分</span></div><div class="smeta">共 165 只个股进入评分池</div><div class="sacts"><a class="sbtn" href="2026-08-19_打分报告.html">查看报告 →</a><a class="sbtn" href="2026-08-19_打分表格.html">打分表格 →</a></div></div></div></div><div class="foot"><b>免责声明</b><br>本站内容由 AI 基于公开数据自动汇总整理，仅用于个人研究与信息留档，不构成任何投资建议。所涉个股仅为信息提及，不代表推荐；数据可能存在提取误差，请以上市公司公告及权威数据源为准。据此操作，风险自负。</div><p class="updated">最后更新：2026-09-03 16:34</p></div></div></div></body></html>
