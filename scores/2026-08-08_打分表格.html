@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打分结果表格 - 调研基地_2026-08-08</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f5f7fa; color: #1f2933; line-height: 1.6;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;
+            background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+            color: #475569; font-size: 13px; text-decoration: none; transition: all .15s;
+        }
+        .back-link:hover { border-color: #2563eb; color: #2563eb; }
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white; padding: 24px 28px; border-radius: 12px; margin-bottom: 16px;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+        }
+        .header h1 { font-size: 22px; }
+        .header .meta { opacity: 0.9; font-size: 13px; }
+        .toolbar {
+            background: #fff; border-radius: 12px; padding: 14px 18px; margin-bottom: 16px;
+            display: flex; gap: 12px; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .toolbar input {
+            flex: 1; padding: 10px 14px; border: 1px solid #e2e8f0; border-radius: 10px;
+            font-size: 14px; outline: none;
+        }
+        .toolbar input:focus { border-color: #2563eb; }
+        .toolbar .count { font-size: 13px; color: #64748b; white-space: nowrap; }
+        .section { background: #fff; border-radius: 12px; padding: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+        .table-container { overflow: auto; max-height: 75vh; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th {
+            background: #f8fafc; color: #64748b; font-weight: 600; text-align: left;
+            padding: 12px 8px; border-bottom: 2px solid #e2e8f0; position: sticky; top: 0; z-index: 1;
+        }
+        td { padding: 10px 8px; border-bottom: 1px solid #f1f5f9; }
+        tr:hover { background: #f8fafc; }
+        .rank-cell { font-weight: 600; color: #64748b; width: 50px; }
+        .code-cell a { color: #2563eb; text-decoration: none; }
+        .code-cell a:hover { text-decoration: underline; }
+        .name-cell { font-weight: 500; white-space: nowrap; }
+        .theme-cell { color: #64748b; font-size: 12px; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .pct-cell { font-size: 12px; white-space: nowrap; }
+        .delta-cell { font-size: 12px; white-space: nowrap; }
+        .flag-badge {
+            display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 6px;
+            font-weight: 600; vertical-align: middle; margin-left: 4px;
+        }
+        .flag-limit { background: #fee2e2; color: #dc2626; }
+        .flag-halt { background: #f1f5f9; color: #64748b; }
+        .flag-new { background: #dbeafe; color: #2563eb; }
+        .dropped-note {
+            background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px;
+            padding: 12px 16px; margin-bottom: 12px; font-size: 13px; color: #92400e; line-height: 1.8;
+        }
+        .dropped-tip { display: block; font-size: 11px; color: #b45309; }
+        .score-cell { font-weight: 600; color: #1e3a5f; font-size: 15px; }
+        .grade-cell { font-weight: 600; font-size: 12px; }
+        .dim-cell { color: #64748b; font-size: 12px; }
+        .hidden { display: none; }
+        .footer { text-align: center; color: #94a3b8; font-size: 12px; padding: 20px; }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 18px; }
+            .container { padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <a class="back-link" href="index.html">← 打分汇总</a>
+            <a class="back-link" href="2026-08-08_打分报告.html">📊 返回报告</a>
+        </div>
+        <div class="header">
+            <h1>📋 打分结果表格</h1>
+            <div class="meta"><span>调研基地_2026-08-08</span> · <span>📅 数据截至 2026-08-07 收盘</span> · <span>⏱ 生成于 2026-09-04 11:40</span> · <span>共 106 只个股</span></div>
+        </div>
+        
+        <div class="toolbar">
+            <input id="filter" type="text" placeholder="搜索代码 / 名称 / 主题…" oninput="applyFilter()">
+            <span class="count" id="count">显示 106 / 106</span>
+        </div>
+        <div class="section">
+            <div class="table-container">
+                <table id="scoreTable">
+                    <thead>
+                        <tr>
+                            <th>排名</th>
+                            <th>代码</th>
+                            <th>名称</th>
+                            <th>主题</th>
+                            <th title="数据截止交易日（T-1）涨跌幅">涨跌幅</th>
+                            <th>总分</th>
+                            <th>Δ分</th>
+                            <th>评级</th>
+                            <th>趋势</th>
+                            <th>动量</th>
+                            <th>量价</th>
+                            <th>资金</th>
+                            <th>突破</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr>
+            <td class="rank-cell">1</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">003032</a></td>
+            <td class="name-cell">传智教育</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+5.02%</td>
+            <td class="score-cell">75.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A+ 优秀</td>
+            <td class="dim-cell">8.8</td>
+            <td class="dim-cell">17.6</td>
+            <td class="dim-cell">13.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">19.6</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">2</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300489</a></td>
+            <td class="name-cell">光智科技</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+18.81%</td>
+            <td class="score-cell">72.5</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A+ 优秀</td>
+            <td class="dim-cell">13.9</td>
+            <td class="dim-cell">19.6</td>
+            <td class="dim-cell">12.3</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">18.3</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">3</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002428</a></td>
+            <td class="name-cell">云南锗业 <span class="flag-badge flag-limit">涨停</span></td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+10.00%</td>
+            <td class="score-cell">71.4</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A+ 优秀</td>
+            <td class="dim-cell">13.3</td>
+            <td class="dim-cell">13.7</td>
+            <td class="dim-cell">9.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">19.6</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">4</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300759</a></td>
+            <td class="name-cell">康龙化成</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+14.34%</td>
+            <td class="score-cell">67.7</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A+ 优秀</td>
+            <td class="dim-cell">13.1</td>
+            <td class="dim-cell">16.3</td>
+            <td class="dim-cell">11.3</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">13.6</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">5</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300620</a></td>
+            <td class="name-cell">光库科技</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+4.50%</td>
+            <td class="score-cell">61.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A+ 优秀</td>
+            <td class="dim-cell">12.6</td>
+            <td class="dim-cell">16.1</td>
+            <td class="dim-cell">8.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">17.4</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">6</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300394</a></td>
+            <td class="name-cell">天孚通信</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+2.40%</td>
+            <td class="score-cell">60.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A+ 优秀</td>
+            <td class="dim-cell">11.3</td>
+            <td class="dim-cell">17.1</td>
+            <td class="dim-cell">11.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">13.1</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">7</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688313</a></td>
+            <td class="name-cell">仕佳光子</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+7.54%</td>
+            <td class="score-cell">59.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A+ 优秀</td>
+            <td class="dim-cell">10.8</td>
+            <td class="dim-cell">17.6</td>
+            <td class="dim-cell">9.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">14.3</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">8</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">603259</a></td>
+            <td class="name-cell">药明康德</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+8.52%</td>
+            <td class="score-cell">58.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A+ 优秀</td>
+            <td class="dim-cell">12.9</td>
+            <td class="dim-cell">10.1</td>
+            <td class="dim-cell">2.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">17.1</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">9</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300548</a></td>
+            <td class="name-cell">长芯博创</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+3.53%</td>
+            <td class="score-cell">58.6</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A+ 优秀</td>
+            <td class="dim-cell">10.2</td>
+            <td class="dim-cell">16.5</td>
+            <td class="dim-cell">10.7</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">12.5</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">10</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">600105</a></td>
+            <td class="name-cell">永鼎股份</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+1.62%</td>
+            <td class="score-cell">57.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A  良好</td>
+            <td class="dim-cell">10.9</td>
+            <td class="dim-cell">13.6</td>
+            <td class="dim-cell">10.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">13.3</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">11</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">603650</a></td>
+            <td class="name-cell">彤程新材</td>
+            <td class="theme-cell">半导体设备/材料</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+3.80%</td>
+            <td class="score-cell">50.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A  良好</td>
+            <td class="dim-cell">12.5</td>
+            <td class="dim-cell">11.4</td>
+            <td class="dim-cell">5.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">13.7</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">12</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002281</a></td>
+            <td class="name-cell">光迅科技 <span class="flag-badge flag-limit">涨停</span></td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+10.00%</td>
+            <td class="score-cell">49.7</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A  良好</td>
+            <td class="dim-cell">13.0</td>
+            <td class="dim-cell">7.0</td>
+            <td class="dim-cell">3.8</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">17.6</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">13</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688048</a></td>
+            <td class="name-cell">长光华芯</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+6.62%</td>
+            <td class="score-cell">48.2</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A  良好</td>
+            <td class="dim-cell">2.2</td>
+            <td class="dim-cell">15.9</td>
+            <td class="dim-cell">10.7</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">11.6</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">14</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">600487</a></td>
+            <td class="name-cell">亨通光电</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+6.00%</td>
+            <td class="score-cell">47.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A  良好</td>
+            <td class="dim-cell">12.0</td>
+            <td class="dim-cell">10.3</td>
+            <td class="dim-cell">5.4</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">10.1</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">15</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300236</a></td>
+            <td class="name-cell">上海新阳</td>
+            <td class="theme-cell">半导体设备/材料</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+1.11%</td>
+            <td class="score-cell">46.7</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A  良好</td>
+            <td class="dim-cell">12.0</td>
+            <td class="dim-cell">9.9</td>
+            <td class="dim-cell">5.4</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">11.2</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">16</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688498</a></td>
+            <td class="name-cell">源杰科技</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+1.69%</td>
+            <td class="score-cell">46.6</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#10b981">A  良好</td>
+            <td class="dim-cell">8.8</td>
+            <td class="dim-cell">10.6</td>
+            <td class="dim-cell">3.5</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">11.0</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">17</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002821</a></td>
+            <td class="name-cell">凯莱英 <span class="flag-badge flag-limit">涨停</span></td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+10.00%</td>
+            <td class="score-cell">45.7</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">13.3</td>
+            <td class="dim-cell">5.8</td>
+            <td class="dim-cell">3.3</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">10.9</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">18</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">600522</a></td>
+            <td class="name-cell">中天科技</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+4.27%</td>
+            <td class="score-cell">45.4</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">11.7</td>
+            <td class="dim-cell">7.9</td>
+            <td class="dim-cell">4.8</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">11.7</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">19</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">601869</a></td>
+            <td class="name-cell">长飞光纤</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+3.18%</td>
+            <td class="score-cell">44.4</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">7.7</td>
+            <td class="dim-cell">9.9</td>
+            <td class="dim-cell">2.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">11.3</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">20</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300308</a></td>
+            <td class="name-cell">中际旭创</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-3.68%</td>
+            <td class="score-cell">44.2</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">2.4</td>
+            <td class="dim-cell">9.1</td>
+            <td class="dim-cell">4.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">15.3</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">21</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688981</a></td>
+            <td class="name-cell">中芯国际</td>
+            <td class="theme-cell">算力/AI芯片</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+3.50%</td>
+            <td class="score-cell">40.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">6.5</td>
+            <td class="dim-cell">7.8</td>
+            <td class="dim-cell">6.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">10.3</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">22</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002335</a></td>
+            <td class="name-cell">科华数据</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.84%</td>
+            <td class="score-cell">38.5</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">5.8</td>
+            <td class="dim-cell">11.3</td>
+            <td class="dim-cell">10.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">9.9</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">23</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300502</a></td>
+            <td class="name-cell">新易盛</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.22%</td>
+            <td class="score-cell">38.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">2.3</td>
+            <td class="dim-cell">5.1</td>
+            <td class="dim-cell">6.5</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">11.7</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">24</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300274</a></td>
+            <td class="name-cell">阳光电源</td>
+            <td class="theme-cell">光伏/新能源</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+6.99%</td>
+            <td class="score-cell">36.0</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">6.0</td>
+            <td class="dim-cell">7.8</td>
+            <td class="dim-cell">4.8</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">17.2</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">25</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">600498</a></td>
+            <td class="name-cell">烽火通信</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+3.76%</td>
+            <td class="score-cell">32.9</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">10.0</td>
+            <td class="dim-cell">8.6</td>
+            <td class="dim-cell">5.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">10.9</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">26</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">603019</a></td>
+            <td class="name-cell">中科曙光</td>
+            <td class="theme-cell">算力/AI芯片</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+1.10%</td>
+            <td class="score-cell">30.6</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">2.0</td>
+            <td class="dim-cell">9.6</td>
+            <td class="dim-cell">6.4</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">9.8</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">27</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688205</a></td>
+            <td class="name-cell">德科立</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+10.86%</td>
+            <td class="score-cell">30.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">14.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">28</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">301110</a></td>
+            <td class="name-cell">青木科技</td>
+            <td class="theme-cell">消费/食饮/教育</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+5.79%</td>
+            <td class="score-cell">29.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">14.2</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">29</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">301606</a></td>
+            <td class="name-cell">绿联科技</td>
+            <td class="theme-cell">消费/食饮/教育</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+5.76%</td>
+            <td class="score-cell">28.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">12.4</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">30</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">600869</a></td>
+            <td class="name-cell">远东股份</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+2.28%</td>
+            <td class="score-cell">28.6</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">14.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">31</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">000938</a></td>
+            <td class="name-cell">紫光股份</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-6.14%</td>
+            <td class="score-cell">27.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">10.7</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">32</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688676</a></td>
+            <td class="name-cell">金盘科技</td>
+            <td class="theme-cell">电力/电网</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+3.17%</td>
+            <td class="score-cell">27.1</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">12.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">33</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002384</a></td>
+            <td class="name-cell">东山精密</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+1.04%</td>
+            <td class="score-cell">26.6</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">9.2</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">34</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688195</a></td>
+            <td class="name-cell">腾景科技</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.61%</td>
+            <td class="score-cell">26.5</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">11.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">35</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002975</a></td>
+            <td class="name-cell">博杰股份</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-5.24%</td>
+            <td class="score-cell">26.4</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">9.1</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">36</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688710</a></td>
+            <td class="name-cell">益诺思</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+1.66%</td>
+            <td class="score-cell">26.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">11.1</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">37</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002364</a></td>
+            <td class="name-cell">中恒电气</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.84%</td>
+            <td class="score-cell">26.2</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">13.5</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">38</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688808</a></td>
+            <td class="name-cell">联讯仪器</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.79%</td>
+            <td class="score-cell">26.1</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">7.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">39</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002491</a></td>
+            <td class="name-cell">通鼎互联</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.66%</td>
+            <td class="score-cell">26.1</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">9.1</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">40</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">301376</a></td>
+            <td class="name-cell">致欧科技</td>
+            <td class="theme-cell">消费/食饮/教育</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+3.16%</td>
+            <td class="score-cell">25.9</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">10.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">41</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688202</a></td>
+            <td class="name-cell">美迪西</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.16%</td>
+            <td class="score-cell">25.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">10.5</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">42</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688796</a></td>
+            <td class="name-cell">百奥赛图</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-3.79%</td>
+            <td class="score-cell">25.7</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">8.2</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">43</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688158</a></td>
+            <td class="name-cell">优刻得</td>
+            <td class="theme-cell">算力/AI芯片</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.83%</td>
+            <td class="score-cell">25.4</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">11.1</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">44</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688630</a></td>
+            <td class="name-cell">芯碁微装</td>
+            <td class="theme-cell">半导体设备/材料</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-3.63%</td>
+            <td class="score-cell">24.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">8.1</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">45</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">601888</a></td>
+            <td class="name-cell">中国中免</td>
+            <td class="theme-cell">消费/食饮/教育</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+2.08%</td>
+            <td class="score-cell">24.6</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">10.4</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">46</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">603127</a></td>
+            <td class="name-cell">昭衍新药</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-2.83%</td>
+            <td class="score-cell">24.5</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">7.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">47</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688235</a></td>
+            <td class="name-cell">百济神州</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.39%</td>
+            <td class="score-cell">24.5</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">7.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">48</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300083</a></td>
+            <td class="name-cell">创世纪</td>
+            <td class="theme-cell">AI液冷/散热</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-6.01%</td>
+            <td class="score-cell">24.4</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">10.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">49</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002440</a></td>
+            <td class="name-cell">闰土股份</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.96%</td>
+            <td class="score-cell">24.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">7.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">50</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688025</a></td>
+            <td class="name-cell">杰普特</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.76%</td>
+            <td class="score-cell">24.1</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">7.8</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">51</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002345</a></td>
+            <td class="name-cell">潮宏基</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+2.54%</td>
+            <td class="score-cell">23.7</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">8.2</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">52</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002659</a></td>
+            <td class="name-cell">凯文教育</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+3.07%</td>
+            <td class="score-cell">23.5</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">10.4</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">53</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002851</a></td>
+            <td class="name-cell">麦格米特</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-2.25%</td>
+            <td class="score-cell">23.4</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">9.5</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">54</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">301078</a></td>
+            <td class="name-cell">孩子王</td>
+            <td class="theme-cell">消费/食饮/教育</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+3.07%</td>
+            <td class="score-cell">23.4</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">9.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">55</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">301087</a></td>
+            <td class="name-cell">可孚医疗</td>
+            <td class="theme-cell">其他</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+7.30%</td>
+            <td class="score-cell">23.2</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">9.7</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">56</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">301486</a></td>
+            <td class="name-cell">致尚科技</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-2.35%</td>
+            <td class="score-cell">23.1</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">11.5</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">57</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688167</a></td>
+            <td class="name-cell">炬光科技</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+10.81%</td>
+            <td class="score-cell">23.0</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">14.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">58</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">600496</a></td>
+            <td class="name-cell">精工钢构</td>
+            <td class="theme-cell">其他</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+1.82%</td>
+            <td class="score-cell">22.9</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#3b82f6">B  中等</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">10.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">59</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688677</a></td>
+            <td class="name-cell">海泰新光</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-3.72%</td>
+            <td class="score-cell">22.7</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">9.1</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">60</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688222</a></td>
+            <td class="name-cell">成都先导</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.71%</td>
+            <td class="score-cell">22.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">7.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">61</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">605098</a></td>
+            <td class="name-cell">行动教育</td>
+            <td class="theme-cell">消费/食饮/教育</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+1.72%</td>
+            <td class="score-cell">22.2</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">6.1</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">62</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">600415</a></td>
+            <td class="name-cell">小商品城</td>
+            <td class="theme-cell">消费/食饮/教育</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+1.63%</td>
+            <td class="score-cell">22.1</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">7.3</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">63</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">301165</a></td>
+            <td class="name-cell">锐捷网络</td>
+            <td class="theme-cell">算力/AI芯片</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-5.11%</td>
+            <td class="score-cell">22.0</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">5.7</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">64</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002627</a></td>
+            <td class="name-cell">三峡旅游</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+2.38%</td>
+            <td class="score-cell">21.9</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">8.8</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">65</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688727</a></td>
+            <td class="name-cell">恒坤新材</td>
+            <td class="theme-cell">半导体设备/材料</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-1.39%</td>
+            <td class="score-cell">21.9</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">7.1</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">66</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">301080</a></td>
+            <td class="name-cell">百普赛斯</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-1.82%</td>
+            <td class="score-cell">21.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">8.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">67</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">603929</a></td>
+            <td class="name-cell">亚翔集成</td>
+            <td class="theme-cell">其他</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-1.34%</td>
+            <td class="score-cell">21.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">4.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">68</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">000739</a></td>
+            <td class="name-cell">普洛药业</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+2.14%</td>
+            <td class="score-cell">21.7</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">7.5</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">69</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">600588</a></td>
+            <td class="name-cell">用友网络</td>
+            <td class="theme-cell">AI应用/大模型</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+4.33%</td>
+            <td class="score-cell">21.6</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">12.8</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">70</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">000988</a></td>
+            <td class="name-cell">华工科技</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-1.31%</td>
+            <td class="score-cell">21.4</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">5.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">71</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688256</a></td>
+            <td class="name-cell">寒武纪</td>
+            <td class="theme-cell">算力/AI芯片</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-1.59%</td>
+            <td class="score-cell">21.4</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">3.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">72</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300363</a></td>
+            <td class="name-cell">博腾股份</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+2.18%</td>
+            <td class="score-cell">21.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">12.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">73</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">000166</a></td>
+            <td class="name-cell">申万宏源</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.88%</td>
+            <td class="score-cell">21.1</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">6.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">74</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">301312</a></td>
+            <td class="name-cell">智立方</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-1.48%</td>
+            <td class="score-cell">21.1</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">8.1</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">75</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">601211</a></td>
+            <td class="name-cell">国泰海通</td>
+            <td class="theme-cell">AI应用/大模型</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+1.19%</td>
+            <td class="score-cell">21.1</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">6.4</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">76</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300757</a></td>
+            <td class="name-cell">罗博特科</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.55%</td>
+            <td class="score-cell">20.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">6.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">77</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300866</a></td>
+            <td class="name-cell">安克创新</td>
+            <td class="theme-cell">消费/食饮/教育</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.13%</td>
+            <td class="score-cell">20.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">4.4</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">78</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">605358</a></td>
+            <td class="name-cell">立昂微</td>
+            <td class="theme-cell">光伏/新能源</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-1.45%</td>
+            <td class="score-cell">20.6</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">6.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">79</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300592</a></td>
+            <td class="name-cell">华凯易佰</td>
+            <td class="theme-cell">消费/食饮/教育</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.24%</td>
+            <td class="score-cell">20.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">3.4</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">80</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688293</a></td>
+            <td class="name-cell">奥浦迈</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.54%</td>
+            <td class="score-cell">20.2</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">4.5</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">81</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688046</a></td>
+            <td class="name-cell">药康生物</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-2.68%</td>
+            <td class="score-cell">19.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">4.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">82</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">600352</a></td>
+            <td class="name-cell">浙江龙盛</td>
+            <td class="theme-cell">其他</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.48%</td>
+            <td class="score-cell">19.4</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">6.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">83</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">605208</a></td>
+            <td class="name-cell">永茂泰</td>
+            <td class="theme-cell">人形机器人/具身智能</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.74%</td>
+            <td class="score-cell">19.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">3.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">84</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">601099</a></td>
+            <td class="name-cell">太平洋</td>
+            <td class="theme-cell">其他</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+1.12%</td>
+            <td class="score-cell">19.1</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">6.4</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">85</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688301</a></td>
+            <td class="name-cell">奕瑞科技</td>
+            <td class="theme-cell">PCB/电子布/CCL</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.75%</td>
+            <td class="score-cell">19.0</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">4.3</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">86</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002541</a></td>
+            <td class="name-cell">鸿路钢构</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+3.41%</td>
+            <td class="score-cell">18.5</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">4.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">87</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">601728</a></td>
+            <td class="name-cell">中国电信</td>
+            <td class="theme-cell">算力/AI芯片</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.63%</td>
+            <td class="score-cell">18.0</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">5.2</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">88</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">301047</a></td>
+            <td class="name-cell">义翘神州</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-1.14%</td>
+            <td class="score-cell">17.9</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">4.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">89</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">605167</a></td>
+            <td class="name-cell">利柏特</td>
+            <td class="theme-cell">其他</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-1.39%</td>
+            <td class="score-cell">17.7</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">4.8</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">90</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/9.html" target="_blank">920493</a></td>
+            <td class="name-cell">并行科技</td>
+            <td class="theme-cell">算力/AI芯片</td>
+            <td class="dim-cell">—</td>
+            <td class="score-cell">17.6</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">91</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/9.html" target="_blank">920045</a></td>
+            <td class="name-cell">蘅东光</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="dim-cell">—</td>
+            <td class="score-cell">17.6</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">92</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300798</a></td>
+            <td class="name-cell">锦鸡股份</td>
+            <td class="theme-cell">其他</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.44%</td>
+            <td class="score-cell">17.5</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">9.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">93</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/8.html" target="_blank">874387</a></td>
+            <td class="name-cell">百英生物</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="dim-cell">—</td>
+            <td class="score-cell">17.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">94</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">601886</a></td>
+            <td class="name-cell">江河集团</td>
+            <td class="theme-cell">其他</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+1.57%</td>
+            <td class="score-cell">17.1</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">2.1</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">95</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688361</a></td>
+            <td class="name-cell">中科飞测</td>
+            <td class="theme-cell">AI光模块/CPO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-4.07%</td>
+            <td class="score-cell">17.0</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">8.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">96</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">600039</a></td>
+            <td class="name-cell">四川路桥</td>
+            <td class="theme-cell">其他</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.65%</td>
+            <td class="score-cell">16.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">2.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">97</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688137</a></td>
+            <td class="name-cell">近岸蛋白</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.53%</td>
+            <td class="score-cell">15.6</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">7.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">98</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">600941</a></td>
+            <td class="name-cell">中国移动</td>
+            <td class="theme-cell">算力/AI芯片</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.12%</td>
+            <td class="score-cell">15.1</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">1.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">99</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">301367</a></td>
+            <td class="name-cell">瑞迈特</td>
+            <td class="theme-cell">其他</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.94%</td>
+            <td class="score-cell">14.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">1.9</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">100</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300656</a></td>
+            <td class="name-cell">民德电子</td>
+            <td class="theme-cell">电力/电网</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.32%</td>
+            <td class="score-cell">14.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">6.4</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">101</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002140</a></td>
+            <td class="name-cell">东华科技</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.98%</td>
+            <td class="score-cell">14.6</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">1.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">102</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/0.html" target="_blank">002091</a></td>
+            <td class="name-cell">江苏国泰</td>
+            <td class="theme-cell"></td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.52%</td>
+            <td class="score-cell">13.8</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">1.5</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">103</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300024</a></td>
+            <td class="name-cell">机器人</td>
+            <td class="theme-cell">人形机器人/具身智能</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.63%</td>
+            <td class="score-cell">13.3</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">5.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">104</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688141</a></td>
+            <td class="name-cell">杰华特</td>
+            <td class="theme-cell">半导体设备/材料</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-2.28%</td>
+            <td class="score-cell">13.2</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">4.8</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">105</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688114</a></td>
+            <td class="name-cell">华大智造</td>
+            <td class="theme-cell">创新药/CXO</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-0.42%</td>
+            <td class="score-cell">11.4</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">2.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">106</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/8.html" target="_blank">833699</a></td>
+            <td class="name-cell">联网科技</td>
+            <td class="theme-cell">PCB/电子布/CCL</td>
+            <td class="dim-cell">—</td>
+            <td class="score-cell">9.6</td>
+            <td class="delta-cell">—</td>
+            <td class="grade-cell" style="color:#ef4444">E  很差</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">nan</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">nan</td>
+        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="footer">免责声明：本表格仅供参考，不构成投资建议。数据来自东方财富，可能存在延迟。</div>
+    </div>
+    <script>
+        function applyFilter() {
+            var q = document.getElementById('filter').value.trim().toLowerCase();
+            var rows = document.querySelectorAll('#scoreTable tbody tr');
+            var shown = 0;
+            rows.forEach(function(r) {
+                var text = r.innerText.toLowerCase();
+                var match = (q === '' || text.indexOf(q) !== -1);
+                r.classList.toggle('hidden', !match);
+                if (match) shown++;
+            });
+            document.getElementById('count').innerText = '显示 ' + shown + ' / 106';
+        }
+    </script>
+    <script src="../assets/navbar.js"></script>
+</body>
+</html>
