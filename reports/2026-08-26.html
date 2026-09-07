@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%231e88e5%22%2F%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3Crect%20x%3D%227%22%20y%3D%2217%22%20width%3D%224%22%20height%3D%228%22%20rx%3D%221%22%2F%3E%3Crect%20x%3D%2214%22%20y%3D%2212%22%20width%3D%224%22%20height%3D%2213%22%20rx%3D%221%22%2F%3E%3Crect%20x%3D%2221%22%20y%3D%227%22%20width%3D%224%22%20height%3D%2218%22%20rx%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2026-08-26 新闻总结报告</title>
@@ -93,7 +92,7 @@ if(i>0)set("zsxq-prev",L[i-1]);if(i>=0&&i<L.length-1)set("zsxq-next",L[i+1]);})(
 
 <!-- Header -->
 <div class="header">
-  <h1>📊 2026-08-26 江湖传闻报告</h1>
+  <h1>📊 2026-08-26 财经新闻总结报告</h1>
   <div class="meta">分析日期：2026-08-26 | 生成时间：2026-08-27 17:21</div>
   <div class="sources">数据来源：调研基地·信息社(231条)+菜园子(9条)，共240帖</div>
 </div>
@@ -116,9 +115,9 @@ if(i>0)set("zsxq-prev",L[i-1]);if(i>=0&&i<L.length-1)set("zsxq-next",L[i+1]);})(
 <!-- 帖子全文集合（可选，模式A） -->
   <div class="section">
     <div class="section-title"><span class="icon">📄</span> 帖子全文集合（共 240 条）</div>
-    <p style="font-size:13px;margin:-6px 0 12px;"><button type="button" onclick="downloadPostsMd()" style="background:#e8eaf6;border:1px solid #c5cae9;border-radius:6px;padding:6px 12px;color:#1a237e;font-size:13px;cursor:pointer;">📎 查看全文合集（Markdown）</button><span style="color:#666;"> — 共 240 条原始帖文，点击导出 .md 文件（本地离线可用，无需联网）。</span></p>
+    <p style="font-size:13px;margin:-6px 0 12px;">📎 <a href="调研基地_2026-08-26_报告_全集.md" target="_blank" style="color:#1a237e;text-decoration:underline;">查看全文合集（Markdown）</a> — 共 240 条原始帖文，点击在新标签页打开。</p>
     <p style="font-size:12px;color:#888;margin:-6px 0 14px;">原始帖文按时间倒序排列，默认折叠；点击标题展开正文。仅模式A（抓取+分析）有此数据。</p>
-    <div class="posts-list" id="postsList">
+    <div class="posts-list">
 <details><summary><b>信息社</b> · 2026-08-26 23:19</summary><div class="post-body">ABF膜产业变化和思考——0826
 
 最近PTFE和Q布聊很多了，现在炒的东西也都提前提示过了，现在再提示一个产业变化→ABF膜。
@@ -5103,45 +5102,6 @@ new Chart(document.getElementById('chainChart'), {
     }
   }
 });
-
-
-// 帖子全文合集导出（v3.9.2 存量修复注入；纯客户端 Blob，无外部依赖）
-var POSTS_MD_NAME = "2026-08-26_帖子全集.md";
-var POSTS_MD_DATE = "2026-08-26";
-function downloadPostsMd() {
-  var list = document.getElementById('postsList');
-  if (!list) { alert('未找到帖子列表，无法导出'); return; }
-  var items = list.querySelectorAll('details');
-  var lines = ['# ' + POSTS_MD_DATE + ' 帖子全集', '',
-               '> 共 ' + items.length + ' 条 | 由报告页导出', '', '---', ''];
-  items.forEach(function (d) {
-    var s = d.querySelector('summary');
-    var b = d.querySelector('.post-body');
-    var head = s ? String(s.textContent || '').replace(/^[\s▸▾]+/, '').trim() : '';
-    var body = b ? String(b.textContent || '') : '';
-    // 纯图片 / 无文字帖在采集层 text 即为空，导出时补占位说明，避免 md 里出现空白条目
-    if (!body.trim()) { body = '_（本帖无文字内容，可能为纯图片 / 转发）_'; }
-    lines.push('### ' + head);
-    lines.push('');
-    lines.push(body);
-    lines.push('');
-    lines.push('---');
-    lines.push('');
-  });
-  try {
-    var blob = new Blob([lines.join('\n')], { type: 'text/markdown;charset=utf-8' });
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.href = url;
-    a.download = POSTS_MD_NAME;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
-  } catch (e) {
-    alert('导出失败：' + (e && e.message ? e.message : e));
-  }
-}
 </script>
 </body>
 </html>
