@@ -1,8 +1,21 @@
 {
  "title": "康庄研究院",
- "updated": "2026-09-10 15:45:18",
- "count": 41,
+ "updated": "2026-09-11 08:26:07",
+ "count": 42,
  "days": [
+  {
+   "date": "2026-09-10",
+   "weekday": "四",
+   "summary": "2026-09-10 调研基地情报高度集中于AI硬件上游：液冷/金刚石散热、光通信（CPO/NPO/OCS）、PCB-CCL-电子布-铜箔涨价链、AI算力芯片与先进封装四大主线热度均为★★★★★，多源…",
+   "theme_count": 12,
+   "stock_count": 50,
+   "top_themes": [
+    "光通信/CPO/NPO/OCS",
+    "液冷散热",
+    "PCB/CCL/电子布/铜箔涨价链"
+   ],
+   "report": "reports/2026-09-10.html"
+  },
   {
    "date": "2026-09-09",
    "weekday": "三",
