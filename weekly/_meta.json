@@ -1,5 +1,52 @@
 [
   {
+    "label": "2026-W37",
+    "start": "2026-09-07",
+    "end": "2026-09-13",
+    "trade_days": 5,
+    "stance": "偏空",
+    "confidence": "低",
+    "confidence_score": 0.35,
+    "avg_chg_pct": -0.82,
+    "headline": "创业板指领涨、上证50落后，8 指数周均 -0.82%",
+    "indices": [
+      {
+        "name": "上证指数",
+        "chg_pct": -1.07
+      },
+      {
+        "name": "深证成指",
+        "chg_pct": -0.34
+      },
+      {
+        "name": "创业板指",
+        "chg_pct": 1.08
+      },
+      {
+        "name": "沪深300",
+        "chg_pct": -0.83
+      },
+      {
+        "name": "中证500",
+        "chg_pct": -0.94
+      },
+      {
+        "name": "中证1000",
+        "chg_pct": -1.08
+      },
+      {
+        "name": "上证50",
+        "chg_pct": -1.9
+      },
+      {
+        "name": "科创50",
+        "chg_pct": -1.52
+      }
+    ],
+    "missing_count": 6,
+    "synced_at": "2026-09-13T20:07:15+08:00"
+  },
+  {
     "label": "2026-W36",
     "start": "2026-08-31",
     "end": "2026-09-06",
