@@ -4,11 +4,11 @@
     "start": "2026-09-07",
     "end": "2026-09-13",
     "trade_days": 5,
-    "stance": "偏空",
-    "confidence": "低",
-    "confidence_score": 0.35,
+    "stance": "中性",
+    "confidence": "中",
+    "confidence_score": 0.5,
     "avg_chg_pct": -0.82,
-    "headline": "创业板指领涨、上证50落后，8 指数周均 -0.82%",
+    "headline": "指数缩量调整、AI算力硬件（PCB/光模块）资金高度抱团，8指数周均 -0.82%",
     "indices": [
       {
         "name": "上证指数",
@@ -43,8 +43,8 @@
         "chg_pct": -1.52
       }
     ],
-    "missing_count": 6,
-    "synced_at": "2026-09-13T20:07:15+08:00"
+    "missing_count": 5,
+    "synced_at": "2026-09-14T14:15:23+08:00"
   },
   {
     "label": "2026-W36",
