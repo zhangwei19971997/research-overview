@@ -1,8 +1,47 @@
 {
  "title": "康庄研究院",
- "updated": "2026-09-13 20:07:56",
- "count": 42,
+ "updated": "2026-09-14 12:12:46",
+ "count": 45,
  "days": [
+  {
+   "date": "2026-09-13",
+   "weekday": "日",
+   "summary": "9/13星球核心围绕\"AI前沿模型呼吁降速\"事件展开：Dario/Altman/Musk共识本质为安全预算新出口，不影响训练侧与推理需求高增长。产业主线高度集中于AI硬件链——光模块(CPO/NPO)…",
+   "theme_count": 12,
+   "stock_count": 254,
+   "top_themes": [
+    "AI安全与前沿模型降速",
+    "光模块/光互联(CPO/NPO/OCS)",
+    "PCB/CCL/电子材料"
+   ],
+   "report": "reports/2026-09-13.html"
+  },
+  {
+   "date": "2026-09-12",
+   "weekday": "六",
+   "summary": "09-12调研基地聚焦AI产业链与军工国产化两条主线：人形机器人T链（科达利谐波独供、丝杠/peek件放量）、AI算力（博通ASIC放量、浪潮90亿定增扩超节点、摩尔线程国产GPU）与光通信（长飞保偏…",
+   "theme_count": 10,
+   "stock_count": 46,
+   "top_themes": [
+    "人形机器人/T链",
+    "AI算力/超节点",
+    "光通信/CPO/保偏光纤"
+   ],
+   "report": "reports/2026-09-12.html"
+  },
+  {
+   "date": "2026-09-11",
+   "weekday": "五",
+   "summary": "9月11日调研基地聚焦AI算力硬件链的全面景气：液冷、光模块、PCB/CCL/电子布、MLCC四大方向共振上行，村田停产转产与FCC新规分别催化被动元件与光通信。机器人T链量产拐点临近，军工军贸受地缘…",
+   "theme_count": 12,
+   "stock_count": 50,
+   "top_themes": [
+    "液冷散热",
+    "光模块/光通信",
+    "PCB/CCL/电子布"
+   ],
+   "report": "reports/2026-09-11.html"
+  },
   {
    "date": "2026-09-10",
    "weekday": "四",
