@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%231e88e5%22%2F%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3Crect%20x%3D%227%22%20y%3D%2217%22%20width%3D%224%22%20height%3D%228%22%20rx%3D%221%22%2F%3E%3Crect%20x%3D%2214%22%20y%3D%2212%22%20width%3D%224%22%20height%3D%2213%22%20rx%3D%221%22%2F%3E%3Crect%20x%3D%2221%22%20y%3D%227%22%20width%3D%224%22%20height%3D%2218%22%20rx%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2026-08-27 新闻总结报告</title>
@@ -59,13 +58,6 @@ body { font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif; background: #f0f2
 .stock-table td { padding: 8px 12px; border-bottom: 1px solid #e8eaf6; }
 .stock-table tr:hover { background: #f5f7fa; }
 .cat-badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
-.posts-list details { border: 1px solid #e8eaf6; border-radius: 8px; margin-bottom: 6px; background: #fafbff; }
-.posts-list summary { padding: 10px 14px; cursor: pointer; font-size: 13px; color: #1a237e; list-style: none; }
-.posts-list summary::-webkit-details-marker { display: none; }
-.posts-list summary::before { content: '▸ '; color: #9fa8da; font-weight: 700; }
-.posts-list details[open] summary::before { content: '▾ '; }
-.posts-list summary:hover { background: #e8eaf6; }
-.posts-list .post-body { padding: 12px 16px; font-size: 13px; color: #455a64; white-space: pre-wrap; line-height: 1.7; border-top: 1px solid #e8eaf6; word-break: break-word; }
 @media (max-width: 768px) {
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
 }
@@ -94,7 +86,7 @@ if(i>0)set("zsxq-prev",L[i-1]);if(i>=0&&i<L.length-1)set("zsxq-next",L[i+1]);})(
 <!-- Header -->
 <div class="header">
   <h1>📊 2026-08-27 江湖传闻报告</h1>
-  <div class="meta">分析日期：2026-08-27 | 生成时间：2026-08-28 15:26</div>
+  <div class="meta">分析日期：2026-08-27 | 生成时间：2026-09-15 11:27</div>
   <div class="sources">数据来源：['信息社']</div>
 </div>
 
@@ -104,111 +96,41 @@ if(i>0)set("zsxq-prev",L[i-1]);if(i>=0&&i<L.length-1)set("zsxq-next",L[i+1]);})(
   <p>8月27日信息社内容聚焦中报业绩披露与AI产业动态。核心主题：①英伟达财报超预期，数据中心营收同比增长117%，ACIE贡献约50%营收；②AI产业链景气持续，NVIDIA收购Hugging Face、智谱开源GLM-5.3-Flash；③消费/医药/化工行业中报分化，关注业绩拐点与估值修复机会。</p>
 </div>
 
-<!-- 帖子摘要（优先 summary 字段，最多 1000 字） -->
+<!-- 内容摘要（优先 summary 字段，最多 1000 字） -->
   <div class="section">
-    <div class="section-title"><span class="icon">📝</span> 帖子全文集合 · 内容摘要</div>
+    <div class="section-title"><span class="icon">📝</span> 内容摘要</div>
     <div class="summary-box" style="margin:0;background:#f8f9fa;border-left:4px solid #1a237e;">
       <p>8月27日信息社内容聚焦中报业绩披露与AI产业动态。核心主题：①英伟达财报超预期，数据中心营收同比增长117%，ACIE贡献约50%营收；②AI产业链景气持续，NVIDIA收购Hugging Face、智谱开源GLM-5.3-Flash；③消费/医药/化工行业中报分化，关注业绩拐点与估值修复机会。</p>
-      <p style="font-size:12px;color:#999;margin-top:8px;">（摘要取自 analysis.json 的 summary 字段，最多 1000 字；完整帖子见下方「帖子全文集合」）</p>
+      <p style="font-size:12px;color:#999;margin-top:8px;">（摘要取自 analysis.json 的 summary 字段，最多 1000 字；完整帖子见文末「帖子全文集合」）</p>
     </div>
   </div>
 
-<!-- 帖子全文集合（可选，模式A） -->
-  <div class="section">
-    <div class="section-title"><span class="icon">📄</span> 帖子全文集合（共 33 条）</div>
-    <p style="font-size:13px;margin:-6px 0 12px;"><button type="button" onclick="downloadPostsMd()" style="background:#e8eaf6;border:1px solid #c5cae9;border-radius:6px;padding:6px 12px;color:#1a237e;font-size:13px;cursor:pointer;">📎 查看全文合集（Markdown）</button><span style="color:#666;"> — 共 33 条原始帖文，点击导出 .md 文件（本地离线可用，无需联网）。</span></p>
-    <p style="font-size:12px;color:#888;margin:-6px 0 14px;">原始帖文按时间倒序排列，默认折叠；点击标题展开正文。仅模式A（抓取+分析）有此数据。</p>
-    <div class="posts-list" id="postsList">
-<details><summary><b>信息社</b> · 2026-08-27 23:21</summary><div class="post-body">上市公司硫磺-硫铁矿-磷石膏-硫酸产能统计</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 23:20</summary><div class="post-body">北证50etf被动资金流入弹性测算-0827</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 23:16</summary><div class="post-body">【开源化工】新凤鸣中报点评——0827
-事件：公司发布2026年中报，2026H1实现营收406.91亿元，同比+21.50%，实现归母净利润14.39亿元，同比+103.16%。其中，2026Q2公司实现归母净利润10.71亿元，同比+166.19%，环比+191.46%。产销量方面，2026H1公司长丝产销量分别为377、345万吨，分别比-4.8%、-3.3%，H1产销率为92%。26H1，公司坚决落实长丝行业反内卷与协同减产，将产品单位效益置于首位。 Q2以来，受益于行业反内卷的不断推进，公司PTA-长丝产业链景气度持续修复。看好长丝旺季需求与中长期盈利中枢上行。预计2026-2028年归母净利润分别为35、41、47亿元，当前股价对应PE分别为9.8、8.4、7.3倍。维持"买入"评级。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 23:02</summary><div class="post-body">财报落幕，关注景气主线——2026年9月A股及港股月度金股组合
-玫瑰A股观点：指数下探空间已显著收敛，总量层面尚不具备全面普涨的条件，短期市场大概率维持区间震荡，结构上关注以硬科技为代表的三条景气主线
-玫瑰港股观点：底部区域已现，但反转时机未至。配置方向上，"防御打底，成长掘金"
-玫瑰2026年9月A股金股组合：中微公司、宁德时代、安培龙、杰瑞股份、新雷能、紫金矿业、川恒股份、嘉友国际、药明康德、格力电器
-玫瑰2026年9月港股金股组合：剑桥科技、壁仞科技</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 23:01</summary><div class="post-body">【国泰海通医药】即将入通标的基石药业中报点评：PD1*VEGF*CTLA4三抗数据更新
-公司发布2026年中报，1h26公司实现营业收入2.05亿元，同比大幅增长。公司更新PD1*VEGF*CTLA4三抗CS2009 I/II期临床数据：1L PDL1&gt;50% NSCLC ORR达83%，DCR达96%。单药针对1L PDL1&gt;1% NSCLC ORR达62%、DCR 94%。ESMO大会将以快速口头报告形式分享CS2009更多更新数据。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 22:48</summary><div class="post-body">【招商计算机】AI日报2026.8.27
-NVIDIA：FY27Q2收入962.2亿美元、YOY+106%、QoQ+18%，数据中心收入890亿美元、YOY+117%；预计Q3收入中值1080亿美元。
-Salesforce：FY27Q2收入113.45亿美元、YOY+11%，Agentforce与Data 360 ARR接近39亿美元、YOY超210%。
-CrowdStrike：FY27Q2收入14.7亿美元、YOY+26%，期末ARR 58.4亿美元、YOY+25%。
-AWS与NVIDIA双方计划27-28年在AWS部署200万颗Blackwell Ultra、Rubin及Rubin Ultra GPU。
-NVIDIA已同意以129亿美元收购Hugging Face。
-Anthropic与Nscale签署约450亿美元、为期6年的算力租赁协议。
-智谱开源原生多模态GLM-5.3-Flash。
-国家统计局：全国1-7月集成电路行业利润YOY增长18.5倍。
-三星电子、SK海力士正与高通积极合作，共同推进高带宽计算（HBC）芯片商业化。
-铠侠和闪迪计划投入逾5万亿日元（314亿美元）提高在日本的产能。
-Token高频数据：DeepSeek (23.8%)/Google (21.3%)/OpenAI (18.9%)/Stealth (7.9%)/Qwen (5.0%)</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 22:48</summary><div class="post-body">【CJJSJ】鼎捷数智2026年中报点评：AI商业化加速，并购落地打开新空间
-2026年上半年：营收11.01亿元，同比+5.37%；归母净利润1.88亿元，同比+318.50%。AI相关签约总额近2亿元、智能体产品放量成为核心引擎。收购能誉科技，补齐OT及工业控制层面能力。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 22:47</summary><div class="post-body">【华安电新】麦格米特26中报业绩点评：AI电源业务进入收获期，卡位优势明显
-26H1：实现营收60.61亿元，YoY+29.68%；实现归母净利2.52亿元，YoY+45.21%。AIDC电源26H1实现18.41亿元，YoY+60.92%。NV电源推荐提供商之一，GB200/300系列已实现批量出货。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 22:46</summary><div class="post-body">【国盛电新】德业股份中报点评：户储欧洲去库尾声，储能高增延续
-26H1营收30.52亿元，同比+21.6%；归母净利润3.66亿元，同比+15.3%。储能业务同比高增延续，欧洲户储去库接近尾声。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 09:06</summary><div class="post-body">盛科通信Q2业绩速评，只抓关键
-盛科Q2单季度营收为4.22亿，同比增长~50%，环比增长~70%，创单季度营收历史新高；Q2存货5.52亿，环比增长~66%。Q2预付款2.99亿保持较高水平，购买商品经营活动现金4.29亿，环比提升90%。Q3财报将有望体现营收高增。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 09:06</summary><div class="post-body">泡泡玛特跟踪：星星人农场系列或是年内最强新品
-星星人农场是"整端强"的大单品系列，整端溢价稳定在+14~15%，为26年多款大IP高价新品整端普遍破发背景下表现最强。后续核心跟踪W4-W6整端溢价和补货后价格韧性。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 09:04</summary><div class="post-body">英伟达业绩电话会议市场初步反馈解读
-投资者反馈积极，NVIDIA对2028财年给出业绩指引，预测增长高达70%。ACIE（主权/消费互联网/公司）已占到数据中心营收约50%，将成为未来增长的主要驱动力。CoreWeave和Nebius这类新型云服务商盘后分别上涨5%、6%。黄仁勋看好OpenAI以及Anthropic，判断二者会成为"历史上最大的科技公司"。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 09:04</summary><div class="post-body">【浙商轻工|重点推荐】致欧科技：26Q2表现靓丽，策略调整助力成长提效
-26H1收入48亿元，同比+19%；归母2.5亿元，同比+29%。亚马逊VC收入18.66亿元，同比+406.3%，占主营收入38.91%。欧洲H1收入32.39亿元，同比+26.0%。预计公司26-27年利润5/6.5亿元，对应PE17.2/13.2X。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 09:04</summary><div class="post-body">【浙商轻工||重点推荐】裕同科技：26H1主业毛利率显著提升，液冷第二曲线卡位明确
-26H1收入82亿元（同比+0.23%），归母净利5.75亿元（+1.1%）。海外收入32.52亿元（+9%），毛利率32.1%（+2.7pct）。华研期内并表，H2有望进入液冷业绩贡献阶段。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 09:03</summary><div class="post-body">【广发建筑 耿鹏智团队】北方国际 26H1业绩说明会摘要
-蒙古焦煤一体化：产业链降本带动毛利率提升。孟加拉电站：26M6已实现双机组发电，线性外推下全年满发投资收益约3.5亿元。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 09:03</summary><div class="post-body">理想汽车：26Q2业绩符合预期
-26Q2实现营收256.7亿，同比-15.1%，环比+11.7%；净亏损17.1亿元，同比由盈转亏。L9&amp;L8改款上市带动ASP提升。26Q3指引：交付量9.5w-10w量，营收266-280亿元。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 09:02</summary><div class="post-body">【兴证汽车】金龙汽车中报点评：2026Q2业绩符合预期，毛利率同环比提升
-2026H1：营收110.8亿元，同比+7.3%；归母净利润2.8亿元，同比+137.6%。出口销量同比+25%，国内销量同比-26.5%。预计2026/2027年利润分别为7.5/12亿元。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 09:02</summary><div class="post-body">【华泰汽车】中国重汽A：Q2净利润5.2e符合预期
-上半年销量10.61万辆（同比+31%），出口占比过半。H1营收384e（同比+47%），归母净利润9.7e（同比+46%）。分红比例高达65%。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 09:02</summary><div class="post-body">华夏航空2026半年报点评
-26H1：收入37.3亿元，同比+3.3%，归母净利0.44亿元，同比-82.6%。受中东地缘冲突影响，航油价格高位运行。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 09:01</summary><div class="post-body">格力电器2026年上半年业绩速递
-收入896.73亿元，YoY-8%；归母净利润132.78亿元，YoY-8%。消费电器收入740.74亿元，占82.86%；毛利率31.77%。海外收入127.44亿元，YoY-21.98%。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 08:52</summary><div class="post-body">【天风医药】誉衡药业：2026H1利润端延续改善
-2026H1公司实现营业收入10.07亿元，同比-8.41%；归母净利润1.59亿元，同比+18.27%。费用管控成效显著，期间费用率大幅下降。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 08:52</summary><div class="post-body">伊利股份26H1业绩点评
-26H1营收643.31亿元（yoy+4.13%）、归母净利57.59亿元（yoy-20.02%）。核心经营利润总额约94.53亿元，同比增速约+14.2%；核心归母净利润约82.00亿元，同比增速约+13.9%。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 08:51</summary><div class="post-body">首华燃气大涨！东吴环保还在推什么
-行业聚焦优势能源：垃圾发电可持续增长&amp;分红提升三倍空间。个股聚焦：紫金龙净、首华燃气、朗坤科技。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 08:51</summary><div class="post-body">卫宁健康：Q2营收同比+21%，AI医疗进入商业化加速阶段
-2026H1营收同比+18.50%，Q2单季度营收同比+20.80%。互联网医疗健康收入0.99亿元，同比+58.32%。WiNEX系列产品商业化加速。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 08:50</summary><div class="post-body">爱科赛博26年半年报业绩点评
-公司26H1实现营收4.15亿元，同比-7.20%；综合毛利率39.75%，同比+10.09pct。Q2毛利率41.97%，同比+11.72pct。AIDC电源测试MW级平台打开成长空间。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 08:50</summary><div class="post-body">【个股观点】剂泰科技：营收指数增长显示业务弹性
-2026H1，公司实现营业收入1.54亿元，同比+13399%；毛利率约99%。经调整净亏损0.51亿元，同比收窄56.4%。NanoForge升级为Biological AI平台。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 08:50</summary><div class="post-body">海底捞26中期业绩会总结
-26H1实现营收223.37亿元/+7.9%，核心经营利润25.13亿元/+4.4%，净利润17.64亿元/+0.5%。自营餐厅翻台率3.9次/天。外卖收入20.51亿元/+121.2%，收入占比升至9.2%。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 08:49</summary><div class="post-body">安踏体育：超预期中报业绩
-集团26H1收入435.1亿，+12.9%；归母利润94.9亿，+34.9%。剔除亚玛芬配股一次性收益15.5亿，归母利润79.4亿，+12.9%。FILA营业利润率28.7%，+1.0pp。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 08:47</summary><div class="post-body">【石四药集团-2026H1简评】：输液H1/Q2同比环比双改善
-公司2026H1营业收入23.61亿港元（同比+9.9%），归母净利润3.20亿港元（同比+13.0%）。输液板块销售量8.68亿瓶（袋）（同比+21.4%）。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 08:46</summary><div class="post-body">【国金轻工&amp;新消费】中烟香港-国金9月金股核心投资逻辑
-中烟香港长期有望成长为类似于美国菲莫国际的实体化运营平台。当前为177亿港币市值，对应2027年15XPE底部位置。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 08:45</summary><div class="post-body">【康希通信】进入最佳击球点
-并购补全射频全领域产品+切入未来商业航天空间最大赛道。知融科技技术上更为领先，同时在卫星通信载荷领域有巨大进展。</div></details>
-<details><summary><b>信息社</b> · 2026-08-27 08:45</summary><div class="post-body">关注高成长+盈利中枢有望呈现边际改善的消费硬件子板块
-估值已回落至击球区：康耐特光学、影石创新、创想三维、石头科技、绿联科技、安克创新。需求仍然景气：3D打印、智能影像、清洁机器人、智能眼镜。</div></details>
-<details><summary><b>菜园子</b> · 2026-08-27 08:24</summary><div class="post-body">机构交流会音频
-AI金属回收再生、AIGC的本质、6G迎来政策红利等。</div></details>
+<!-- 市场情绪与宏观 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🌐</span> 市场情绪与宏观</div>
+  <div class="grid-3">
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>📈 market</h3>
+      <p>指数下探空间显著收敛，短期区间震荡，结构关注硬科技三条景气主线 | 影响：中性偏多 | 关注：中微公司、宁德时代</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>🌍 overseas</h3>
+      <p>英伟达财报超预期，ACIE成增长新引擎，新型云服务商崛起对超大规模云形成竞争 | 影响：利好AI板块 | 关注：英伟达产业链</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>🛢 commodities</h3>
+      <p>航油价格高位运行（中东地缘冲突），焦煤价格上涨至1700元/吨以上 | 影响：成本压力 | 关注：航空、能源</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>🏛 policy</h3>
+      <p>长丝行业反内卷持续推进，以旧换新政策在各省市落地 | 影响：结构性利好 | 关注：化纤、汽车</p>
+    </div>
+    <div class="card" style="border-color:#78909c;background:#eceff1;">
+      <h3>💧 liquidity</h3>
+      <p>北证50ETF被动资金流入弹性测算，机构关注港股底部区域配置 | 影响：中性 | 关注：北交所、港股</p>
     </div>
   </div>
-
-
-<!-- 技术面评分 TOP（可选，依赖步骤6B 产出的技术面打分 JSON） -->
-
-
-<!-- 发帖时间分布（可选） -->
-  <div class="section">
-    <div class="section-title"><span class="icon">🕐</span> 发帖时间分布</div>
-    <div class="chart-container" style="height:240px;"><canvas id="postChart"></canvas></div>
-    <div style="font-size:12px;color:#999;margin-top:8px;">主力来源：信息社(31)、菜园子(2)</div>
-  </div>
+</div>
 
 <!-- 主题热度图 -->
 <div class="section">
@@ -294,14 +216,6 @@ AI金属回收再生、AIGC的本质、6G迎来政策红利等。</div></details
   </div>
 </div>
 
-<!-- 市场情绪 -->
-<div class="section">
-  <div class="section-title"><span class="icon">🌐</span> 市场情绪与宏观</div>
-  <div class="grid-3">
-
-  </div>
-</div>
-
 <!-- 重点关注个股 -->
 <div class="section">
   <div class="section-title"><span class="icon">⭐</span> 重点关注个股速览</div>
@@ -379,6 +293,14 @@ AI金属回收再生、AIGC的本质、6G迎来政策红利等。</div></details
   </table>
 </div>
 
+<!-- 帖子全文集合（可选，模式A；只显示查看全文合集按钮文字版） -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📄</span> 帖子全文集合（共 33 条）</div>
+    <p style="font-size:13px;margin:-6px 0 12px;"><button type="button" onclick="downloadPostsMd()" style="background:#e8eaf6;border:1px solid #c5cae9;border-radius:6px;padding:6px 12px;color:#1a237e;font-size:13px;cursor:pointer;">📎 查看全文合集（Markdown）</button> <span style="color:#666;">— 共 33 条原始帖文，点击导出 .md 文件（本地离线可用，无需联网）。</span></p>
+    <p style="font-size:12px;color:#888;margin:-6px 0 14px;">原始帖文按时间倒序排列。仅模式A（抓取+分析）有此数据；点击上方按钮导出 Markdown 全文合集。</p>
+  </div>
+
+
 <div class="disclaimer">
   ⚠️ 本报告由AI基于公开新闻信息自动整理，仅供研究参考，不构成任何投资建议。投资有风险，入市需谨慎。<br>
   数据来源：['信息社'] | 生成时间：2026-08-27
@@ -387,17 +309,43 @@ AI金属回收再生、AIGC的本质、6G迎来政策红利等。</div></details
 </div>
 
 <script>
-// 发帖时间分布（可选）
-const postLabels = ["08", "09", "22", "23"];
-const postValues = [8, 12, 6, 7];
-new Chart(document.getElementById('postChart'), {
-  type: 'bar',
-  data: { labels: postLabels, datasets: [{ data: postValues, backgroundColor: '#7e57c2', borderRadius: 6, barThickness: 18 }] },
-  options: { responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: false } },
-    scales: { x: { ticks: { font: { size: 11 } } }, y: { beginAtZero: true, ticks: { font: { size: 10 } } } }
+// 帖子全文合集导出（模式A）
+
+// 帖子全文合集导出（纯客户端 Blob，无外部依赖；本地双击 / 站点部署均可用）
+const POSTS_MD_NAME = "2026-08-27_帖子全集.md";
+const POSTS_MD_DATE = "2026-08-27";
+const RAW_POSTS = [{"author": "信息社", "date": "2026-08-27 23:21", "text": "上市公司硫磺-硫铁矿-磷石膏-硫酸产能统计"}, {"author": "信息社", "date": "2026-08-27 23:20", "text": "北证50etf被动资金流入弹性测算-0827"}, {"author": "信息社", "date": "2026-08-27 23:16", "text": "【开源化工】新凤鸣中报点评——0827\n事件：公司发布2026年中报，2026H1实现营收406.91亿元，同比+21.50%，实现归母净利润14.39亿元，同比+103.16%。其中，2026Q2公司实现归母净利润10.71亿元，同比+166.19%，环比+191.46%。产销量方面，2026H1公司长丝产销量分别为377、345万吨，分别比-4.8%、-3.3%，H1产销率为92%。26H1，公司坚决落实长丝行业反内卷与协同减产，将产品单位效益置于首位。 Q2以来，受益于行业反内卷的不断推进，公司PTA-长丝产业链景气度持续修复。看好长丝旺季需求与中长期盈利中枢上行。预计2026-2028年归母净利润分别为35、41、47亿元，当前股价对应PE分别为9.8、8.4、7.3倍。维持\"买入\"评级。"}, {"author": "信息社", "date": "2026-08-27 23:02", "text": "财报落幕，关注景气主线——2026年9月A股及港股月度金股组合\n玫瑰A股观点：指数下探空间已显著收敛，总量层面尚不具备全面普涨的条件，短期市场大概率维持区间震荡，结构上关注以硬科技为代表的三条景气主线\n玫瑰港股观点：底部区域已现，但反转时机未至。配置方向上，\"防御打底，成长掘金\"\n玫瑰2026年9月A股金股组合：中微公司、宁德时代、安培龙、杰瑞股份、新雷能、紫金矿业、川恒股份、嘉友国际、药明康德、格力电器\n玫瑰2026年9月港股金股组合：剑桥科技、壁仞科技"}, {"author": "信息社", "date": "2026-08-27 23:01", "text": "【国泰海通医药】即将入通标的基石药业中报点评：PD1*VEGF*CTLA4三抗数据更新\n公司发布2026年中报，1h26公司实现营业收入2.05亿元，同比大幅增长。公司更新PD1*VEGF*CTLA4三抗CS2009 I/II期临床数据：1L PDL1>50% NSCLC ORR达83%，DCR达96%。单药针对1L PDL1>1% NSCLC ORR达62%、DCR 94%。ESMO大会将以快速口头报告形式分享CS2009更多更新数据。"}, {"author": "信息社", "date": "2026-08-27 22:48", "text": "【招商计算机】AI日报2026.8.27\nNVIDIA：FY27Q2收入962.2亿美元、YOY+106%、QoQ+18%，数据中心收入890亿美元、YOY+117%；预计Q3收入中值1080亿美元。\nSalesforce：FY27Q2收入113.45亿美元、YOY+11%，Agentforce与Data 360 ARR接近39亿美元、YOY超210%。\nCrowdStrike：FY27Q2收入14.7亿美元、YOY+26%，期末ARR 58.4亿美元、YOY+25%。\nAWS与NVIDIA双方计划27-28年在AWS部署200万颗Blackwell Ultra、Rubin及Rubin Ultra GPU。\nNVIDIA已同意以129亿美元收购Hugging Face。\nAnthropic与Nscale签署约450亿美元、为期6年的算力租赁协议。\n智谱开源原生多模态GLM-5.3-Flash。\n国家统计局：全国1-7月集成电路行业利润YOY增长18.5倍。\n三星电子、SK海力士正与高通积极合作，共同推进高带宽计算（HBC）芯片商业化。\n铠侠和闪迪计划投入逾5万亿日元（314亿美元）提高在日本的产能。\nToken高频数据：DeepSeek (23.8%)/Google (21.3%)/OpenAI (18.9%)/Stealth (7.9%)/Qwen (5.0%)"}, {"author": "信息社", "date": "2026-08-27 22:48", "text": "【CJJSJ】鼎捷数智2026年中报点评：AI商业化加速，并购落地打开新空间\n2026年上半年：营收11.01亿元，同比+5.37%；归母净利润1.88亿元，同比+318.50%。AI相关签约总额近2亿元、智能体产品放量成为核心引擎。收购能誉科技，补齐OT及工业控制层面能力。"}, {"author": "信息社", "date": "2026-08-27 22:47", "text": "【华安电新】麦格米特26中报业绩点评：AI电源业务进入收获期，卡位优势明显\n26H1：实现营收60.61亿元，YoY+29.68%；实现归母净利2.52亿元，YoY+45.21%。AIDC电源26H1实现18.41亿元，YoY+60.92%。NV电源推荐提供商之一，GB200/300系列已实现批量出货。"}, {"author": "信息社", "date": "2026-08-27 22:46", "text": "【国盛电新】德业股份中报点评：户储欧洲去库尾声，储能高增延续\n26H1营收30.52亿元，同比+21.6%；归母净利润3.66亿元，同比+15.3%。储能业务同比高增延续，欧洲户储去库接近尾声。"}, {"author": "信息社", "date": "2026-08-27 09:06", "text": "盛科通信Q2业绩速评，只抓关键\n盛科Q2单季度营收为4.22亿，同比增长~50%，环比增长~70%，创单季度营收历史新高；Q2存货5.52亿，环比增长~66%。Q2预付款2.99亿保持较高水平，购买商品经营活动现金4.29亿，环比提升90%。Q3财报将有望体现营收高增。"}, {"author": "信息社", "date": "2026-08-27 09:06", "text": "泡泡玛特跟踪：星星人农场系列或是年内最强新品\n星星人农场是\"整端强\"的大单品系列，整端溢价稳定在+14~15%，为26年多款大IP高价新品整端普遍破发背景下表现最强。后续核心跟踪W4-W6整端溢价和补货后价格韧性。"}, {"author": "信息社", "date": "2026-08-27 09:04", "text": "英伟达业绩电话会议市场初步反馈解读\n投资者反馈积极，NVIDIA对2028财年给出业绩指引，预测增长高达70%。ACIE（主权/消费互联网/公司）已占到数据中心营收约50%，将成为未来增长的主要驱动力。CoreWeave和Nebius这类新型云服务商盘后分别上涨5%、6%。黄仁勋看好OpenAI以及Anthropic，判断二者会成为\"历史上最大的科技公司\"。"}, {"author": "信息社", "date": "2026-08-27 09:04", "text": "【浙商轻工|重点推荐】致欧科技：26Q2表现靓丽，策略调整助力成长提效\n26H1收入48亿元，同比+19%；归母2.5亿元，同比+29%。亚马逊VC收入18.66亿元，同比+406.3%，占主营收入38.91%。欧洲H1收入32.39亿元，同比+26.0%。预计公司26-27年利润5/6.5亿元，对应PE17.2/13.2X。"}, {"author": "信息社", "date": "2026-08-27 09:04", "text": "【浙商轻工||重点推荐】裕同科技：26H1主业毛利率显著提升，液冷第二曲线卡位明确\n26H1收入82亿元（同比+0.23%），归母净利5.75亿元（+1.1%）。海外收入32.52亿元（+9%），毛利率32.1%（+2.7pct）。华研期内并表，H2有望进入液冷业绩贡献阶段。"}, {"author": "信息社", "date": "2026-08-27 09:03", "text": "【广发建筑 耿鹏智团队】北方国际 26H1业绩说明会摘要\n蒙古焦煤一体化：产业链降本带动毛利率提升。孟加拉电站：26M6已实现双机组发电，线性外推下全年满发投资收益约3.5亿元。"}, {"author": "信息社", "date": "2026-08-27 09:03", "text": "理想汽车：26Q2业绩符合预期\n26Q2实现营收256.7亿，同比-15.1%，环比+11.7%；净亏损17.1亿元，同比由盈转亏。L9&L8改款上市带动ASP提升。26Q3指引：交付量9.5w-10w量，营收266-280亿元。"}, {"author": "信息社", "date": "2026-08-27 09:02", "text": "【兴证汽车】金龙汽车中报点评：2026Q2业绩符合预期，毛利率同环比提升\n2026H1：营收110.8亿元，同比+7.3%；归母净利润2.8亿元，同比+137.6%。出口销量同比+25%，国内销量同比-26.5%。预计2026/2027年利润分别为7.5/12亿元。"}, {"author": "信息社", "date": "2026-08-27 09:02", "text": "【华泰汽车】中国重汽A：Q2净利润5.2e符合预期\n上半年销量10.61万辆（同比+31%），出口占比过半。H1营收384e（同比+47%），归母净利润9.7e（同比+46%）。分红比例高达65%。"}, {"author": "信息社", "date": "2026-08-27 09:02", "text": "华夏航空2026半年报点评\n26H1：收入37.3亿元，同比+3.3%，归母净利0.44亿元，同比-82.6%。受中东地缘冲突影响，航油价格高位运行。"}, {"author": "信息社", "date": "2026-08-27 09:01", "text": "格力电器2026年上半年业绩速递\n收入896.73亿元，YoY-8%；归母净利润132.78亿元，YoY-8%。消费电器收入740.74亿元，占82.86%；毛利率31.77%。海外收入127.44亿元，YoY-21.98%。"}, {"author": "信息社", "date": "2026-08-27 08:52", "text": "【天风医药】誉衡药业：2026H1利润端延续改善\n2026H1公司实现营业收入10.07亿元，同比-8.41%；归母净利润1.59亿元，同比+18.27%。费用管控成效显著，期间费用率大幅下降。"}, {"author": "信息社", "date": "2026-08-27 08:52", "text": "伊利股份26H1业绩点评\n26H1营收643.31亿元（yoy+4.13%）、归母净利57.59亿元（yoy-20.02%）。核心经营利润总额约94.53亿元，同比增速约+14.2%；核心归母净利润约82.00亿元，同比增速约+13.9%。"}, {"author": "信息社", "date": "2026-08-27 08:51", "text": "首华燃气大涨！东吴环保还在推什么\n行业聚焦优势能源：垃圾发电可持续增长&分红提升三倍空间。个股聚焦：紫金龙净、首华燃气、朗坤科技。"}, {"author": "信息社", "date": "2026-08-27 08:51", "text": "卫宁健康：Q2营收同比+21%，AI医疗进入商业化加速阶段\n2026H1营收同比+18.50%，Q2单季度营收同比+20.80%。互联网医疗健康收入0.99亿元，同比+58.32%。WiNEX系列产品商业化加速。"}, {"author": "信息社", "date": "2026-08-27 08:50", "text": "爱科赛博26年半年报业绩点评\n公司26H1实现营收4.15亿元，同比-7.20%；综合毛利率39.75%，同比+10.09pct。Q2毛利率41.97%，同比+11.72pct。AIDC电源测试MW级平台打开成长空间。"}, {"author": "信息社", "date": "2026-08-27 08:50", "text": "【个股观点】剂泰科技：营收指数增长显示业务弹性\n2026H1，公司实现营业收入1.54亿元，同比+13399%；毛利率约99%。经调整净亏损0.51亿元，同比收窄56.4%。NanoForge升级为Biological AI平台。"}, {"author": "信息社", "date": "2026-08-27 08:50", "text": "海底捞26中期业绩会总结\n26H1实现营收223.37亿元/+7.9%，核心经营利润25.13亿元/+4.4%，净利润17.64亿元/+0.5%。自营餐厅翻台率3.9次/天。外卖收入20.51亿元/+121.2%，收入占比升至9.2%。"}, {"author": "信息社", "date": "2026-08-27 08:49", "text": "安踏体育：超预期中报业绩\n集团26H1收入435.1亿，+12.9%；归母利润94.9亿，+34.9%。剔除亚玛芬配股一次性收益15.5亿，归母利润79.4亿，+12.9%。FILA营业利润率28.7%，+1.0pp。"}, {"author": "信息社", "date": "2026-08-27 08:47", "text": "【石四药集团-2026H1简评】：输液H1/Q2同比环比双改善\n公司2026H1营业收入23.61亿港元（同比+9.9%），归母净利润3.20亿港元（同比+13.0%）。输液板块销售量8.68亿瓶（袋）（同比+21.4%）。"}, {"author": "信息社", "date": "2026-08-27 08:46", "text": "【国金轻工&新消费】中烟香港-国金9月金股核心投资逻辑\n中烟香港长期有望成长为类似于美国菲莫国际的实体化运营平台。当前为177亿港币市值，对应2027年15XPE底部位置。"}, {"author": "信息社", "date": "2026-08-27 08:45", "text": "【康希通信】进入最佳击球点\n并购补全射频全领域产品+切入未来商业航天空间最大赛道。知融科技技术上更为领先，同时在卫星通信载荷领域有巨大进展。"}, {"author": "信息社", "date": "2026-08-27 08:45", "text": "关注高成长+盈利中枢有望呈现边际改善的消费硬件子板块\n估值已回落至击球区：康耐特光学、影石创新、创想三维、石头科技、绿联科技、安克创新。需求仍然景气：3D打印、智能影像、清洁机器人、智能眼镜。"}, {"author": "菜园子", "date": "2026-08-27 08:24", "text": "机构交流会音频\nAI金属回收再生、AIGC的本质、6G迎来政策红利等。"}];
+function downloadPostsMd() {
+  var items = RAW_POSTS || [];
+  if (!items.length) { alert('无原始帖文数据，无法导出'); return; }
+  var lines = ['# ' + POSTS_MD_DATE + ' 帖子全集', '',
+               '> 共 ' + items.length + ' 条 | 由报告页导出', '', '---', ''];
+  items.forEach(function (p) {
+    var head = String((p.date || '') + ' · ' + (p.author || '')).trim();
+    var body = String(p.text || '').trim();
+    // 纯图片 / 无文字帖在采集层 text 即为空，导出时补占位说明，避免 md 里出现空白条目
+    if (!body) { body = '_（本帖无文字内容，可能为纯图片 / 转发）_'; }
+    lines.push('### ' + head);
+    lines.push('');
+    lines.push(body);
+    lines.push('');
+    lines.push('---');
+    lines.push('');
+  });
+  try {
+    var blob = new Blob([lines.join('\n')], { type: 'text/markdown;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = POSTS_MD_NAME;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  } catch (e) {
+    alert('导出失败：' + (e && e.message ? e.message : e));
   }
-});
+}
 
 
 // 主题热度数据
@@ -479,45 +427,6 @@ new Chart(document.getElementById('chainChart'), {
     }
   }
 });
-
-
-// 帖子全文合集导出（v3.9.2 存量修复注入；纯客户端 Blob，无外部依赖）
-var POSTS_MD_NAME = "2026-08-27_帖子全集.md";
-var POSTS_MD_DATE = "2026-08-27";
-function downloadPostsMd() {
-  var list = document.getElementById('postsList');
-  if (!list) { alert('未找到帖子列表，无法导出'); return; }
-  var items = list.querySelectorAll('details');
-  var lines = ['# ' + POSTS_MD_DATE + ' 帖子全集', '',
-               '> 共 ' + items.length + ' 条 | 由报告页导出', '', '---', ''];
-  items.forEach(function (d) {
-    var s = d.querySelector('summary');
-    var b = d.querySelector('.post-body');
-    var head = s ? String(s.textContent || '').replace(/^[\s▸▾]+/, '').trim() : '';
-    var body = b ? String(b.textContent || '') : '';
-    // 纯图片 / 无文字帖在采集层 text 即为空，导出时补占位说明，避免 md 里出现空白条目
-    if (!body.trim()) { body = '_（本帖无文字内容，可能为纯图片 / 转发）_'; }
-    lines.push('### ' + head);
-    lines.push('');
-    lines.push(body);
-    lines.push('');
-    lines.push('---');
-    lines.push('');
-  });
-  try {
-    var blob = new Blob([lines.join('\n')], { type: 'text/markdown;charset=utf-8' });
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.href = url;
-    a.download = POSTS_MD_NAME;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
-  } catch (e) {
-    alert('导出失败：' + (e && e.message ? e.message : e));
-  }
-}
 </script>
 </body>
 </html>
