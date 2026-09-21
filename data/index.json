@@ -1,8 +1,21 @@
 {
  "title": "康庄研究院",
- "updated": "2026-09-21 19:47:46",
- "count": 52,
+ "updated": "2026-09-22 02:47:12",
+ "count": 53,
  "days": [
+  {
+   "date": "2026-09-21",
+   "weekday": "一",
+   "summary": "2026-09-21 调研基地（信息社）覆盖197条产业动态，主线高度集中于AI算力链条：高阶PCB/CCL涨价、光模块（NPO/CPO）放量、长鑫G5存储国产替代、半导体设备零部件国产化；人形机器人…",
+   "theme_count": 12,
+   "stock_count": 191,
+   "top_themes": [
+    "AI算力·PCB/CCL涨价",
+    "光模块·NPO/CPO",
+    "半导体·存储（长鑫G5）"
+   ],
+   "report": "reports/2026-09-21.html"
+  },
   {
    "date": "2026-09-20",
    "weekday": "日",
