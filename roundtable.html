@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%231e88e5%22%2F%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3Crect%20x%3D%227%22%20y%3D%2217%22%20width%3D%224%22%20height%3D%228%22%20rx%3D%221%22%2F%3E%3Crect%20x%3D%2214%22%20y%3D%2212%22%20width%3D%224%22%20height%3D%2213%22%20rx%3D%221%22%2F%3E%3Crect%20x%3D%2221%22%20y%3D%227%22%20width%3D%224%22%20height%3D%2218%22%20rx%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>康庄研究院 · 组合圆桌</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Roboto,sans-serif;
+background:#f4f6f9;color:#1f2933;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px 56px}
+.layout{display:flex;align-items:flex-start;min-height:100vh}
+.sidebar{position:sticky;top:0;align-self:flex-start;width:232px;flex:none;height:100vh;
+background:#12325b;color:#fff;padding:22px 16px;display:flex;flex-direction:column;gap:4px;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Roboto,sans-serif}
+.sidebar .brand{font-weight:700;font-size:16px;display:flex;align-items:center;gap:8px;margin-bottom:18px;line-height:1.3}
+.sidebar .brand svg{flex:none}
+.sidebar .nav-sep{height:1px;background:rgba(255,255,255,.14);margin:4px 2px 12px}
+.nav-btn{padding:10px 14px;border-radius:10px;font-size:14px;color:#dbe6f3;min-height:40px;
+display:flex;align-items:center;transition:background .15s,color .15s}
+.nav-btn:hover{background:rgba(255,255,255,.12);color:#fff}
+.nav-btn.on{background:#1e88e5;color:#fff;font-weight:600}
+.main{flex:1;min-width:0}
+.hero{background:linear-gradient(135deg,#12325b,#1e6fa8 55%,#1e88e5);color:#fff;border-radius:0 0 20px 20px;
+padding:28px 16px 30px;margin-bottom:22px}
+.hero .inner{max-width:1120px;margin:0 auto}
+.hero h1{font-size:24px;font-weight:700;letter-spacing:.5px}
+.hero p{opacity:.86;font-size:14px;margin-top:6px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
+.stat{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px}
+.stat b{display:block;font-size:22px;line-height:1.2}
+.stat span{font-size:12px;opacity:.85}
+.sec{margin-top:26px}
+.sec-h{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sec-h h2{font-size:17px;font-weight:700}
+.sec-h .bar{width:4px;height:17px;border-radius:2px;background:#1e88e5}
+.sec-h .note{margin-left:auto;font-size:12px;color:#8494a6}
+.card{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(16,42,74,.07);padding:16px}
+.latest{border-left:4px solid #e53935}
+.latest .tag{display:inline-block;background:#ffebee;color:#c62828;font-size:12px;font-weight:600;
+padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.latest h3{font-size:20px;margin-bottom:6px}
+.latest p{color:#425466;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.portal{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.pcard{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(16,42,74,.07);padding:17px;display:block;
+border-left:4px solid #1e88e5;transition:transform .15s,box-shadow .15s}
+.pcard:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(16,42,74,.12)}
+.pcard .ph{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.pcard .ph h3{font-size:16px;font-weight:700}
+.pcard .ph .go{margin-left:auto;font-size:12.5px;font-weight:600;color:#1e88e5}
+.pcard .pd{font-size:13px;color:#52606d;min-height:40px}
+.pcard .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.pcard .pm{display:flex;gap:13px;flex-wrap:wrap;font-size:12px;color:#7b8794;
+border-top:1px dashed #e5eaf0;margin-top:10px;padding-top:9px}
+.pcard .pm b{color:#1e88e5;font-size:13px}
+.pcard.off{opacity:.6;border-left-color:#b0bec5;pointer-events:none}
+.day{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(16,42,74,.07);padding:15px;display:block;
+transition:transform .15s,box-shadow .15s;border-top:3px solid #1e88e5}
+.day:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(16,42,74,.12)}
+.day .d{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}
+.day .d b{font-size:17px}
+.day .d span{font-size:12px;color:#8494a6}
+.day .sum{font-size:13px;color:#52606d;height:60px;overflow:hidden}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 8px}
+.tag2{font-size:12px;padding:3px 9px;border-radius:6px;font-weight:600}
+.metrics{display:flex;gap:14px;font-size:12px;color:#7b8794;border-top:1px dashed #e5eaf0;padding-top:9px}
+.metrics b{color:#1e88e5;font-size:13px}
+.chart-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chart{width:100%;min-width:640px;height:auto;display:block}
+.ax{font-size:11px;fill:#8494a6}
+.bl{font-size:12.5px;fill:#3e4c59}
+.bv{font-size:12px;fill:#7b8794}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:12px;color:#52606d}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:#f7f9fc;color:#52606d;font-weight:600;text-align:left;padding:10px;border-bottom:2px solid #e5eaf0;
+white-space:nowrap}
+td{padding:10px;border-bottom:1px solid #eef2f7;vertical-align:top}
+tr:hover td{background:#fafcff}
+.code{font-family:Consolas,Menlo,monospace;color:#1565c0;font-weight:600}
+.rank{display:inline-flex;width:22px;height:22px;border-radius:6px;background:#eef2f7;color:#52606d;
+align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.rank.t{background:#e53935;color:#fff}
+.search{width:100%;padding:11px 14px;border:1px solid #dfe6ee;border-radius:10px;font-size:16px;
+background:#fff;margin-bottom:12px;outline:none}
+.search:focus{border-color:#1e88e5}
+.empty{color:#8494a6;font-size:13px;padding:18px;text-align:center}
+.onboard{text-align:center;padding:34px 20px}
+.onboard svg{margin-bottom:12px}
+.onboard h3{font-size:17px;margin-bottom:8px;color:#1f2933}
+.onboard p{font-size:13.5px;color:#52606d;max-width:520px;margin:0 auto 6px}
+.onboard .hint{font-size:12.5px;color:#8494a6;margin-top:10px}
+.foot{margin-top:30px;padding:16px;background:#fff8e1;border:1px solid #ffe082;border-radius:12px;
+font-size:12px;color:#7c5b00;line-height:1.75}
+.updated{text-align:center;color:#9aa5b1;font-size:12px;margin-top:14px}
+@media(max-width:768px){
+.layout{flex-direction:column}
+.sidebar{position:static;width:auto;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;
+padding:12px 14px;gap:8px}
+.sidebar .brand{margin-bottom:0;margin-right:auto}
+.sidebar .nav-sep{display:none}
+.nav-btn{flex:1 1 auto;justify-content:center;min-height:36px;padding:8px 12px}
+.stats{grid-template-columns:repeat(2,1fr)}
+.hero h1{font-size:20px}
+.wrap{padding:0 12px 40px}
+.grid{grid-template-columns:1fr}
+.day .sum{height:auto}
+th,td{padding:8px 7px;font-size:12.5px}
+}
+
+.sig{display:inline-block;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600;white-space:nowrap}
+.sig.bull{background:#fdecea;color:#c62828}
+.sig.bear{background:#e8f5e9;color:#2e7d32}
+.sig.neu{background:#eceff1;color:#546e7a}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{padding:8px 10px;border-bottom:1px solid #e6eaee;text-align:left}
+.tbl th{background:#f0f3f7;font-weight:600;color:#37474f;position:sticky;top:0}
+.tbl tr:hover td{background:#fafbfc}
+.tbl td.num{text-align:right;font-variant-numeric:tabular-nums}
+.card{background:#fff;border:1px solid #e3e8ee;border-radius:12px;padding:18px 20px;margin-bottom:16px}
+.card h3{font-size:16px;margin-bottom:10px;color:#12325b}
+.dim{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.dim .card{margin-bottom:0}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;font-size:14px}
+.kv dt{color:#607d8b;font-weight:600}
+.kv dd{color:#263238}
+.up{color:#c62828;font-weight:600}
+.down{color:#2e7d32;font-weight:600}
+.warn{background:#fff8e1;border:1px solid #ffe082;border-radius:10px;padding:12px 14px;font-size:13px;color:#795548;margin-bottom:16px}
+.srch{width:100%;padding:9px 12px;border:1px solid #d5dbe0;border-radius:8px;font-size:14px;margin-bottom:10px}
+.badge{display:inline-block;background:#e3f2fd;color:#1565c0;border-radius:6px;padding:1px 7px;font-size:12px;margin-right:4px}
+</style></head><body><div class="layout"><aside class="sidebar"><div class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>康庄研究院</div><div class="nav-sep"></div><a class="nav-btn" href="index.html">康庄大厅</a><a class="nav-btn" href="news.html">江湖传闻</a><a class="nav-btn" href="futures.html">期货收盘</a><a class="nav-btn" href="scores/index.html">江湖龙虎榜</a><a class="nav-btn" href="weekly.html">康庄周鉴</a></aside><div class="main"><div class="hero"><div class="inner"><h1>组合圆桌</h1><p>近 20 个交易日每日 Top3 并集 · 2026-09-02 至 2026-09-22 · 投资大师专家团组合级圆桌</p><div class="stats"><div class="stat"><b>50</b><span>组合池个股</span></div><div class="stat"><b>20</b><span>覆盖期数</span></div><div class="stat"><b>0</b><span>有效大师信号</span></div><div class="stat"><b>0</b><span>看多票数</span></div></div></div></div><div class="wrap"><div class="warn"><b>⚠️ 信号完整性提示</b><br>本轮以下成员因模型用量限流未能出信号，其结论<b>不在</b>本报告内：奥马哈先知、芒格、麦哲伦舵手、大空头、黑天鹅之父、木头姐、格雷厄姆、华尔街斗牛士、宏观之王、Dhandho掌门、费雪、估值教父、金君瓦拉、基本面分析师、技术面分析师、估值分析师、情绪分析师、成长分析师、新闻情绪分析师。待额度恢复后可补跑并重生成本页。<div class="sec-h"><span class="bar"></span><h2>大师信号汇总</h2><span class="note">看多 0 · 看空 0 · 中性 0</span></div><div class="card"><p class="note">本轮未收集到有效大师信号。</p></div><div class="sec-h"><span class="bar"></span><h2>风险评估</h2></div><div class="card"><ul style="padding-left:20px;font-size:14px;color:#37474f"><li>大师信号尚未收齐：本轮 19 位成员首轮全部因模型用量限流（429）失败，额度重置时间 2026-09-23 19:11:36。</li><li>数据源降级：neodata-financial-search 凭证于 2026-09-08 过期且刷新工具不可用，本页数据改由 westock-mcp / tdx-connector 供给，口径与 NeoData 可能存在差异。</li><li>本页量化画像基于历史打分归档（近 20 期每期 Top3 并集），属事后统计，不构成未来收益承诺。</li></ul></div><div class="sec-h"><span class="bar"></span><h2>组合池清单（近 20 期每期 Top3 并集）</h2></div><div class="card"><input class="srch" id="poolSearch" placeholder="按代码 / 名称 / 主题搜索…" oninput="filterPool()"><p style="font-size:13px;color:#607d8b;margin-bottom:8px">显示 <b id="poolCount">50</b> / 50 只</p><table class="tbl" id="poolTable"><thead><tr><th>代码</th><th>名称</th><th style="text-align:right">Top3次数</th><th style="text-align:right">均分</th><th style="text-align:right">最高分</th><th style="text-align:right">最近排名</th><th>主题</th></tr></thead><tbody><tr data-key='601869 长飞光纤 光通信/cpo/保偏光纤/光通信·光模块·光互联'><td>601869</td><td>长飞光纤</td><td class='num'>3</td><td class='num'>70.75</td><td class='num'>74.19</td><td class='num'>3</td><td>光通信/CPO/保偏光纤/光通信·光模块·光互联</td></tr><tr data-key='603186 华正新材 pcb/ccl/电子布/pcb/ccl/电子布/铜箔涨价链'><td>603186</td><td>华正新材</td><td class='num'>2</td><td class='num'>79.24</td><td class='num'>80.42</td><td class='num'>1</td><td>PCB/CCL/电子布/PCB/CCL/电子布/铜箔涨价链</td></tr><tr data-key='301080 百普赛斯 创新药·ai制药/医药/消费/快递/周期修复'><td>301080</td><td>百普赛斯</td><td class='num'>2</td><td class='num'>75.28</td><td class='num'>76.06</td><td class='num'>3</td><td>创新药·AI制药/医药/消费/快递/周期修复</td></tr><tr data-key='002636 金安国纪 -'><td>002636</td><td>金安国纪</td><td class='num'>2</td><td class='num'>73.11</td><td class='num'>80.71</td><td class='num'>3</td><td>-</td></tr><tr data-key='002913 奥士康 -'><td>002913</td><td>奥士康</td><td class='num'>2</td><td class='num'>69.94</td><td class='num'>72.62</td><td class='num'>1</td><td>-</td></tr><tr data-key='601579 会稽山 消费修复/白酒/白酒双节动销与黄酒高端化'><td>601579</td><td>会稽山</td><td class='num'>2</td><td class='num'>69.27</td><td class='num'>70.06</td><td class='num'>2</td><td>消费修复/白酒/白酒双节动销与黄酒高端化</td></tr><tr data-key='002080 中材科技 -'><td>002080</td><td>中材科技</td><td class='num'>2</td><td class='num'>68.23</td><td class='num'>71.97</td><td class='num'>3</td><td>-</td></tr><tr data-key='301183 东田微 光通信/cpo/npo/ocs/光通信/cpo/保偏光纤'><td>301183</td><td>东田微</td><td class='num'>2</td><td class='num'>67.67</td><td class='num'>69.0</td><td class='num'>2</td><td>光通信/CPO/NPO/OCS/光通信/CPO/保偏光纤</td></tr><tr data-key='300408 三环集团 ai服务器/mlcc紧缺/mlcc/被动元件'><td>300408</td><td>三环集团</td><td class='num'>2</td><td class='num'>64.5</td><td class='num'>76.06</td><td class='num'>2</td><td>AI服务器/MLCC紧缺/MLCC/被动元件</td></tr><tr data-key='603162 海通发展 造船与油运景气'><td>603162</td><td>海通发展</td><td class='num'>1</td><td class='num'>82.47</td><td class='num'>82.47</td><td class='num'>1</td><td>造船与油运景气</td></tr><tr data-key='688655 迅捷兴 pcb/电子材料'><td>688655</td><td>迅捷兴</td><td class='num'>1</td><td class='num'>79.64</td><td class='num'>79.64</td><td class='num'>2</td><td>PCB/电子材料</td></tr><tr data-key='300829 金丹科技 玻璃基板·金刚石散热·tgv新材料'><td>300829</td><td>金丹科技</td><td class='num'>1</td><td class='num'>78.42</td><td class='num'>78.42</td><td class='num'>1</td><td>玻璃基板·金刚石散热·TGV新材料</td></tr><tr data-key='688203 海正生材 有色·小金属'><td>688203</td><td>海正生材</td><td class='num'>1</td><td class='num'>77.28</td><td class='num'>77.28</td><td class='num'>1</td><td>有色·小金属</td></tr><tr data-key='000798 中水渔业 -'><td>000798</td><td>中水渔业</td><td class='num'>1</td><td class='num'>76.83</td><td class='num'>76.83</td><td class='num'>1</td><td>-</td></tr><tr data-key='301176 逸豪新材 pcb/电子材料'><td>301176</td><td>逸豪新材</td><td class='num'>1</td><td class='num'>76.79</td><td class='num'>76.79</td><td class='num'>3</td><td>PCB/电子材料</td></tr><tr data-key='603268 松发股份 创新药·ai制药'><td>603268</td><td>松发股份</td><td class='num'>1</td><td class='num'>76.53</td><td class='num'>76.53</td><td class='num'>2</td><td>创新药·AI制药</td></tr><tr data-key='000737 北方铜业 -'><td>000737</td><td>北方铜业</td><td class='num'>1</td><td class='num'>76.32</td><td class='num'>76.32</td><td class='num'>2</td><td>-</td></tr><tr data-key='688179 阿拉丁 ai制药/科研服务'><td>688179</td><td>阿拉丁</td><td class='num'>1</td><td class='num'>75.6</td><td class='num'>75.6</td><td class='num'>1</td><td>AI制药/科研服务</td></tr><tr data-key='300577 开润股份 机器人/物理ai'><td>300577</td><td>开润股份</td><td class='num'>1</td><td class='num'>74.91</td><td class='num'>74.91</td><td class='num'>3</td><td>机器人/物理AI</td></tr><tr data-key='600172 黄河旋风 金刚石/超硬散热材料'><td>600172</td><td>黄河旋风</td><td class='num'>1</td><td class='num'>74.81</td><td class='num'>74.81</td><td class='num'>1</td><td>金刚石/超硬散热材料</td></tr><tr data-key='603893 瑞芯微 cpu/端侧ai（agent时代cpu重估）'><td>603893</td><td>瑞芯微</td><td class='num'>1</td><td class='num'>74.77</td><td class='num'>74.77</td><td class='num'>2</td><td>CPU/端侧AI（Agent时代CPU重估）</td></tr><tr data-key='002046 国机精工 -'><td>002046</td><td>国机精工</td><td class='num'>1</td><td class='num'>74.59</td><td class='num'>74.59</td><td class='num'>2</td><td>-</td></tr><tr data-key='002827 高争民爆 -'><td>002827</td><td>高争民爆</td><td class='num'>1</td><td class='num'>74.34</td><td class='num'>74.34</td><td class='num'>3</td><td>-</td></tr><tr data-key='002041 登海种业 -'><td>002041</td><td>登海种业</td><td class='num'>1</td><td class='num'>74.13</td><td class='num'>74.13</td><td class='num'>1</td><td>-</td></tr><tr data-key='688519 南亚新材 pcb/ccl/电子布/铜箔涨价链'><td>688519</td><td>南亚新材</td><td class='num'>1</td><td class='num'>74.01</td><td class='num'>74.01</td><td class='num'>2</td><td>PCB/CCL/电子布/铜箔涨价链</td></tr><tr data-key='601118 海南橡胶 农业新周期：猪去化与奶反转'><td>601118</td><td>海南橡胶</td><td class='num'>1</td><td class='num'>73.6</td><td class='num'>73.6</td><td class='num'>2</td><td>农业新周期：猪去化与奶反转</td></tr><tr data-key='300741 华宝股份 消费·食品·造纸·电子烟·ai影视'><td>300741</td><td>华宝股份</td><td class='num'>1</td><td class='num'>73.58</td><td class='num'>73.58</td><td class='num'>2</td><td>消费·食品·造纸·电子烟·AI影视</td></tr><tr data-key='688690 纳微科技 医药·cxo·创新药·ai制药'><td>688690</td><td>纳微科技</td><td class='num'>1</td><td class='num'>73.36</td><td class='num'>73.36</td><td class='num'>1</td><td>医药·CXO·创新药·AI制药</td></tr><tr data-key='601975 招商南油 造船与油运景气'><td>601975</td><td>招商南油</td><td class='num'>1</td><td class='num'>73.27</td><td class='num'>73.27</td><td class='num'>2</td><td>造船与油运景气</td></tr><tr data-key='300454 深信服 ai应用·端侧ai'><td>300454</td><td>深信服</td><td class='num'>1</td><td class='num'>73.14</td><td class='num'>73.14</td><td class='num'>1</td><td>AI应用·端侧AI</td></tr><tr data-key='688028 沃尔德 化工新材料(玻璃基板/pspi/金刚石散热)'><td>688028</td><td>沃尔德</td><td class='num'>1</td><td class='num'>72.77</td><td class='num'>72.77</td><td class='num'>3</td><td>化工新材料(玻璃基板/PSPI/金刚石散热)</td></tr><tr data-key='603083 剑桥科技 光通信全链量价齐升'><td>603083</td><td>剑桥科技</td><td class='num'>1</td><td class='num'>72.4</td><td class='num'>72.4</td><td class='num'>3</td><td>光通信全链量价齐升</td></tr><tr data-key='301252 同星科技 液冷散热'><td>301252</td><td>同星科技</td><td class='num'>1</td><td class='num'>70.63</td><td class='num'>70.63</td><td class='num'>2</td><td>液冷散热</td></tr><tr data-key='600391 航发科技 军贸与十五五军工'><td>600391</td><td>航发科技</td><td class='num'>1</td><td class='num'>70.51</td><td class='num'>70.51</td><td class='num'>3</td><td>军贸与十五五军工</td></tr><tr data-key='603626 科森科技 人形机器人'><td>603626</td><td>科森科技</td><td class='num'>1</td><td class='num'>70.51</td><td class='num'>70.51</td><td class='num'>2</td><td>人形机器人</td></tr><tr data-key='688313 仕佳光子 光通信与光模块(1.6t/ocs/cpo)'><td>688313</td><td>仕佳光子</td><td class='num'>1</td><td class='num'>69.27</td><td class='num'>69.27</td><td class='num'>1</td><td>光通信与光模块(1.6T/OCS/CPO)</td></tr><tr data-key='603353 和顺石油 国产算力芯片与互联'><td>603353</td><td>和顺石油</td><td class='num'>1</td><td class='num'>68.67</td><td class='num'>68.67</td><td class='num'>2</td><td>国产算力芯片与互联</td></tr><tr data-key='002292 奥飞娱乐 -'><td>002292</td><td>奥飞娱乐</td><td class='num'>1</td><td class='num'>68.49</td><td class='num'>68.49</td><td class='num'>3</td><td>-</td></tr><tr data-key='688200 华峰测控 半导体设备与材料'><td>688200</td><td>华峰测控</td><td class='num'>1</td><td class='num'>68.09</td><td class='num'>68.09</td><td class='num'>1</td><td>半导体设备与材料</td></tr><tr data-key='605258 协和电子 半导体材料/先进封装'><td>605258</td><td>协和电子</td><td class='num'>1</td><td class='num'>68.0</td><td class='num'>68.0</td><td class='num'>1</td><td>半导体材料/先进封装</td></tr><tr data-key='301419 阿莱德 散热新材料(金刚石/石墨烯/tim)'><td>301419</td><td>阿莱德</td><td class='num'>1</td><td class='num'>67.85</td><td class='num'>67.85</td><td class='num'>3</td><td>散热新材料(金刚石/石墨烯/TIM)</td></tr><tr data-key='688002 睿创微纳 军工/军贸'><td>688002</td><td>睿创微纳</td><td class='num'>1</td><td class='num'>67.81</td><td class='num'>67.81</td><td class='num'>3</td><td>军工/军贸</td></tr><tr data-key='600059 古越龙山 白酒双节动销与黄酒高端化'><td>600059</td><td>古越龙山</td><td class='num'>1</td><td class='num'>67.63</td><td class='num'>67.63</td><td class='num'>3</td><td>白酒双节动销与黄酒高端化</td></tr><tr data-key='688785 恒运昌 半导体设备与材料'><td>688785</td><td>恒运昌</td><td class='num'>1</td><td class='num'>66.99</td><td class='num'>66.99</td><td class='num'>2</td><td>半导体设备与材料</td></tr><tr data-key='300037 新宙邦 化工'><td>300037</td><td>新宙邦</td><td class='num'>1</td><td class='num'>65.89</td><td class='num'>65.89</td><td class='num'>2</td><td>化工</td></tr><tr data-key='300731 科创新源 液冷散热'><td>300731</td><td>科创新源</td><td class='num'>1</td><td class='num'>63.85</td><td class='num'>63.85</td><td class='num'>3</td><td>液冷散热</td></tr><tr data-key='600887 伊利股份 消费修复/白酒'><td>600887</td><td>伊利股份</td><td class='num'>1</td><td class='num'>60.0</td><td class='num'>60.0</td><td class='num'>2</td><td>消费修复/白酒</td></tr><tr data-key='000938 紫光股份 -'><td>000938</td><td>紫光股份</td><td class='num'>1</td><td class='num'>59.24</td><td class='num'>59.24</td><td class='num'>3</td><td>-</td></tr><tr data-key='000636 风华高科 -'><td>000636</td><td>风华高科</td><td class='num'>1</td><td class='num'>49.37</td><td class='num'>49.37</td><td class='num'>2</td><td>-</td></tr><tr data-key='300888 集泰股份 液冷散热/aidc'><td>300888</td><td>集泰股份</td><td class='num'>1</td><td class='num'>47.33</td><td class='num'>47.33</td><td class='num'>3</td><td>液冷散热/AIDC</td></tr></tbody></table></div><div class="foot"><b>免责声明</b><br>本站内容由 AI 基于公开数据自动汇总整理，仅用于个人研究与信息留档，不构成任何投资建议。所涉个股仅为信息提及，不代表推荐；数据可能存在提取误差，请以上市公司公告及权威数据源为准。据此操作，风险自负。</div><p class="updated">最后更新：2026-09-23 14:58</p></div><script>
+function filterPool(){
+  var q=(document.getElementById('poolSearch').value||'').trim().toLowerCase();
+  var rows=document.querySelectorAll('#poolTable tbody tr');
+  var n=0;
+  for(var i=0;i<rows.length;i++){
+    var t=(rows[i].getAttribute('data-key')||'').toLowerCase();
+    var hit=(!q||t.indexOf(q)>=0);
+    rows[i].style.display=hit?'':'none';
+    if(hit)n++;
+  }
+  var c=document.getElementById('poolCount');
+  if(c)c.textContent=n;
+}
+</script></div></div></body></html>
