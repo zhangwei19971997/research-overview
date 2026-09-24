@@ -1,8 +1,21 @@
 {
- "title": "康庄研究院",
- "updated": "2026-09-24 15:47:28",
- "count": 55,
+ "title": "调研基地 · 每日情报站",
+ "updated": "2026-09-25 00:51:45",
+ "count": 56,
  "days": [
+  {
+   "date": "2026-09-24",
+   "weekday": "四",
+   "summary": "9月24日信息社130帖高度集中于AI硬件上游的“材料通胀”主线：PCB/CCL端PTFE与M9混压正交背板方案渐明、SY电子连续11轮涨价且HVLP铜箔四季度加工费再涨10%以上，宏和科技T布排期拉…",
+   "theme_count": 14,
+   "stock_count": 60,
+   "top_themes": [
+    "AI算力/PCB·CCL·铜箔",
+    "Meta Muse/AI Agent与端侧AI",
+    "液冷/AIDC基建"
+   ],
+   "report": "reports/2026-09-24.html"
+  },
   {
    "date": "2026-09-23",
    "weekday": "三",
