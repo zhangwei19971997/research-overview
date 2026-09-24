@@ -7,7 +7,7 @@
 (function(){
   'use strict';
   // 导航项（href 用站点根相对，便于子目录 /reports/、/futures/、/scores/ 也能用）
-  // 平级栏目：康庄大厅 / 江湖传闻 / 期货收盘 / 江湖龙虎榜 / 康庄周鉴（四者平行，无父子嵌套）
+  // 平级栏目：康庄大厅 / 江湖传闻 / 期货收盘 / 江湖龙虎榜 / 组合圆桌（五者平行，无父子嵌套）
   // ⚠️ 新增/改名栏目必须同步「网站维护」技能的 site_skin.NAV_ITEMS，否则各落地页侧栏会缺项
   // 站点根必须运行时推导：GitHub Pages 项目页位于 /<repo>/ 子路径，
   // 写死 '/' 会让 /scores/、/futures/ 等子目录页的导航全部指向 404。
@@ -20,8 +20,7 @@
     {key:'news',   text:'江湖传闻', href:SITE_ROOT+'news.html'},
     {key:'futures',text:'期货收盘', href:SITE_ROOT+'futures.html'},
     {key:'scores', text:'江湖龙虎榜', href:SITE_ROOT+'scores/index.html'},
-    {key:'roundtable', text:'组合圆桌', href:SITE_ROOT+'roundtable.html'},
-    {key:'weekly', text:'康庄周鉴', href:SITE_ROOT+'weekly.html'}
+    {key:'roundtable', text:'组合圆桌', href:SITE_ROOT+'roundtable.html'}
   ];
   // 依据当前 URL 决定哪个 key 高亮
   var path = location.pathname.replace(/\/+$/,'/');
@@ -30,7 +29,6 @@
     if (/\/futures(\.html)?$/.test(path) || /\/futures\//.test(path)) return 'futures';
     if (/\/scores(\.html)?$/.test(path) || /\/scores\//.test(path)) return 'scores';
     if (/\/roundtable(\.html)?$/.test(path) || /\/roundtable\//.test(path)) return 'roundtable';
-    if (/\/weekly(\.html)?$/.test(path) || /\/weekly\//.test(path)) return 'weekly';
     return 'index';
   }
   var ACTIVE = activeKey();
