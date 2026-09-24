@@ -20,6 +20,7 @@
     {key:'news',   text:'江湖传闻', href:SITE_ROOT+'news.html'},
     {key:'futures',text:'期货收盘', href:SITE_ROOT+'futures.html'},
     {key:'scores', text:'江湖龙虎榜', href:SITE_ROOT+'scores/index.html'},
+    {key:'roundtable', text:'组合圆桌', href:SITE_ROOT+'roundtable.html'},
     {key:'weekly', text:'康庄周鉴', href:SITE_ROOT+'weekly.html'}
   ];
   // 依据当前 URL 决定哪个 key 高亮
@@ -28,6 +29,7 @@
     if (/\/news(\.html)?$/.test(path)) return 'news';
     if (/\/futures(\.html)?$/.test(path) || /\/futures\//.test(path)) return 'futures';
     if (/\/scores(\.html)?$/.test(path) || /\/scores\//.test(path)) return 'scores';
+    if (/\/roundtable(\.html)?$/.test(path) || /\/roundtable\//.test(path)) return 'roundtable';
     if (/\/weekly(\.html)?$/.test(path) || /\/weekly\//.test(path)) return 'weekly';
     return 'index';
   }
