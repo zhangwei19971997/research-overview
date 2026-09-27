@@ -1,8 +1,47 @@
 {
- "title": "康庄研究院",
- "updated": "2026-09-25 04:24:49",
- "count": 56,
+ "title": "调研基地 · 每日情报站",
+ "updated": "2026-09-28 00:34:42",
+ "count": 59,
  "days": [
+  {
+   "date": "2026-09-27",
+   "weekday": "日",
+   "summary": "2026-09-27（周日）信息社合集84帖，以研报/调研/专家纪要为主，无A股交易。当日主线高度集中于AI算力硬件链与机器人量产拐点，呈\"AI建设转向变现验证、硬件景气全面扩散\"特征。PCB/CCL…",
+   "theme_count": 14,
+   "stock_count": 58,
+   "top_themes": [
+    "AI算力/PCB·CCL",
+    "AI散热(液冷/金刚石/石墨烯/TIM)",
+    "人形机器人(量产拐点/外资上修)"
+   ],
+   "report": "reports/2026-09-27.html"
+  },
+  {
+   "date": "2026-09-26",
+   "weekday": "六",
+   "summary": "2026-09-26（周六）「信息社」共发布17帖，多为周末海外要闻与细分行业纪要，A股休市。当日主线围绕「AI算力硬件价值重估」与「高端材料景气」两条链展开。AI侧：Meta Muse上线10天用户…",
+   "theme_count": 14,
+   "stock_count": 20,
+   "top_themes": [
+    "AI算力硬件·价值重估",
+    "光模块·CPO/NPO/OCS",
+    "铜箔/HVLP"
+   ],
+   "report": "reports/2026-09-26.html"
+  },
+  {
+   "date": "2026-09-25",
+   "weekday": "五",
+   "summary": "2026-09-25（周五）“信息社每日研报合集”共37帖，以半导体/AI硬件全球路演纪要、国产算力与材料调研为主。主线一：存储与HBM高景气，美光成焦点，瑞银上调FY27-29 EPS至212/27…",
+   "theme_count": 14,
+   "stock_count": 56,
+   "top_themes": [
+    "AI存储/HBM/DRAM涨价",
+    "AI算力/高端PCB·CCL",
+    "碳化硅SiC高景气"
+   ],
+   "report": "reports/2026-09-25.html"
+  },
   {
    "date": "2026-09-24",
    "weekday": "四",
