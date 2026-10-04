@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打分结果表格 - 调研基地_2026-10-03</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f5f7fa; color: #1f2933; line-height: 1.6;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;
+            background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+            color: #475569; font-size: 13px; text-decoration: none; transition: all .15s;
+        }
+        .back-link:hover { border-color: #2563eb; color: #2563eb; }
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white; padding: 24px 28px; border-radius: 12px; margin-bottom: 16px;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+        }
+        .header h1 { font-size: 22px; }
+        .header .meta { opacity: 0.9; font-size: 13px; }
+        .toolbar {
+            background: #fff; border-radius: 12px; padding: 14px 18px; margin-bottom: 16px;
+            display: flex; gap: 12px; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .toolbar input {
+            flex: 1; padding: 10px 14px; border: 1px solid #e2e8f0; border-radius: 10px;
+            font-size: 14px; outline: none;
+        }
+        .toolbar input:focus { border-color: #2563eb; }
+        .toolbar .count { font-size: 13px; color: #64748b; white-space: nowrap; }
+        .section { background: #fff; border-radius: 12px; padding: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+        .table-container { overflow: auto; max-height: 75vh; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th {
+            background: #f8fafc; color: #64748b; font-weight: 600; text-align: left;
+            padding: 12px 8px; border-bottom: 2px solid #e2e8f0; position: sticky; top: 0; z-index: 1;
+        }
+        td { padding: 10px 8px; border-bottom: 1px solid #f1f5f9; }
+        tr:hover { background: #f8fafc; }
+        .rank-cell { font-weight: 600; color: #64748b; width: 50px; }
+        .code-cell a { color: #2563eb; text-decoration: none; }
+        .code-cell a:hover { text-decoration: underline; }
+        .name-cell { font-weight: 500; white-space: nowrap; }
+        .theme-cell { color: #64748b; font-size: 12px; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .pct-cell { font-size: 12px; white-space: nowrap; }
+        .delta-cell { font-size: 12px; white-space: nowrap; }
+        .flag-badge {
+            display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 6px;
+            font-weight: 600; vertical-align: middle; margin-left: 4px;
+        }
+        .flag-limit { background: #fee2e2; color: #dc2626; }
+        .flag-halt { background: #f1f5f9; color: #64748b; }
+        .flag-new { background: #dbeafe; color: #2563eb; }
+        .dropped-note {
+            background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px;
+            padding: 12px 16px; margin-bottom: 12px; font-size: 13px; color: #92400e; line-height: 1.8;
+        }
+        .dropped-tip { display: block; font-size: 11px; color: #b45309; }
+        .score-cell { font-weight: 600; color: #1e3a5f; font-size: 15px; }
+        .grade-cell { font-weight: 600; font-size: 12px; }
+        .dim-cell { color: #64748b; font-size: 12px; }
+        .hidden { display: none; }
+        .footer { text-align: center; color: #94a3b8; font-size: 12px; padding: 20px; }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 18px; }
+            .container { padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <a class="back-link" href="index.html">← 打分汇总</a>
+            <a class="back-link" href="2026-10-03_打分报告.html">📊 返回报告</a>
+        </div>
+        <div class="header">
+            <h1>📋 打分结果表格</h1>
+            <div class="meta"><span>调研基地_2026-10-03</span> · <span>📅 数据截至 2026-09-30 收盘</span> · <span>⏱ 生成于 2026-10-05 02:04</span> · <span>共 5 只个股</span></div>
+        </div>
+        <div class="dropped-note">📤 上期在池、本期滑出：百普赛斯(301080)、深物业A(000011)、善水科技(301190)、南模生物(688265)、义翘神州(301047)、华是科技(301218)、五洲医疗(301234)、近岸蛋白(688137)、万科A(000002)、万邦医药(301520)、艾艾精工(603580)、江淮汽车(600418)、金健米业(600127)、新易盛(300502)、中际旭创(300308)<span class="dropped-tip">（分数仅供参考，滑出多因当期新闻池不含该股）</span></div>
+        <div class="toolbar">
+            <input id="filter" type="text" placeholder="搜索代码 / 名称 / 主题…" oninput="applyFilter()">
+            <span class="count" id="count">显示 5 / 5</span>
+        </div>
+        <div class="section">
+            <div class="table-container">
+                <table id="scoreTable">
+                    <thead>
+                        <tr>
+                            <th>排名</th>
+                            <th>代码</th>
+                            <th>名称</th>
+                            <th>主题</th>
+                            <th title="数据截止交易日（T-1）涨跌幅">涨跌幅</th>
+                            <th>总分</th>
+                            <th title="总分对比上期（2026-09-30）">Δ分</th>
+                            <th>评级</th>
+                            <th>趋势</th>
+                            <th>动量</th>
+                            <th>量价</th>
+                            <th>资金</th>
+                            <th>突破</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr>
+            <td class="rank-cell">1</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300394</a></td>
+            <td class="name-cell">天孚通信</td>
+            <td class="theme-cell">光模块/NPO·CPO·OCS</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+1.87%</td>
+            <td class="score-cell">73.1</td>
+            <td class="delta-cell"><span class="flag-badge flag-new">新进</span></td>
+            <td class="grade-cell" style="color:#10b981">A+ 优秀</td>
+            <td class="dim-cell">12.0</td>
+            <td class="dim-cell">14.4</td>
+            <td class="dim-cell">13.2</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">16.0</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">2</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">601869</a></td>
+            <td class="name-cell">长飞光纤</td>
+            <td class="theme-cell">光纤光缆</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.79%</td>
+            <td class="score-cell">54.2</td>
+            <td class="delta-cell"><span class="flag-badge flag-new">新进</span></td>
+            <td class="grade-cell" style="color:#3b82f6">B+ 中上</td>
+            <td class="dim-cell">10.9</td>
+            <td class="dim-cell">7.6</td>
+            <td class="dim-cell">5.4</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">12.0</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">3</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">600487</a></td>
+            <td class="name-cell">亨通光电</td>
+            <td class="theme-cell">光纤光缆</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-3.94%</td>
+            <td class="score-cell">39.6</td>
+            <td class="delta-cell"><span class="flag-badge flag-new">新进</span></td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">5.4</td>
+            <td class="dim-cell">7.8</td>
+            <td class="dim-cell">12.6</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">12.0</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">4</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/6.html" target="_blank">688234</a></td>
+            <td class="name-cell">天岳先进</td>
+            <td class="theme-cell">碳化硅/化合物半导体</td>
+            <td class="pct-cell" style="color:#16a34a;font-weight:600">-4.23%</td>
+            <td class="score-cell">38.8</td>
+            <td class="delta-cell"><span class="flag-badge flag-new">新进</span></td>
+            <td class="grade-cell" style="color:#f59e0b">C  偏弱</td>
+            <td class="dim-cell">10.2</td>
+            <td class="dim-cell">18.4</td>
+            <td class="dim-cell">7.8</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">12.0</td>
+        </tr>
+        <tr>
+            <td class="rank-cell">5</td>
+            <td class="code-cell"><a href="https://quote.eastmoney.com/3.html" target="_blank">300144</a></td>
+            <td class="name-cell">宋城演艺</td>
+            <td class="theme-cell">国庆消费/旅游</td>
+            <td class="pct-cell" style="color:#dc2626;font-weight:600">+0.54%</td>
+            <td class="score-cell">33.6</td>
+            <td class="delta-cell"><span class="flag-badge flag-new">新进</span></td>
+            <td class="grade-cell" style="color:#ef4444">D  较差</td>
+            <td class="dim-cell">6.5</td>
+            <td class="dim-cell">11.8</td>
+            <td class="dim-cell">6.0</td>
+            <td class="dim-cell">4.7</td>
+            <td class="dim-cell">8.0</td>
+        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="footer">免责声明：本表格仅供参考，不构成投资建议。数据来自东方财富，可能存在延迟。</div>
+    </div>
+    <script>
+        function applyFilter() {
+            var q = document.getElementById('filter').value.trim().toLowerCase();
+            var rows = document.querySelectorAll('#scoreTable tbody tr');
+            var shown = 0;
+            rows.forEach(function(r) {
+                var text = r.innerText.toLowerCase();
+                var match = (q === '' || text.indexOf(q) !== -1);
+                r.classList.toggle('hidden', !match);
+                if (match) shown++;
+            });
+            document.getElementById('count').innerText = '显示 ' + shown + ' / 5';
+        }
+    </script>
+    <script src="../assets/navbar.js"></script>
+</body>
+</html>
