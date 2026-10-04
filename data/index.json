@@ -1,8 +1,47 @@
 {
- "title": "康庄研究院",
- "updated": "2026-10-02 04:17:32",
- "count": 63,
+ "title": "调研基地 · 每日情报站",
+ "updated": "2026-10-05 00:21:15",
+ "count": 66,
  "days": [
+  {
+   "date": "2026-10-04",
+   "weekday": "日",
+   "summary": "假期尾声的 7 条信息把 FCC 光模块监管链条讲到了更上游：天风测算 DSP（约 40-50%）+激光器（约 15-30%）即可凑齐 65% 美系 BOM 门槛，意味着规则一旦落地，InP 衬底等上…",
+   "theme_count": 7,
+   "stock_count": 7,
+   "top_themes": [
+    "光模块/InP衬底",
+    "TEC/散热器件",
+    "AI算力/英伟达"
+   ],
+   "report": "reports/2026-10-04.html"
+  },
+  {
+   "date": "2026-10-03",
+   "weekday": "六",
+   "summary": "当日是信息密度最高的一天，主线全部指向 AI 硬件的价值量重估：摩根大通测算 Vera Rubin Ultra 单柜冷却部件价值升至 98500 美元、快拆接头翻倍、均热盖价值提升 4-5 倍，液冷从…",
+   "theme_count": 14,
+   "stock_count": 5,
+   "top_themes": [
+    "液冷/热管理",
+    "光芯片/激光器",
+    "光模块/NPO·CPO·OCS"
+   ],
+   "report": "reports/2026-10-03.html"
+  },
+  {
+   "date": "2026-10-02",
+   "weekday": "五",
+   "summary": "假期首日信息量集中在两条主线：其一是大摩牵头的 FCC 光收发器监管预期——限制大概率落在 3.2T 代际、以 BOM 中美系器件占比 65% 设豁免门槛，本质是利润在 DSP/激光器与模块组装之间重…",
+   "theme_count": 9,
+   "stock_count": 15,
+   "top_themes": [
+    "光模块/FCC监管",
+    "创新药/生物医药",
+    "光芯片/激光器"
+   ],
+   "report": "reports/2026-10-02.html"
+  },
   {
    "date": "2026-10-01",
    "weekday": "四",
