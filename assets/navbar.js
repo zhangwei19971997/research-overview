@@ -1,39 +1,30 @@
-/* 共享导航条 — 康庄研究院情报站
+/* 共享导航条 — 调研基地情报站
  * 用法：在 </body> 前引入 <script src="assets/navbar.js"></script>
  * 行为：
- *   1) 页面已有 .sidebar  → 校验/补齐 4 个平级 nav-btn，并按当前 URL 修正 "on" 高亮
+ *   1) 页面已有 .sidebar  → 校验/补齐 4 个 nav-btn，并按当前 URL 修正 "on" 高亮
  *   2) 页面没有 .sidebar  → 注入一个置顶水平导航条，不破坏原有布局
  */
 (function(){
   'use strict';
-  // 导航项（href 用站点根相对，便于子目录 /reports/、/futures/、/scores/ 也能用）
-  // 平级栏目：康庄大厅 / 江湖传闻 / 期货收盘 / 江湖龙虎榜 / 组合圆桌（五者平行，无父子嵌套）
-  // ⚠️ 新增/改名栏目必须同步「网站维护」技能的 site_skin.NAV_ITEMS，否则各落地页侧栏会缺项
-  // 站点根必须运行时推导：GitHub Pages 项目页位于 /<repo>/ 子路径，
-  // 写死 '/' 会让 /scores/、/futures/ 等子目录页的导航全部指向 404。
-  // 仅 .github.io 域名取 path 首段；自定义域名（站点在根）与本地 file:// 一律回退 '/'。
-  var _seg = location.pathname.split('/').filter(Boolean);
-  var SITE_ROOT = (/\.github\.io$/i.test(location.hostname) && _seg.length)
-    ? '/' + _seg[0] + '/' : '/';
+  // 4 个导航项（href 用站点根相对，便于子目录 /reports/、/futures/、/scores/ 也能用）
+  var SITE_ROOT = '/';
   var items = [
-    {key:'index',  text:'康庄大厅', href:SITE_ROOT+'index.html'},
-    {key:'news',   text:'江湖传闻', href:SITE_ROOT+'news.html'},
-    {key:'futures',text:'期货收盘', href:SITE_ROOT+'futures.html'},
-    {key:'scores', text:'江湖龙虎榜', href:SITE_ROOT+'scores/index.html'},
-    {key:'roundtable', text:'组合圆桌', href:SITE_ROOT+'roundtable.html'}
+    {key:'index',     text:'归档首页', href:SITE_ROOT+'index.html'},
+    {key:'dashboard', text:'汇总看板', href:SITE_ROOT+'dashboard.html'},
+    {key:'futures',   text:'期货收盘', href:SITE_ROOT+'futures.html'},
+    {key:'scores',    text:'股票打分', href:SITE_ROOT+'scores/index.html'}
   ];
   // 依据当前 URL 决定哪个 key 高亮
   var path = location.pathname.replace(/\/+$/,'/');
   function activeKey(){
-    if (/\/news(\.html)?$/.test(path)) return 'news';
+    if (/\/dashboard(\.html)?$/.test(path)) return 'dashboard';
     if (/\/futures(\.html)?$/.test(path) || /\/futures\//.test(path)) return 'futures';
     if (/\/scores(\.html)?$/.test(path) || /\/scores\//.test(path)) return 'scores';
-    if (/\/roundtable(\.html)?$/.test(path) || /\/roundtable\//.test(path)) return 'roundtable';
     return 'index';
   }
   var ACTIVE = activeKey();
 
-  // —— 工具：构造 sidebar <aside> HTML（4 个平级栏目 + brand）——
+  // —— 工具：构造 sidebar <aside> HTML（4 链接 + brand）——
   function sidebarHTML(){
     var btns = items.map(function(it){
       var cls = 'nav-btn' + (it.key===ACTIVE ? ' on' : '');
@@ -41,7 +32,7 @@
     }).join('');
     return '<aside class="sidebar nb-injected"><div class="brand">'+
       '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+
-      '<path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>康庄研究院</div>'+
+      '<path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>调研基地</div>'+
       '<div class="nav-sep"></div>'+btns+'</aside>';
   }
 
@@ -78,18 +69,20 @@
     document.head.appendChild(s);
   }
 
-  // —— 模式 1：页面已有 sidebar（.nav-btn） → 校正/补齐 4 个平级链接 & "on" 高亮 —— 
+  // —— 模式 1：页面已有 sidebar（.nav-btn） → 校正/补齐 4 个链接 & "on" 高亮 —— 
   function patchExistingSidebar(){
     var sidebar = document.querySelector('.sidebar');
     if (!sidebar) return false;
     // 移除原有 nav-btn，避免重复
-    sidebar.querySelectorAll('.nav-btn').forEach(function(el){ el.parentNode.removeChild(el); });
+    var existing = sidebar.querySelectorAll('.nav-btn');
+    existing.forEach(function(el){ el.parentNode.removeChild(el); });
     // 确保有 .nav-sep；没有则补一个
     if (!sidebar.querySelector('.nav-sep')){
       var sep = document.createElement('div');
       sep.className = 'nav-sep';
       sidebar.appendChild(sep);
     }
+    // 注入 4 个按钮
     var sep = sidebar.querySelector('.nav-sep');
     items.forEach(function(it){
       var a = document.createElement('a');
@@ -97,8 +90,9 @@
       a.href = it.href;
       a.textContent = it.text;
       sep.parentNode.insertBefore(a, sep.nextSibling);
+      // 保持插入顺序：每次插在 sep 之后，自然形成正确顺序
     });
-    // 修正插入顺序（insertBefore 只保证在 sep 之后，按 items 顺序重排）
+    // 修正插入顺序（insertBefore 逻辑只保证每个新元素在 sep 之后，但相对顺序需要重建）
     var btnEls = Array.from(sidebar.querySelectorAll('.nav-btn'));
     btnEls.sort(function(a,b){
       return items.findIndex(function(i){return a.textContent===i.text;}) -
@@ -127,7 +121,7 @@
     }).join('');
     var html = '<nav class="nb-topbar"><span class="nb-brand">'+
       '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+
-      '<path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>康庄研究院</span>'+
+      '<path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>调研基地</span>'+
       '<span class="nb-sep"></span>'+btns+'</nav>';
     document.body.insertAdjacentHTML('afterbegin', html);
   }
