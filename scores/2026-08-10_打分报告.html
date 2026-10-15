@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>股票池打分报告 - 调研基地_2026-08-10</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f5f7fa; 
+            color: #1f2933; 
+            line-height: 1.6;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .header { 
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white; padding: 30px; border-radius: 12px; margin-bottom: 20px;
+        }
+        .header h1 { font-size: 28px; margin-bottom: 8px; }
+        .header .meta { opacity: 0.9; font-size: 14px; }
+        .section { 
+            background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .section-title { 
+            font-size: 18px; font-weight: 600; margin-bottom: 16px; 
+            padding-bottom: 12px; border-bottom: 2px solid #e5e7eb;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th { 
+            background: #f8fafc; color: #64748b; font-weight: 600; 
+            text-align: left; padding: 12px 8px; border-bottom: 2px solid #e2e8f0;
+        }
+        td { padding: 10px 8px; border-bottom: 1px solid #f1f5f9; }
+        tr:hover { background: #f8fafc; }
+        .rank-cell { font-weight: 600; color: #64748b; width: 50px; }
+        .code-cell a { color: #2563eb; text-decoration: none; }
+        .code-cell a:hover { text-decoration: underline; }
+        .name-cell { font-weight: 500; }
+        .theme-cell { color: #64748b; font-size: 12px; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .score-cell { font-weight: 600; color: #1e3a5f; font-size: 15px; }
+        .grade-cell { font-weight: 600; font-size: 12px; }
+        .dim-cell { color: #64748b; font-size: 12px; }
+        
+        /* Top Stock Cards */
+        .top-stock-card {
+            background: #fafbfc; border: 1px solid #e5e7eb; border-radius: 12px;
+            padding: 20px; margin-bottom: 16px;
+        }
+        .stock-header {
+            display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
+        }
+        .stock-rank {
+            width: 48px; height: 48px; border-radius: 50%;
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: white; display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 18px;
+        }
+        .stock-basic { flex: 1; }
+        .stock-name { font-size: 20px; font-weight: 600; color: #1f2933; }
+        .stock-code { font-size: 13px; color: #64748b; font-family: monospace; }
+        .stock-theme { 
+            background: #e0e7ff; color: #4338ca; padding: 4px 12px; border-radius: 20px;
+            font-size: 12px; font-weight: 500;
+        }
+        .stock-price-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 0; border-bottom: 1px solid #e5e7eb; margin-bottom: 12px;
+        }
+        .price-main { display: flex; align-items: baseline; gap: 12px; }
+        .price-value { font-size: 28px; font-weight: 700; color: #1f2933; }
+        .price-change { font-size: 16px; font-weight: 600; }
+        .stock-meta { display: flex; gap: 16px; }
+        .meta-item { font-size: 12px; color: #64748b; }
+        .stock-scores { margin-bottom: 12px; }
+        .score-bar {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 8px;
+        }
+        .score-fill {
+            height: 8px; border-radius: 4px; min-width: 4px;
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+        }
+        .score-label { font-size: 12px; color: #64748b; width: 80px; }
+        .stock-financials {
+            display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px;
+            padding: 12px; background: white; border-radius: 8px;
+        }
+        .fin-item { display: flex; flex-direction: column; align-items: center; }
+        .fin-label { font-size: 11px; color: #64748b; }
+        .fin-value { font-size: 16px; font-weight: 600; }
+        .stock-technical {
+            display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;
+            margin-bottom: 12px;
+        }
+        .tech-item {
+            text-align: center; padding: 8px; background: white; border-radius: 6px;
+        }
+        .tech-label { font-size: 11px; color: #64748b; }
+        .tech-value { font-size: 14px; font-weight: 600; color: #1f2933; }
+        .tech-diagnosis {
+            padding: 12px; background: white; border-radius: 8px; margin-bottom: 12px;
+        }
+        .diagnosis-title { font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 8px; }
+        .diagnosis-items { display: flex; gap: 8px; flex-wrap: wrap; }
+        .diagnosis-tag {
+            background: #dbeafe; color: #1e40af; padding: 4px 10px; border-radius: 12px;
+            font-size: 12px;
+        }
+        .analysis-text {
+            padding: 16px; background: #f0f9ff; border-left: 3px solid #0ea5e9;
+            border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.8; color: #334155;
+            margin-bottom: 12px;
+        }
+        .stock-footer {
+            display: flex; justify-content: flex-end; align-items: center;
+            padding-top: 12px; border-top: 1px solid #e5e7eb;
+        }
+        .final-score { display: flex; align-items: center; gap: 12px; }
+        .score-value { font-size: 24px; font-weight: 700; color: #1e3a5f; }
+        .score-grade { font-size: 14px; font-weight: 600; }
+        
+        /* Scrollable table */
+        .table-container { overflow-x: auto; }
+        
+        /* Topbar (navigation) */
+        .topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;
+            background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+            color: #475569; font-size: 13px; text-decoration: none; transition: all .15s;
+        }
+        .back-link:hover { border-color: #2563eb; color: #2563eb; }
+        
+        /* Link card to standalone table subpage */
+        .table-link-card {
+            display: flex; align-items: center; gap: 16px; padding: 18px 20px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd; border-radius: 12px; text-decoration: none;
+            color: #0c4a6e; transition: all .15s;
+        }
+        .table-link-card:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(37,99,235,.12); border-color: #2563eb; }
+        .table-link-card .tl-icon { font-size: 28px; }
+        .table-link-card .tl-text { flex: 1; }
+        .table-link-card .tl-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .table-link-card .tl-sub { font-size: 12px; color: #0369a1; opacity: .85; }
+        .table-link-card .tl-arrow { font-size: 22px; font-weight: 700; color: #2563eb; }
+        
+        @media (max-width: 768px) {
+            .container { padding: 12px; }
+            .header { padding: 20px; }
+            .header h1 { font-size: 22px; }
+            .stock-technical { grid-template-columns: repeat(3, 1fr); }
+            .stock-price-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .table-link-card { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <a class="back-link" href="index.html">← 打分汇总</a>
+        </div>
+        <div class="header">
+            <h1>📊 股票池打分报告</h1>
+            <div class="meta">
+                <span>调研基地_2026-08-10</span> · <span>📅 数据截至 2026-08-10 收盘</span> · <span>⏱ 生成于 2026-09-04 11:47</span> · <span>共 42 只个股</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">🏆 Top 3 个股详细分析</div>
+            
+        <div class="top-stock-card">
+            <div class="stock-header">
+                <div class="stock-rank">TOP 1</div>
+                <div class="stock-basic">
+                    <div class="stock-name">云南锗业</div>
+                    <div class="stock-code">002428</div>
+                </div>
+                <div class="stock-theme"></div>
+            </div>
+            <div class="stock-price-row">
+                <div class="price-main">
+                    <span class="price-value">0.00</span>
+                    <span class="price-change" style="color:#6b7280">0.00%</span>
+                </div>
+                <div class="stock-meta">
+                    <span class="meta-item"></span>
+                    <span class="meta-item">PE 0.0</span>
+                    <span class="meta-item">PB 0.0</span>
+                </div>
+            </div>
+            <div class="stock-scores">
+                <div class="score-bar"><div class="score-fill" style="width:80.875%;background:#ef4444"></div><span class="score-label">趋势 12.9</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:107.5625%;background:#f59e0b"></div><span class="score-label">动量 17.2</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:62.0625%;background:#3b82f6"></div><span class="score-label">量价 9.9</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:29.312500000000004%;background:#8b5cf6"></div><span class="score-label">资金 4.7</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:118.3125%;background:#10b981"></div><span class="score-label">突破 18.9</span></div>
+            </div>
+            <div class="stock-financials"></div>
+            <div class="stock-technical">
+                <div class="tech-item"><span class="tech-label">当前价</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">MA5</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">MA10</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">MA20</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">量比</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">位置</span><span class="tech-value">0%</span></div>
+            </div>
+            <div class="tech-diagnosis">
+                <div class="diagnosis-title">技术面诊断</div>
+                <div class="diagnosis-items">
+                    <span class="diagnosis-tag">短期均线承压</span><span class="diagnosis-tag">量能萎缩至 0.0 倍</span><span class="diagnosis-tag">处于近期低位区域</span>
+                </div>
+            </div>
+            <div class="analysis-text">**云南锗业（002428）** 属于 **** 主题，综合总得分 **75.1 分**（评级：A+ 优秀）。
+
+**趋势分析：**
+趋势健康度 12.9 分，股价运行在主要均线上方，中期上升趋势明确。
+当前价格 0.00 元，跌破 5 日均线（0.00 元），短期承压。
+
+**动量质量：**
+动量得分 17.2 分，近期价格动量强劲，动能充足。
+当日涨跌幅 +0.00%，波动平缓。
+
+**量价关系：**
+量价配合度 9.9 分，量价关系基本健康。
+量比 0.00，明显缩量，关注度下降。
+
+**资金动向：**
+资金活跃度偏低，得分 4.7 分，需观察后续资金流向。
+
+**突破形态：**
+突破形态良好，得分 18.9 分，近期有有效突破迹象。
+股价处于近期 0% 分位，接近阶段性低点。
+
+**基本面速览：**
+
+**综合判断：**
+综合表现优秀（75.1 分），趋势、动量、资金面配合良好，具备较好的短期交易机会。建议关注支撑位和止损位。</div>
+            <div class="stock-footer">
+                <div class="final-score">
+                    <span class="score-label">综合总分</span>
+                    <span class="score-value">75.1</span>
+                    <span class="score-grade" style="color:#10b981">A+ 优秀</span>
+                </div>
+            </div>
+        </div>
+        <div class="top-stock-card">
+            <div class="stock-header">
+                <div class="stock-rank">TOP 2</div>
+                <div class="stock-basic">
+                    <div class="stock-name">精测电子</div>
+                    <div class="stock-code">300567</div>
+                </div>
+                <div class="stock-theme">半导体量测</div>
+            </div>
+            <div class="stock-price-row">
+                <div class="price-main">
+                    <span class="price-value">0.00</span>
+                    <span class="price-change" style="color:#6b7280">0.00%</span>
+                </div>
+                <div class="stock-meta">
+                    <span class="meta-item"></span>
+                    <span class="meta-item">PE 0.0</span>
+                    <span class="meta-item">PB 0.0</span>
+                </div>
+            </div>
+            <div class="stock-scores">
+                <div class="score-bar"><div class="score-fill" style="width:87.125%;background:#ef4444"></div><span class="score-label">趋势 13.9</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:111.43749999999999%;background:#f59e0b"></div><span class="score-label">动量 17.8</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:76.8125%;background:#3b82f6"></div><span class="score-label">量价 12.3</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:29.312500000000004%;background:#8b5cf6"></div><span class="score-label">资金 4.7</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:61.75000000000001%;background:#10b981"></div><span class="score-label">突破 9.9</span></div>
+            </div>
+            <div class="stock-financials"></div>
+            <div class="stock-technical">
+                <div class="tech-item"><span class="tech-label">当前价</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">MA5</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">MA10</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">MA20</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">量比</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">位置</span><span class="tech-value">0%</span></div>
+            </div>
+            <div class="tech-diagnosis">
+                <div class="diagnosis-title">技术面诊断</div>
+                <div class="diagnosis-items">
+                    <span class="diagnosis-tag">短期均线承压</span><span class="diagnosis-tag">量能萎缩至 0.0 倍</span><span class="diagnosis-tag">处于近期低位区域</span>
+                </div>
+            </div>
+            <div class="analysis-text">**精测电子（300567）** 属于 **半导体量测** 主题，综合总得分 **68.4 分**（评级：A+ 优秀）。
+
+**趋势分析：**
+趋势健康度 13.9 分，股价运行在主要均线上方，中期上升趋势明确。
+当前价格 0.00 元，跌破 5 日均线（0.00 元），短期承压。
+
+**动量质量：**
+动量得分 17.8 分，近期价格动量强劲，动能充足。
+当日涨跌幅 +0.00%，波动平缓。
+
+**量价关系：**
+量价配合度 12.3 分，量价共振良好，资金参与度高。
+量比 0.00，明显缩量，关注度下降。
+
+**资金动向：**
+资金活跃度偏低，得分 4.7 分，需观察后续资金流向。
+
+**突破形态：**
+突破形态中等，得分 9.9 分，处于蓄势阶段。
+股价处于近期 0% 分位，接近阶段性低点。
+
+**基本面速览：**
+
+**综合判断：**
+综合表现优秀（68.4 分），趋势、动量、资金面配合良好，具备较好的短期交易机会。建议关注支撑位和止损位。</div>
+            <div class="stock-footer">
+                <div class="final-score">
+                    <span class="score-label">综合总分</span>
+                    <span class="score-value">68.4</span>
+                    <span class="score-grade" style="color:#10b981">A+ 优秀</span>
+                </div>
+            </div>
+        </div>
+        <div class="top-stock-card">
+            <div class="stock-header">
+                <div class="stock-rank">TOP 3</div>
+                <div class="stock-basic">
+                    <div class="stock-name">微导纳米</div>
+                    <div class="stock-code">688147</div>
+                </div>
+                <div class="stock-theme">半导体设备</div>
+            </div>
+            <div class="stock-price-row">
+                <div class="price-main">
+                    <span class="price-value">0.00</span>
+                    <span class="price-change" style="color:#6b7280">0.00%</span>
+                </div>
+                <div class="stock-meta">
+                    <span class="meta-item"></span>
+                    <span class="meta-item">PE 0.0</span>
+                    <span class="meta-item">PB 0.0</span>
+                </div>
+            </div>
+            <div class="stock-scores">
+                <div class="score-bar"><div class="score-fill" style="width:76.5625%;background:#ef4444"></div><span class="score-label">趋势 12.2</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:106.87500000000001%;background:#f59e0b"></div><span class="score-label">动量 17.1</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:72.75%;background:#3b82f6"></div><span class="score-label">量价 11.6</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:29.312500000000004%;background:#8b5cf6"></div><span class="score-label">资金 4.7</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:76.625%;background:#10b981"></div><span class="score-label">突破 12.3</span></div>
+            </div>
+            <div class="stock-financials"></div>
+            <div class="stock-technical">
+                <div class="tech-item"><span class="tech-label">当前价</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">MA5</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">MA10</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">MA20</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">量比</span><span class="tech-value">0.00</span></div>
+                <div class="tech-item"><span class="tech-label">位置</span><span class="tech-value">0%</span></div>
+            </div>
+            <div class="tech-diagnosis">
+                <div class="diagnosis-title">技术面诊断</div>
+                <div class="diagnosis-items">
+                    <span class="diagnosis-tag">短期均线承压</span><span class="diagnosis-tag">量能萎缩至 0.0 倍</span><span class="diagnosis-tag">处于近期低位区域</span>
+                </div>
+            </div>
+            <div class="analysis-text">**微导纳米（688147）** 属于 **半导体设备** 主题，综合总得分 **65.6 分**（评级：A+ 优秀）。
+
+**趋势分析：**
+趋势健康度 12.2 分，股价运行在主要均线上方，中期上升趋势明确。
+当前价格 0.00 元，跌破 5 日均线（0.00 元），短期承压。
+
+**动量质量：**
+动量得分 17.1 分，近期价格动量强劲，动能充足。
+当日涨跌幅 +0.00%，波动平缓。
+
+**量价关系：**
+量价配合度 11.6 分，量价关系基本健康。
+量比 0.00，明显缩量，关注度下降。
+
+**资金动向：**
+资金活跃度偏低，得分 4.7 分，需观察后续资金流向。
+
+**突破形态：**
+突破形态良好，得分 12.3 分，近期有有效突破迹象。
+股价处于近期 0% 分位，接近阶段性低点。
+
+**基本面速览：**
+
+**综合判断：**
+综合表现优秀（65.6 分），趋势、动量、资金面配合良好，具备较好的短期交易机会。建议关注支撑位和止损位。</div>
+            <div class="stock-footer">
+                <div class="final-score">
+                    <span class="score-label">综合总分</span>
+                    <span class="score-value">65.6</span>
+                    <span class="score-grade" style="color:#10b981">A+ 优秀</span>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">📈 全池打分结果表格</div>
+            <a class="table-link-card" href="2026-08-10_打分表格.html">
+                <div class="tl-icon">📋</div>
+                <div class="tl-text">
+                    <div class="tl-title">查看完整打分结果表格</div>
+                    <div class="tl-sub">共 42 只个股 · 排名 / 代码 / 名称 / 主题 / 总分 / 评级 / 五维明细 — 独立子页面，支持代码·名称·主题搜索</div>
+                </div>
+                <div class="tl-arrow">→</div>
+            </a>
+        </div>
+        
+        <div class="section" style="text-align:center;color:#94a3b8;font-size:12px;padding:20px;">
+            <p>免责声明：本报告仅供参考，不构成投资建议。数据来自东方财富，可能存在延迟。</p>
+        </div>
+    </div>
+    <script src="../assets/navbar.js"></script>
+</body>
+</html>
