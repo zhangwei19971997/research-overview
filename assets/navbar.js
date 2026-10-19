@@ -6,13 +6,14 @@
  */
 (function(){
   'use strict';
-  // 4 个导航项（href 用站点根相对，便于子目录 /reports/、/futures/、/scores/ 也能用）
+  // 5 个导航项（href 用站点根相对，便于子目录 /reports/、/futures/、/scores/ 也能用）
   var SITE_ROOT = '/';
   var items = [
     {key:'index',     text:'归档首页', href:SITE_ROOT+'index.html'},
     {key:'dashboard', text:'汇总看板', href:SITE_ROOT+'dashboard.html'},
     {key:'futures',   text:'期货收盘', href:SITE_ROOT+'futures.html'},
-    {key:'scores',    text:'股票打分', href:SITE_ROOT+'scores/index.html'}
+    {key:'scores',    text:'股票打分', href:SITE_ROOT+'scores/index.html'},
+    {key:'roundtable', text:'组合圆桌', href:SITE_ROOT+'roundtable.html'}
   ];
   // 依据当前 URL 决定哪个 key 高亮
   var path = location.pathname.replace(/\/+$/,'/');
@@ -20,6 +21,7 @@
     if (/\/dashboard(\.html)?$/.test(path)) return 'dashboard';
     if (/\/futures(\.html)?$/.test(path) || /\/futures\//.test(path)) return 'futures';
     if (/\/scores(\.html)?$/.test(path) || /\/scores\//.test(path)) return 'scores';
+    if (/\/roundtable(\.html)?$/.test(path)) return 'roundtable';
     return 'index';
   }
   var ACTIVE = activeKey();
