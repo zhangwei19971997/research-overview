@@ -92,7 +92,7 @@ padding:24px 18px 26px;margin-bottom:20px}
 <div class="main">
 <div class="hero"><div class="inner">
 <h1>技术面判断</h1>
-<p>输入 A 股代码 → 拉取日 K → 计算 MA18 趋势 + 6 日 BIAS → 输出六档操作建议</p>
+<p>输入 A 股代码 → 优先查后台表格缓存，命中即出 MA18 趋势 + BIAS 乖离率判断；未收录再拉日 K 兜底</p>
 </div></div>
 <div class="wrap">
 <div class="sec">
@@ -102,7 +102,7 @@ padding:24px 18px 26px;margin-bottom:20px}
 <input id="code" placeholder="如 600519 或 sh600519" autocomplete="off">
 <button class="btn" id="go" disabled>查询</button>
 </div>
-<div class="hint" id="hint">输入 6 位代码（沪深 A 股）后点击「查询」。北交所 920xxx 暂不支持。判断依据：MA18 走高为上升趋势、走反为下降趋势；再按 6 日 BIAS 的 ±5% 分档给出操作建议。</div>
+<div class="hint" id="hint">输入 6 位代码（沪深 A 股）后点击「查询」。优先查后台表格缓存（命中即出 MA18 趋势 + BIAS 乖离率判断），未收录再走浏览器直取。北交所 920xxx 覆盖有限。判断依据：趋势判断 G=D−E（>0 上升 / <0 下降），BIAS 乖离率 F=(C−D)/D×100 按 ±5% 分档给出操作建议。</div>
 </div>
 </div>
 
@@ -137,6 +137,7 @@ var EM_HOSTS = ['https://push2his.eastmoney.com','https://13.push2his.eastmoney.
 var EM_PARAMS = 'fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61&ut=7eea3edcaed7348a9c54788a165692f2&klt=101&fqt=1&lmt=30';
 var BIAS_BOUND = 5;   // 六档分界：±5%
 var MA_N = 18;
+var CACHE_URL = 'data/techjudge_cache.json';  // 优先查表格（导出缓存）
 
 // 6 位代码 → secid（沪 1. / 深 0. / 北 0.）
 function secidOf(code){
@@ -149,8 +150,32 @@ function sinaSym(code){
   var c = String(code).replace(/^(sh|sz|bj)/i,'');
   return (c[0] === '9' || c[0] === '6') ? 'sh' + c : 'sz' + c;
 }
+// 6 位代码 → 表内代码键（沪 .SH / 深·北 .SZ）
+function codeKey(code){
+  var c = String(code).replace(/^(sh|sz|bj)/i,'');
+  return (c[0] === '9' || c[0] === '6') ? c + '.SH' : c + '.SZ';
+}
 function isValidCode(v){
   return /^\d{6}$/.test(String(v).trim());
+}
+
+// ---- 优先查表格缓存：命中返回 {C,D,E,F,G}，未命中/加载失败返回 null ----
+var _cache = null;      // null=未加载，object=已加载
+function loadCache(){
+  if (_cache !== null) return Promise.resolve(_cache);
+  return fetch(CACHE_URL, { cache: 'no-store' })
+    .then(function(r){ if (!r.ok) throw new Error('cache http ' + r.status); return r.json(); })
+    .then(function(j){ _cache = (j && j.data) || {}; return _cache; })
+    .catch(function(){ _cache = {}; return _cache; });  // 缓存不可用 → 走浏览器直取，不阻断
+}
+function lookupCache(code){
+  var key = codeKey(code);
+  return loadCache().then(function(c){
+    var rec = c && c[key];
+    // 命中且关键列齐（G 趋势 + F BIAS 都在）才算有效
+    if (rec && rec.G != null && rec.F != null && rec.D != null) return rec;
+    return null;
+  });
 }
 
 function fetchEm(host, secid){
@@ -314,9 +339,55 @@ function run(){
   $go.disabled = true; $go.textContent = '查询中…';
   $sec.style.display = 'block'; $verdict.style.display = 'none';
   $chartwrap.style.display = 'none'; $empty.style.display = 'none';
-  $status.innerHTML = '<span class="bad">正在拉取 K 线…</span>';
+  $status.innerHTML = '<span class="bad">正在查表格缓存…</span>';
   $asof.textContent = '';
 
+  // ① 优先查表格缓存（导出自 EDE 表 C/D/E/F/G）；命中即出判断，免联网
+  lookupCache(code).then(function(rec){
+    if (rec) { renderFromCache(code, rec); return; }
+    // ② 表里没有 → 浏览器直取
+    $status.innerHTML = '<span class="warn">表格未收录，转浏览器直取…</span>';
+    fetchFromBrowser(code);
+  });
+}
+
+function renderFromCache(code, rec){
+  // rec: {C,D,E,F,G}；G=趋势(D-E)，F=BIAS18。读 G/F 直接出判断，与后台表格口径一致。
+  var trendUp = rec.G > 0;
+  var bias = rec.F;
+  var j = judge(trendUp, bias);
+  $status.innerHTML = '<span class="ok">命中表格缓存（数据截至缓存刷新日）</span>'
+    + (code[0]==='9' ? '<br><span class="warn">提示：北交所 920xxx 表格覆盖有限，结果仅供参考。</span>' : '');
+  $asof.textContent = '数据源：表格缓存 · 命中 ' + codeKey(code);
+  renderVerdictCache(code, j, rec, trendUp, bias);
+  // 缓存无 K 线序列，图表区提示
+  $empty.style.display = 'block';
+  $empty.innerHTML = '<span class="warn">命中表格缓存，仅输出判断（C/D/E/F/G）；K 线走势图请「表内未收录」时经浏览器直取查看。</span>';
+}
+
+function renderVerdictCache(code, j, rec, trendUp, bias){
+  var m18 = rec.D, m18prev = rec.E;
+  var trendTxt = trendUp ? '上升趋势' : '下降趋势';
+  var trendCls = trendUp ? 'up' : 'down';
+  var trendArrow = trendUp ? '↗' : '↘';
+  var html = '';
+  html += '<div class="v-head">';
+  html += '<div class="v-trend ' + trendCls + '">' + trendTxt + ' <span class="arrow">' + trendArrow + '</span></div>';
+  html += '<div class="v-desc">' + j.label + '</div>';
+  html += '</div>';
+  html += '<div class="v-action">操作建议：<b>' + j.action + '</b></div>';
+  html += '<div class="v-metrics">';
+  html += vm('收盘价 C', rec.C != null ? rec.C.toFixed(2) : '—', '', 'neu');
+  html += vm('MA18（最新）', m18 != null ? m18.toFixed(2) : '—', m18prev != null && m18 >= m18prev ? '较前值走高' : '较前值走反', m18 >= (m18prev||m18) ? 'up' : 'down');
+  html += vm('MA18（前交易日）', m18prev != null ? m18prev.toFixed(2) : '—', '', 'neu');
+  html += vm('BIAS 乖离率 F', (bias>0?'+':'') + bias.toFixed(2) + '%', Math.abs(bias)<BIAS_BOUND ? '±5% 内' : (bias>BIAS_BOUND ? '超 +5%' : '低于 -5%'), Math.abs(bias)<BIAS_BOUND ? 'neu' : (bias>0 ? 'up' : 'down'));
+  html += vm('趋势判断 G', (rec.G>0?'+':'') + rec.G.toFixed(4), rec.G>0 ? '上升' : (rec.G<0 ? '下降' : '走平'), rec.G>0 ? 'up' : (rec.G<0 ? 'down' : 'neu'));
+  html += '</div>';
+  $verdict.innerHTML = html;
+  $verdict.style.display = 'block';
+}
+
+function fetchFromBrowser(code){
   fetchKline(code).then(function(res){
     var bars = res.bars;
     setSourceMsg(res.source);
@@ -339,9 +410,8 @@ function run(){
   }).catch(function(e){
     $empty.style.display = 'block';
     $empty.innerHTML = '<span class="bad">拉取失败：' + escMsg(e && e.message || e) + '</span>'
-      + '<div class="hint" style="margin-top:8px">三个数据源（东方财富多域名 / 新浪 / 本地后端）均不可达。若浏览器直取被 CORS/混合内容拦截，请在本机运行 <code>python techjudge_proxy.py</code> 后重试（监听 127.0.0.1:8765）。</div>';
+      + '<div class="hint" style="margin-top:8px">表格未收录且三个数据源（东方财富多域名 / 新浪 / 本地后端）均不可达。若浏览器直取被 CORS/混合内容拦截，请在本机运行 <code>python techjudge_proxy.py</code> 后重试（监听 127.0.0.1:8765）。</div>';
   }).finally(function(){
-    $go.disabled = !$code.value && !isValidCode($code.value) ? true : false;
     $go.disabled = !isValidCode($code.value);
     $go.textContent = '查询';
   });
