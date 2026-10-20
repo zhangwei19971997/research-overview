@@ -1,5 +1,43 @@
 [
   {
+    "date": "2026-10-20",
+    "weekday": "周二",
+    "contracts": [
+      {
+        "code": "IF",
+        "name": "沪深300",
+        "close": 4152.11,
+        "change": -0.54,
+        "bias": "中性",
+        "risk_level": "中"
+      },
+      {
+        "code": "IH",
+        "name": "上证50",
+        "close": 2765.77,
+        "change": -0.31,
+        "bias": "偏多",
+        "risk_level": "中"
+      },
+      {
+        "code": "IC",
+        "name": "中证500",
+        "close": 6841.44,
+        "change": 0.6,
+        "bias": "中性偏空",
+        "risk_level": "高"
+      },
+      {
+        "code": "IM",
+        "name": "中证1000",
+        "close": 6766.9,
+        "change": 1.02,
+        "bias": "中性",
+        "risk_level": "高"
+      }
+    ]
+  },
+  {
     "date": "2026-10-19",
     "weekday": "周一",
     "contracts": [
