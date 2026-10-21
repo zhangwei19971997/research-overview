@@ -1,366 +1,360 @@
 {
- "date": "2026-10-19",
- "count": 60,
+ "date": "2026-10-21",
+ "count": 59,
  "quotes": {
+  "600150": {
+   "name": "中国船舶",
+   "price": 35.06,
+   "change_percent": -0.45,
+   "date": "2026-10-21"
+  },
   "600176": {
    "name": "中国巨石",
-   "price": 33.72,
-   "change_percent": -0.53,
-   "date": "2026-10-19"
+   "price": 35.0,
+   "change_percent": 0.98,
+   "date": "2026-10-21"
   },
   "600183": {
    "name": "生益科技",
-   "price": 117.63,
-   "change_percent": 2.64,
-   "date": "2026-10-19"
-  },
-  "600276": {
-   "name": "恒瑞医药",
-   "price": 46.08,
-   "change_percent": -1.18,
-   "date": "2026-10-19"
+   "price": 121.0,
+   "change_percent": 3.22,
+   "date": "2026-10-21"
   },
   "600482": {
    "name": "中国动力",
-   "price": 31.81,
-   "change_percent": 1.34,
-   "date": "2026-10-19"
+   "price": 30.47,
+   "change_percent": -0.16,
+   "date": "2026-10-21"
   },
   "600519": {
    "name": "贵州茅台",
-   "price": 1324.97,
-   "change_percent": -0.3,
-   "date": "2026-10-19"
-  },
-  "601100": {
-   "name": "恒立液压",
-   "price": 83.05,
-   "change_percent": 6.3,
-   "date": "2026-10-19"
+   "price": 1315.1,
+   "change_percent": -1.26,
+   "date": "2026-10-21"
   },
   "601208": {
    "name": "东材科技",
-   "price": 40.89,
-   "change_percent": -3.56,
-   "date": "2026-10-19"
+   "price": 41.62,
+   "change_percent": 1.49,
+   "date": "2026-10-21"
   },
   "601689": {
    "name": "拓普集团",
-   "price": 40.49,
-   "change_percent": 1.73,
-   "date": "2026-10-19"
+   "price": 42.42,
+   "change_percent": 0.62,
+   "date": "2026-10-21"
   },
   "601869": {
    "name": "长飞光纤",
-   "price": 340.0,
-   "change_percent": 2.56,
-   "date": "2026-10-19"
+   "price": 353.87,
+   "change_percent": 4.36,
+   "date": "2026-10-21"
   },
   "601872": {
    "name": "招商轮船",
-   "price": 17.85,
-   "change_percent": -1.87,
-   "date": "2026-10-19"
+   "price": 18.04,
+   "change_percent": 2.62,
+   "date": "2026-10-21"
   },
   "603009": {
    "name": "北特科技",
-   "price": 43.97,
-   "change_percent": 7.64,
-   "date": "2026-10-19"
+   "price": 47.4,
+   "change_percent": 0.23,
+   "date": "2026-10-21"
   },
   "603186": {
    "name": "华正新材",
-   "price": 186.74,
-   "change_percent": -1.71,
-   "date": "2026-10-19"
+   "price": 202.25,
+   "change_percent": 5.11,
+   "date": "2026-10-21"
   },
   "603228": {
    "name": "景旺电子",
-   "price": 86.9,
-   "change_percent": -3.98,
-   "date": "2026-10-19"
+   "price": 91.61,
+   "change_percent": 3.65,
+   "date": "2026-10-21"
   },
   "603256": {
    "name": "宏和科技",
-   "price": 97.48,
-   "change_percent": -3.65,
-   "date": "2026-10-19"
+   "price": 104.48,
+   "change_percent": 5.5,
+   "date": "2026-10-21"
   },
   "603259": {
    "name": "药明康德",
-   "price": 146.5,
-   "change_percent": 1.52,
-   "date": "2026-10-19"
+   "price": 147.38,
+   "change_percent": -0.19,
+   "date": "2026-10-21"
   },
   "603986": {
    "name": "兆易创新",
-   "price": 282.44,
-   "change_percent": 0.21,
-   "date": "2026-10-19"
+   "price": 288.11,
+   "change_percent": 2.01,
+   "date": "2026-10-21"
   },
   "688012": {
    "name": "中微公司",
-   "price": 277.27,
-   "change_percent": -6.08,
-   "date": "2026-10-19"
+   "price": 277.21,
+   "change_percent": -0.46,
+   "date": "2026-10-21"
   },
   "688017": {
    "name": "绿的谐波",
-   "price": 250.5,
-   "change_percent": 5.81,
-   "date": "2026-10-19"
+   "price": 258.0,
+   "change_percent": -3.82,
+   "date": "2026-10-21"
   },
   "688037": {
    "name": "芯源微",
-   "price": 281.79,
-   "change_percent": -5.81,
-   "date": "2026-10-19"
+   "price": 276.12,
+   "change_percent": 0.24,
+   "date": "2026-10-21"
   },
   "688041": {
    "name": "海光信息",
-   "price": 191.5,
-   "change_percent": -0.54,
-   "date": "2026-10-19"
-  },
-  "688048": {
-   "name": "长光华芯",
-   "price": 177.0,
-   "change_percent": -2.33,
-   "date": "2026-10-19"
+   "price": 195.57,
+   "change_percent": 1.86,
+   "date": "2026-10-21"
   },
   "688072": {
    "name": "拓荆科技",
-   "price": 571.0,
-   "change_percent": -13.88,
-   "date": "2026-10-19"
+   "price": 542.1,
+   "change_percent": -0.71,
+   "date": "2026-10-21"
   },
   "688120": {
    "name": "华海清科",
-   "price": 229.56,
-   "change_percent": -7.39,
-   "date": "2026-10-19"
+   "price": 220.23,
+   "change_percent": 0.79,
+   "date": "2026-10-21"
   },
   "688141": {
    "name": "杰华特",
-   "price": 74.6,
-   "change_percent": -1.84,
-   "date": "2026-10-19"
+   "price": 77.09,
+   "change_percent": 0.42,
+   "date": "2026-10-21"
+  },
+  "688147": {
+   "name": "微导纳米",
+   "price": 76.83,
+   "change_percent": 1.57,
+   "date": "2026-10-21"
   },
   "688200": {
    "name": "华峰测控",
-   "price": 308.5,
-   "change_percent": -3.44,
-   "date": "2026-10-19"
+   "price": 303.33,
+   "change_percent": 1.11,
+   "date": "2026-10-21"
   },
   "688256": {
    "name": "寒武纪",
-   "price": 928.51,
-   "change_percent": 1.48,
-   "date": "2026-10-19"
+   "price": 932.07,
+   "change_percent": 1.2,
+   "date": "2026-10-21"
   },
   "688313": {
    "name": "仕佳光子",
-   "price": 111.84,
-   "change_percent": -0.51,
-   "date": "2026-10-19"
+   "price": 117.11,
+   "change_percent": 2.79,
+   "date": "2026-10-21"
   },
   "688361": {
    "name": "中科飞测",
-   "price": 301.19,
-   "change_percent": -10.36,
-   "date": "2026-10-19"
+   "price": 285.5,
+   "change_percent": 1.24,
+   "date": "2026-10-21"
   },
   "688498": {
    "name": "源杰科技",
-   "price": 1002.0,
-   "change_percent": -2.58,
-   "date": "2026-10-19"
+   "price": 1029.0,
+   "change_percent": 1.85,
+   "date": "2026-10-21"
   },
   "688981": {
    "name": "中芯国际",
-   "price": 99.7,
-   "change_percent": -2.88,
-   "date": "2026-10-19"
+   "price": 100.86,
+   "change_percent": -1.1,
+   "date": "2026-10-21"
   },
   "000338": {
    "name": "潍柴动力",
-   "price": 21.41,
-   "change_percent": -1.65,
-   "date": "2026-10-19"
+   "price": 21.75,
+   "change_percent": 1.3,
+   "date": "2026-10-21"
   },
   "000636": {
    "name": "风华高科",
-   "price": 40.13,
-   "change_percent": -1.55,
-   "date": "2026-10-19"
+   "price": 41.46,
+   "change_percent": 2.47,
+   "date": "2026-10-21"
   },
   "000811": {
    "name": "冰轮环境",
-   "price": 29.49,
-   "change_percent": -2.45,
-   "date": "2026-10-19"
+   "price": 30.79,
+   "change_percent": 4.37,
+   "date": "2026-10-21"
   },
   "002046": {
    "name": "国机精工",
-   "price": 49.45,
-   "change_percent": -1.1,
-   "date": "2026-10-19"
+   "price": 53.5,
+   "change_percent": 5.56,
+   "date": "2026-10-21"
   },
   "002050": {
    "name": "三花智控",
-   "price": 32.65,
-   "change_percent": 3.91,
-   "date": "2026-10-19"
+   "price": 32.92,
+   "change_percent": -0.33,
+   "date": "2026-10-21"
   },
   "002281": {
    "name": "光迅科技",
-   "price": 132.52,
-   "change_percent": -0.92,
-   "date": "2026-10-19"
+   "price": 136.93,
+   "change_percent": 2.14,
+   "date": "2026-10-21"
   },
   "002371": {
    "name": "北方华创",
-   "price": 573.1,
-   "change_percent": -3.46,
-   "date": "2026-10-19"
+   "price": 570.66,
+   "change_percent": 0.74,
+   "date": "2026-10-21"
   },
   "002384": {
    "name": "东山精密",
-   "price": 122.15,
-   "change_percent": -0.42,
-   "date": "2026-10-19"
+   "price": 124.52,
+   "change_percent": 1.94,
+   "date": "2026-10-21"
   },
   "002436": {
    "name": "兴森科技",
-   "price": 34.52,
-   "change_percent": -1.43,
-   "date": "2026-10-19"
+   "price": 37.0,
+   "change_percent": 4.28,
+   "date": "2026-10-21"
   },
   "002463": {
    "name": "沪电股份",
-   "price": 111.75,
-   "change_percent": -1.44,
-   "date": "2026-10-19"
+   "price": 116.28,
+   "change_percent": 4.75,
+   "date": "2026-10-21"
   },
   "002475": {
    "name": "立讯精密",
-   "price": 46.2,
-   "change_percent": 3.43,
-   "date": "2026-10-19"
+   "price": 48.17,
+   "change_percent": 1.2,
+   "date": "2026-10-21"
   },
   "002536": {
    "name": "飞龙股份",
-   "price": 39.01,
-   "change_percent": -3.92,
-   "date": "2026-10-19"
-  },
-  "002594": {
-   "name": "比亚迪",
-   "price": 83.5,
-   "change_percent": 0.94,
-   "date": "2026-10-19"
+   "price": 40.84,
+   "change_percent": 2.48,
+   "date": "2026-10-21"
   },
   "002837": {
    "name": "英维克",
-   "price": 44.46,
-   "change_percent": -0.54,
-   "date": "2026-10-19"
+   "price": 45.51,
+   "change_percent": 1.49,
+   "date": "2026-10-21"
   },
   "002916": {
    "name": "深南电路",
-   "price": 302.17,
-   "change_percent": -2.52,
-   "date": "2026-10-19"
+   "price": 309.29,
+   "change_percent": 2.76,
+   "date": "2026-10-21"
+  },
+  "300014": {
+   "name": "亿纬锂能",
+   "price": 42.4,
+   "change_percent": -3.72,
+   "date": "2026-10-21"
   },
   "300274": {
    "name": "阳光电源",
-   "price": 77.68,
-   "change_percent": 1.07,
-   "date": "2026-10-19"
+   "price": 72.66,
+   "change_percent": -4.45,
+   "date": "2026-10-21"
   },
   "300308": {
    "name": "中际旭创",
-   "price": 660.7,
-   "change_percent": -1.39,
-   "date": "2026-10-19"
+   "price": 656.61,
+   "change_percent": 1.34,
+   "date": "2026-10-21"
   },
   "300364": {
    "name": "中文在线",
-   "price": 23.74,
-   "change_percent": -1.66,
-   "date": "2026-10-19"
+   "price": 24.77,
+   "change_percent": 2.06,
+   "date": "2026-10-21"
   },
   "300394": {
    "name": "天孚通信",
-   "price": 203.3,
-   "change_percent": -4.46,
-   "date": "2026-10-19"
+   "price": 216.08,
+   "change_percent": 5.64,
+   "date": "2026-10-21"
   },
   "300408": {
    "name": "三环集团",
-   "price": 94.42,
-   "change_percent": -2.84,
-   "date": "2026-10-19"
+   "price": 96.73,
+   "change_percent": 4.86,
+   "date": "2026-10-21"
   },
   "300413": {
    "name": "芒果超媒",
-   "price": 23.3,
-   "change_percent": -1.31,
-   "date": "2026-10-19"
+   "price": 23.2,
+   "change_percent": -0.85,
+   "date": "2026-10-21"
   },
   "300454": {
    "name": "深信服",
-   "price": 125.01,
-   "change_percent": -0.09,
-   "date": "2026-10-19"
+   "price": 134.17,
+   "change_percent": -0.02,
+   "date": "2026-10-21"
   },
   "300476": {
    "name": "胜宏科技",
-   "price": 176.85,
-   "change_percent": -2.83,
-   "date": "2026-10-19"
+   "price": 190.24,
+   "change_percent": 3.0,
+   "date": "2026-10-21"
   },
   "300502": {
    "name": "新易盛",
-   "price": 308.0,
-   "change_percent": 0.36,
-   "date": "2026-10-19"
+   "price": 298.63,
+   "change_percent": 0.15,
+   "date": "2026-10-21"
   },
   "300567": {
    "name": "精测电子",
-   "price": 141.3,
-   "change_percent": -6.94,
-   "date": "2026-10-19"
+   "price": 143.45,
+   "change_percent": -0.46,
+   "date": "2026-10-21"
   },
   "300570": {
    "name": "太辰光",
-   "price": 167.38,
-   "change_percent": -3.8,
-   "date": "2026-10-19"
+   "price": 175.59,
+   "change_percent": 2.92,
+   "date": "2026-10-21"
   },
   "300604": {
    "name": "长川科技",
-   "price": 206.25,
-   "change_percent": -3.81,
-   "date": "2026-10-19"
+   "price": 204.8,
+   "change_percent": 0.73,
+   "date": "2026-10-21"
   },
   "300750": {
    "name": "宁德时代",
-   "price": 267.02,
-   "change_percent": -3.6,
-   "date": "2026-10-19"
+   "price": 232.53,
+   "change_percent": -10.25,
+   "date": "2026-10-21"
   },
   "300757": {
    "name": "罗博特科",
-   "price": 440.38,
-   "change_percent": -0.48,
-   "date": "2026-10-19"
+   "price": 452.15,
+   "change_percent": 3.94,
+   "date": "2026-10-21"
   },
   "301018": {
    "name": "申菱环境",
-   "price": 74.33,
-   "change_percent": -0.47,
-   "date": "2026-10-19"
+   "price": 76.8,
+   "change_percent": 3.77,
+   "date": "2026-10-21"
   }
  }
 }
