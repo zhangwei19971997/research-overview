@@ -119,7 +119,7 @@
 
   <div class="card">
     <h2>期货滚贴息（16 合约到期年化收益率）</h2>
-    <div class="style-box">滚贴息数据缺失（阶段 1.5 未抓取合约行情或 basis.py 未运行）</div>
+    <div class="style-box">滚贴息数据缺失：滚贴息当日未同步：tdx-connector 本会话未安装（list_installed_plugins 返回 No connectors installed），16 合约行情缺失，连续第 4 期降级。</div>
     <p class="muted" style="margin-top:10px">滚贴息 = 到期年化收益率 =（现货收盘 − 期货收盘）÷ 期货收盘 × 365 ÷ 剩余自然日；<b>贴水</b>（期货低于现货）为正值，代表持有至到期可获得的年化基差收敛收益，升水为负。到期日为合约月份第三个周五（中金所规则，遇法定节假日可能提前）；当日交割合约不计算年化。数据来源：通达信（合约行情）+ 腾讯自选股（现货指数收盘）。</p>
   </div>
 
