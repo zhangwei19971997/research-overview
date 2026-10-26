@@ -1,8 +1,21 @@
 {
  "title": "康庄研究院",
- "updated": "2026-10-26 15:45:08",
- "count": 87,
+ "updated": "2026-10-27 00:39:34",
+ "count": 88,
  "days": [
+  {
+   "date": "2026-10-26",
+   "weekday": "一",
+   "summary": "2026-10-26 调研基地当日核心由“物理AI/具身智能”接棒AI硬件成为最强主线：OpenAI组机器人团队、GPT-6 Astra与英伟达GTC柏林共振，EGO/UMI数采需求爆发、触觉/相机/…",
+   "theme_count": 12,
+   "stock_count": 197,
+   "top_themes": [
+    "具身智能/物理AI/机器人",
+    "AI算力/液冷/PCB/CPO",
+    "半导体国产替代（设备/材料/EDA/存储）"
+   ],
+   "report": "reports/2026-10-26.html"
+  },
   {
    "date": "2026-10-25",
    "weekday": "日",
