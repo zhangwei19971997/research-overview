@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>股票池打分报告 - 调研基地_2026-11-10</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f5f7fa; 
+            color: #1f2933; 
+            line-height: 1.6;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .header { 
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white; padding: 30px; border-radius: 12px; margin-bottom: 20px;
+        }
+        .header h1 { font-size: 28px; margin-bottom: 8px; }
+        .header .meta { opacity: 0.9; font-size: 14px; }
+        .section { 
+            background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .section-title { 
+            font-size: 18px; font-weight: 600; margin-bottom: 16px; 
+            padding-bottom: 12px; border-bottom: 2px solid #e5e7eb;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th { 
+            background: #f8fafc; color: #64748b; font-weight: 600; 
+            text-align: left; padding: 12px 8px; border-bottom: 2px solid #e2e8f0;
+        }
+        td { padding: 10px 8px; border-bottom: 1px solid #f1f5f9; }
+        tr:hover { background: #f8fafc; }
+        .rank-cell { font-weight: 600; color: #64748b; width: 50px; }
+        .code-cell a { color: #2563eb; text-decoration: none; }
+        .code-cell a:hover { text-decoration: underline; }
+        .name-cell { font-weight: 500; }
+        .theme-cell { color: #64748b; font-size: 12px; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .score-cell { font-weight: 600; color: #1e3a5f; font-size: 15px; }
+        .grade-cell { font-weight: 600; font-size: 12px; }
+        .dim-cell { color: #64748b; font-size: 12px; }
+        
+        /* Top Stock Cards */
+        .top-stock-card {
+            background: #fafbfc; border: 1px solid #e5e7eb; border-radius: 12px;
+            padding: 20px; margin-bottom: 16px;
+        }
+        .stock-header {
+            display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
+        }
+        .stock-rank {
+            width: 48px; height: 48px; border-radius: 50%;
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: white; display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 18px;
+        }
+        .stock-basic { flex: 1; }
+        .stock-name { font-size: 20px; font-weight: 600; color: #1f2933; }
+        .stock-code { font-size: 13px; color: #64748b; font-family: monospace; }
+        .stock-theme { 
+            background: #e0e7ff; color: #4338ca; padding: 4px 12px; border-radius: 20px;
+            font-size: 12px; font-weight: 500;
+        }
+        .stock-price-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 0; border-bottom: 1px solid #e5e7eb; margin-bottom: 12px;
+        }
+        .price-main { display: flex; align-items: baseline; gap: 12px; }
+        .price-value { font-size: 28px; font-weight: 700; color: #1f2933; }
+        .price-change { font-size: 16px; font-weight: 600; }
+        .stock-meta { display: flex; gap: 16px; }
+        .meta-item { font-size: 12px; color: #64748b; }
+        .stock-scores { margin-bottom: 12px; }
+        .score-bar {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 8px;
+        }
+        .score-fill {
+            height: 8px; border-radius: 4px; min-width: 4px;
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+        }
+        .score-label { font-size: 12px; color: #64748b; width: 80px; }
+        .stock-financials {
+            display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px;
+            padding: 12px; background: white; border-radius: 8px;
+        }
+        .fin-item { display: flex; flex-direction: column; align-items: center; }
+        .fin-label { font-size: 11px; color: #64748b; }
+        .fin-value { font-size: 16px; font-weight: 600; }
+        .stock-technical {
+            display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;
+            margin-bottom: 12px;
+        }
+        .tech-item {
+            text-align: center; padding: 8px; background: white; border-radius: 6px;
+        }
+        .tech-label { font-size: 11px; color: #64748b; }
+        .tech-value { font-size: 14px; font-weight: 600; color: #1f2933; }
+        .tech-diagnosis {
+            padding: 12px; background: white; border-radius: 8px; margin-bottom: 12px;
+        }
+        .diagnosis-title { font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 8px; }
+        .diagnosis-items { display: flex; gap: 8px; flex-wrap: wrap; }
+        .diagnosis-tag {
+            background: #dbeafe; color: #1e40af; padding: 4px 10px; border-radius: 12px;
+            font-size: 12px;
+        }
+        .analysis-text {
+            padding: 16px; background: #f0f9ff; border-left: 3px solid #0ea5e9;
+            border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.8; color: #334155;
+            margin-bottom: 12px;
+        }
+        .stock-footer {
+            display: flex; justify-content: flex-end; align-items: center;
+            padding-top: 12px; border-top: 1px solid #e5e7eb;
+        }
+        .final-score { display: flex; align-items: center; gap: 12px; }
+        .score-value { font-size: 24px; font-weight: 700; color: #1e3a5f; }
+        .score-grade { font-size: 14px; font-weight: 600; }
+        
+        /* Scrollable table */
+        .table-container { overflow-x: auto; }
+        
+        /* Topbar (navigation) */
+        .topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;
+            background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+            color: #475569; font-size: 13px; text-decoration: none; transition: all .15s;
+        }
+        .back-link:hover { border-color: #2563eb; color: #2563eb; }
+        
+        /* Link card to standalone table subpage */
+        .table-link-card {
+            display: flex; align-items: center; gap: 16px; padding: 18px 20px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd; border-radius: 12px; text-decoration: none;
+            color: #0c4a6e; transition: all .15s;
+        }
+        .table-link-card:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(37,99,235,.12); border-color: #2563eb; }
+        .table-link-card .tl-icon { font-size: 28px; }
+        .table-link-card .tl-text { flex: 1; }
+        .table-link-card .tl-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .table-link-card .tl-sub { font-size: 12px; color: #0369a1; opacity: .85; }
+        .table-link-card .tl-arrow { font-size: 22px; font-weight: 700; color: #2563eb; }
+        
+        @media (max-width: 768px) {
+            .container { padding: 12px; }
+            .header { padding: 20px; }
+            .header h1 { font-size: 22px; }
+            .stock-technical { grid-template-columns: repeat(3, 1fr); }
+            .stock-price-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .table-link-card { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <a class="back-link" href="index.html">← 打分汇总</a>
+        </div>
+        <div class="header">
+            <h1>📊 股票池打分报告</h1>
+            <div class="meta">
+                <span>调研基地_2026-11-10</span> · <span>📅 数据截至 2026-11-10 收盘</span> · <span>⏱ 生成于 2026-11-11 08:34</span> · <span>共 63 只个股</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">🏆 Top 3 个股详细分析</div>
+            
+        <div class="top-stock-card">
+            <div class="stock-header">
+                <div class="stock-rank">TOP 1</div>
+                <div class="stock-basic">
+                    <div class="stock-name">乐鑫科技</div>
+                    <div class="stock-code">688018</div>
+                </div>
+                <div class="stock-theme">存储芯片/端侧SoC</div>
+            </div>
+            <div class="stock-price-row">
+                <div class="price-main">
+                    <span class="price-value">176.15</span>
+                    <span class="price-change" style="color:#ef4444">+8.14%</span>
+                </div>
+                <div class="stock-meta">
+                    <span class="meta-item">41286796382.65</span>
+                    <span class="meta-item">PE 2.1</span>
+                    <span class="meta-item">PB 77451.0</span>
+                </div>
+            </div>
+            <div class="stock-scores">
+                <div class="score-bar"><div class="score-fill" style="width:59.8125%;background:#ef4444"></div><span class="score-label">趋势 9.6</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:96.5%;background:#f59e0b"></div><span class="score-label">动量 15.4</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:69.625%;background:#3b82f6"></div><span class="score-label">量价 11.1</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:54.0625%;background:#8b5cf6"></div><span class="score-label">资金 8.7</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:99.1875%;background:#10b981"></div><span class="score-label">突破 15.9</span></div>
+            </div>
+            <div class="stock-financials"><span class="fin-item"><span class="fin-label">PE(TTM)</span><span class="fin-value">2.1</span></span><span class="fin-item"><span class="fin-label">PB</span><span class="fin-value">77451.0</span></span></div>
+            <div class="stock-technical">
+                <div class="tech-item"><span class="tech-label">当前价</span><span class="tech-value">160.26</span></div>
+                <div class="tech-item"><span class="tech-label">MA5</span><span class="tech-value">152.15</span></div>
+                <div class="tech-item"><span class="tech-label">MA10</span><span class="tech-value">141.91</span></div>
+                <div class="tech-item"><span class="tech-label">MA20</span><span class="tech-value">134.91</span></div>
+                <div class="tech-item"><span class="tech-label">量比</span><span class="tech-value">1.29</span></div>
+                <div class="tech-item"><span class="tech-label">位置</span><span class="tech-value">100%</span></div>
+            </div>
+            <div class="tech-diagnosis">
+                <div class="diagnosis-title">技术面诊断</div>
+                <div class="diagnosis-items">
+                    <span class="diagnosis-tag">短期均线支撑有效</span><span class="diagnosis-tag">处于近期高位区域</span>
+                </div>
+            </div>
+            <div class="analysis-text">**乐鑫科技（688018）** 属于 **存储芯片/端侧SoC** 主题，综合总得分 **72.6 分**（评级：A+ 优秀）。
+
+**趋势分析：**
+趋势健康度 9.6 分，股价在均线附近震荡，方向尚不明确。
+当前价格 176.15 元，站稳 5 日均线（152.15 元），短期偏强。
+
+**动量质量：**
+动量得分 15.4 分，近期价格动量强劲，动能充足。
+当日涨跌幅 +8.14%，涨幅明显。
+
+**量价关系：**
+量价配合度 11.1 分，量价关系基本健康。
+量比 1.29，量能正常。
+
+**资金动向：**
+资金活跃度中等，得分 8.7 分，有资金关注。
+
+**突破形态：**
+突破形态良好，得分 15.9 分，近期有有效突破迹象。
+股价处于近期 100% 分位，接近阶段性高点。
+
+**基本面速览：**
+PE(TTM) 2.1，估值偏低。
+
+**综合判断：**
+综合表现优秀（72.6 分），趋势、动量、资金面配合良好，具备较好的短期交易机会。建议关注支撑位和止损位。</div>
+            <div class="stock-footer">
+                <div class="final-score">
+                    <span class="score-label">综合总分</span>
+                    <span class="score-value">72.6</span>
+                    <span class="score-grade" style="color:#10b981">A+ 优秀</span>
+                </div>
+            </div>
+        </div>
+        <div class="top-stock-card">
+            <div class="stock-header">
+                <div class="stock-rank">TOP 2</div>
+                <div class="stock-basic">
+                    <div class="stock-name">日盈电子</div>
+                    <div class="stock-code">603286</div>
+                </div>
+                <div class="stock-theme">机器人/智能驾驶（具身智能）</div>
+            </div>
+            <div class="stock-price-row">
+                <div class="price-main">
+                    <span class="price-value">60.90</span>
+                    <span class="price-change" style="color:#ef4444">+10.01%</span>
+                </div>
+                <div class="stock-meta">
+                    <span class="meta-item">7185814563.9</span>
+                    <span class="meta-item">PE -0.4</span>
+                    <span class="meta-item">PB 57417.0</span>
+                </div>
+            </div>
+            <div class="stock-scores">
+                <div class="score-bar"><div class="score-fill" style="width:55.875%;background:#ef4444"></div><span class="score-label">趋势 8.9</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:83.1875%;background:#f59e0b"></div><span class="score-label">动量 13.3</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:87.625%;background:#3b82f6"></div><span class="score-label">量价 14.0</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:55.3125%;background:#8b5cf6"></div><span class="score-label">资金 8.8</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:95.25%;background:#10b981"></div><span class="score-label">突破 15.2</span></div>
+            </div>
+            <div class="stock-financials"><span class="fin-item"><span class="fin-label">PB</span><span class="fin-value">57417.0</span></span></div>
+            <div class="stock-technical">
+                <div class="tech-item"><span class="tech-label">当前价</span><span class="tech-value">55.61</span></div>
+                <div class="tech-item"><span class="tech-label">MA5</span><span class="tech-value">51.35</span></div>
+                <div class="tech-item"><span class="tech-label">MA10</span><span class="tech-value">51.20</span></div>
+                <div class="tech-item"><span class="tech-label">MA20</span><span class="tech-value">47.10</span></div>
+                <div class="tech-item"><span class="tech-label">量比</span><span class="tech-value">2.06</span></div>
+                <div class="tech-item"><span class="tech-label">位置</span><span class="tech-value">100%</span></div>
+            </div>
+            <div class="tech-diagnosis">
+                <div class="diagnosis-title">技术面诊断</div>
+                <div class="diagnosis-items">
+                    <span class="diagnosis-tag">短期均线支撑有效</span><span class="diagnosis-tag">量能放大 2.1 倍</span><span class="diagnosis-tag">处于近期高位区域</span>
+                </div>
+            </div>
+            <div class="analysis-text">**日盈电子（603286）** 属于 **机器人/智能驾驶（具身智能）** 主题，综合总得分 **70.6 分**（评级：A+ 优秀）。
+
+**趋势分析：**
+趋势健康度 8.9 分，股价在均线附近震荡，方向尚不明确。
+当前价格 60.90 元，站稳 5 日均线（51.35 元），短期偏强。
+
+**动量质量：**
+动量得分 13.3 分，近期价格动量强劲，动能充足。
+当日涨跌幅 +10.01%，涨幅明显。
+
+**量价关系：**
+量价配合度 14.0 分，量价共振良好，资金参与度高。
+量比 2.06，明显放量，资金活跃度提升。
+
+**资金动向：**
+资金活跃度中等，得分 8.8 分，有资金关注。
+
+**突破形态：**
+突破形态良好，得分 15.2 分，近期有有效突破迹象。
+股价处于近期 100% 分位，接近阶段性高点。
+
+**基本面速览：**
+
+**综合判断：**
+综合表现优秀（70.6 分），趋势、动量、资金面配合良好，具备较好的短期交易机会。建议关注支撑位和止损位。</div>
+            <div class="stock-footer">
+                <div class="final-score">
+                    <span class="score-label">综合总分</span>
+                    <span class="score-value">70.6</span>
+                    <span class="score-grade" style="color:#10b981">A+ 优秀</span>
+                </div>
+            </div>
+        </div>
+        <div class="top-stock-card">
+            <div class="stock-header">
+                <div class="stock-rank">TOP 3</div>
+                <div class="stock-basic">
+                    <div class="stock-name">瑞芯微</div>
+                    <div class="stock-code">603893</div>
+                </div>
+                <div class="stock-theme">存储芯片/端侧SoC</div>
+            </div>
+            <div class="stock-price-row">
+                <div class="price-main">
+                    <span class="price-value">233.20</span>
+                    <span class="price-change" style="color:#ef4444">+10.00%</span>
+                </div>
+                <div class="stock-meta">
+                    <span class="meta-item">98736122100.0</span>
+                    <span class="meta-item">PE 2.5</span>
+                    <span class="meta-item">PB 89150.0</span>
+                </div>
+            </div>
+            <div class="stock-scores">
+                <div class="score-bar"><div class="score-fill" style="width:65.5%;background:#ef4444"></div><span class="score-label">趋势 10.5</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:73.1875%;background:#f59e0b"></div><span class="score-label">动量 11.7</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:58.62500000000001%;background:#3b82f6"></div><span class="score-label">量价 9.4</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:58.75%;background:#8b5cf6"></div><span class="score-label">资金 9.4</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:95.75%;background:#10b981"></div><span class="score-label">突破 15.3</span></div>
+            </div>
+            <div class="stock-financials"><span class="fin-item"><span class="fin-label">PE(TTM)</span><span class="fin-value">2.5</span></span><span class="fin-item"><span class="fin-label">PB</span><span class="fin-value">89150.0</span></span></div>
+            <div class="stock-technical">
+                <div class="tech-item"><span class="tech-label">当前价</span><span class="tech-value">211.00</span></div>
+                <div class="tech-item"><span class="tech-label">MA5</span><span class="tech-value">201.15</span></div>
+                <div class="tech-item"><span class="tech-label">MA10</span><span class="tech-value">191.50</span></div>
+                <div class="tech-item"><span class="tech-label">MA20</span><span class="tech-value">188.41</span></div>
+                <div class="tech-item"><span class="tech-label">量比</span><span class="tech-value">1.15</span></div>
+                <div class="tech-item"><span class="tech-label">位置</span><span class="tech-value">99%</span></div>
+            </div>
+            <div class="tech-diagnosis">
+                <div class="diagnosis-title">技术面诊断</div>
+                <div class="diagnosis-items">
+                    <span class="diagnosis-tag">短期均线支撑有效</span><span class="diagnosis-tag">处于近期高位区域</span>
+                </div>
+            </div>
+            <div class="analysis-text">**瑞芯微（603893）** 属于 **存储芯片/端侧SoC** 主题，综合总得分 **69.4 分**（评级：A+ 优秀）。
+
+**趋势分析：**
+趋势健康度 10.5 分，股价在均线附近震荡，方向尚不明确。
+当前价格 233.20 元，站稳 5 日均线（201.15 元），短期偏强。
+
+**动量质量：**
+动量得分 11.7 分，价格动量中等，有一定上涨惯性。
+当日涨跌幅 +10.00%，涨幅明显。
+
+**量价关系：**
+量价配合度 9.4 分，量价关系基本健康。
+量比 1.15，量能正常。
+
+**资金动向：**
+资金活跃度中等，得分 9.4 分，有资金关注。
+
+**突破形态：**
+突破形态良好，得分 15.3 分，近期有有效突破迹象。
+股价处于近期 99% 分位，接近阶段性高点。
+
+**基本面速览：**
+PE(TTM) 2.5，估值偏低。
+
+**综合判断：**
+综合表现优秀（69.4 分），趋势、动量、资金面配合良好，具备较好的短期交易机会。建议关注支撑位和止损位。</div>
+            <div class="stock-footer">
+                <div class="final-score">
+                    <span class="score-label">综合总分</span>
+                    <span class="score-value">69.4</span>
+                    <span class="score-grade" style="color:#10b981">A+ 优秀</span>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        
+<style>
+.dd-sec{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin:18px 0}
+.dd-sec .dd-h{font-size:17px;font-weight:600;color:#0f172a;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid #e5e7eb}
+.dd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.dd-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px}
+.dd-card h3{font-size:15px;margin:0 0 8px;color:#1e293b}
+.dd-card .dd-rank{display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;background:#f59e0b;color:#fff;font-size:12px;font-weight:700;margin-right:6px}
+.dd-kv{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;font-size:12.5px;margin:6px 0}
+.dd-kv div{display:flex;justify-content:space-between;border-bottom:1px dashed #eef2f7;padding:2px 0}
+.dd-kv b{color:#0f172a}.dd-kv span{color:#64748b}
+.dd-bar{display:inline-block;width:120px;height:8px;background:#e2e8f0;border-radius:5px;overflow:hidden;vertical-align:middle;margin-right:6px}
+.dd-bar span{display:block;height:100%}
+.dd-pos{color:#dc2626}.dd-neg{color:#16a34a}
+.dd-tag{display:inline-block;background:#e0e7ff;color:#4338ca;border-radius:6px;padding:2px 8px;font-size:11px;margin:2px 2px 2px 0}
+.dd-warn{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412}
+.dd-good{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534}
+.dd-bad{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.dd-note{font-size:12px;color:#64748b;margin-top:8px;line-height:1.7}
+.dd-verdict{font-size:18px;font-weight:700;padding:8px 12px;border-radius:10px;text-align:center;margin:10px 0}
+.dd-table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px}
+.dd-table th,.dd-table td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left}
+.dd-table th{background:#f1f5f9;color:#64748b}
+.dd-file{margin-top:12px;padding:10px 12px;border:1px dashed #cbd5e1;border-radius:8px;background:#f8fafc;font-size:12.5px;line-height:1.85}
+.dd-file>.dd-file-h{display:block;font-weight:600;color:#0f172a;margin-bottom:6px}
+.dd-file-miss{margin-top:10px;font-size:12px;color:#94a3b8;font-style:italic}
+</style><div class="dd-sec"><div class="dd-h">🔬 Top3 单只深研（交易分析团队 · 三维+异动）</div><div class="dd-note" style="margin-bottom:10px">数据截至 2026-11-10 收盘 ｜ 框架：基本面35%/新闻面20%/资金面35%/技术面10% + A股异常波动偏离值排雷。量化打分（技术/动量权重80%）与三维深研方向相反时，须结合使用，不可只看打分追入。</div><div class="dd-note" style="margin:-4px 0 10px;padding:8px 10px;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;color:#9a3412">⚠ 数据完整度（自动模式）：本期仅接入「池级量化打分 + 日 K 线 + 技术指标 + 异动偏离」，财务 / 主营结构 / 资金流 / 新闻评级 / PE·市值·目标价 <b>未接入</b>，相关段落一律标「未获取」，三维加权按可用维度重归一。结论仅作技术面观察清单，不构成基本面判断；连接器恢复后请改走全量模式复核。</div><div class="dd-grid">
+<div class="dd-card">
+  <h3><span class="dd-rank">2</span>日盈电子（SH603286）</h3>
+  <div class="dd-kv">
+    <div><span>现价</span><b class="dd-pos">60.9</b></div>
+    <div><span>涨跌幅</span><b class="dd-pos">+10.01%</b></div>
+    <div><span>PE/PB</span><b>—/—</b></div>
+    <div><span>总市值</span><b>—</b></div>
+    <div><span>20/60日</span><b class="dd-pos">+47.07%/+43.77%</b></div>
+    <div><span>年初至今</span><b class="dd-pos">-11.94%</b></div>
+  </div>
+  <div class="dd-verdict" style="background:#16a34a22;color:#16a34a">综合研判：观望偏多（仅技术面单维口径）　|　可用维度加权 8.00/10（量化原始分 70.58 A+ 优秀）</div>
+  <div style="font-size:12.5px;line-height:1.9">
+    <div>🔹 基本面 35% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入财务/业务构成接口）</div></div>
+    <div>🔹 新闻面 20% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入新闻/评级接口）</div></div>
+    <div>🔹 资金面 35% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入资金流接口）</div></div>
+    <div>🔹 技术面 10% <span class="dd-bar"><span style="width:80.0%;background:#7c3aed"></span></span><b>8.0</b>/10<div class="dd-note">站上3/3 条均线(+3)；MACD金叉(+2)；RSI6 69 未超买(+1)；KDJ_J 86 未极端(+1)；距52周高47%(+1)</div></div>
+  </div>
+  <div class="dd-card " style="margin-top:10px">
+    <b>⑥ 异动监控</b>（上证指数 基准，阈值 9.7%）
+    <table class="dd-table"><tr><th>窗口</th><th>个股</th><th>基准</th><th>偏离值</th><th>进度</th><th>等级</th></tr><tr><td>3日</td><td class='dd-pos'>+13.07%</td><td>-1.19%</td><td class='dd-pos'>+14.26%</td><td>147%</td><td>🔴 已触发异动（连续3日）</td></tr><tr><td>10日</td><td class='dd-pos'>+14.88%</td><td>-3.41%</td><td class='dd-pos'>+18.29%</td><td>18%</td><td>⚪ 安全区间</td></tr><tr><td>30日</td><td class='dd-pos'>+35.60%</td><td>-7.14%</td><td class='dd-pos'>+42.74%</td><td>21%</td><td>⚪ 安全区间</td></tr></table>
+    <div class="dd-kv" style="margin-top:8px"><div><span>异动向上天花板</span><b class="dd-pos">—（3日偏离已超阈值，已触发或临近异动）</b></div></div>
+  </div>
+  <div class="dd-kv" style="margin-top:8px">
+    <div><span>建仓参考</span><b class="dd-pos">58.46</b></div>
+    <div><span>止损参考</span><b class="dd-neg">54.37</b></div>
+    <div><span>情绪目标</span><b class="dd-pos">66.99</b></div>
+  </div>
+  <!-- AUTO_GENERATED by top3_deepdive.py · 数据日期 2026-11-10 -->
+<div class="dd-file"><span class="dd-file-h">📁 文件分析总结（自生成 · K 线派生口径 · 数据截至 2026-11-10）</span><div class="dd-note">数据完整度：已接入＝池级量化打分 / 日 K 线 / 技术指标 / 异动偏离；未接入＝财务 · 主营结构 · 资金流 · 新闻评级 · PE/市值/目标价。未接入段落一律标「未获取」，三维加权按可用维度重归一。</div><div><b>① 日期 + 代码/名称：</b>2026-11-10 ｜ 603286 日盈电子（沪市主板，异动基准 上证指数）</div><div><b>② 历史走势回顾：</b>最新收盘 60.9 元；近 250 根日 K 高/低 84.79 / 34.17 元，当前处区间约 53% 分位；近 20 日 +47.07%；近 60 日 +43.77%；年初至今 -11.94%；区间累计 +48.97%（2025-10-30 → 2026-11-10）。近期催化：—（未获取）（本期未接入新闻/公告源）</div><div><b>③ 业绩情况：</b>—（未获取）（本期未接入财务接口）；池级基本面量化打分 10.22/20（模型派生，非披露财务数据，不可替代营收/净利）</div><div><b>④ 主营结构：</b>—（未获取）（本期未接入业务构成接口）</div><div><b>⑤ 分析：</b>一、池级量化：总得分 70.58/100（A+ 优秀），技术面 60.36/80，五维中「突破」最高 15.24、「资金」最低 8.85；二、K 线技术：站上3/3 条均线(+3)；MACD金叉(+2)；RSI6 69 未超买(+1)；KDJ_J 86 未极端(+1)；距52周高47%(+1)；三、资金/基本面/新闻三维：—（未获取）（本期未接入财务/业务构成接口） / —（未获取）（本期未接入资金流接口） / —（未获取）（本期未接入新闻/评级接口）。以上为「量化打分 + K 线」口径的中立拆解，不含财报、公告与产业链调研结论。</div><div><b>⑥ 估值：</b>PE / PB / 总市值 / 目标价：—（未获取）（本期未接入行情估值接口，禁止据 K 线反推估值）。仅提供价格相对位置：52 周区间约 53% 分位（非估值指标）。</div><div><b>⑦ 自己判断：</b>综合研判「观望偏多（仅技术面单维口径）」、可用维度加权 8.0/10，异动排雷：3 日异动 🔴 已触发异动（连续3日）；10 日异动 ⚪ 安全区间；池内标记「T-1涨停」。结论仅基于 K 线派生技术面与池级量化打分，未验证业绩、估值与资金真实性；数据完整度不足，宜作技术面观察清单而非基本面建仓依据，须自行补充财报/估值/公告核验。</div></div>
+</div>
+<div class="dd-card">
+  <h3><span class="dd-rank">1</span>乐鑫科技（SH688018）</h3>
+  <div class="dd-kv">
+    <div><span>现价</span><b class="dd-pos">176.15</b></div>
+    <div><span>涨跌幅</span><b class="dd-pos">+8.14%</b></div>
+    <div><span>PE/PB</span><b>—/—</b></div>
+    <div><span>总市值</span><b>—</b></div>
+    <div><span>20/60日</span><b class="dd-pos">+63.98%/+58.69%</b></div>
+    <div><span>年初至今</span><b class="dd-pos">+3.62%</b></div>
+  </div>
+  <div class="dd-verdict" style="background:#16a34a22;color:#16a34a">综合研判：观望偏多（仅技术面单维口径）　|　可用维度加权 7.00/10（量化原始分 72.61 A+ 优秀）</div>
+  <div style="font-size:12.5px;line-height:1.9">
+    <div>🔹 基本面 35% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入财务/业务构成接口）</div></div>
+    <div>🔹 新闻面 20% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入新闻/评级接口）</div></div>
+    <div>🔹 资金面 35% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入资金流接口）</div></div>
+    <div>🔹 技术面 10% <span class="dd-bar"><span style="width:70.0%;background:#7c3aed"></span></span><b>7.0</b>/10<div class="dd-note">站上3/3 条均线(+3)；MACD金叉(+2)；RSI6 90 超买；KDJ_J 92 未极端(+1)；距52周高17%(+1)</div></div>
+  </div>
+  <div class="dd-card " style="margin-top:10px">
+    <b>⑥ 异动监控</b>（上证指数 基准，阈值 19.7%）
+    <table class="dd-table"><tr><th>窗口</th><th>个股</th><th>基准</th><th>偏离值</th><th>进度</th><th>等级</th></tr><tr><td>3日</td><td class='dd-pos'>+7.10%</td><td>-1.19%</td><td class='dd-pos'>+8.29%</td><td>42%</td><td>🟢 轻度偏离</td></tr><tr><td>10日</td><td class='dd-pos'>+27.64%</td><td>-3.41%</td><td class='dd-pos'>+31.05%</td><td>31%</td><td>⚪ 安全区间</td></tr><tr><td>30日</td><td class='dd-pos'>+56.86%</td><td>-7.14%</td><td class='dd-pos'>+63.99%</td><td>32%</td><td>⚪ 安全区间</td></tr></table>
+    <div class="dd-kv" style="margin-top:8px"><div><span>异动向上天花板</span><b class="dd-pos">196.25（较现价+11.4%）</b></div></div>
+  </div>
+  <div class="dd-kv" style="margin-top:8px">
+    <div><span>建仓参考</span><b class="dd-pos">169.1</b></div>
+    <div><span>止损参考</span><b class="dd-neg">157.26</b></div>
+    <div><span>情绪目标</span><b class="dd-pos">193.77</b></div>
+  </div>
+  <!-- AUTO_GENERATED by top3_deepdive.py · 数据日期 2026-11-10 -->
+<div class="dd-file"><span class="dd-file-h">📁 文件分析总结（自生成 · K 线派生口径 · 数据截至 2026-11-10）</span><div class="dd-note">数据完整度：已接入＝池级量化打分 / 日 K 线 / 技术指标 / 异动偏离；未接入＝财务 · 主营结构 · 资金流 · 新闻评级 · PE/市值/目标价。未接入段落一律标「未获取」，三维加权按可用维度重归一。</div><div><b>① 日期 + 代码/名称：</b>2026-11-10 ｜ 688018 乐鑫科技（科创板，异动基准 上证指数）</div><div><b>② 历史走势回顾：</b>最新收盘 176.15 元；近 250 根日 K 高/低 194.57 / 89.02 元，当前处区间约 83% 分位；近 20 日 +63.98%；近 60 日 +58.69%；年初至今 +3.62%；区间累计 +6.32%（2025-10-30 → 2026-11-10）。近期催化：—（未获取）（本期未接入新闻/公告源）</div><div><b>③ 业绩情况：</b>—（未获取）（本期未接入财务接口）；池级基本面量化打分 11.94/20（模型派生，非披露财务数据，不可替代营收/净利）</div><div><b>④ 主营结构：</b>—（未获取）（本期未接入业务构成接口）</div><div><b>⑤ 分析：</b>一、池级量化：总得分 72.61/100（A+ 优秀），技术面 60.67/80，五维中「突破」最高 15.87、「资金」最低 8.65；二、K 线技术：站上3/3 条均线(+3)；MACD金叉(+2)；RSI6 90 超买；KDJ_J 92 未极端(+1)；距52周高17%(+1)；三、资金/基本面/新闻三维：—（未获取）（本期未接入财务/业务构成接口） / —（未获取）（本期未接入资金流接口） / —（未获取）（本期未接入新闻/评级接口）。以上为「量化打分 + K 线」口径的中立拆解，不含财报、公告与产业链调研结论。</div><div><b>⑥ 估值：</b>PE / PB / 总市值 / 目标价：—（未获取）（本期未接入行情估值接口，禁止据 K 线反推估值）。仅提供价格相对位置：52 周区间约 83% 分位（非估值指标）。</div><div><b>⑦ 自己判断：</b>综合研判「观望偏多（仅技术面单维口径）」、可用维度加权 7.0/10，异动排雷：3 日异动 🟢 轻度偏离；10 日异动 ⚪ 安全区间。结论仅基于 K 线派生技术面与池级量化打分，未验证业绩、估值与资金真实性；数据完整度不足，宜作技术面观察清单而非基本面建仓依据，须自行补充财报/估值/公告核验。</div></div>
+</div>
+<div class="dd-card">
+  <h3><span class="dd-rank">3</span>瑞芯微（SH603893）</h3>
+  <div class="dd-kv">
+    <div><span>现价</span><b class="dd-pos">233.2</b></div>
+    <div><span>涨跌幅</span><b class="dd-pos">+10.00%</b></div>
+    <div><span>PE/PB</span><b>—/—</b></div>
+    <div><span>总市值</span><b>—</b></div>
+    <div><span>20/60日</span><b class="dd-pos">+18.63%/+13.59%</b></div>
+    <div><span>年初至今</span><b class="dd-pos">+30.81%</b></div>
+  </div>
+  <div class="dd-verdict" style="background:#d9770622;color:#d97706">综合研判：观望等待（仅技术面单维口径）　|　可用维度加权 5.00/10（量化原始分 69.43 A+ 优秀）</div>
+  <div style="font-size:12.5px;line-height:1.9">
+    <div>🔹 基本面 35% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入财务/业务构成接口）</div></div>
+    <div>🔹 新闻面 20% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入新闻/评级接口）</div></div>
+    <div>🔹 资金面 35% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入资金流接口）</div></div>
+    <div>🔹 技术面 10% <span class="dd-bar"><span style="width:50.0%;background:#7c3aed"></span></span><b>5.0</b>/10<div class="dd-note">站上3/3 条均线(+3)；MACD金叉(+2)；RSI6 89 超买；KDJ_J 108 极端超买；已近52周高（压力位）</div></div>
+  </div>
+  <div class="dd-card " style="margin-top:10px">
+    <b>⑥ 异动监控</b>（上证指数 基准，阈值 9.7%）
+    <table class="dd-table"><tr><th>窗口</th><th>个股</th><th>基准</th><th>偏离值</th><th>进度</th><th>等级</th></tr><tr><td>3日</td><td class='dd-pos'>+7.07%</td><td>-1.19%</td><td class='dd-pos'>+8.25%</td><td>85%</td><td>🟠 临近异动（上涨空间极受限）</td></tr><tr><td>10日</td><td class='dd-pos'>+20.83%</td><td>-3.41%</td><td class='dd-pos'>+24.24%</td><td>24%</td><td>⚪ 安全区间</td></tr><tr><td>30日</td><td class='dd-pos'>+17.78%</td><td>-7.14%</td><td class='dd-pos'>+24.91%</td><td>12%</td><td>⚪ 安全区间</td></tr></table>
+    <div class="dd-kv" style="margin-top:8px"><div><span>异动向上天花板</span><b class="dd-pos">236.58（较现价+1.4%）</b></div></div>
+  </div>
+  <div class="dd-kv" style="margin-top:8px">
+    <div><span>建仓参考</span><b class="dd-pos">223.87</b></div>
+    <div><span>止损参考</span><b class="dd-neg">208.2</b></div>
+    <div><span>情绪目标</span><b class="dd-pos">256.52</b></div>
+  </div>
+  <!-- AUTO_GENERATED by top3_deepdive.py · 数据日期 2026-11-10 -->
+<div class="dd-file"><span class="dd-file-h">📁 文件分析总结（自生成 · K 线派生口径 · 数据截至 2026-11-10）</span><div class="dd-note">数据完整度：已接入＝池级量化打分 / 日 K 线 / 技术指标 / 异动偏离；未接入＝财务 · 主营结构 · 资金流 · 新闻评级 · PE/市值/目标价。未接入段落一律标「未获取」，三维加权按可用维度重归一。</div><div><b>① 日期 + 代码/名称：</b>2026-11-10 ｜ 603893 瑞芯微（沪市主板，异动基准 上证指数）</div><div><b>② 历史走势回顾：</b>最新收盘 233.2 元；近 250 根日 K 高/低 233.88 / 145.45 元，当前处区间约 99% 分位；近 20 日 +18.63%；近 60 日 +13.59%；年初至今 +30.81%；区间累计 +25.97%（2025-10-30 → 2026-11-10）。近期催化：—（未获取）（本期未接入新闻/公告源）</div><div><b>③ 业绩情况：</b>—（未获取）（本期未接入财务接口）；池级基本面量化打分 13.14/20（模型派生，非披露财务数据，不可替代营收/净利）</div><div><b>④ 主营结构：</b>—（未获取）（本期未接入业务构成接口）</div><div><b>⑤ 分析：</b>一、池级量化：总得分 69.43/100（A+ 优秀），技术面 56.29/80，五维中「突破」最高 15.32、「量价」最低 9.38；二、K 线技术：站上3/3 条均线(+3)；MACD金叉(+2)；RSI6 89 超买；KDJ_J 108 极端超买；已近52周高（压力位）；三、资金/基本面/新闻三维：—（未获取）（本期未接入财务/业务构成接口） / —（未获取）（本期未接入资金流接口） / —（未获取）（本期未接入新闻/评级接口）。以上为「量化打分 + K 线」口径的中立拆解，不含财报、公告与产业链调研结论。</div><div><b>⑥ 估值：</b>PE / PB / 总市值 / 目标价：—（未获取）（本期未接入行情估值接口，禁止据 K 线反推估值）。仅提供价格相对位置：52 周区间约 99% 分位（非估值指标）。</div><div><b>⑦ 自己判断：</b>综合研判「观望等待（仅技术面单维口径）」、可用维度加权 5.0/10，异动排雷：3 日异动 🟠 临近异动（上涨空间极受限）；10 日异动 ⚪ 安全区间；价格处 52 周高位，回撤敏感；池内标记「T-1涨停」。结论仅基于 K 线派生技术面与池级量化打分，未验证业绩、估值与资金真实性；数据完整度不足，宜作技术面观察清单而非基本面建仓依据，须自行补充财报/估值/公告核验。</div></div>
+</div></div></div>
+        
+        <div class="section">
+            <div class="section-title">📈 全池打分结果表格</div>
+            <a class="table-link-card" href="2026-11-10_打分表格.html">
+                <div class="tl-icon">📋</div>
+                <div class="tl-text">
+                    <div class="tl-title">查看完整打分结果表格</div>
+                    <div class="tl-sub">共 63 只个股 · 排名 / 代码 / 名称 / 主题 / 总分 / 评级 / 五维明细 — 独立子页面，支持代码·名称·主题搜索</div>
+                </div>
+                <div class="tl-arrow">→</div>
+            </a>
+        </div>
+        
+        <div class="section" style="text-align:center;color:#94a3b8;font-size:12px;padding:20px;">
+            <p>免责声明：本报告仅供参考，不构成投资建议。数据来自东方财富，可能存在延迟。</p>
+        </div>
+    </div>
+    <script src="../assets/navbar.js"></script>
+</body>
+</html>
