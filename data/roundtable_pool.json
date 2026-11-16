@@ -1,29 +1,14 @@
 {
- "generated_at": "2026-11-13",
+ "generated_at": "2026-11-16",
  "window": {
-  "from": "2026-10-24",
-  "to": "2026-11-12"
+  "from": "2026-10-26",
+  "to": "2026-11-15"
  },
  "universe": "近20个交易日每期Top3并集",
  "periods": 20,
  "nominal_size": 60,
- "unique_size": 42,
+ "unique_size": 41,
  "stocks": [
-  {
-   "code": "688018",
-   "name": "乐鑫科技",
-   "top3": 4,
-   "avg": 62.56,
-   "max": 72.61,
-   "first": "2026-10-24",
-   "last": "2026-11-10",
-   "last_rank": 1,
-   "theme": "AI端侧·智能眼镜·游戏传媒/AI算力/存储",
-   "entry_date": "2026-10-24",
-   "cumulative_return_pct": 12.54,
-   "peak_return_pct": 28.27,
-   "post_entry_comment": "入池基准 2026-10-26（入池日休市，首个交易日作基准） → 区间最高 +28.27% / 最低 -10.66% → 2026-11-12 收于 +12.54%（14 个交易日）"
-  },
   {
    "code": "002708",
    "name": "光洋股份",
@@ -35,9 +20,24 @@
    "last_rank": 3,
    "theme": "-",
    "entry_date": "2026-10-29",
-   "cumulative_return_pct": 20.5,
+   "cumulative_return_pct": 10.23,
    "peak_return_pct": 33.85,
-   "post_entry_comment": "入池基准 2026-10-29 → 区间最高 +33.85% / 最低 -18.43% → 2026-11-12 收于 +20.50%（11 个交易日）"
+   "post_entry_comment": "入池基准 2026-10-29 → 区间最高 +33.85% / 最低 -18.43% → 2026-11-16 收于 +10.23%（13 个交易日）"
+  },
+  {
+   "code": "601595",
+   "name": "上海电影",
+   "top3": 3,
+   "avg": 66.42,
+   "max": 71.14,
+   "first": "2026-11-06",
+   "last": "2026-11-15",
+   "last_rank": 2,
+   "theme": "AI应用/传媒/AI影视/短剧/游戏",
+   "entry_date": "2026-11-06",
+   "cumulative_return_pct": 5.34,
+   "peak_return_pct": 30.96,
+   "post_entry_comment": "入池基准 2026-11-06 → 区间最高 +30.96% / 最低 -13.31% → 2026-11-16 收于 +5.34%（7 个交易日）"
   },
   {
    "code": "000333",
@@ -50,9 +50,24 @@
    "last_rank": 1,
    "theme": "-",
    "entry_date": "2026-10-30",
-   "cumulative_return_pct": -1.33,
-   "peak_return_pct": 0.77,
-   "post_entry_comment": "入池基准 2026-10-30 → 区间最高 +0.77% / 最低 -3.16% → 2026-11-12 收于 -1.33%（10 个交易日）"
+   "cumulative_return_pct": 3.92,
+   "peak_return_pct": 4.06,
+   "post_entry_comment": "入池基准 2026-10-30 → 区间最高 +4.06% / 最低 -3.16% → 2026-11-16 收于 +3.92%（12 个交易日）"
+  },
+  {
+   "code": "688018",
+   "name": "乐鑫科技",
+   "top3": 3,
+   "avg": 65.09,
+   "max": 72.61,
+   "first": "2026-11-04",
+   "last": "2026-11-10",
+   "last_rank": 1,
+   "theme": "AI端侧·智能眼镜·游戏传媒/AI算力/存储",
+   "entry_date": "2026-11-04",
+   "cumulative_return_pct": -1.52,
+   "peak_return_pct": 18.41,
+   "post_entry_comment": "入池基准 2026-11-04 → 区间最高 +18.41% / 最低 -13.05% → 2026-11-16 收于 -1.52%（9 个交易日）"
   },
   {
    "code": "601288",
@@ -65,9 +80,9 @@
    "last_rank": 2,
    "theme": "银行/保险",
    "entry_date": "2026-10-30",
-   "cumulative_return_pct": -2.94,
+   "cumulative_return_pct": 1.47,
    "peak_return_pct": 2.14,
-   "post_entry_comment": "入池基准 2026-10-30 → 区间最高 +2.14% / 最低 -4.81% → 2026-11-12 收于 -2.94%（10 个交易日）"
+   "post_entry_comment": "入池基准 2026-10-30 → 区间最高 +2.14% / 最低 -4.81% → 2026-11-16 收于 +1.47%（12 个交易日）"
   },
   {
    "code": "601658",
@@ -80,24 +95,24 @@
    "last_rank": 3,
    "theme": "银行/保险",
    "entry_date": "2026-10-30",
-   "cumulative_return_pct": -1.92,
+   "cumulative_return_pct": 1.22,
    "peak_return_pct": 1.92,
-   "post_entry_comment": "入池基准 2026-10-30 → 区间最高 +1.92% / 最低 -4.89% → 2026-11-12 收于 -1.92%（10 个交易日）"
+   "post_entry_comment": "入池基准 2026-10-30 → 区间最高 +1.92% / 最低 -4.89% → 2026-11-16 收于 +1.22%（12 个交易日）"
   },
   {
-   "code": "301529",
-   "name": "福赛科技",
-   "top3": 3,
-   "avg": 58.98,
-   "max": 64.82,
-   "first": "2026-10-24",
-   "last": "2026-11-07",
+   "code": "300829",
+   "name": "金丹科技",
+   "top3": 2,
+   "avg": 75.32,
+   "max": 77.73,
+   "first": "2026-11-12",
+   "last": "2026-11-13",
    "last_rank": 3,
-   "theme": "物理AI/具身智能/物理AI·具身智能·人形机器人",
-   "entry_date": "2026-10-24",
-   "cumulative_return_pct": 17.76,
-   "peak_return_pct": 24.69,
-   "post_entry_comment": "入池基准 2026-10-26（入池日休市，首个交易日作基准） → 区间最高 +24.69% / 最低 -6.96% → 2026-11-12 收于 +17.76%（14 个交易日）"
+   "theme": "3D打印（Formnext+设备）/周期资源与材料涨价",
+   "entry_date": "2026-11-12",
+   "cumulative_return_pct": -0.39,
+   "peak_return_pct": 11.31,
+   "post_entry_comment": "入池基准 2026-11-12 → 区间最高 +11.31% / 最低 -13.38% → 2026-11-16 收于 -0.39%（3 个交易日）"
   },
   {
    "code": "002929",
@@ -110,24 +125,39 @@
    "last_rank": 1,
    "theme": "-",
    "entry_date": "2026-11-06",
-   "cumulative_return_pct": -10.47,
+   "cumulative_return_pct": -17.05,
    "peak_return_pct": 7.38,
-   "post_entry_comment": "入池基准 2026-11-06 → 区间最高 +7.38% / 最低 -10.70% → 2026-11-12 收于 -10.47%（5 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-06 → 区间最高 +7.38% / 最低 -17.05% → 2026-11-16 收于 -17.05%（7 个交易日）"
   },
   {
-   "code": "601595",
-   "name": "上海电影",
+   "code": "301218",
+   "name": "华是科技",
    "top3": 2,
-   "avg": 71.05,
-   "max": 71.14,
-   "first": "2026-11-06",
-   "last": "2026-11-08",
+   "avg": 73.92,
+   "max": 75.0,
+   "first": "2026-10-29",
+   "last": "2026-11-13",
    "last_rank": 2,
-   "theme": "AI应用/传媒/影视/IP",
-   "entry_date": "2026-11-06",
-   "cumulative_return_pct": 17.87,
-   "peak_return_pct": 30.96,
-   "post_entry_comment": "入池基准 2026-11-06 → 区间最高 +30.96% / 最低 -13.31% → 2026-11-12 收于 +17.87%（5 个交易日）"
+   "theme": "AI/交通/AI影视/短剧/游戏",
+   "entry_date": "2026-10-29",
+   "cumulative_return_pct": 41.53,
+   "peak_return_pct": 52.67,
+   "post_entry_comment": "入池基准 2026-10-29 → 区间最高 +52.67% / 最低 -4.96% → 2026-11-16 收于 +41.53%（13 个交易日）"
+  },
+  {
+   "code": "688135",
+   "name": "利扬芯片",
+   "top3": 2,
+   "avg": 67.19,
+   "max": 76.66,
+   "first": "2026-11-13",
+   "last": "2026-11-15",
+   "last_rank": 1,
+   "theme": "国产算力/国产算力自主可控",
+   "entry_date": "2026-11-13",
+   "cumulative_return_pct": -12.34,
+   "peak_return_pct": 5.52,
+   "post_entry_comment": "入池基准 2026-11-13 → 区间最高 +5.52% / 最低 -15.24% → 2026-11-16 收于 -12.34%（2 个交易日）"
   },
   {
    "code": "300788",
@@ -140,9 +170,24 @@
    "last_rank": 2,
    "theme": "AI端侧·智能眼镜·游戏传媒/传媒/AI应用",
    "entry_date": "2026-11-04",
-   "cumulative_return_pct": -0.94,
+   "cumulative_return_pct": -8.32,
    "peak_return_pct": 12.87,
-   "post_entry_comment": "入池基准 2026-11-04 → 区间最高 +12.87% / 最低 -17.08% → 2026-11-12 收于 -0.94%（7 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-04 → 区间最高 +12.87% / 最低 -17.08% → 2026-11-16 收于 -8.32%（9 个交易日）"
+  },
+  {
+   "code": "301529",
+   "name": "福赛科技",
+   "top3": 2,
+   "avg": 60.74,
+   "max": 64.82,
+   "first": "2026-10-28",
+   "last": "2026-11-07",
+   "last_rank": 3,
+   "theme": "物理AI/具身智能/物理AI·具身智能·人形机器人",
+   "entry_date": "2026-10-28",
+   "cumulative_return_pct": 0.65,
+   "peak_return_pct": 15.5,
+   "post_entry_comment": "入池基准 2026-10-28 → 区间最高 +15.50% / 最低 -13.82% → 2026-11-16 收于 +0.65%（14 个交易日）"
   },
   {
    "code": "300508",
@@ -155,24 +200,9 @@
    "last_rank": 3,
    "theme": "人形机器人/物理AI/物理AI与人形机器人",
    "entry_date": "2026-11-03",
-   "cumulative_return_pct": 17.4,
-   "peak_return_pct": 29.27,
-   "post_entry_comment": "入池基准 2026-11-03 → 区间最高 +29.27% / 最低 -4.53% → 2026-11-12 收于 +17.40%（8 个交易日）"
-  },
-  {
-   "code": "603626",
-   "name": "科森科技",
-   "top3": 2,
-   "avg": 57.71,
-   "max": 59.82,
-   "first": "2026-10-25",
-   "last": "2026-10-28",
-   "last_rank": 3,
-   "theme": "消费·白酒·食饮·纺服/物理AI·具身智能·人形机器人",
-   "entry_date": "2026-10-25",
-   "cumulative_return_pct": 17.67,
-   "peak_return_pct": 24.65,
-   "post_entry_comment": "入池基准 2026-10-26（入池日休市，首个交易日作基准） → 区间最高 +24.65% / 最低 -10.57% → 2026-11-12 收于 +17.67%（14 个交易日）"
+   "cumulative_return_pct": 8.81,
+   "peak_return_pct": 29.71,
+   "post_entry_comment": "入池基准 2026-11-03 → 区间最高 +29.71% / 最低 -4.53% → 2026-11-16 收于 +8.81%（10 个交易日）"
   },
   {
    "code": "603198",
@@ -185,24 +215,9 @@
    "last_rank": 2,
    "theme": "消费/食品饮料/白酒/服饰",
    "entry_date": "2026-11-02",
-   "cumulative_return_pct": -9.13,
+   "cumulative_return_pct": -7.91,
    "peak_return_pct": 0.8,
-   "post_entry_comment": "入池基准 2026-11-02 → 区间最高 +0.80% / 最低 -10.78% → 2026-11-12 收于 -9.13%（9 个交易日）"
-  },
-  {
-   "code": "300829",
-   "name": "金丹科技",
-   "top3": 1,
-   "avg": 77.73,
-   "max": 77.73,
-   "first": "2026-11-12",
-   "last": "2026-11-12",
-   "last_rank": 1,
-   "theme": "3D打印（Formnext+设备）",
-   "entry_date": "2026-11-12",
-   "cumulative_return_pct": 0.0,
-   "peak_return_pct": 5.62,
-   "post_entry_comment": "入池基准 2026-11-12 → 区间最高 +5.62% / 最低 -13.38% → 2026-11-12 收于 +0.00%（1 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-02 → 区间最高 +0.80% / 最低 -11.81% → 2026-11-16 收于 -7.91%（11 个交易日）"
   },
   {
    "code": "688235",
@@ -215,9 +230,9 @@
    "last_rank": 1,
    "theme": "创新药/BD出海",
    "entry_date": "2026-11-07",
-   "cumulative_return_pct": 0.92,
+   "cumulative_return_pct": -3.41,
    "peak_return_pct": 3.92,
-   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +3.92% / 最低 -2.23% → 2026-11-12 收于 +0.92%（4 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +3.92% / 最低 -3.86% → 2026-11-16 收于 -3.41%（6 个交易日）"
   },
   {
    "code": "600757",
@@ -230,24 +245,9 @@
    "last_rank": 1,
    "theme": "传媒",
    "entry_date": "2026-10-29",
-   "cumulative_return_pct": 2.09,
+   "cumulative_return_pct": 3.26,
    "peak_return_pct": 8.14,
-   "post_entry_comment": "入池基准 2026-10-29 → 区间最高 +8.14% / 最低 -4.65% → 2026-11-12 收于 +2.09%（11 个交易日）"
-  },
-  {
-   "code": "301218",
-   "name": "华是科技",
-   "top3": 1,
-   "avg": 72.85,
-   "max": 72.85,
-   "first": "2026-10-29",
-   "last": "2026-10-29",
-   "last_rank": 3,
-   "theme": "AI/交通",
-   "entry_date": "2026-10-29",
-   "cumulative_return_pct": 26.63,
-   "peak_return_pct": 45.77,
-   "post_entry_comment": "入池基准 2026-10-29 → 区间最高 +45.77% / 最低 -4.96% → 2026-11-12 收于 +26.63%（11 个交易日）"
+   "post_entry_comment": "入池基准 2026-10-29 → 区间最高 +8.14% / 最低 -4.65% → 2026-11-16 收于 +3.26%（13 个交易日）"
   },
   {
    "code": "300761",
@@ -260,9 +260,9 @@
    "last_rank": 2,
    "theme": "生猪/农业",
    "entry_date": "2026-11-06",
-   "cumulative_return_pct": -1.86,
+   "cumulative_return_pct": 0.22,
    "peak_return_pct": 1.9,
-   "post_entry_comment": "入池基准 2026-11-06 → 区间最高 +1.90% / 最低 -3.98% → 2026-11-12 收于 -1.86%（5 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-06 → 区间最高 +1.90% / 最低 -3.98% → 2026-11-16 收于 +0.22%（7 个交易日）"
   },
   {
    "code": "600419",
@@ -275,9 +275,9 @@
    "last_rank": 3,
    "theme": "消费/食品饮料/白酒/服饰",
    "entry_date": "2026-11-02",
-   "cumulative_return_pct": 2.43,
+   "cumulative_return_pct": 5.5,
    "peak_return_pct": 7.3,
-   "post_entry_comment": "入池基准 2026-11-02 → 区间最高 +7.30% / 最低 -5.82% → 2026-11-12 收于 +2.43%（9 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-02 → 区间最高 +7.30% / 最低 -5.82% → 2026-11-16 收于 +5.50%（11 个交易日）"
   },
   {
    "code": "600540",
@@ -290,9 +290,9 @@
    "last_rank": 1,
    "theme": "农业",
    "entry_date": "2026-11-09",
-   "cumulative_return_pct": -7.46,
+   "cumulative_return_pct": -15.32,
    "peak_return_pct": 1.61,
-   "post_entry_comment": "入池基准 2026-11-09 → 区间最高 +1.61% / 最低 -9.07% → 2026-11-12 收于 -7.46%（4 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09 → 区间最高 +1.61% / 最低 -16.33% → 2026-11-16 收于 -15.32%（6 个交易日）"
   },
   {
    "code": "603286",
@@ -305,9 +305,9 @@
    "last_rank": 2,
    "theme": "机器人/智能驾驶（具身智能）",
    "entry_date": "2026-11-10",
-   "cumulative_return_pct": -3.1,
+   "cumulative_return_pct": -2.2,
    "peak_return_pct": 6.63,
-   "post_entry_comment": "入池基准 2026-11-10 → 区间最高 +6.63% / 最低 -8.69% → 2026-11-12 收于 -3.10%（3 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-10 → 区间最高 +6.63% / 最低 -8.69% → 2026-11-16 收于 -2.20%（5 个交易日）"
   },
   {
    "code": "688787",
@@ -320,9 +320,9 @@
    "last_rank": 1,
    "theme": "游戏传媒/AI应用",
    "entry_date": "2026-11-11",
-   "cumulative_return_pct": -14.21,
+   "cumulative_return_pct": -27.09,
    "peak_return_pct": 0.2,
-   "post_entry_comment": "入池基准 2026-11-11 → 区间最高 +0.20% / 最低 -16.68% → 2026-11-12 收于 -14.21%（2 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-11 → 区间最高 +0.20% / 最低 -28.15% → 2026-11-16 收于 -27.09%（4 个交易日）"
   },
   {
    "code": "600371",
@@ -335,9 +335,9 @@
    "last_rank": 2,
    "theme": "农业",
    "entry_date": "2026-11-09",
-   "cumulative_return_pct": -7.48,
+   "cumulative_return_pct": -18.28,
    "peak_return_pct": 1.33,
-   "post_entry_comment": "入池基准 2026-11-09 → 区间最高 +1.33% / 最低 -14.36% → 2026-11-12 收于 -7.48%（4 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09 → 区间最高 +1.33% / 最低 -18.95% → 2026-11-16 收于 -18.28%（6 个交易日）"
   },
   {
    "code": "603893",
@@ -350,9 +350,9 @@
    "last_rank": 3,
    "theme": "存储芯片/端侧SoC",
    "entry_date": "2026-11-10",
-   "cumulative_return_pct": -5.35,
+   "cumulative_return_pct": -10.55,
    "peak_return_pct": 1.79,
-   "post_entry_comment": "入池基准 2026-11-10 → 区间最高 +1.79% / 最低 -9.52% → 2026-11-12 收于 -5.35%（3 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-10 → 区间最高 +1.79% / 最低 -11.28% → 2026-11-16 收于 -10.55%（5 个交易日）"
   },
   {
    "code": "300307",
@@ -365,9 +365,9 @@
    "last_rank": 1,
    "theme": "具身智能/物理AI/机器人",
    "entry_date": "2026-10-26",
-   "cumulative_return_pct": -7.15,
+   "cumulative_return_pct": -12.81,
    "peak_return_pct": 16.44,
-   "post_entry_comment": "入池基准 2026-10-26 → 区间最高 +16.44% / 最低 -14.62% → 2026-11-12 收于 -7.15%（14 个交易日）"
+   "post_entry_comment": "入池基准 2026-10-26 → 区间最高 +16.44% / 最低 -14.62% → 2026-11-16 收于 -12.81%（16 个交易日）"
   },
   {
    "code": "000525",
@@ -380,9 +380,9 @@
    "last_rank": 3,
    "theme": "-",
    "entry_date": "2026-11-09",
-   "cumulative_return_pct": -2.54,
+   "cumulative_return_pct": -15.4,
    "peak_return_pct": 6.34,
-   "post_entry_comment": "入池基准 2026-11-09 → 区间最高 +6.34% / 最低 -7.97% → 2026-11-12 收于 -2.54%（4 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09 → 区间最高 +6.34% / 最低 -16.67% → 2026-11-16 收于 -15.40%（6 个交易日）"
   },
   {
    "code": "603990",
@@ -395,9 +395,9 @@
    "last_rank": 1,
    "theme": "机器人/物理AI",
    "entry_date": "2026-11-05",
-   "cumulative_return_pct": 9.56,
+   "cumulative_return_pct": -1.41,
    "peak_return_pct": 12.03,
-   "post_entry_comment": "入池基准 2026-11-05 → 区间最高 +12.03% / 最低 -9.78% → 2026-11-12 收于 +9.56%（6 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-05 → 区间最高 +12.03% / 最低 -9.78% → 2026-11-16 收于 -1.41%（8 个交易日）"
   },
   {
    "code": "302132",
@@ -410,9 +410,9 @@
    "last_rank": 1,
    "theme": "军工/军贸",
    "entry_date": "2026-11-03",
-   "cumulative_return_pct": -0.81,
+   "cumulative_return_pct": -5.08,
    "peak_return_pct": 4.74,
-   "post_entry_comment": "入池基准 2026-11-03 → 区间最高 +4.74% / 最低 -6.17% → 2026-11-12 收于 -0.81%（8 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-03 → 区间最高 +4.74% / 最低 -6.17% → 2026-11-16 收于 -5.08%（10 个交易日）"
   },
   {
    "code": "688071",
@@ -425,9 +425,9 @@
    "last_rank": 2,
    "theme": "具身智能/物理AI/机器人",
    "entry_date": "2026-10-26",
-   "cumulative_return_pct": -16.26,
+   "cumulative_return_pct": -26.61,
    "peak_return_pct": 16.67,
-   "post_entry_comment": "入池基准 2026-10-26 → 区间最高 +16.67% / 最低 -20.96% → 2026-11-12 收于 -16.26%（14 个交易日）"
+   "post_entry_comment": "入池基准 2026-10-26 → 区间最高 +16.67% / 最低 -27.74% → 2026-11-16 收于 -26.61%（16 个交易日）"
   },
   {
    "code": "605488",
@@ -440,9 +440,9 @@
    "last_rank": 2,
    "theme": "物理AI/具身智能",
    "entry_date": "2026-11-07",
-   "cumulative_return_pct": 8.91,
+   "cumulative_return_pct": 2.32,
    "peak_return_pct": 22.85,
-   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +22.85% / 最低 -1.11% → 2026-11-12 收于 +8.91%（4 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +22.85% / 最低 -5.51% → 2026-11-16 收于 +2.32%（6 个交易日）"
   },
   {
    "code": "688552",
@@ -455,9 +455,9 @@
    "last_rank": 2,
    "theme": "军工/军贸（珠海航展·订单兑现）",
    "entry_date": "2026-11-12",
-   "cumulative_return_pct": 0.0,
+   "cumulative_return_pct": -8.86,
    "peak_return_pct": 5.22,
-   "post_entry_comment": "入池基准 2026-11-12 → 区间最高 +5.22% / 最低 -9.72% → 2026-11-12 收于 +0.00%（1 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-12 → 区间最高 +5.22% / 最低 -10.31% → 2026-11-16 收于 -8.86%（3 个交易日）"
   },
   {
    "code": "605118",
@@ -470,9 +470,9 @@
    "last_rank": 2,
    "theme": "工程机械/通用设备",
    "entry_date": "2026-11-11",
-   "cumulative_return_pct": -2.85,
+   "cumulative_return_pct": -17.07,
    "peak_return_pct": 6.59,
-   "post_entry_comment": "入池基准 2026-11-11 → 区间最高 +6.59% / 最低 -5.93% → 2026-11-12 收于 -2.85%（2 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-11 → 区间最高 +6.59% / 最低 -17.07% → 2026-11-16 收于 -17.07%（4 个交易日）"
   },
   {
    "code": "603337",
@@ -485,9 +485,9 @@
    "last_rank": 1,
    "theme": "物理AI·具身智能",
    "entry_date": "2026-10-27",
-   "cumulative_return_pct": 5.54,
+   "cumulative_return_pct": -2.73,
    "peak_return_pct": 20.7,
-   "post_entry_comment": "入池基准 2026-10-27 → 区间最高 +20.70% / 最低 -9.64% → 2026-11-12 收于 +5.54%（13 个交易日）"
+   "post_entry_comment": "入池基准 2026-10-27 → 区间最高 +20.70% / 最低 -9.64% → 2026-11-16 收于 -2.73%（15 个交易日）"
   },
   {
    "code": "600316",
@@ -500,9 +500,9 @@
    "last_rank": 3,
    "theme": "军工/军贸（珠海航展·订单兑现）",
    "entry_date": "2026-11-12",
-   "cumulative_return_pct": 0.0,
+   "cumulative_return_pct": -9.8,
    "peak_return_pct": 3.25,
-   "post_entry_comment": "入池基准 2026-11-12 → 区间最高 +3.25% / 最低 -6.08% → 2026-11-12 收于 +0.00%（1 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-12 → 区间最高 +3.25% / 最低 -10.08% → 2026-11-16 收于 -9.80%（3 个交易日）"
   },
   {
    "code": "603600",
@@ -515,9 +515,9 @@
    "last_rank": 3,
    "theme": "具身智能/物理AI/机器人",
    "entry_date": "2026-10-26",
-   "cumulative_return_pct": 2.23,
+   "cumulative_return_pct": 6.08,
    "peak_return_pct": 7.95,
-   "post_entry_comment": "入池基准 2026-10-26 → 区间最高 +7.95% / 最低 -5.27% → 2026-11-12 收于 +2.23%（14 个交易日）"
+   "post_entry_comment": "入池基准 2026-10-26 → 区间最高 +7.95% / 最低 -5.27% → 2026-11-16 收于 +6.08%（16 个交易日）"
   },
   {
    "code": "601668",
@@ -530,9 +530,9 @@
    "last_rank": 2,
    "theme": "建材/建筑/机械/船舶",
    "entry_date": "2026-11-03",
-   "cumulative_return_pct": -2.96,
+   "cumulative_return_pct": -1.27,
    "peak_return_pct": 1.06,
-   "post_entry_comment": "入池基准 2026-11-03 → 区间最高 +1.06% / 最低 -4.44% → 2026-11-12 收于 -2.96%（8 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-03 → 区间最高 +1.06% / 最低 -4.44% → 2026-11-16 收于 -1.27%（10 个交易日）"
   },
   {
    "code": "603565",
@@ -545,9 +545,9 @@
    "last_rank": 2,
    "theme": "物流·红海",
    "entry_date": "2026-10-27",
-   "cumulative_return_pct": -2.62,
+   "cumulative_return_pct": -2.15,
    "peak_return_pct": 4.53,
-   "post_entry_comment": "入池基准 2026-10-27 → 区间最高 +4.53% / 最低 -3.42% → 2026-11-12 收于 -2.62%（13 个交易日）"
+   "post_entry_comment": "入池基准 2026-10-27 → 区间最高 +4.53% / 最低 -4.53% → 2026-11-16 收于 -2.15%（15 个交易日）"
   },
   {
    "code": "002293",
@@ -560,9 +560,9 @@
    "last_rank": 3,
    "theme": "-",
    "entry_date": "2026-10-27",
-   "cumulative_return_pct": 3.85,
-   "peak_return_pct": 5.44,
-   "post_entry_comment": "入池基准 2026-10-27 → 区间最高 +5.44% / 最低 -3.01% → 2026-11-12 收于 +3.85%（13 个交易日）"
+   "cumulative_return_pct": 5.36,
+   "peak_return_pct": 5.94,
+   "post_entry_comment": "入池基准 2026-10-27 → 区间最高 +5.94% / 最低 -3.01% → 2026-11-16 收于 +5.36%（15 个交易日）"
   },
   {
    "code": "002428",
@@ -575,39 +575,9 @@
    "last_rank": 3,
    "theme": "-",
    "entry_date": "2026-11-11",
-   "cumulative_return_pct": -1.62,
+   "cumulative_return_pct": -14.05,
    "peak_return_pct": 3.67,
-   "post_entry_comment": "入池基准 2026-11-11 → 区间最高 +3.67% / 最低 -9.00% → 2026-11-12 收于 -1.62%（2 个交易日）"
-  },
-  {
-   "code": "603101",
-   "name": "汇嘉时代",
-   "top3": 1,
-   "avg": 57.9,
-   "max": 57.9,
-   "first": "2026-10-25",
-   "last": "2026-10-25",
-   "last_rank": 2,
-   "theme": "消费·白酒·食饮·纺服",
-   "entry_date": "2026-10-25",
-   "cumulative_return_pct": -10.67,
-   "peak_return_pct": 6.38,
-   "post_entry_comment": "入池基准 2026-10-26（入池日休市，首个交易日作基准） → 区间最高 +6.38% / 最低 -19.75% → 2026-11-12 收于 -10.67%（14 个交易日）"
-  },
-  {
-   "code": "300454",
-   "name": "深信服",
-   "top3": 1,
-   "avg": 57.6,
-   "max": 57.6,
-   "first": "2026-10-25",
-   "last": "2026-10-25",
-   "last_rank": 3,
-   "theme": "网络安全·数据要素",
-   "entry_date": "2026-10-25",
-   "cumulative_return_pct": -18.0,
-   "peak_return_pct": 3.23,
-   "post_entry_comment": "入池基准 2026-10-26（入池日休市，首个交易日作基准） → 区间最高 +3.23% / 最低 -23.48% → 2026-11-12 收于 -18.00%（14 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-11 → 区间最高 +3.67% / 最低 -14.72% → 2026-11-16 收于 -14.05%（4 个交易日）"
   },
   {
    "code": "600838",
@@ -620,24 +590,39 @@
    "last_rank": 1,
    "theme": "消费·家居·双十一",
    "entry_date": "2026-10-28",
-   "cumulative_return_pct": -12.87,
+   "cumulative_return_pct": -22.16,
    "peak_return_pct": 6.43,
-   "post_entry_comment": "入池基准 2026-10-28 → 区间最高 +6.43% / 最低 -26.23% → 2026-11-12 收于 -12.87%（12 个交易日）"
+   "post_entry_comment": "入池基准 2026-10-28 → 区间最高 +6.43% / 最低 -26.23% → 2026-11-16 收于 -22.16%（14 个交易日）"
   },
   {
-   "code": "301550",
-   "name": "斯菱智驱",
+   "code": "603626",
+   "name": "科森科技",
    "top3": 1,
-   "avg": 53.45,
-   "max": 53.45,
-   "first": "2026-10-24",
-   "last": "2026-10-24",
+   "avg": 55.6,
+   "max": 55.6,
+   "first": "2026-10-28",
+   "last": "2026-10-28",
    "last_rank": 3,
-   "theme": "物理AI与具身智能",
-   "entry_date": "2026-10-24",
-   "cumulative_return_pct": 0.92,
-   "peak_return_pct": 20.56,
-   "post_entry_comment": "入池基准 2026-10-26（入池日休市，首个交易日作基准） → 区间最高 +20.56% / 最低 -1.79% → 2026-11-12 收于 +0.92%（14 个交易日）"
+   "theme": "物理AI·具身智能·人形机器人",
+   "entry_date": "2026-10-28",
+   "cumulative_return_pct": 3.02,
+   "peak_return_pct": 16.1,
+   "post_entry_comment": "入池基准 2026-10-28 → 区间最高 +16.10% / 最低 -16.71% → 2026-11-16 收于 +3.02%（14 个交易日）"
+  },
+  {
+   "code": "300825",
+   "name": "阿尔特",
+   "top3": 1,
+   "avg": 54.67,
+   "max": 54.67,
+   "first": "2026-11-15",
+   "last": "2026-11-15",
+   "last_rank": 3,
+   "theme": "物理AI与人形机器人",
+   "entry_date": "2026-11-15",
+   "cumulative_return_pct": 0.0,
+   "peak_return_pct": 4.53,
+   "post_entry_comment": "入池基准 2026-11-16（入池日休市，首个交易日作基准） → 区间最高 +4.53% / 最低 -3.22% → 2026-11-16 收于 +0.00%（1 个交易日）"
   }
  ]
 }
