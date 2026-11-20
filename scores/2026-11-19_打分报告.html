@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>股票池打分报告 - 调研基地_2026-11-19</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f5f7fa; 
+            color: #1f2933; 
+            line-height: 1.6;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .header { 
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white; padding: 30px; border-radius: 12px; margin-bottom: 20px;
+        }
+        .header h1 { font-size: 28px; margin-bottom: 8px; }
+        .header .meta { opacity: 0.9; font-size: 14px; }
+        .section { 
+            background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .section-title { 
+            font-size: 18px; font-weight: 600; margin-bottom: 16px; 
+            padding-bottom: 12px; border-bottom: 2px solid #e5e7eb;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th { 
+            background: #f8fafc; color: #64748b; font-weight: 600; 
+            text-align: left; padding: 12px 8px; border-bottom: 2px solid #e2e8f0;
+        }
+        td { padding: 10px 8px; border-bottom: 1px solid #f1f5f9; }
+        tr:hover { background: #f8fafc; }
+        .rank-cell { font-weight: 600; color: #64748b; width: 50px; }
+        .code-cell a { color: #2563eb; text-decoration: none; }
+        .code-cell a:hover { text-decoration: underline; }
+        .name-cell { font-weight: 500; }
+        .theme-cell { color: #64748b; font-size: 12px; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .score-cell { font-weight: 600; color: #1e3a5f; font-size: 15px; }
+        .grade-cell { font-weight: 600; font-size: 12px; }
+        .dim-cell { color: #64748b; font-size: 12px; }
+        
+        /* Top Stock Cards */
+        .top-stock-card {
+            background: #fafbfc; border: 1px solid #e5e7eb; border-radius: 12px;
+            padding: 20px; margin-bottom: 16px;
+        }
+        .stock-header {
+            display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
+        }
+        .stock-rank {
+            width: 48px; height: 48px; border-radius: 50%;
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: white; display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 18px;
+        }
+        .stock-basic { flex: 1; }
+        .stock-name { font-size: 20px; font-weight: 600; color: #1f2933; }
+        .stock-code { font-size: 13px; color: #64748b; font-family: monospace; }
+        .stock-theme { 
+            background: #e0e7ff; color: #4338ca; padding: 4px 12px; border-radius: 20px;
+            font-size: 12px; font-weight: 500;
+        }
+        .stock-price-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 0; border-bottom: 1px solid #e5e7eb; margin-bottom: 12px;
+        }
+        .price-main { display: flex; align-items: baseline; gap: 12px; }
+        .price-value { font-size: 28px; font-weight: 700; color: #1f2933; }
+        .price-change { font-size: 16px; font-weight: 600; }
+        .stock-meta { display: flex; gap: 16px; }
+        .meta-item { font-size: 12px; color: #64748b; }
+        .stock-scores { margin-bottom: 12px; }
+        .score-bar {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 8px;
+        }
+        .score-fill {
+            height: 8px; border-radius: 4px; min-width: 4px;
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+        }
+        .score-label { font-size: 12px; color: #64748b; width: 80px; }
+        .stock-financials {
+            display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px;
+            padding: 12px; background: white; border-radius: 8px;
+        }
+        .fin-item { display: flex; flex-direction: column; align-items: center; }
+        .fin-label { font-size: 11px; color: #64748b; }
+        .fin-value { font-size: 16px; font-weight: 600; }
+        .stock-technical {
+            display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;
+            margin-bottom: 12px;
+        }
+        .tech-item {
+            text-align: center; padding: 8px; background: white; border-radius: 6px;
+        }
+        .tech-label { font-size: 11px; color: #64748b; }
+        .tech-value { font-size: 14px; font-weight: 600; color: #1f2933; }
+        .tech-diagnosis {
+            padding: 12px; background: white; border-radius: 8px; margin-bottom: 12px;
+        }
+        .diagnosis-title { font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 8px; }
+        .diagnosis-items { display: flex; gap: 8px; flex-wrap: wrap; }
+        .diagnosis-tag {
+            background: #dbeafe; color: #1e40af; padding: 4px 10px; border-radius: 12px;
+            font-size: 12px;
+        }
+        .analysis-text {
+            padding: 16px; background: #f0f9ff; border-left: 3px solid #0ea5e9;
+            border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.8; color: #334155;
+            margin-bottom: 12px;
+        }
+        .stock-footer {
+            display: flex; justify-content: flex-end; align-items: center;
+            padding-top: 12px; border-top: 1px solid #e5e7eb;
+        }
+        .final-score { display: flex; align-items: center; gap: 12px; }
+        .score-value { font-size: 24px; font-weight: 700; color: #1e3a5f; }
+        .score-grade { font-size: 14px; font-weight: 600; }
+        
+        /* Scrollable table */
+        .table-container { overflow-x: auto; }
+        
+        /* Topbar (navigation) */
+        .topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;
+            background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+            color: #475569; font-size: 13px; text-decoration: none; transition: all .15s;
+        }
+        .back-link:hover { border-color: #2563eb; color: #2563eb; }
+        
+        /* Link card to standalone table subpage */
+        .table-link-card {
+            display: flex; align-items: center; gap: 16px; padding: 18px 20px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd; border-radius: 12px; text-decoration: none;
+            color: #0c4a6e; transition: all .15s;
+        }
+        .table-link-card:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(37,99,235,.12); border-color: #2563eb; }
+        .table-link-card .tl-icon { font-size: 28px; }
+        .table-link-card .tl-text { flex: 1; }
+        .table-link-card .tl-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .table-link-card .tl-sub { font-size: 12px; color: #0369a1; opacity: .85; }
+        .table-link-card .tl-arrow { font-size: 22px; font-weight: 700; color: #2563eb; }
+        
+        @media (max-width: 768px) {
+            .container { padding: 12px; }
+            .header { padding: 20px; }
+            .header h1 { font-size: 22px; }
+            .stock-technical { grid-template-columns: repeat(3, 1fr); }
+            .stock-price-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .table-link-card { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <a class="back-link" href="index.html">← 打分汇总</a>
+        </div>
+        <div class="header">
+            <h1>📊 股票池打分报告</h1>
+            <div class="meta">
+                <span>调研基地_2026-11-19</span> · <span>📅 数据截至 2026-11-19 收盘</span> · <span>⏱ 生成于 2026-11-20 14:44</span> · <span>共 150 只个股</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">🏆 Top 3 个股详细分析</div>
+            
+        <div class="top-stock-card">
+            <div class="stock-header">
+                <div class="stock-rank">TOP 1</div>
+                <div class="stock-basic">
+                    <div class="stock-name">华能蒙电</div>
+                    <div class="stock-code">600863</div>
+                </div>
+                <div class="stock-theme">高股息红利与周期（交运/电力/轨交/资源）、储能内蒙容量电价政策落地与需求再定位</div>
+            </div>
+            <div class="stock-price-row">
+                <div class="price-main">
+                    <span class="price-value">5.63</span>
+                    <span class="price-change" style="color:#10b981">-0.53%</span>
+                </div>
+                <div class="stock-meta">
+                    <span class="meta-item">44112117222.799995</span>
+                    <span class="meta-item">PE 0.3</span>
+                    <span class="meta-item">PB 1006034.0</span>
+                </div>
+            </div>
+            <div class="stock-scores">
+                <div class="score-bar"><div class="score-fill" style="width:83.25%;background:#ef4444"></div><span class="score-label">趋势 13.3</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:112.8125%;background:#f59e0b"></div><span class="score-label">动量 18.1</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:68.375%;background:#3b82f6"></div><span class="score-label">量价 10.9</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:43.4375%;background:#8b5cf6"></div><span class="score-label">资金 7.0</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:115.1875%;background:#10b981"></div><span class="score-label">突破 18.4</span></div>
+            </div>
+            <div class="stock-financials"><span class="fin-item"><span class="fin-label">PE(TTM)</span><span class="fin-value">0.3</span></span><span class="fin-item"><span class="fin-label">PB</span><span class="fin-value">1006034.0</span></span></div>
+            <div class="stock-technical">
+                <div class="tech-item"><span class="tech-label">当前价</span><span class="tech-value">5.50</span></div>
+                <div class="tech-item"><span class="tech-label">MA5</span><span class="tech-value">5.38</span></div>
+                <div class="tech-item"><span class="tech-label">MA10</span><span class="tech-value">5.31</span></div>
+                <div class="tech-item"><span class="tech-label">MA20</span><span class="tech-value">5.21</span></div>
+                <div class="tech-item"><span class="tech-label">量比</span><span class="tech-value">1.82</span></div>
+                <div class="tech-item"><span class="tech-label">位置</span><span class="tech-value">100%</span></div>
+            </div>
+            <div class="tech-diagnosis">
+                <div class="diagnosis-title">技术面诊断</div>
+                <div class="diagnosis-items">
+                    <span class="diagnosis-tag">短期均线支撑有效</span><span class="diagnosis-tag">量能放大 1.8 倍</span><span class="diagnosis-tag">处于近期高位区域</span>
+                </div>
+            </div>
+            <div class="analysis-text">**华能蒙电（600863）** 属于 **高股息红利与周期（交运/电力/轨交/资源）、储能内蒙容量电价政策落地与需求再定位** 主题，综合总得分 **77.1 分**（评级：A+ 优秀）。
+
+**趋势分析：**
+趋势健康度 13.3 分，股价运行在主要均线上方，中期上升趋势明确。
+当前价格 5.63 元，站稳 5 日均线（5.38 元），短期偏强。
+
+**动量质量：**
+动量得分 18.1 分，近期价格动量强劲，动能充足。
+当日涨跌幅 -0.53%，波动平缓。
+
+**量价关系：**
+量价配合度 10.9 分，量价关系基本健康。
+量比 1.82，明显放量，资金活跃度提升。
+
+**资金动向：**
+资金活跃度偏低，得分 7.0 分，需观察后续资金流向。
+
+**突破形态：**
+突破形态良好，得分 18.4 分，近期有有效突破迹象。
+股价处于近期 100% 分位，接近阶段性高点。
+
+**基本面速览：**
+PE(TTM) 0.3，估值偏低。
+
+**综合判断：**
+综合表现优秀（77.1 分），趋势、动量、资金面配合良好，具备较好的短期交易机会。建议关注支撑位和止损位。</div>
+            <div class="stock-footer">
+                <div class="final-score">
+                    <span class="score-label">综合总分</span>
+                    <span class="score-value">77.1</span>
+                    <span class="score-grade" style="color:#10b981">A+ 优秀</span>
+                </div>
+            </div>
+        </div>
+        <div class="top-stock-card">
+            <div class="stock-header">
+                <div class="stock-rank">TOP 2</div>
+                <div class="stock-basic">
+                    <div class="stock-name">隆鑫通用</div>
+                    <div class="stock-code">603766</div>
+                </div>
+                <div class="stock-theme">家电成本压力缓解与出海</div>
+            </div>
+            <div class="stock-price-row">
+                <div class="price-main">
+                    <span class="price-value">16.26</span>
+                    <span class="price-change" style="color:#ef4444">+0.06%</span>
+                </div>
+                <div class="stock-meta">
+                    <span class="meta-item">33390590481.000004</span>
+                    <span class="meta-item">PE 0.8</span>
+                    <span class="meta-item">PB 91298.0</span>
+                </div>
+            </div>
+            <div class="stock-scores">
+                <div class="score-bar"><div class="score-fill" style="width:83.1875%;background:#ef4444"></div><span class="score-label">趋势 13.3</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:105.8125%;background:#f59e0b"></div><span class="score-label">动量 16.9</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:53.0%;background:#3b82f6"></div><span class="score-label">量价 8.5</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:43.6875%;background:#8b5cf6"></div><span class="score-label">资金 7.0</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:98.9375%;background:#10b981"></div><span class="score-label">突破 15.8</span></div>
+            </div>
+            <div class="stock-financials"><span class="fin-item"><span class="fin-label">PE(TTM)</span><span class="fin-value">0.8</span></span><span class="fin-item"><span class="fin-label">PB</span><span class="fin-value">91298.0</span></span></div>
+            <div class="stock-technical">
+                <div class="tech-item"><span class="tech-label">当前价</span><span class="tech-value">16.08</span></div>
+                <div class="tech-item"><span class="tech-label">MA5</span><span class="tech-value">15.85</span></div>
+                <div class="tech-item"><span class="tech-label">MA10</span><span class="tech-value">15.59</span></div>
+                <div class="tech-item"><span class="tech-label">MA20</span><span class="tech-value">15.24</span></div>
+                <div class="tech-item"><span class="tech-label">量比</span><span class="tech-value">1.27</span></div>
+                <div class="tech-item"><span class="tech-label">位置</span><span class="tech-value">100%</span></div>
+            </div>
+            <div class="tech-diagnosis">
+                <div class="diagnosis-title">技术面诊断</div>
+                <div class="diagnosis-items">
+                    <span class="diagnosis-tag">短期均线支撑有效</span><span class="diagnosis-tag">处于近期高位区域</span>
+                </div>
+            </div>
+            <div class="analysis-text">**隆鑫通用（603766）** 属于 **家电成本压力缓解与出海** 主题，综合总得分 **72.4 分**（评级：A+ 优秀）。
+
+**趋势分析：**
+趋势健康度 13.3 分，股价运行在主要均线上方，中期上升趋势明确。
+当前价格 16.26 元，站稳 5 日均线（15.85 元），短期偏强。
+
+**动量质量：**
+动量得分 16.9 分，近期价格动量强劲，动能充足。
+当日涨跌幅 +0.06%，波动平缓。
+
+**量价关系：**
+量价配合度 8.5 分，量价关系基本健康。
+量比 1.27，量能正常。
+
+**资金动向：**
+资金活跃度偏低，得分 7.0 分，需观察后续资金流向。
+
+**突破形态：**
+突破形态良好，得分 15.8 分，近期有有效突破迹象。
+股价处于近期 100% 分位，接近阶段性高点。
+
+**基本面速览：**
+PE(TTM) 0.8，估值偏低。
+
+**综合判断：**
+综合表现优秀（72.4 分），趋势、动量、资金面配合良好，具备较好的短期交易机会。建议关注支撑位和止损位。</div>
+            <div class="stock-footer">
+                <div class="final-score">
+                    <span class="score-label">综合总分</span>
+                    <span class="score-value">72.4</span>
+                    <span class="score-grade" style="color:#10b981">A+ 优秀</span>
+                </div>
+            </div>
+        </div>
+        <div class="top-stock-card">
+            <div class="stock-header">
+                <div class="stock-rank">TOP 3</div>
+                <div class="stock-basic">
+                    <div class="stock-name">TCL科技</div>
+                    <div class="stock-code">000100</div>
+                </div>
+                <div class="stock-theme"></div>
+            </div>
+            <div class="stock-price-row">
+                <div class="price-main">
+                    <span class="price-value">4.90</span>
+                    <span class="price-change" style="color:#ef4444">+1.87%</span>
+                </div>
+                <div class="stock-meta">
+                    <span class="meta-item">107537439139.90001</span>
+                    <span class="meta-item">PE 0.2</span>
+                    <span class="meta-item">PB 1903572.0</span>
+                </div>
+            </div>
+            <div class="stock-scores">
+                <div class="score-bar"><div class="score-fill" style="width:76.6875%;background:#ef4444"></div><span class="score-label">趋势 12.3</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:105.6875%;background:#f59e0b"></div><span class="score-label">动量 16.9</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:70.75%;background:#3b82f6"></div><span class="score-label">量价 11.3</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:11.375%;background:#8b5cf6"></div><span class="score-label">资金 1.8</span></div>
+                <div class="score-bar"><div class="score-fill" style="width:90.0%;background:#10b981"></div><span class="score-label">突破 14.4</span></div>
+            </div>
+            <div class="stock-financials"><span class="fin-item"><span class="fin-label">PE(TTM)</span><span class="fin-value">0.2</span></span><span class="fin-item"><span class="fin-label">PB</span><span class="fin-value">1903572.0</span></span></div>
+            <div class="stock-technical">
+                <div class="tech-item"><span class="tech-label">当前价</span><span class="tech-value">4.73</span></div>
+                <div class="tech-item"><span class="tech-label">MA5</span><span class="tech-value">4.64</span></div>
+                <div class="tech-item"><span class="tech-label">MA10</span><span class="tech-value">4.58</span></div>
+                <div class="tech-item"><span class="tech-label">MA20</span><span class="tech-value">4.51</span></div>
+                <div class="tech-item"><span class="tech-label">量比</span><span class="tech-value">1.79</span></div>
+                <div class="tech-item"><span class="tech-label">位置</span><span class="tech-value">95%</span></div>
+            </div>
+            <div class="tech-diagnosis">
+                <div class="diagnosis-title">技术面诊断</div>
+                <div class="diagnosis-items">
+                    <span class="diagnosis-tag">短期均线支撑有效</span><span class="diagnosis-tag">量能放大 1.8 倍</span><span class="diagnosis-tag">处于近期高位区域</span>
+                </div>
+            </div>
+            <div class="analysis-text">**TCL科技（000100）** 属于 **** 主题，综合总得分 **67.5 分**（评级：A+ 优秀）。
+
+**趋势分析：**
+趋势健康度 12.3 分，股价运行在主要均线上方，中期上升趋势明确。
+当前价格 4.90 元，站稳 5 日均线（4.64 元），短期偏强。
+
+**动量质量：**
+动量得分 16.9 分，近期价格动量强劲，动能充足。
+当日涨跌幅 +1.87%，波动平缓。
+
+**量价关系：**
+量价配合度 11.3 分，量价关系基本健康。
+量比 1.79，明显放量，资金活跃度提升。
+
+**资金动向：**
+资金活跃度偏低，得分 1.8 分，需观察后续资金流向。
+
+**突破形态：**
+突破形态良好，得分 14.4 分，近期有有效突破迹象。
+股价处于近期 95% 分位，接近阶段性高点。
+
+**基本面速览：**
+PE(TTM) 0.2，估值偏低。
+
+**综合判断：**
+综合表现优秀（67.5 分），趋势、动量、资金面配合良好，具备较好的短期交易机会。建议关注支撑位和止损位。</div>
+            <div class="stock-footer">
+                <div class="final-score">
+                    <span class="score-label">综合总分</span>
+                    <span class="score-value">67.5</span>
+                    <span class="score-grade" style="color:#10b981">A+ 优秀</span>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        
+<style>
+.dd-sec{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin:18px 0}
+.dd-sec .dd-h{font-size:17px;font-weight:600;color:#0f172a;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid #e5e7eb}
+.dd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.dd-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px}
+.dd-card h3{font-size:15px;margin:0 0 8px;color:#1e293b}
+.dd-card .dd-rank{display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;background:#f59e0b;color:#fff;font-size:12px;font-weight:700;margin-right:6px}
+.dd-kv{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;font-size:12.5px;margin:6px 0}
+.dd-kv div{display:flex;justify-content:space-between;border-bottom:1px dashed #eef2f7;padding:2px 0}
+.dd-kv b{color:#0f172a}.dd-kv span{color:#64748b}
+.dd-bar{display:inline-block;width:120px;height:8px;background:#e2e8f0;border-radius:5px;overflow:hidden;vertical-align:middle;margin-right:6px}
+.dd-bar span{display:block;height:100%}
+.dd-pos{color:#dc2626}.dd-neg{color:#16a34a}
+.dd-tag{display:inline-block;background:#e0e7ff;color:#4338ca;border-radius:6px;padding:2px 8px;font-size:11px;margin:2px 2px 2px 0}
+.dd-warn{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412}
+.dd-good{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534}
+.dd-bad{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.dd-note{font-size:12px;color:#64748b;margin-top:8px;line-height:1.7}
+.dd-verdict{font-size:18px;font-weight:700;padding:8px 12px;border-radius:10px;text-align:center;margin:10px 0}
+.dd-table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px}
+.dd-table th,.dd-table td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left}
+.dd-table th{background:#f1f5f9;color:#64748b}
+.dd-file{margin-top:12px;padding:10px 12px;border:1px dashed #cbd5e1;border-radius:8px;background:#f8fafc;font-size:12.5px;line-height:1.85}
+.dd-file>.dd-file-h{display:block;font-weight:600;color:#0f172a;margin-bottom:6px}
+.dd-file-miss{margin-top:10px;font-size:12px;color:#94a3b8;font-style:italic}
+</style><div class="dd-sec"><div class="dd-h">🔬 Top3 单只深研（交易分析团队 · 三维+异动）</div><div class="dd-note" style="margin-bottom:10px">数据截至 2026-11-19 收盘 ｜ 框架：基本面35%/新闻面20%/资金面35%/技术面10% + A股异常波动偏离值排雷。量化打分（技术/动量权重80%）与三维深研方向相反时，须结合使用，不可只看打分追入。</div><div class="dd-note" style="margin:-4px 0 10px;padding:8px 10px;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;color:#9a3412">⚠ 数据完整度（自动模式）：本期仅接入「池级量化打分 + 日 K 线 + 技术指标 + 异动偏离」，财务 / 主营结构 / 资金流 / 新闻评级 / PE·市值·目标价 <b>未接入</b>，相关段落一律标「未获取」，三维加权按可用维度重归一。结论仅作技术面观察清单，不构成基本面判断；连接器恢复后请改走全量模式复核。</div><div class="dd-grid">
+<div class="dd-card">
+  <h3><span class="dd-rank">1</span>华能蒙电（SH600863）</h3>
+  <div class="dd-kv">
+    <div><span>现价</span><b class="dd-pos">5.62</b></div>
+    <div><span>涨跌幅</span><b class="dd-pos">+4.81%</b></div>
+    <div><span>PE/PB</span><b>—/—</b></div>
+    <div><span>总市值</span><b>—</b></div>
+    <div><span>20/60日</span><b class="dd-pos">+12.18%/+18.32%</b></div>
+    <div><span>年初至今</span><b class="dd-pos">+31.92%</b></div>
+  </div>
+  <div class="dd-verdict" style="background:#16a34a22;color:#16a34a">综合研判：观望偏多（仅技术面单维口径）　|　可用维度加权 7.00/10（量化原始分 77.09 A+ 优秀）</div>
+  <div style="font-size:12.5px;line-height:1.9">
+    <div>🔹 基本面 35% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入财务/业务构成接口）</div></div>
+    <div>🔹 新闻面 20% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入新闻/评级接口）</div></div>
+    <div>🔹 资金面 35% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入资金流接口）</div></div>
+    <div>🔹 技术面 10% <span class="dd-bar"><span style="width:70.0%;background:#7c3aed"></span></span><b>7.0</b>/10<div class="dd-note">站上3/3 条均线(+3)；MACD金叉(+2)；RSI6 80 超买；KDJ_J 58 未极端(+1)；距52周高58%(+1)</div></div>
+  </div>
+  <div class="dd-card " style="margin-top:10px">
+    <b>⑥ 异动监控</b>（上证指数 基准，阈值 9.7%）
+    <table class="dd-table"><tr><th>窗口</th><th>个股</th><th>基准</th><th>偏离值</th><th>进度</th><th>等级</th></tr><tr><td>3日</td><td class='dd-pos'>+4.66%</td><td>-1.19%</td><td class='dd-pos'>+5.84%</td><td>60%</td><td>🟡 异动警戒</td></tr><tr><td>10日</td><td class='dd-pos'>+4.85%</td><td>-3.41%</td><td class='dd-pos'>+8.26%</td><td>8%</td><td>⚪ 安全区间</td></tr><tr><td>30日</td><td class='dd-pos'>+8.49%</td><td>-7.14%</td><td class='dd-pos'>+15.63%</td><td>8%</td><td>⚪ 安全区间</td></tr></table>
+    <div class="dd-kv" style="margin-top:8px"><div><span>异动向上天花板</span><b class="dd-pos">5.84（较现价+3.9%）</b></div></div>
+  </div>
+  <div class="dd-kv" style="margin-top:8px">
+    <div><span>建仓参考</span><b class="dd-pos">5.4</b></div>
+    <div><span>止损参考</span><b class="dd-neg">5.02</b></div>
+    <div><span>情绪目标</span><b class="dd-pos">6.18</b></div>
+  </div>
+  <!-- AUTO_GENERATED by top3_deepdive.py · 数据日期 2026-11-19 -->
+<div class="dd-file"><span class="dd-file-h">📁 文件分析总结（自生成 · K 线派生口径 · 数据截至 2026-11-19）</span><div class="dd-note">数据完整度：已接入＝池级量化打分 / 日 K 线 / 技术指标 / 异动偏离；未接入＝财务 · 主营结构 · 资金流 · 新闻评级 · PE/市值/目标价。未接入段落一律标「未获取」，三维加权按可用维度重归一。</div><div><b>① 日期 + 代码/名称：</b>2026-11-19 ｜ 600863 华能蒙电（沪市主板，异动基准 上证指数）</div><div><b>② 历史走势回顾：</b>最新收盘 5.62 元；近 250 根日 K 高/低 7.81 / 4.04 元，当前处区间约 42% 分位；近 20 日 +12.18%；近 60 日 +18.32%；年初至今 +31.92%；区间累计 +29.20%（2025-11-11 → 2026-11-20）。近期催化：—（未获取）（本期未接入新闻/公告源）</div><div><b>③ 业绩情况：</b>—（未获取）（本期未接入财务接口）；池级基本面量化打分 9.4/20（模型派生，非披露财务数据，不可替代营收/净利）</div><div><b>④ 主营结构：</b>—（未获取）（本期未接入业务构成接口）</div><div><b>⑤ 分析：</b>一、池级量化：总得分 77.09/100（A+ 优秀），技术面 67.69/80，五维中「突破」最高 18.43、「资金」最低 6.95；二、K 线技术：站上3/3 条均线(+3)；MACD金叉(+2)；RSI6 80 超买；KDJ_J 58 未极端(+1)；距52周高58%(+1)；三、资金/基本面/新闻三维：—（未获取）（本期未接入财务/业务构成接口） / —（未获取）（本期未接入资金流接口） / —（未获取）（本期未接入新闻/评级接口）。以上为「量化打分 + K 线」口径的中立拆解，不含财报、公告与产业链调研结论。</div><div><b>⑥ 估值：</b>PE / PB / 总市值 / 目标价：—（未获取）（本期未接入行情估值接口，禁止据 K 线反推估值）。仅提供价格相对位置：52 周区间约 42% 分位（非估值指标）。</div><div><b>⑦ 自己判断：</b>综合研判「观望偏多（仅技术面单维口径）」、可用维度加权 7.0/10，异动排雷：3 日异动 🟡 异动警戒；10 日异动 ⚪ 安全区间。结论仅基于 K 线派生技术面与池级量化打分，未验证业绩、估值与资金真实性；数据完整度不足，宜作技术面观察清单而非基本面建仓依据，须自行补充财报/估值/公告核验。</div></div>
+</div>
+<div class="dd-card">
+  <h3><span class="dd-rank">2</span>隆鑫通用（SH603766）</h3>
+  <div class="dd-kv">
+    <div><span>现价</span><b class="dd-pos">16.27</b></div>
+    <div><span>涨跌幅</span><b class="dd-pos">+0.87%</b></div>
+    <div><span>PE/PB</span><b>—/—</b></div>
+    <div><span>总市值</span><b>—</b></div>
+    <div><span>20/60日</span><b class="dd-pos">+8.61%/+18.59%</b></div>
+    <div><span>年初至今</span><b class="dd-pos">+7.32%</b></div>
+  </div>
+  <div class="dd-verdict" style="background:#16a34a22;color:#16a34a">综合研判：观望偏多（仅技术面单维口径）　|　可用维度加权 6.00/10（量化原始分 72.37 A+ 优秀）</div>
+  <div style="font-size:12.5px;line-height:1.9">
+    <div>🔹 基本面 35% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入财务/业务构成接口）</div></div>
+    <div>🔹 新闻面 20% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入新闻/评级接口）</div></div>
+    <div>🔹 资金面 35% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入资金流接口）</div></div>
+    <div>🔹 技术面 10% <span class="dd-bar"><span style="width:60.0%;background:#7c3aed"></span></span><b>6.0</b>/10<div class="dd-note">站上3/3 条均线(+3)；MACD金叉(+2)；RSI6 100 超买；KDJ_J 90 未极端(+1)；已近52周高（压力位）</div></div>
+  </div>
+  <div class="dd-card " style="margin-top:10px">
+    <b>⑥ 异动监控</b>（上证指数 基准，阈值 9.7%）
+    <table class="dd-table"><tr><th>窗口</th><th>个股</th><th>基准</th><th>偏离值</th><th>进度</th><th>等级</th></tr><tr><td>3日</td><td class='dd-pos'>+1.06%</td><td>-1.19%</td><td class='dd-pos'>+2.24%</td><td>23%</td><td>⚪ 安全区间</td></tr><tr><td>10日</td><td class='dd-pos'>+2.07%</td><td>-3.41%</td><td class='dd-pos'>+5.48%</td><td>5%</td><td>⚪ 安全区间</td></tr><tr><td>30日</td><td class='dd-pos'>+18.07%</td><td>-7.14%</td><td class='dd-pos'>+25.21%</td><td>13%</td><td>⚪ 安全区间</td></tr></table>
+    <div class="dd-kv" style="margin-top:8px"><div><span>异动向上天花板</span><b class="dd-pos">17.48（较现价+7.5%）</b></div></div>
+  </div>
+  <div class="dd-kv" style="margin-top:8px">
+    <div><span>建仓参考</span><b class="dd-pos">15.62</b></div>
+    <div><span>止损参考</span><b class="dd-neg">14.53</b></div>
+    <div><span>情绪目标</span><b class="dd-pos">17.9</b></div>
+  </div>
+  <!-- AUTO_GENERATED by top3_deepdive.py · 数据日期 2026-11-19 -->
+<div class="dd-file"><span class="dd-file-h">📁 文件分析总结（自生成 · K 线派生口径 · 数据截至 2026-11-19）</span><div class="dd-note">数据完整度：已接入＝池级量化打分 / 日 K 线 / 技术指标 / 异动偏离；未接入＝财务 · 主营结构 · 资金流 · 新闻评级 · PE/市值/目标价。未接入段落一律标「未获取」，三维加权按可用维度重归一。</div><div><b>① 日期 + 代码/名称：</b>2026-11-19 ｜ 603766 隆鑫通用（沪市主板，异动基准 上证指数）</div><div><b>② 历史走势回顾：</b>最新收盘 16.27 元；近 250 根日 K 高/低 16.49 / 10.59 元，当前处区间约 96% 分位；近 20 日 +8.61%；近 60 日 +18.59%；年初至今 +7.32%；区间累计 +30.26%（2025-11-11 → 2026-11-20）。近期催化：—（未获取）（本期未接入新闻/公告源）</div><div><b>③ 业绩情况：</b>—（未获取）（本期未接入财务接口）；池级基本面量化打分 10.82/20（模型派生，非披露财务数据，不可替代营收/净利）</div><div><b>④ 主营结构：</b>—（未获取）（本期未接入业务构成接口）</div><div><b>⑤ 分析：</b>一、池级量化：总得分 72.37/100（A+ 优秀），技术面 61.55/80，五维中「动量」最高 16.93、「资金」最低 6.99；二、K 线技术：站上3/3 条均线(+3)；MACD金叉(+2)；RSI6 100 超买；KDJ_J 90 未极端(+1)；已近52周高（压力位）；三、资金/基本面/新闻三维：—（未获取）（本期未接入财务/业务构成接口） / —（未获取）（本期未接入资金流接口） / —（未获取）（本期未接入新闻/评级接口）。以上为「量化打分 + K 线」口径的中立拆解，不含财报、公告与产业链调研结论。</div><div><b>⑥ 估值：</b>PE / PB / 总市值 / 目标价：—（未获取）（本期未接入行情估值接口，禁止据 K 线反推估值）。仅提供价格相对位置：52 周区间约 96% 分位（非估值指标）。</div><div><b>⑦ 自己判断：</b>综合研判「观望偏多（仅技术面单维口径）」、可用维度加权 6.0/10，异动排雷：3 日异动 ⚪ 安全区间；10 日异动 ⚪ 安全区间；价格处 52 周高位，回撤敏感。结论仅基于 K 线派生技术面与池级量化打分，未验证业绩、估值与资金真实性；数据完整度不足，宜作技术面观察清单而非基本面建仓依据，须自行补充财报/估值/公告核验。</div></div>
+</div>
+<div class="dd-card">
+  <h3><span class="dd-rank">3</span>TCL科技（SZ000100）</h3>
+  <div class="dd-kv">
+    <div><span>现价</span><b class="dd-pos">4.91</b></div>
+    <div><span>涨跌幅</span><b class="dd-pos">+0.84%</b></div>
+    <div><span>PE/PB</span><b>—/—</b></div>
+    <div><span>总市值</span><b>—</b></div>
+    <div><span>20/60日</span><b class="dd-pos">+9.84%/-2.39%</b></div>
+    <div><span>年初至今</span><b class="dd-pos">+10.34%</b></div>
+  </div>
+  <div class="dd-verdict" style="background:#16a34a22;color:#16a34a">综合研判：观望偏多（仅技术面单维口径）　|　可用维度加权 6.00/10（量化原始分 67.45 A+ 优秀）</div>
+  <div style="font-size:12.5px;line-height:1.9">
+    <div>🔹 基本面 35% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入财务/业务构成接口）</div></div>
+    <div>🔹 新闻面 20% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入新闻/评级接口）</div></div>
+    <div>🔹 资金面 35% <b>—（未获取）</b><div class="dd-note">—（未获取）（本期未接入资金流接口）</div></div>
+    <div>🔹 技术面 10% <span class="dd-bar"><span style="width:60.0%;background:#7c3aed"></span></span><b>6.0</b>/10<div class="dd-note">站上3/3 条均线(+3)；MACD金叉(+2)；RSI6 100 超买；KDJ_J 103 极端超买；距52周高58%(+1)</div></div>
+  </div>
+  <div class="dd-card " style="margin-top:10px">
+    <b>⑥ 异动监控</b>（深证综指 基准，阈值 9.7%）
+    <table class="dd-table"><tr><th>窗口</th><th>个股</th><th>基准</th><th>偏离值</th><th>进度</th><th>等级</th></tr><tr><td>3日</td><td class='dd-pos'>+3.37%</td><td>-0.74%</td><td class='dd-pos'>+4.11%</td><td>42%</td><td>🟢 轻度偏离</td></tr><tr><td>10日</td><td class='dd-pos'>+7.44%</td><td>-2.47%</td><td class='dd-pos'>+9.91%</td><td>10%</td><td>⚪ 安全区间</td></tr><tr><td>30日</td><td class='dd-pos'>+5.82%</td><td>-15.07%</td><td class='dd-pos'>+20.89%</td><td>10%</td><td>⚪ 安全区间</td></tr></table>
+    <div class="dd-kv" style="margin-top:8px"><div><span>异动向上天花板</span><b class="dd-pos">5.18（较现价+5.6%）</b></div></div>
+  </div>
+  <div class="dd-kv" style="margin-top:8px">
+    <div><span>建仓参考</span><b class="dd-pos">4.71</b></div>
+    <div><span>止损参考</span><b class="dd-neg">4.38</b></div>
+    <div><span>情绪目标</span><b class="dd-pos">5.4</b></div>
+  </div>
+  <!-- AUTO_GENERATED by top3_deepdive.py · 数据日期 2026-11-19 -->
+<div class="dd-file"><span class="dd-file-h">📁 文件分析总结（自生成 · K 线派生口径 · 数据截至 2026-11-19）</span><div class="dd-note">数据完整度：已接入＝池级量化打分 / 日 K 线 / 技术指标 / 异动偏离；未接入＝财务 · 主营结构 · 资金流 · 新闻评级 · PE/市值/目标价。未接入段落一律标「未获取」，三维加权按可用维度重归一。</div><div><b>① 日期 + 代码/名称：</b>2026-11-19 ｜ 000100 TCL科技（深市主板，异动基准 深证综指）</div><div><b>② 历史走势回顾：</b>最新收盘 4.91 元；近 250 根日 K 高/低 6.26 / 3.95 元，当前处区间约 42% 分位；近 20 日 +9.84%；近 60 日 -2.39%；年初至今 +10.34%；区间累计 +13.92%（2025-11-11 → 2026-11-20）。近期催化：—（未获取）（本期未接入新闻/公告源）</div><div><b>③ 业绩情况：</b>—（未获取）（本期未接入财务接口）；池级基本面量化打分 10.74/20（模型派生，非披露财务数据，不可替代营收/净利）</div><div><b>④ 主营结构：</b>—（未获取）（本期未接入业务构成接口）</div><div><b>⑤ 分析：</b>一、池级量化：总得分 67.45/100（A+ 优秀），技术面 56.71/80，五维中「动量」最高 16.91、「资金」最低 1.82；二、K 线技术：站上3/3 条均线(+3)；MACD金叉(+2)；RSI6 100 超买；KDJ_J 103 极端超买；距52周高58%(+1)；三、资金/基本面/新闻三维：—（未获取）（本期未接入财务/业务构成接口） / —（未获取）（本期未接入资金流接口） / —（未获取）（本期未接入新闻/评级接口）。以上为「量化打分 + K 线」口径的中立拆解，不含财报、公告与产业链调研结论。</div><div><b>⑥ 估值：</b>PE / PB / 总市值 / 目标价：—（未获取）（本期未接入行情估值接口，禁止据 K 线反推估值）。仅提供价格相对位置：52 周区间约 42% 分位（非估值指标）。</div><div><b>⑦ 自己判断：</b>综合研判「观望偏多（仅技术面单维口径）」、可用维度加权 6.0/10，异动排雷：3 日异动 🟢 轻度偏离；10 日异动 ⚪ 安全区间。结论仅基于 K 线派生技术面与池级量化打分，未验证业绩、估值与资金真实性；数据完整度不足，宜作技术面观察清单而非基本面建仓依据，须自行补充财报/估值/公告核验。</div></div>
+</div></div></div>
+        
+        <div class="section">
+            <div class="section-title">📈 全池打分结果表格</div>
+            <a class="table-link-card" href="2026-11-19_打分表格.html">
+                <div class="tl-icon">📋</div>
+                <div class="tl-text">
+                    <div class="tl-title">查看完整打分结果表格</div>
+                    <div class="tl-sub">共 150 只个股 · 排名 / 代码 / 名称 / 主题 / 总分 / 评级 / 五维明细 — 独立子页面，支持代码·名称·主题搜索</div>
+                </div>
+                <div class="tl-arrow">→</div>
+            </a>
+        </div>
+        
+        <div class="section" style="text-align:center;color:#94a3b8;font-size:12px;padding:20px;">
+            <p>免责声明：本报告仅供参考，不构成投资建议。数据来自东方财富，可能存在延迟。</p>
+        </div>
+    </div>
+    <script src="../assets/navbar.js"></script>
+</body>
+</html>
