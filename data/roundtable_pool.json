@@ -1,28 +1,172 @@
 {
- "generated_at": "2026-11-20",
+ "generated_at": "2026-11-23",
  "window": {
-  "from": "2026-10-30",
-  "to": "2026-11-19"
+  "from": "2026-11-02",
+  "to": "2026-11-22"
  },
  "universe": "近20个交易日每期Top3并集",
  "periods": 20,
  "nominal_size": 60,
- "unique_size": 43,
+ "unique_size": 46,
  "event_size": 60,
  "stocks": [
   {
+   "code": "601318",
+   "name": "中国平安",
+   "top3": 1,
+   "avg": 68.68,
+   "max": 68.68,
+   "first": "2026-11-22",
+   "last": "2026-11-22",
+   "last_rank": 3,
+   "theme": "高股息红利",
+   "entry_rank": 3,
+   "entry_score": 68.68,
+   "entry_date": "2026-11-22",
+   "base_open": null,
+   "day2_open": null,
+   "day4_close": null,
+   "day6_close": null,
+   "win_day2": null,
+   "win_day4": null,
+   "win_day6": null,
+   "cumulative_return_pct": null,
+   "peak_return_pct": null,
+   "post_entry_comment": "无入池后行情（末日 2026-11-20，入池日 2026-11-22 后无交易日），占位不伪造"
+  },
+  {
+   "code": "601298",
+   "name": "青岛港",
+   "top3": 1,
+   "avg": 71.04,
+   "max": 71.04,
+   "first": "2026-11-22",
+   "last": "2026-11-22",
+   "last_rank": 2,
+   "theme": "高股息红利",
+   "entry_rank": 2,
+   "entry_score": 71.04,
+   "entry_date": "2026-11-22",
+   "base_open": null,
+   "day2_open": null,
+   "day4_close": null,
+   "day6_close": null,
+   "win_day2": null,
+   "win_day4": null,
+   "win_day6": null,
+   "cumulative_return_pct": null,
+   "peak_return_pct": null,
+   "post_entry_comment": "无入池后行情（末日 2026-11-20，入池日 2026-11-22 后无交易日），占位不伪造"
+  },
+  {
+   "code": "601000",
+   "name": "唐山港",
+   "top3": 2,
+   "avg": 73.72,
+   "max": 76.11,
+   "first": "2026-11-20",
+   "last": "2026-11-22",
+   "last_rank": 1,
+   "theme": "高股息红利/高股息红利与价值防御",
+   "entry_rank": 1,
+   "entry_score": 71.34,
+   "entry_date": "2026-11-22",
+   "base_open": null,
+   "day2_open": null,
+   "day4_close": null,
+   "day6_close": null,
+   "win_day2": null,
+   "win_day4": null,
+   "win_day6": null,
+   "cumulative_return_pct": null,
+   "peak_return_pct": null,
+   "post_entry_comment": "无入池后行情（末日 2026-11-20，入池日 2026-11-22 后无交易日），占位不伪造"
+  },
+  {
+   "code": "688981",
+   "name": "中芯国际",
+   "top3": 2,
+   "avg": 72.42,
+   "max": 74.82,
+   "first": "2026-11-20",
+   "last": "2026-11-21",
+   "last_rank": 3,
+   "theme": "国产算力与AI芯片/国产算力与半导体自主可控",
+   "entry_rank": 3,
+   "entry_score": 70.02,
+   "entry_date": "2026-11-21",
+   "base_open": null,
+   "day2_open": null,
+   "day4_close": null,
+   "day6_close": null,
+   "win_day2": null,
+   "win_day4": null,
+   "win_day6": null,
+   "cumulative_return_pct": null,
+   "peak_return_pct": null,
+   "post_entry_comment": "无入池后行情（末日 2026-11-20，入池日 2026-11-21 后无交易日），占位不伪造"
+  },
+  {
    "code": "603766",
    "name": "隆鑫通用",
-   "top3": 1,
-   "avg": 72.37,
+   "top3": 2,
+   "avg": 71.33,
    "max": 72.37,
    "first": "2026-11-19",
-   "last": "2026-11-19",
+   "last": "2026-11-21",
    "last_rank": 2,
-   "theme": "家电成本压力缓解与出海",
+   "theme": "出口链：逆变器、摩托车、纺织服装与新型烟草/家电成本压力缓解与出海",
    "entry_rank": 2,
-   "entry_score": 72.37,
-   "entry_date": "2026-11-19",
+   "entry_score": 70.28,
+   "entry_date": "2026-11-21",
+   "base_open": null,
+   "day2_open": null,
+   "day4_close": null,
+   "day6_close": null,
+   "win_day2": null,
+   "win_day4": null,
+   "win_day6": null,
+   "cumulative_return_pct": null,
+   "peak_return_pct": null,
+   "post_entry_comment": "无入池后行情（末日 2026-11-20，入池日 2026-11-21 后无交易日），占位不伪造"
+  },
+  {
+   "code": "003816",
+   "name": "中国广核",
+   "top3": 1,
+   "avg": 74.31,
+   "max": 74.31,
+   "first": "2026-11-21",
+   "last": "2026-11-21",
+   "last_rank": 1,
+   "theme": "-",
+   "entry_rank": 1,
+   "entry_score": 74.31,
+   "entry_date": "2026-11-21",
+   "base_open": null,
+   "day2_open": null,
+   "day4_close": null,
+   "day6_close": null,
+   "win_day2": null,
+   "win_day4": null,
+   "win_day6": null,
+   "cumulative_return_pct": null,
+   "peak_return_pct": null,
+   "post_entry_comment": "无入池后行情（末日 2026-11-20，入池日 2026-11-21 后无交易日），占位不伪造"
+  },
+  {
+   "code": "688981",
+   "name": "中芯国际",
+   "top3": 2,
+   "avg": 72.42,
+   "max": 74.82,
+   "first": "2026-11-20",
+   "last": "2026-11-21",
+   "last_rank": 3,
+   "theme": "国产算力与AI芯片/国产算力与半导体自主可控",
+   "entry_rank": 3,
+   "entry_score": 74.82,
+   "entry_date": "2026-11-20",
    "base_open": null,
    "day2_open": null,
    "day4_close": null,
@@ -31,8 +175,80 @@
    "win_day4": null,
    "win_day6": null,
    "cumulative_return_pct": 0.0,
-   "peak_return_pct": 0.86,
-   "post_entry_comment": "入池基准 2026-11-19 → 区间最高 +0.86% / 最低 -1.42% → 2026-11-19 收于 +0.00%（1 个交易日）"
+   "peak_return_pct": 0.18,
+   "post_entry_comment": "入池基准 2026-11-20 → 区间最高 +0.18% / 最低 -4.89% → 2026-11-20 收于 +0.00%（1 个交易日）"
+  },
+  {
+   "code": "601000",
+   "name": "唐山港",
+   "top3": 2,
+   "avg": 73.72,
+   "max": 76.11,
+   "first": "2026-11-20",
+   "last": "2026-11-22",
+   "last_rank": 1,
+   "theme": "高股息红利/高股息红利与价值防御",
+   "entry_rank": 2,
+   "entry_score": 76.11,
+   "entry_date": "2026-11-20",
+   "base_open": null,
+   "day2_open": null,
+   "day4_close": null,
+   "day6_close": null,
+   "win_day2": null,
+   "win_day4": null,
+   "win_day6": null,
+   "cumulative_return_pct": 0.0,
+   "peak_return_pct": 0.19,
+   "post_entry_comment": "入池基准 2026-11-20 → 区间最高 +0.19% / 最低 -2.65% → 2026-11-20 收于 +0.00%（1 个交易日）"
+  },
+  {
+   "code": "600519",
+   "name": "贵州茅台",
+   "top3": 1,
+   "avg": 77.29,
+   "max": 77.29,
+   "first": "2026-11-20",
+   "last": "2026-11-20",
+   "last_rank": 1,
+   "theme": "高股息红利与价值防御",
+   "entry_rank": 1,
+   "entry_score": 77.29,
+   "entry_date": "2026-11-20",
+   "base_open": null,
+   "day2_open": null,
+   "day4_close": null,
+   "day6_close": null,
+   "win_day2": null,
+   "win_day4": null,
+   "win_day6": null,
+   "cumulative_return_pct": 0.0,
+   "peak_return_pct": 0.22,
+   "post_entry_comment": "入池基准 2026-11-20 → 区间最高 +0.22% / 最低 -4.16% → 2026-11-20 收于 +0.00%（1 个交易日）"
+  },
+  {
+   "code": "603766",
+   "name": "隆鑫通用",
+   "top3": 2,
+   "avg": 71.33,
+   "max": 72.37,
+   "first": "2026-11-19",
+   "last": "2026-11-21",
+   "last_rank": 2,
+   "theme": "出口链：逆变器、摩托车、纺织服装与新型烟草/家电成本压力缓解与出海",
+   "entry_rank": 2,
+   "entry_score": 72.37,
+   "entry_date": "2026-11-19",
+   "base_open": 16.27,
+   "day2_open": 16.27,
+   "day4_close": null,
+   "day6_close": null,
+   "win_day2": true,
+   "win_day4": null,
+   "win_day6": null,
+   "cumulative_return_pct": 0.18,
+   "peak_return_pct": 1.48,
+   "post_entry_comment": "入池基准 2026-11-19 → 区间最高 +1.48% / 最低 -1.42% → 2026-11-20 收于 +0.18%（2 个交易日）"
   },
   {
    "code": "600863",
@@ -47,16 +263,16 @@
    "entry_rank": 1,
    "entry_score": 77.09,
    "entry_date": "2026-11-19",
-   "base_open": null,
-   "day2_open": null,
+   "base_open": 5.51,
+   "day2_open": 5.51,
    "day4_close": null,
    "day6_close": null,
-   "win_day2": null,
+   "win_day2": true,
    "win_day4": null,
    "win_day6": null,
-   "cumulative_return_pct": 0.0,
+   "cumulative_return_pct": -0.71,
    "peak_return_pct": 4.95,
-   "post_entry_comment": "入池基准 2026-11-19 → 区间最高 +4.95% / 最低 -4.42% → 2026-11-19 收于 +0.00%（1 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-19 → 区间最高 +4.95% / 最低 -4.42% → 2026-11-20 收于 -0.71%（2 个交易日）"
   },
   {
    "code": "000100",
@@ -71,16 +287,16 @@
    "entry_rank": 3,
    "entry_score": 67.45,
    "entry_date": "2026-11-19",
-   "base_open": null,
-   "day2_open": null,
+   "base_open": 4.75,
+   "day2_open": 4.75,
    "day4_close": null,
    "day6_close": null,
-   "win_day2": null,
+   "win_day2": true,
    "win_day4": null,
    "win_day6": null,
-   "cumulative_return_pct": 0.0,
-   "peak_return_pct": 0.62,
-   "post_entry_comment": "入池基准 2026-11-19 → 区间最高 +0.62% / 最低 -1.25% → 2026-11-19 收于 +0.00%（1 个交易日）"
+   "cumulative_return_pct": 1.87,
+   "peak_return_pct": 2.91,
+   "post_entry_comment": "入池基准 2026-11-19 → 区间最高 +2.91% / 最低 -1.66% → 2026-11-20 收于 +1.87%（2 个交易日）"
   },
   {
    "code": "603600",
@@ -102,9 +318,9 @@
    "win_day2": false,
    "win_day4": null,
    "win_day6": null,
-   "cumulative_return_pct": -3.23,
+   "cumulative_return_pct": -7.04,
    "peak_return_pct": 2.24,
-   "post_entry_comment": "入池基准 2026-11-18 → 区间最高 +2.24% / 最低 -4.06% → 2026-11-19 收于 -3.23%（2 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-18 → 区间最高 +2.24% / 最低 -8.11% → 2026-11-20 收于 -7.04%（3 个交易日）"
   },
   {
    "code": "301606",
@@ -126,9 +342,9 @@
    "win_day2": true,
    "win_day4": null,
    "win_day6": null,
-   "cumulative_return_pct": -0.81,
-   "peak_return_pct": 1.04,
-   "post_entry_comment": "入池基准 2026-11-18 → 区间最高 +1.04% / 最低 -3.48% → 2026-11-19 收于 -0.81%（2 个交易日）"
+   "cumulative_return_pct": -3.35,
+   "peak_return_pct": 1.22,
+   "post_entry_comment": "入池基准 2026-11-18 → 区间最高 +1.22% / 最低 -3.48% → 2026-11-20 收于 -3.35%（3 个交易日）"
   },
   {
    "code": "002959",
@@ -150,9 +366,9 @@
    "win_day2": false,
    "win_day4": null,
    "win_day6": null,
-   "cumulative_return_pct": -10.0,
+   "cumulative_return_pct": -19.0,
    "peak_return_pct": 5.71,
-   "post_entry_comment": "入池基准 2026-11-18 → 区间最高 +5.71% / 最低 -10.00% → 2026-11-19 收于 -10.00%（2 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-18 → 区间最高 +5.71% / 最低 -19.00% → 2026-11-20 收于 -19.00%（3 个交易日）"
   },
   {
    "code": "600467",
@@ -169,14 +385,14 @@
    "entry_date": "2026-11-17",
    "base_open": 2.64,
    "day2_open": 2.64,
-   "day4_close": null,
+   "day4_close": 2.86,
    "day6_close": null,
    "win_day2": true,
-   "win_day4": null,
+   "win_day4": true,
    "win_day6": null,
-   "cumulative_return_pct": -5.45,
+   "cumulative_return_pct": 4.0,
    "peak_return_pct": 8.73,
-   "post_entry_comment": "入池基准 2026-11-17 → 区间最高 +8.73% / 最低 -11.64% → 2026-11-19 收于 -5.45%（3 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-17 → 区间最高 +8.73% / 最低 -14.55% → 2026-11-20 收于 +4.00%（4 个交易日）"
   },
   {
    "code": "300824",
@@ -193,14 +409,14 @@
    "entry_date": "2026-11-17",
    "base_open": 9.26,
    "day2_open": 9.26,
-   "day4_close": null,
+   "day4_close": 8.28,
    "day6_close": null,
    "win_day2": true,
-   "win_day4": null,
+   "win_day4": false,
    "win_day6": null,
-   "cumulative_return_pct": -9.32,
+   "cumulative_return_pct": -17.03,
    "peak_return_pct": 12.02,
-   "post_entry_comment": "入池基准 2026-11-17 → 区间最高 +12.02% / 最低 -14.83% → 2026-11-19 收于 -9.32%（3 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-17 → 区间最高 +12.02% / 最低 -17.64% → 2026-11-20 收于 -17.03%（4 个交易日）"
   },
   {
    "code": "002959",
@@ -217,14 +433,14 @@
    "entry_date": "2026-11-17",
    "base_open": 40.0,
    "day2_open": 40.0,
-   "day4_close": null,
+   "day4_close": 33.63,
    "day6_close": null,
    "win_day2": true,
-   "win_day4": null,
+   "win_day4": false,
    "win_day6": null,
-   "cumulative_return_pct": -6.34,
+   "cumulative_return_pct": -15.71,
    "peak_return_pct": 10.0,
-   "post_entry_comment": "入池基准 2026-11-17 → 区间最高 +10.00% / 最低 -6.52% → 2026-11-19 收于 -6.34%（3 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-17 → 区间最高 +10.00% / 最低 -15.71% → 2026-11-20 收于 -15.71%（4 个交易日）"
   },
   {
    "code": "600312",
@@ -246,9 +462,9 @@
    "win_day2": false,
    "win_day4": true,
    "win_day6": null,
-   "cumulative_return_pct": 1.64,
-   "peak_return_pct": 2.96,
-   "post_entry_comment": "入池基准 2026-11-16 → 区间最高 +2.96% / 最低 -6.25% → 2026-11-19 收于 +1.64%（4 个交易日）"
+   "cumulative_return_pct": -0.14,
+   "peak_return_pct": 3.51,
+   "post_entry_comment": "入池基准 2026-11-16 → 区间最高 +3.51% / 最低 -6.25% → 2026-11-20 收于 -0.14%（5 个交易日）"
   },
   {
    "code": "300770",
@@ -270,9 +486,9 @@
    "win_day2": false,
    "win_day4": false,
    "win_day6": null,
-   "cumulative_return_pct": -11.3,
+   "cumulative_return_pct": -10.87,
    "peak_return_pct": 2.07,
-   "post_entry_comment": "入池基准 2026-11-16 → 区间最高 +2.07% / 最低 -11.94% → 2026-11-19 收于 -11.30%（4 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-16 → 区间最高 +2.07% / 最低 -13.65% → 2026-11-20 收于 -10.87%（5 个交易日）"
   },
   {
    "code": "002748",
@@ -294,9 +510,9 @@
    "win_day2": false,
    "win_day4": false,
    "win_day6": null,
-   "cumulative_return_pct": -7.63,
+   "cumulative_return_pct": -14.75,
    "peak_return_pct": 2.2,
-   "post_entry_comment": "入池基准 2026-11-16 → 区间最高 +2.20% / 最低 -8.66% → 2026-11-19 收于 -7.63%（4 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-16 → 区间最高 +2.20% / 最低 -15.63% → 2026-11-20 收于 -14.75%（5 个交易日）"
   },
   {
    "code": "688135",
@@ -314,13 +530,13 @@
    "base_open": 32.17,
    "day2_open": 32.17,
    "day4_close": 32.34,
-   "day6_close": null,
+   "day6_close": 25.56,
    "win_day2": false,
    "win_day4": true,
-   "win_day6": null,
-   "cumulative_return_pct": -5.01,
+   "win_day6": false,
+   "cumulative_return_pct": -15.7,
    "peak_return_pct": 8.11,
-   "post_entry_comment": "入池基准 2026-11-16（入池日休市，首个交易日作基准） → 区间最高 +8.11% / 最低 -5.38% → 2026-11-19 收于 -5.01%（4 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-16（入池日休市，首个交易日作基准） → 区间最高 +8.11% / 最低 -15.86% → 2026-11-20 收于 -15.70%（5 个交易日）"
   },
   {
    "code": "601595",
@@ -338,13 +554,13 @@
    "base_open": 40.35,
    "day2_open": 40.35,
    "day4_close": 34.13,
-   "day6_close": null,
+   "day6_close": 29.56,
    "win_day2": false,
    "win_day4": false,
-   "win_day6": null,
-   "cumulative_return_pct": -14.84,
+   "win_day6": false,
+   "cumulative_return_pct": -21.53,
    "peak_return_pct": 8.84,
-   "post_entry_comment": "入池基准 2026-11-16（入池日休市，首个交易日作基准） → 区间最高 +8.84% / 最低 -15.58% → 2026-11-19 收于 -14.84%（4 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-16（入池日休市，首个交易日作基准） → 区间最高 +8.84% / 最低 -21.79% → 2026-11-20 收于 -21.53%（5 个交易日）"
   },
   {
    "code": "300825",
@@ -362,13 +578,13 @@
    "base_open": 13.35,
    "day2_open": 13.35,
    "day4_close": 11.2,
-   "day6_close": null,
+   "day6_close": 9.88,
    "win_day2": false,
    "win_day4": false,
-   "win_day6": null,
-   "cumulative_return_pct": -20.57,
+   "win_day6": false,
+   "cumulative_return_pct": -24.17,
    "peak_return_pct": 4.53,
-   "post_entry_comment": "入池基准 2026-11-16（入池日休市，首个交易日作基准） → 区间最高 +4.53% / 最低 -20.95% → 2026-11-19 收于 -20.57%（4 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-16（入池日休市，首个交易日作基准） → 区间最高 +4.53% / 最低 -25.71% → 2026-11-20 收于 -24.17%（5 个交易日）"
   },
   {
    "code": "688135",
@@ -386,13 +602,13 @@
    "base_open": 32.17,
    "day2_open": 32.17,
    "day4_close": 32.34,
-   "day6_close": null,
+   "day6_close": 25.56,
    "win_day2": false,
    "win_day4": true,
-   "win_day6": null,
-   "cumulative_return_pct": -16.74,
+   "win_day6": false,
+   "cumulative_return_pct": -26.11,
    "peak_return_pct": 5.52,
-   "post_entry_comment": "入池基准 2026-11-13 → 区间最高 +5.52% / 最低 -17.06% → 2026-11-19 收于 -16.74%（5 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-13 → 区间最高 +5.52% / 最低 -26.25% → 2026-11-20 收于 -26.11%（6 个交易日）"
   },
   {
    "code": "301218",
@@ -410,13 +626,13 @@
    "base_open": 102.37,
    "day2_open": 102.37,
    "day4_close": 83.39,
-   "day6_close": null,
+   "day6_close": 72.5,
    "win_day2": false,
    "win_day4": false,
-   "win_day6": null,
-   "cumulative_return_pct": -22.31,
+   "win_day6": false,
+   "cumulative_return_pct": -27.4,
    "peak_return_pct": 4.56,
-   "post_entry_comment": "入池基准 2026-11-13 → 区间最高 +4.56% / 最低 -23.36% → 2026-11-19 收于 -22.31%（5 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-13 → 区间最高 +4.56% / 最低 -27.60% → 2026-11-20 收于 -27.40%（6 个交易日）"
   },
   {
    "code": "300829",
@@ -434,13 +650,13 @@
    "base_open": 30.87,
    "day2_open": 30.87,
    "day4_close": 30.91,
-   "day6_close": null,
+   "day6_close": 26.2,
    "win_day2": false,
    "win_day4": true,
-   "win_day6": null,
-   "cumulative_return_pct": -5.66,
+   "win_day6": false,
+   "cumulative_return_pct": -8.46,
    "peak_return_pct": 14.78,
-   "post_entry_comment": "入池基准 2026-11-13 → 区间最高 +14.78% / 最低 -7.83% → 2026-11-19 收于 -5.66%（5 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-13 → 区间最高 +14.78% / 最低 -12.65% → 2026-11-20 收于 -8.46%（6 个交易日）"
   },
   {
    "code": "688552",
@@ -462,9 +678,9 @@
    "win_day2": false,
    "win_day4": false,
    "win_day6": false,
-   "cumulative_return_pct": -19.81,
+   "cumulative_return_pct": -26.08,
    "peak_return_pct": 5.22,
-   "post_entry_comment": "入池基准 2026-11-12 → 区间最高 +5.22% / 最低 -20.81% → 2026-11-19 收于 -19.81%（6 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-12 → 区间最高 +5.22% / 最低 -26.11% → 2026-11-20 收于 -26.08%（7 个交易日）"
   },
   {
    "code": "600316",
@@ -486,9 +702,9 @@
    "win_day2": false,
    "win_day4": false,
    "win_day6": false,
-   "cumulative_return_pct": -19.02,
+   "cumulative_return_pct": -27.13,
    "peak_return_pct": 3.25,
-   "post_entry_comment": "入池基准 2026-11-12 → 区间最高 +3.25% / 最低 -20.30% → 2026-11-19 收于 -19.02%（6 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-12 → 区间最高 +3.25% / 最低 -27.13% → 2026-11-20 收于 -27.13%（7 个交易日）"
   },
   {
    "code": "300829",
@@ -510,9 +726,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": false,
-   "cumulative_return_pct": -5.16,
+   "cumulative_return_pct": -7.97,
    "peak_return_pct": 15.38,
-   "post_entry_comment": "入池基准 2026-11-12 → 区间最高 +15.38% / 最低 -13.38% → 2026-11-19 收于 -5.16%（6 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-12 → 区间最高 +15.38% / 最低 -13.38% → 2026-11-20 收于 -7.97%（7 个交易日）"
   },
   {
    "code": "688787",
@@ -534,9 +750,9 @@
    "win_day2": false,
    "win_day4": false,
    "win_day6": false,
-   "cumulative_return_pct": -40.03,
+   "cumulative_return_pct": -40.59,
    "peak_return_pct": 0.2,
-   "post_entry_comment": "入池基准 2026-11-11 → 区间最高 +0.20% / 最低 -40.59% → 2026-11-19 收于 -40.03%（7 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-11 → 区间最高 +0.20% / 最低 -43.66% → 2026-11-20 收于 -40.59%（8 个交易日）"
   },
   {
    "code": "605118",
@@ -558,9 +774,9 @@
    "win_day2": false,
    "win_day4": false,
    "win_day6": false,
-   "cumulative_return_pct": -35.96,
+   "cumulative_return_pct": -40.79,
    "peak_return_pct": 6.59,
-   "post_entry_comment": "入池基准 2026-11-11 → 区间最高 +6.59% / 最低 -36.31% → 2026-11-19 收于 -35.96%（7 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-11 → 区间最高 +6.59% / 最低 -41.00% → 2026-11-20 收于 -40.79%（8 个交易日）"
   },
   {
    "code": "002428",
@@ -582,9 +798,9 @@
    "win_day2": false,
    "win_day4": false,
    "win_day6": false,
-   "cumulative_return_pct": -12.9,
+   "cumulative_return_pct": -17.29,
    "peak_return_pct": 3.67,
-   "post_entry_comment": "入池基准 2026-11-11 → 区间最高 +3.67% / 最低 -16.20% → 2026-11-19 收于 -12.90%（7 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-11 → 区间最高 +3.67% / 最低 -17.29% → 2026-11-20 收于 -17.29%（8 个交易日）"
   },
   {
    "code": "688018",
@@ -606,9 +822,9 @@
    "win_day2": true,
    "win_day4": false,
    "win_day6": false,
-   "cumulative_return_pct": -20.64,
+   "cumulative_return_pct": -24.72,
    "peak_return_pct": 4.37,
-   "post_entry_comment": "入池基准 2026-11-10 → 区间最高 +4.37% / 最低 -21.66% → 2026-11-19 收于 -20.64%（8 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-10 → 区间最高 +4.37% / 最低 -24.88% → 2026-11-20 收于 -24.72%（9 个交易日）"
   },
   {
    "code": "603893",
@@ -630,9 +846,9 @@
    "win_day2": true,
    "win_day4": false,
    "win_day6": false,
-   "cumulative_return_pct": -18.77,
+   "cumulative_return_pct": -20.91,
    "peak_return_pct": 1.79,
-   "post_entry_comment": "入池基准 2026-11-10 → 区间最高 +1.79% / 最低 -19.44% → 2026-11-19 收于 -18.77%（8 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-10 → 区间最高 +1.79% / 最低 -22.34% → 2026-11-20 收于 -20.91%（9 个交易日）"
   },
   {
    "code": "603286",
@@ -654,9 +870,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": false,
-   "cumulative_return_pct": -22.32,
+   "cumulative_return_pct": -26.95,
    "peak_return_pct": 6.63,
-   "post_entry_comment": "入池基准 2026-11-10 → 区间最高 +6.63% / 最低 -22.82% → 2026-11-19 收于 -22.32%（8 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-10 → 区间最高 +6.63% / 最低 -27.83% → 2026-11-20 收于 -26.95%（9 个交易日）"
   },
   {
    "code": "600540",
@@ -678,9 +894,9 @@
    "win_day2": true,
    "win_day4": false,
    "win_day6": false,
-   "cumulative_return_pct": -23.19,
+   "cumulative_return_pct": -22.38,
    "peak_return_pct": 1.61,
-   "post_entry_comment": "入池基准 2026-11-09 → 区间最高 +1.61% / 最低 -23.79% → 2026-11-19 收于 -23.19%（9 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09 → 区间最高 +1.61% / 最低 -26.61% → 2026-11-20 收于 -22.38%（10 个交易日）"
   },
   {
    "code": "600371",
@@ -702,9 +918,9 @@
    "win_day2": true,
    "win_day4": false,
    "win_day6": false,
-   "cumulative_return_pct": -28.05,
+   "cumulative_return_pct": -20.87,
    "peak_return_pct": 1.33,
-   "post_entry_comment": "入池基准 2026-11-09 → 区间最高 +1.33% / 最低 -28.42% → 2026-11-19 收于 -28.05%（9 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09 → 区间最高 +1.33% / 最低 -31.90% → 2026-11-20 收于 -20.87%（10 个交易日）"
   },
   {
    "code": "000525",
@@ -726,9 +942,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": false,
-   "cumulative_return_pct": -25.91,
+   "cumulative_return_pct": -28.44,
    "peak_return_pct": 6.34,
-   "post_entry_comment": "入池基准 2026-11-09 → 区间最高 +6.34% / 最低 -26.27% → 2026-11-19 收于 -25.91%（9 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09 → 区间最高 +6.34% / 最低 -28.62% → 2026-11-20 收于 -28.44%（10 个交易日）"
   },
   {
    "code": "601595",
@@ -750,9 +966,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": true,
-   "cumulative_return_pct": -17.11,
+   "cumulative_return_pct": -23.62,
    "peak_return_pct": 21.01,
-   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +21.01% / 最低 -17.83% → 2026-11-19 收于 -17.11%（9 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +21.01% / 最低 -23.88% → 2026-11-20 收于 -23.62%（10 个交易日）"
   },
   {
    "code": "002929",
@@ -774,9 +990,9 @@
    "win_day2": false,
    "win_day4": false,
    "win_day6": false,
-   "cumulative_return_pct": -14.75,
+   "cumulative_return_pct": -15.86,
    "peak_return_pct": 14.86,
-   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +14.86% / 最低 -20.32% → 2026-11-19 收于 -14.75%（9 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +14.86% / 最低 -20.32% → 2026-11-20 收于 -15.86%（10 个交易日）"
   },
   {
    "code": "002708",
@@ -798,9 +1014,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": true,
-   "cumulative_return_pct": -6.78,
+   "cumulative_return_pct": -13.15,
    "peak_return_pct": 26.9,
-   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +26.90% / 最低 -6.78% → 2026-11-19 收于 -6.78%（9 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +26.90% / 最低 -13.20% → 2026-11-20 收于 -13.15%（10 个交易日）"
   },
   {
    "code": "688235",
@@ -822,9 +1038,9 @@
    "win_day2": false,
    "win_day4": true,
    "win_day6": false,
-   "cumulative_return_pct": -4.11,
+   "cumulative_return_pct": -7.82,
    "peak_return_pct": 3.92,
-   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +3.92% / 最低 -6.74% → 2026-11-19 收于 -4.11%（9 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +3.92% / 最低 -8.77% → 2026-11-20 收于 -7.82%（10 个交易日）"
   },
   {
    "code": "605488",
@@ -846,9 +1062,9 @@
    "win_day2": false,
    "win_day4": true,
    "win_day6": false,
-   "cumulative_return_pct": -20.83,
+   "cumulative_return_pct": -18.37,
    "peak_return_pct": 22.85,
-   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +22.85% / 最低 -21.90% → 2026-11-19 收于 -20.83%（9 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +22.85% / 最低 -23.21% → 2026-11-20 收于 -18.37%（10 个交易日）"
   },
   {
    "code": "301529",
@@ -870,9 +1086,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": true,
-   "cumulative_return_pct": -17.71,
+   "cumulative_return_pct": -25.99,
    "peak_return_pct": 11.86,
-   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +11.86% / 最低 -19.01% → 2026-11-19 收于 -17.71%（9 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-09（入池日休市，首个交易日作基准） → 区间最高 +11.86% / 最低 -26.17% → 2026-11-20 收于 -25.99%（10 个交易日）"
   },
   {
    "code": "601595",
@@ -894,9 +1110,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": true,
-   "cumulative_return_pct": -10.29,
+   "cumulative_return_pct": -17.34,
    "peak_return_pct": 30.96,
-   "post_entry_comment": "入池基准 2026-11-06 → 区间最高 +30.96% / 最低 -13.31% → 2026-11-19 收于 -10.29%（10 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-06 → 区间最高 +30.96% / 最低 -17.62% → 2026-11-20 收于 -17.34%（11 个交易日）"
   },
   {
    "code": "300761",
@@ -918,9 +1134,9 @@
    "win_day2": false,
    "win_day4": false,
    "win_day6": false,
-   "cumulative_return_pct": -4.93,
+   "cumulative_return_pct": -4.36,
    "peak_return_pct": 1.9,
-   "post_entry_comment": "入池基准 2026-11-06 → 区间最高 +1.90% / 最低 -5.57% → 2026-11-19 收于 -4.93%（10 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-06 → 区间最高 +1.90% / 最低 -6.40% → 2026-11-20 收于 -4.36%（11 个交易日）"
   },
   {
    "code": "002929",
@@ -942,9 +1158,9 @@
    "win_day2": false,
    "win_day4": false,
    "win_day6": false,
-   "cumulative_return_pct": -20.3,
+   "cumulative_return_pct": -21.34,
    "peak_return_pct": 7.38,
-   "post_entry_comment": "入池基准 2026-11-06 → 区间最高 +7.38% / 最低 -25.51% → 2026-11-19 收于 -20.30%（10 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-06 → 区间最高 +7.38% / 最低 -25.51% → 2026-11-20 收于 -21.34%（11 个交易日）"
   },
   {
    "code": "688018",
@@ -966,9 +1182,9 @@
    "win_day2": false,
    "win_day4": true,
    "win_day6": false,
-   "cumulative_return_pct": -15.0,
+   "cumulative_return_pct": -19.38,
    "peak_return_pct": 11.78,
-   "post_entry_comment": "入池基准 2026-11-05 → 区间最高 +11.78% / 最低 -16.09% → 2026-11-19 收于 -15.00%（11 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-05 → 区间最高 +11.78% / 最低 -19.55% → 2026-11-20 收于 -19.38%（12 个交易日）"
   },
   {
    "code": "603990",
@@ -990,9 +1206,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": true,
-   "cumulative_return_pct": -11.99,
+   "cumulative_return_pct": -11.37,
    "peak_return_pct": 12.03,
-   "post_entry_comment": "入池基准 2026-11-05 → 区间最高 +12.03% / 最低 -15.51% → 2026-11-19 收于 -11.99%（11 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-05 → 区间最高 +12.03% / 最低 -20.80% → 2026-11-20 收于 -11.37%（12 个交易日）"
   },
   {
    "code": "300788",
@@ -1014,9 +1230,9 @@
    "win_day2": false,
    "win_day4": true,
    "win_day6": true,
-   "cumulative_return_pct": -22.79,
+   "cumulative_return_pct": -20.0,
    "peak_return_pct": 13.37,
-   "post_entry_comment": "入池基准 2026-11-05 → 区间最高 +13.37% / 最低 -22.90% → 2026-11-19 收于 -22.79%（11 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-05 → 区间最高 +13.37% / 最低 -26.82% → 2026-11-20 收于 -20.00%（12 个交易日）"
   },
   {
    "code": "688018",
@@ -1038,9 +1254,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": true,
-   "cumulative_return_pct": -9.96,
+   "cumulative_return_pct": -14.59,
    "peak_return_pct": 18.41,
-   "post_entry_comment": "入池基准 2026-11-04 → 区间最高 +18.41% / 最低 -13.05% → 2026-11-19 收于 -9.96%（12 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-04 → 区间最高 +18.41% / 最低 -14.78% → 2026-11-20 收于 -14.59%（13 个交易日）"
   },
   {
    "code": "300788",
@@ -1062,9 +1278,9 @@
    "win_day2": true,
    "win_day4": false,
    "win_day6": true,
-   "cumulative_return_pct": -23.13,
+   "cumulative_return_pct": -20.35,
    "peak_return_pct": 12.87,
-   "post_entry_comment": "入池基准 2026-11-04 → 区间最高 +12.87% / 最低 -23.24% → 2026-11-19 收于 -23.13%（12 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-04 → 区间最高 +12.87% / 最低 -27.15% → 2026-11-20 收于 -20.35%（13 个交易日）"
   },
   {
    "code": "300508",
@@ -1086,9 +1302,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": true,
-   "cumulative_return_pct": -24.4,
+   "cumulative_return_pct": -30.87,
    "peak_return_pct": 16.22,
-   "post_entry_comment": "入池基准 2026-11-04 → 区间最高 +16.22% / 最低 -24.94% → 2026-11-19 收于 -24.40%（12 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-04 → 区间最高 +16.22% / 最低 -30.87% → 2026-11-20 收于 -30.87%（13 个交易日）"
   },
   {
    "code": "601668",
@@ -1110,9 +1326,9 @@
    "win_day2": false,
    "win_day4": false,
    "win_day6": false,
-   "cumulative_return_pct": 0.0,
+   "cumulative_return_pct": 0.42,
    "peak_return_pct": 1.06,
-   "post_entry_comment": "入池基准 2026-11-03 → 区间最高 +1.06% / 最低 -4.44% → 2026-11-19 收于 +0.00%（13 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-03 → 区间最高 +1.06% / 最低 -4.44% → 2026-11-20 收于 +0.42%（14 个交易日）"
   },
   {
    "code": "302132",
@@ -1134,9 +1350,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": true,
-   "cumulative_return_pct": -15.33,
+   "cumulative_return_pct": -19.2,
    "peak_return_pct": 4.74,
-   "post_entry_comment": "入池基准 2026-11-03 → 区间最高 +4.74% / 最低 -16.57% → 2026-11-19 收于 -15.33%（13 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-03 → 区间最高 +4.74% / 最低 -20.10% → 2026-11-20 收于 -19.20%（14 个交易日）"
   },
   {
    "code": "300508",
@@ -1158,9 +1374,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": true,
-   "cumulative_return_pct": -15.62,
+   "cumulative_return_pct": -22.85,
    "peak_return_pct": 29.71,
-   "post_entry_comment": "入池基准 2026-11-03 → 区间最高 +29.71% / 最低 -16.23% → 2026-11-19 收于 -15.62%（13 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-03 → 区间最高 +29.71% / 最低 -22.85% → 2026-11-20 收于 -22.85%（14 个交易日）"
   },
   {
    "code": "603198",
@@ -1182,9 +1398,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": false,
-   "cumulative_return_pct": -11.04,
+   "cumulative_return_pct": -15.45,
    "peak_return_pct": 0.8,
-   "post_entry_comment": "入池基准 2026-11-02 → 区间最高 +0.80% / 最低 -12.69% → 2026-11-19 收于 -11.04%（14 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-02 → 区间最高 +0.80% / 最低 -15.95% → 2026-11-20 收于 -15.45%（15 个交易日）"
   },
   {
    "code": "600419",
@@ -1206,9 +1422,9 @@
    "win_day2": true,
    "win_day4": true,
    "win_day6": true,
-   "cumulative_return_pct": 2.22,
+   "cumulative_return_pct": -4.02,
    "peak_return_pct": 7.3,
-   "post_entry_comment": "入池基准 2026-11-02 → 区间最高 +7.30% / 最低 -5.82% → 2026-11-19 收于 +2.22%（14 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-02 → 区间最高 +7.30% / 最低 -5.82% → 2026-11-20 收于 -4.02%（15 个交易日）"
   },
   {
    "code": "002708",
@@ -1230,245 +1446,29 @@
    "win_day2": false,
    "win_day4": true,
    "win_day6": true,
-   "cumulative_return_pct": -0.29,
+   "cumulative_return_pct": -7.11,
    "peak_return_pct": 35.74,
-   "post_entry_comment": "入池基准 2026-11-02 → 区间最高 +35.74% / 最低 -17.28% → 2026-11-19 收于 -0.29%（14 个交易日）"
-  },
-  {
-   "code": "601658",
-   "name": "邮储银行",
-   "top3": 3,
-   "avg": 60.76,
-   "max": 60.95,
-   "first": "2026-10-30",
-   "last": "2026-11-01",
-   "last_rank": 3,
-   "theme": "银行/保险",
-   "entry_rank": 3,
-   "entry_score": 60.69,
-   "entry_date": "2026-11-01",
-   "base_open": 5.74,
-   "day2_open": 5.74,
-   "day4_close": 5.59,
-   "day6_close": 5.53,
-   "win_day2": false,
-   "win_day4": false,
-   "win_day6": false,
-   "cumulative_return_pct": 0.35,
-   "peak_return_pct": 2.1,
-   "post_entry_comment": "入池基准 2026-11-02（入池日休市，首个交易日作基准） → 区间最高 +2.10% / 最低 -4.72% → 2026-11-19 收于 +0.35%（14 个交易日）"
-  },
-  {
-   "code": "601288",
-   "name": "农业银行",
-   "top3": 3,
-   "avg": 63.99,
-   "max": 64.51,
-   "first": "2026-10-30",
-   "last": "2026-11-01",
-   "last_rank": 2,
-   "theme": "银行/保险",
-   "entry_rank": 2,
-   "entry_score": 64.51,
-   "entry_date": "2026-11-01",
-   "base_open": 7.51,
-   "day2_open": 7.51,
-   "day4_close": 7.31,
-   "day6_close": 7.28,
-   "win_day2": false,
-   "win_day4": false,
-   "win_day6": false,
-   "cumulative_return_pct": 2.41,
-   "peak_return_pct": 2.95,
-   "post_entry_comment": "入池基准 2026-11-02（入池日休市，首个交易日作基准） → 区间最高 +2.95% / 最低 -4.69% → 2026-11-19 收于 +2.41%（14 个交易日）"
-  },
-  {
-   "code": "000333",
-   "name": "美的集团",
-   "top3": 3,
-   "avg": 66.37,
-   "max": 66.59,
-   "first": "2026-10-30",
-   "last": "2026-11-01",
-   "last_rank": 1,
-   "theme": "-",
-   "entry_rank": 1,
-   "entry_score": 66.04,
-   "entry_date": "2026-11-01",
-   "base_open": 88.75,
-   "day2_open": 88.75,
-   "day4_close": 87.98,
-   "day6_close": 89.6,
-   "win_day2": false,
-   "win_day4": false,
-   "win_day6": true,
-   "cumulative_return_pct": 8.38,
-   "peak_return_pct": 9.13,
-   "post_entry_comment": "入池基准 2026-11-02（入池日休市，首个交易日作基准） → 区间最高 +9.13% / 最低 -1.48% → 2026-11-19 收于 +8.38%（14 个交易日）"
-  },
-  {
-   "code": "601658",
-   "name": "邮储银行",
-   "top3": 3,
-   "avg": 60.76,
-   "max": 60.95,
-   "first": "2026-10-30",
-   "last": "2026-11-01",
-   "last_rank": 3,
-   "theme": "银行/保险",
-   "entry_rank": 3,
-   "entry_score": 60.95,
-   "entry_date": "2026-10-31",
-   "base_open": 5.74,
-   "day2_open": 5.74,
-   "day4_close": 5.59,
-   "day6_close": 5.53,
-   "win_day2": false,
-   "win_day4": false,
-   "win_day6": false,
-   "cumulative_return_pct": 0.35,
-   "peak_return_pct": 2.1,
-   "post_entry_comment": "入池基准 2026-11-02（入池日休市，首个交易日作基准） → 区间最高 +2.10% / 最低 -4.72% → 2026-11-19 收于 +0.35%（14 个交易日）"
-  },
-  {
-   "code": "601288",
-   "name": "农业银行",
-   "top3": 3,
-   "avg": 63.99,
-   "max": 64.51,
-   "first": "2026-10-30",
-   "last": "2026-11-01",
-   "last_rank": 2,
-   "theme": "银行/保险",
-   "entry_rank": 2,
-   "entry_score": 63.79,
-   "entry_date": "2026-10-31",
-   "base_open": 7.51,
-   "day2_open": 7.51,
-   "day4_close": 7.31,
-   "day6_close": 7.28,
-   "win_day2": false,
-   "win_day4": false,
-   "win_day6": false,
-   "cumulative_return_pct": 2.41,
-   "peak_return_pct": 2.95,
-   "post_entry_comment": "入池基准 2026-11-02（入池日休市，首个交易日作基准） → 区间最高 +2.95% / 最低 -4.69% → 2026-11-19 收于 +2.41%（14 个交易日）"
-  },
-  {
-   "code": "000333",
-   "name": "美的集团",
-   "top3": 3,
-   "avg": 66.37,
-   "max": 66.59,
-   "first": "2026-10-30",
-   "last": "2026-11-01",
-   "last_rank": 1,
-   "theme": "-",
-   "entry_rank": 1,
-   "entry_score": 66.49,
-   "entry_date": "2026-10-31",
-   "base_open": 88.75,
-   "day2_open": 88.75,
-   "day4_close": 87.98,
-   "day6_close": 89.6,
-   "win_day2": false,
-   "win_day4": false,
-   "win_day6": true,
-   "cumulative_return_pct": 8.38,
-   "peak_return_pct": 9.13,
-   "post_entry_comment": "入池基准 2026-11-02（入池日休市，首个交易日作基准） → 区间最高 +9.13% / 最低 -1.48% → 2026-11-19 收于 +8.38%（14 个交易日）"
-  },
-  {
-   "code": "601658",
-   "name": "邮储银行",
-   "top3": 3,
-   "avg": 60.76,
-   "max": 60.95,
-   "first": "2026-10-30",
-   "last": "2026-11-01",
-   "last_rank": 3,
-   "theme": "银行/保险",
-   "entry_rank": 3,
-   "entry_score": 60.63,
-   "entry_date": "2026-10-30",
-   "base_open": 5.74,
-   "day2_open": 5.74,
-   "day4_close": 5.59,
-   "day6_close": 5.53,
-   "win_day2": false,
-   "win_day4": false,
-   "win_day6": false,
-   "cumulative_return_pct": 0.17,
-   "peak_return_pct": 1.92,
-   "post_entry_comment": "入池基准 2026-10-30 → 区间最高 +1.92% / 最低 -4.89% → 2026-11-19 收于 +0.17%（15 个交易日）"
-  },
-  {
-   "code": "601288",
-   "name": "农业银行",
-   "top3": 3,
-   "avg": 63.99,
-   "max": 64.51,
-   "first": "2026-10-30",
-   "last": "2026-11-01",
-   "last_rank": 2,
-   "theme": "银行/保险",
-   "entry_rank": 2,
-   "entry_score": 63.68,
-   "entry_date": "2026-10-30",
-   "base_open": 7.51,
-   "day2_open": 7.51,
-   "day4_close": 7.31,
-   "day6_close": 7.28,
-   "win_day2": false,
-   "win_day4": false,
-   "win_day6": false,
-   "cumulative_return_pct": 2.27,
-   "peak_return_pct": 2.81,
-   "post_entry_comment": "入池基准 2026-10-30 → 区间最高 +2.81% / 最低 -4.81% → 2026-11-19 收于 +2.27%（15 个交易日）"
-  },
-  {
-   "code": "000333",
-   "name": "美的集团",
-   "top3": 3,
-   "avg": 66.37,
-   "max": 66.59,
-   "first": "2026-10-30",
-   "last": "2026-11-01",
-   "last_rank": 1,
-   "theme": "-",
-   "entry_rank": 1,
-   "entry_score": 66.59,
-   "entry_date": "2026-10-30",
-   "base_open": 88.75,
-   "day2_open": 88.75,
-   "day4_close": 87.98,
-   "day6_close": 89.6,
-   "win_day2": false,
-   "win_day4": false,
-   "win_day6": true,
-   "cumulative_return_pct": 6.54,
-   "peak_return_pct": 7.27,
-   "post_entry_comment": "入池基准 2026-10-30 → 区间最高 +7.27% / 最低 -3.16% → 2026-11-19 收于 +6.54%（15 个交易日）"
+   "post_entry_comment": "入池基准 2026-11-02 → 区间最高 +35.74% / 最低 -17.28% → 2026-11-20 收于 -7.11%（15 个交易日）"
   }
  ],
  "win_rates": {
   "day2": {
    "label": "入池第2交易日胜率",
-   "wins": 23,
-   "total": 57,
-   "pct": 40.4
+   "wins": 26,
+   "total": 51,
+   "pct": 51.0
   },
   "day4": {
    "label": "入池第4交易日胜率",
-   "wins": 23,
-   "total": 51,
-   "pct": 45.1
+   "wins": 24,
+   "total": 45,
+   "pct": 53.3
   },
   "day6": {
    "label": "入池第6交易日胜率",
-   "wins": 16,
-   "total": 42,
-   "pct": 38.1
+   "wins": 13,
+   "total": 39,
+   "pct": 33.3
   },
   "basis": "入池第2个交易日开盘价（day2_open）",
   "day_count": "交易日（入池日记为第1个，第2个=T+1；非自然日）"
